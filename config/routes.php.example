@@ -2,7 +2,8 @@
 /**
  * Custom Public Application Routes
  *
- * Use example below to define custom static route
+ * Copy this file to routes.php and
+ * use example below to define custom static routes
  */
 
 // Example public static route
