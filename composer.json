@@ -1,0 +1,25 @@
+{
+    "name": "pitoncms/piton",
+    "description": "Simple CMS for small websites",
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/PitonCMS/Piton",
+    "authors": [
+        {
+            "name": "Wolfgang Moritz",
+            "email": "wolfmoritz@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.0",
+        "pitoncms/engine": "^0.1"
+        },
+    "autoload": {
+        "psr-4": {
+            "Piton\\": "app/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true
+    }
+}
