@@ -11,3 +11,13 @@ $('#user-emails .add-user-row').on('click', function() {
     $userRow.find('a').attr('href', '#');
     $(this).before($userRow);
 });
+
+// Make sure element name is one word
+$('form input.element-name').on('blur', function() {
+    var elementName = $(this).val();
+    if (elementName.match(/\s/g)) {
+        elementName = elementName.replace(/\s/g, '-');
+        console.log(elementName)
+        $(this).val(elementName);
+    }
+});

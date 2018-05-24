@@ -11,6 +11,12 @@
 
 <body>
 
+    <h1>All Pages For Nav</h1>
+
+    {% for pl in pageList %}
+        <a href="{{ pathFor('showPage', {'url': pl.url}) }}">{{ pl.title }}</a><br>
+    {% endfor %}
+
     {% block body %}
     <h2>Default body content</h2>
     {% endblock %}
