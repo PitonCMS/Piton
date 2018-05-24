@@ -3,4 +3,6 @@ config/config.local.php
 logs/
 twigcache/
 .sass-cache/
+docker/
+docker-compose.yml
 *.xml
