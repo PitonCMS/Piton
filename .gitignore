@@ -8,4 +8,4 @@ docker-compose.yml
 #templates/*/sass/*
 *.xml
 composer.lock
-vendor/
+vendor/*
