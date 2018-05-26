@@ -13,7 +13,7 @@ $('.jsAddUserRow').on('click', function() {
 });
 
 // Make sure element name is one word
-$('form input.element-name').on('blur', function() {
+$('form input.jsElementName').on('blur', function() {
     var elementName = $(this).val();
     if (elementName.match(/\s/g)) {
         elementName = elementName.replace(/\s/g, '-');
