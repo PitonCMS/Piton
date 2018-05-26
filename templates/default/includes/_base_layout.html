@@ -13,7 +13,7 @@
 
     <h1>All Pages For Nav</h1>
 
-    {% for pl in pageList %}
+    {% for pl in site.pages %}
         <a href="{{ pathFor('showPage', {'url': pl.url}) }}">{{ pl.title }}</a><br>
     {% endfor %}
 
