@@ -5,7 +5,7 @@ twigcache/
 .sass-cache/
 docker/
 docker-compose.yml
-#templates/*/sass/*
+templates/*/sass/*
 *.xml
-composer.lock
+#composer.lock
 vendor/*
