@@ -15,8 +15,8 @@ $('.jsAddUserRow').on('click', function() {
 // Make sure element name is one word
 $('form input.jsElementName').on('blur', function() {
     var elementName = $(this).val();
-    if (elementName.match(/[^a-zA-Z0-9-]/g)) {
-        elementName = elementName.replace(/[^a-z0-9]/g, '-');
+    if (elementName.match(/[^a-zA-Z0-9_]/g)) {
+        elementName = elementName.replace(/[^a-z0-9]/g, '_');
         $(this).val(elementName);
     }
 });
