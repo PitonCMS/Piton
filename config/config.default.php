@@ -11,11 +11,6 @@
 $config['production'] = true;
 
 /**
- * Administration Email Address
- */
-$config['user']['email'] = '';
-
-/**
  * Database Settings
  */
 $config['database']['host'] = 'localhost';
