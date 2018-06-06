@@ -3,8 +3,6 @@ config/config.local.php
 logs/
 twigcache/
 .sass-cache/
-docker/
-docker-compose.yml
 templates/*/sass/*
 *.xml
 #composer.lock
