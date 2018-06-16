@@ -4,6 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
+    "hash": "ad35de3b2ca034ea021a750a76a5b2e7",
     "content-hash": "b0089308342969e1563f77f000b310e0",
     "packages": [
         {
@@ -35,7 +36,7 @@
             ],
             "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
             "homepage": "https://github.com/container-interop/container-interop",
-            "time": "2017-02-14T19:40:03+00:00"
+            "time": "2017-02-14 19:40:03"
         },
         {
             "name": "eoghanobrien/php-simple-mail",
@@ -82,7 +83,7 @@
                 "email",
                 "php5"
             ],
-            "time": "2018-03-16T19:29:23+00:00"
+            "time": "2018-03-16 19:29:23"
         },
         {
             "name": "erusev/parsedown",
@@ -128,7 +129,7 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2018-03-08T01:11:30+00:00"
+            "time": "2018-03-08 01:11:30"
         },
         {
             "name": "monolog/monolog",
@@ -206,7 +207,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2017-06-19T01:22:40+00:00"
+            "time": "2017-06-19 01:22:40"
         },
         {
             "name": "nikic/fast-route",
@@ -252,7 +253,7 @@
                 "router",
                 "routing"
             ],
-            "time": "2018-02-13T20:26:39+00:00"
+            "time": "2018-02-13 20:26:39"
         },
         {
             "name": "pimple/pimple",
@@ -302,7 +303,7 @@
                 "container",
                 "dependency injection"
             ],
-            "time": "2018-01-21T07:42:36+00:00"
+            "time": "2018-01-21 07:42:36"
         },
         {
             "name": "pitoncms/engine",
@@ -310,12 +311,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PitonCMS/Engine.git",
-                "reference": "9d20549c50a88948a400e3fcdd26fc7a51157f31"
+                "reference": "bd5d763540a3e04069052bf3c5cc376920c908ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PitonCMS/Engine/zipball/9d20549c50a88948a400e3fcdd26fc7a51157f31",
-                "reference": "9d20549c50a88948a400e3fcdd26fc7a51157f31",
+                "url": "https://api.github.com/repos/PitonCMS/Engine/zipball/bd5d763540a3e04069052bf3c5cc376920c908ba",
+                "reference": "bd5d763540a3e04069052bf3c5cc376920c908ba",
                 "shasum": ""
             },
             "require": {
@@ -345,7 +346,7 @@
             ],
             "description": "PitonCMS core engine",
             "homepage": "https://github.com/PitonCMS/Engine",
-            "time": "2018-05-27T18:21:59+00:00"
+            "time": "2018-06-06 22:02:17"
         },
         {
             "name": "psr/container",
@@ -394,7 +395,7 @@
                 "container-interop",
                 "psr"
             ],
-            "time": "2017-02-14T16:28:37+00:00"
+            "time": "2017-02-14 16:28:37"
         },
         {
             "name": "psr/http-message",
@@ -444,7 +445,7 @@
                 "request",
                 "response"
             ],
-            "time": "2016-08-06T14:39:51+00:00"
+            "time": "2016-08-06 14:39:51"
         },
         {
             "name": "psr/log",
@@ -491,7 +492,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2016-10-10T12:19:37+00:00"
+            "time": "2016-10-10 12:19:37"
         },
         {
             "name": "slim/slim",
@@ -562,7 +563,7 @@
                 "micro",
                 "router"
             ],
-            "time": "2018-04-19T19:29:08+00:00"
+            "time": "2018-04-19 19:29:08"
         },
         {
             "name": "slim/twig-view",
@@ -613,24 +614,84 @@
                 "twig",
                 "view"
             ],
-            "time": "2018-05-07T10:54:29+00:00"
+            "time": "2018-05-07 10:54:29"
         },
         {
-            "name": "twig/twig",
-            "version": "v1.35.3",
+            "name": "symfony/polyfill-mbstring",
+            "version": "v1.8.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/twigphp/Twig.git",
-                "reference": "b48680b6eb7d16b5025b9bfc4108d86f6b8af86f"
+                "url": "https://github.com/symfony/polyfill-mbstring.git",
+                "reference": "3296adf6a6454a050679cde90f95350ad604b171"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/b48680b6eb7d16b5025b9bfc4108d86f6b8af86f",
-                "reference": "b48680b6eb7d16b5025b9bfc4108d86f6b8af86f",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/3296adf6a6454a050679cde90f95350ad604b171",
+                "reference": "3296adf6a6454a050679cde90f95350ad604b171",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
+            },
+            "suggest": {
+                "ext-mbstring": "For best performance"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Mbstring\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for the Mbstring extension",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "mbstring",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "time": "2018-04-26 10:06:28"
+        },
+        {
+            "name": "twig/twig",
+            "version": "v2.4.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twigphp/Twig.git",
+                "reference": "7b604c89da162034bdf4bb66310f358d313dd16d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/7b604c89da162034bdf4bb66310f358d313dd16d",
+                "reference": "7b604c89da162034bdf4bb66310f358d313dd16d",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0",
+                "symfony/polyfill-mbstring": "~1.0"
             },
             "require-dev": {
                 "psr/container": "^1.0",
@@ -640,7 +701,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.35-dev"
+                    "dev-master": "2.4-dev"
                 }
             },
             "autoload": {
@@ -678,7 +739,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2018-03-20T04:25:58+00:00"
+            "time": "2018-04-02 09:24:19"
         },
         {
             "name": "wolfmoritz/session",
@@ -718,7 +779,7 @@
             "keywords": [
                 "session"
             ],
-            "time": "2016-06-21T22:09:54+00:00"
+            "time": "2016-06-21 22:09:54"
         }
     ],
     "packages-dev": [],
