@@ -12,11 +12,12 @@ $('.jsAddUserRow').on('click', function() {
     $(this).before($userRow);
 });
 
-// Make sure element name is one word
-$('form input.jsElementName').on('blur', function() {
+// Make sure element and section names are one clean word
+$('form input.jsRefNameValidate').on('blur', function() {
     var elementName = $(this).val();
     if (elementName.match(/[^a-zA-Z0-9_]/g)) {
-        elementName = elementName.replace(/[^a-z0-9]/g, '_');
+        elementName = elementName.replace(/[^a-zA-Z0-9_]/g, '_');
+        elementName = elementName.toLowerCase();
         $(this).val(elementName);
     }
 });
