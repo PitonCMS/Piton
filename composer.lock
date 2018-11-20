@@ -311,12 +311,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PitonCMS/Engine.git",
-                "reference": "5d0333e37e745ffde1a9fbcb2eae81081299c138"
+                "reference": "d66ba4cbb24da3de03d6f3759327dd3356b54cb2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PitonCMS/Engine/zipball/fe34ce963215907190b3661f2a2c8028863ee752",
-                "reference": "5d0333e37e745ffde1a9fbcb2eae81081299c138",
+                "url": "https://api.github.com/repos/PitonCMS/Engine/zipball/d66ba4cbb24da3de03d6f3759327dd3356b54cb2",
+                "reference": "d66ba4cbb24da3de03d6f3759327dd3356b54cb2",
                 "shasum": ""
             },
             "require": {
@@ -346,7 +346,7 @@
             ],
             "description": "PitonCMS core engine",
             "homepage": "https://github.com/PitonCMS/Engine",
-            "time": "2018-08-26 16:25:46"
+            "time": "2018-11-20 12:44:15"
         },
         {
             "name": "psr/container",
