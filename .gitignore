@@ -3,7 +3,7 @@ config/config.local.php
 logs/
 twigcache/
 .sass-cache/
-templates/*/sass/*
+themes/*/sass/*
 *.xml
 #composer.lock
 vendor/*

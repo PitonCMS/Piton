@@ -29,7 +29,7 @@
               <li>Set session configs, set the cookieName (lowercase, one word), and add a random hash to 'salt'</li>
               <li>Save config.local.php</li>
             </ul>
-            <li>TODO: Optionally create a new theme folder under 'templates', next to 'default'</li>
+            <li>TODO: Optionally create a new theme folder under 'themes', next to 'default'</li>
             <ul>
               <li>Copy any files you wish to change from default to your custom theme</li>
             </ul>
