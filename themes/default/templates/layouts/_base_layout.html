@@ -6,20 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title>PitonCMS Home</title>
-    <link rel="stylesheet" href="{{ basePath() }}/assets/default/css/main.css">
+    <link rel="stylesheet" href="{{ assetsPath() }}/css/main.css">
 </head>
 
 <body>
-
-    <h1>All Pages For Nav</h1>
-
-    {% for pl in site.pages %}
-        <a href="{{ pathFor('showPage', {'url': pl.url}) }}">{{ pl.title }}</a><br>
-    {% endfor %}
+{{ include ("includes/_navbar.html") }}    
 
     {% block body %}
     <h2>Default body content</h2>
     {% endblock %}
+
+    {{ include ("includes/_footer.html") }} 
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
@@ -27,7 +24,7 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
-    <script src="{{ basePath() }}/assets/default/js/custom.js"></script>
+    <script src="{{ assetsPath() }}/js/custom.js"></script>
 
 </body>
 
