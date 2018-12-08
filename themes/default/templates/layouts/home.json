@@ -1,0 +1,19 @@
+{
+    "pageName": "Home",
+    "pageLayoutDescription": "Home page with hero image and text sections.",
+    "sections": [
+        {
+            "name": "Hero Image",
+            "codeName": "aboveTheFoldHero",
+            "description": "Large full width image",
+            "elementType": "hero",
+            "elementTypeOptions": ["media","text","hero"]
+        },
+        {
+            "name": "Text",
+            "codeName": "introBlock",
+            "description": "Home page text areas",
+            "elementType": ""
+        }
+    ]
+}

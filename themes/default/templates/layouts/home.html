@@ -1,5 +1,17 @@
 {% extends 'layouts/_base_layout.html' %}
 
 {% block body %}
-<h1>PitonCMS Home Page</h1>
+
+<h1>Default PitonCMS Home Page</h1>
+
+{# Fetch all elements in the "aboveTheFoldHero" section #}
+{% for el in page.sections.aboveTheFoldHero %}
+    {{ fetchElementHtml(el.element_type, el.element_title, el.content, el.collection_id, el.media_group, el.media_path) }}
+{% endfor %}
+
+{# Fetch all elements in the "introBlock" section #}
+{% for el in page.sections.introBlock %}
+    {{ fetchElementHtml(el.element_type, el.element_title, el.content, el.collection_id, el.media_group, el.media_path) }}
+{% endfor %}
+
 {% endblock %}

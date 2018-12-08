@@ -315,7 +315,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PitonCMS/Engine/zipball/46270e4d7807650a5ff8cd39c2dec0ef9c8b677c",
+                "url": "https://api.github.com/repos/PitonCMS/Engine/zipball/0503c0da2285f1883d19dccea2d1c2e039850994",
                 "reference": "46270e4d7807650a5ff8cd39c2dec0ef9c8b677c",
                 "shasum": ""
             },
