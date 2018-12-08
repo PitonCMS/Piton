@@ -8,3 +8,4 @@ themes/*/sass/*
 #composer.lock
 vendor/*
 themes/wolf/*
+prepros-6.config

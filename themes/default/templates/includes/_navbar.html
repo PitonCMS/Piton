@@ -1,0 +1,7 @@
+
+      {% for pl in site.pages %}
+     
+        <a href="{{ pathFor('showPage', {'url': pl.url}) }}">{{ pl.title }}</a> | 
+    
+      {% endfor %}
+  
