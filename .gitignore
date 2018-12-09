@@ -1,11 +1,11 @@
 # Things to ignore
 config/config.local.php
-logs/
-twigcache/
-.sass-cache/
+logs/*
+twigcache/*
+.sass-cache/*
 themes/*/sass/*
 *.xml
 #composer.lock
 vendor/*
-themes/wolf/*
+themes/test/*
 prepros-6.config
