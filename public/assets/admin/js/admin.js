@@ -19,13 +19,15 @@ $('.jsAddElement').on('click', function() {
     var $sectionParent = $(this).parent('.jsSectionParent');
     var elementType = $(this).data('element-type');
     var sectionCodeName = $(this).data('section-code-name');
+    var elementTypeOptions = $(this).data('element-type-options');
 
     $.ajax({
         url: '/admin/page/element/fetch',
         method: "POST",
         data: {
             sectionCodeName: sectionCodeName,
-            elementType: elementType
+            elementType: elementType,
+            elementTypeOptions: elementTypeOptions
         },
         success: function (r) {
             var $newElement = $(r.html);
