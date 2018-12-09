@@ -1,9 +1,13 @@
 $('.datepicker').datepicker();
 
 // Delete confirm prompt
+var confirmDeletePrompt = function(msg) {
+    var message = msg || 'Are you sure you want to delete?';
+    return confirm(message);
+}
+
 $('body').on('click', '.jsDeleteConfirm', function() {
-  var reply = confirm('Are you sure you want to delete?');
-  return reply;
+  return confirmDeletePrompt();
 });
 
 // Add user row
@@ -44,6 +48,9 @@ $('.jsAddElement').on('click', function() {
 
 // Delete page section element
 $('.jsSectionParent').on('click', '.jsDeleteSectionElement', function () {
+    if (!confirmDeletePrompt('Are you sure you want to delete this element?')) {
+        return;
+    }
     var sectionElementId = $(this).data('section-element-id') || 'x';
     var physicalDelete = true;
 
