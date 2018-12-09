@@ -4,7 +4,6 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "047089a1a196cc7dc38b8a743ef3b596",
     "content-hash": "60cf51bd05bba081d79bedd2c0ef955d",
     "packages": [
         {
@@ -36,7 +35,7 @@
             ],
             "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
             "homepage": "https://github.com/container-interop/container-interop",
-            "time": "2017-02-14 19:40:03"
+            "time": "2017-02-14T19:40:03+00:00"
         },
         {
             "name": "eoghanobrien/php-simple-mail",
@@ -83,7 +82,7 @@
                 "email",
                 "php5"
             ],
-            "time": "2018-03-16 19:29:23"
+            "time": "2018-03-16T19:29:23+00:00"
         },
         {
             "name": "erusev/parsedown",
@@ -129,7 +128,7 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2018-03-08 01:11:30"
+            "time": "2018-03-08T01:11:30+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -207,7 +206,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2018-11-05 09:00:11"
+            "time": "2018-11-05T09:00:11+00:00"
         },
         {
             "name": "nikic/fast-route",
@@ -253,7 +252,7 @@
                 "router",
                 "routing"
             ],
-            "time": "2018-02-13 20:26:39"
+            "time": "2018-02-13T20:26:39+00:00"
         },
         {
             "name": "pimple/pimple",
@@ -303,7 +302,7 @@
                 "container",
                 "dependency injection"
             ],
-            "time": "2018-01-21 07:42:36"
+            "time": "2018-01-21T07:42:36+00:00"
         },
         {
             "name": "pitoncms/engine",
@@ -315,7 +314,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PitonCMS/Engine/zipball/0503c0da2285f1883d19dccea2d1c2e039850994",
+                "url": "https://api.github.com/repos/PitonCMS/Engine/zipball/46270e4d7807650a5ff8cd39c2dec0ef9c8b677c",
                 "reference": "46270e4d7807650a5ff8cd39c2dec0ef9c8b677c",
                 "shasum": ""
             },
@@ -346,7 +345,7 @@
             ],
             "description": "PitonCMS core engine",
             "homepage": "https://github.com/PitonCMS/Engine",
-            "time": "2018-11-20 15:35:06"
+            "time": "2018-11-20T15:35:06+00:00"
         },
         {
             "name": "psr/container",
@@ -395,7 +394,7 @@
                 "container-interop",
                 "psr"
             ],
-            "time": "2017-02-14 16:28:37"
+            "time": "2017-02-14T16:28:37+00:00"
         },
         {
             "name": "psr/http-message",
@@ -445,7 +444,7 @@
                 "request",
                 "response"
             ],
-            "time": "2016-08-06 14:39:51"
+            "time": "2016-08-06T14:39:51+00:00"
         },
         {
             "name": "psr/log",
@@ -492,7 +491,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2016-10-10 12:19:37"
+            "time": "2016-10-10T12:19:37+00:00"
         },
         {
             "name": "slim/slim",
@@ -563,7 +562,7 @@
                 "micro",
                 "router"
             ],
-            "time": "2018-09-16 10:54:21"
+            "time": "2018-09-16T10:54:21+00:00"
         },
         {
             "name": "slim/twig-view",
@@ -614,7 +613,7 @@
                 "twig",
                 "view"
             ],
-            "time": "2018-05-07 10:54:29"
+            "time": "2018-05-07T10:54:29+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -672,7 +671,7 @@
                 "polyfill",
                 "portable"
             ],
-            "time": "2018-08-06 14:22:27"
+            "time": "2018-08-06T14:22:27+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -731,7 +730,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2018-09-21 13:07:52"
+            "time": "2018-09-21T13:07:52+00:00"
         },
         {
             "name": "twig/twig",
@@ -798,7 +797,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2018-07-13 07:18:09"
+            "time": "2018-07-13T07:18:09+00:00"
         },
         {
             "name": "wolfmoritz/session",
@@ -838,7 +837,7 @@
             "keywords": [
                 "session"
             ],
-            "time": "2016-06-21 22:09:54"
+            "time": "2016-06-21T22:09:54+00:00"
         }
     ],
     "packages-dev": [],
