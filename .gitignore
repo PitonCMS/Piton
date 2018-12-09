@@ -9,3 +9,5 @@ themes/*/sass/*
 vendor/*
 themes/test/*
 prepros-6.config
+test.json
+test.html

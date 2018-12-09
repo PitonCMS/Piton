@@ -1,7 +1,18 @@
-
-      {% for pl in site.pages %}
-     
-        <a href="{{ pathFor('showPage', {'url': pl.url}) }}">{{ pl.title }}</a> | 
-    
-      {% endfor %}
+<header>
+  <div class="container">
+      <div class="logo">Piton<span>CMS</span></div>
+      <ul>
+          {% for pl in site.pages %}
+             
+          <li>
+            <a href="{{ pathFor('showPage', {'url': pl.url}) }}">{{ pl.title }}</a>
+          </li>
+        
+        {% endfor %}
+        
+        </ul>
+  </div>
   
+</header>
+
+     
