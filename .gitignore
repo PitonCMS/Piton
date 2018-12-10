@@ -1,13 +1,13 @@
 # Things to ignore
-config/config.local.php
-logs/*
-twigcache/*
-.sass-cache/*
-themes/*/sass/*
+/config/config.local.php
+/logs/
+/twigcache/
+.sass-cache/
+/themes/*/sass/
 *.xml
-#composer.lock
-vendor/*
-themes/test/*
+/composer.lock
+/vendor/
+/themes/test/
 prepros-6.config
 test.json
 test.html
