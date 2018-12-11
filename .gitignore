@@ -9,5 +9,5 @@
 /vendor/
 /themes/test/
 prepros-6.config
-test.json
-test.html
+style.json
+style.html
