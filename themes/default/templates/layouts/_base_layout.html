@@ -8,19 +8,15 @@
     <title>PitonCMS Home</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ assetsPath() }}/css/main.css">
-    {% block head %}
-
-    {% endblock %}
+    {% block headStyle %}{% endblock %}
 </head>
 
 <body>
 {{ include ("includes/_navbar.html") }}
-<div class="main-body">
-        {% block body %}
-        <h2>Default body content</h2>
-        {% endblock %}
-</div>
-   
+
+    {% block body %}
+    <h2>Default body content</h2>
+    {% endblock %}
 
 {{ include ("includes/_footer.html") }}
 

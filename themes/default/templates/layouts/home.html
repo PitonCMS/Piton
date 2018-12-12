@@ -1,5 +1,12 @@
 {% extends 'layouts/_base_layout.html' %}
 
+{% block headStyle %}
+    {% set image = page.sections.aboveTheFoldHero|first %}
+    <style>
+        .hero-image {background-image: url("{{ image.media_path }}");}
+    </style>
+{% endblock %}
+
 {% block body %}
 
 {# Fetch all elements in the "aboveTheFoldHero" section #}
