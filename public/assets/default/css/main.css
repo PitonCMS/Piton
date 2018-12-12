@@ -260,10 +260,9 @@ hr {
     font-size: 18px;
   }
 }
-body p {
+body {
   font-family: "Lato", sans-serif;
-  color: #333;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.4;
 }
 
@@ -294,6 +293,11 @@ h5 {
 
 h6 {
   font-size: 1.25rem;
+}
+
+body {
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 .container {
@@ -339,6 +343,8 @@ a:hover {
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
+  max-width: 50%;
+  text-align: center;
 }
 .hero-content-wrapper p, .hero-content-wrapper h1 {
   color: #ffffff;
@@ -515,66 +521,48 @@ header::after {
     display: none;
   }
 }
+/* Footer Styles */
 footer {
-  background: #336699;
+  margin-top: auto;
+  background-color: #336699;
+  color: #ffffff;
   width: 100%;
+  position: relative;
 }
 
+/* footer1 */
 .footer1 {
-  display: grid;
-  grid-template-columns: 1.5rem repeat(3, minmax(400px, 1fr)) 1.5rem;
-  grid-gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 2rem 1rem;
-}
-.footer1 p {
-  color: #ffffff;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+  grid-gap: 2rem;
 }
 .footer1 h5 {
   font-size: 1.3rem;
   text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
-  color: #ffffff;
 }
-.footer1 i {
+.footer1 .footer-social .get-social-icons {
   padding-right: 0.5rem;
   padding-left: 0.5rem;
-  color: #ffffff;
 }
-.footer1 i:hover {
-  color: #669933;
-}
-
-.footer-nav {
-  grid-column: 2;
+.footer1 .footer-social .social-icon {
+  padding: 0.25rem 0.5rem;
 }
 
-.footer-about {
-  grid-column: 3;
-}
-
-.footer-social {
-  grid-column: 4;
-}
-
-.get-social {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-
+/* footer2 */
 .footer2 {
-  display: flex;
-  flex-direction: row;
-  padding: 0.5rem;
-  width: 100%;
   background-color: #2d5986;
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 .footer2 p {
+  margin: 0;
   color: #ddd;
-  padding: 0.25rem;
-}
-.footer2 .container {
-  padding: 0;
+  font-weight: 300;
 }
 
 /*# sourceMappingURL=main.css.map */
