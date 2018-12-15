@@ -1,0 +1,17 @@
+body{
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.container{
+  max-width: 1200px;
+  @include margin(0 auto);
+  padding: 1rem;
+}
+a{
+  color: $text-light;
+  text-decoration: none;
+  &:hover{
+    color: $accent-color;
+  }
+}

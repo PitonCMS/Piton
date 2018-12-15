@@ -1,0 +1,52 @@
+/* Footer Styles */
+
+footer{
+  @include margin(auto null null);
+  background-color: $primary-color;
+  color: $text-light;
+  width: 100%;
+  position: relative;
+}
+/* footer1 */
+.footer1{
+  max-width: 1200px;
+  @include margin(0 auto);
+  padding: 2rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, auto));
+  grid-gap: 2rem;
+  h5{
+    font-size: 1.3rem;
+    text-shadow: $text-shadow;
+  }
+  .footer-nav{
+    // grid-column-start: 2;
+  }
+  .footer-about{
+    // grid-column-start: 3;
+  
+  }
+  .footer-social{
+    // grid-column-start: 4;
+
+    .get-social-icons{
+      @include padding(null .5rem);
+    }
+    .social-icon{
+      @include padding(.25rem .5rem);
+    }
+  }
+}
+/* footer2 */
+.footer2{
+  background-color: darken($primary-color,5);
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  p{
+    margin: 0;
+    color: $text-gray;
+    font-weight: 300;
+  }
+}

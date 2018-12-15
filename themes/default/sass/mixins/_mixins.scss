@@ -1,0 +1,3 @@
+@mixin ratio($width, $height) {
+  min-height: calc((#{$height} / #{$width}) * 100vw);
+}

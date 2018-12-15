@@ -3,7 +3,6 @@
 /logs/
 /twigcache/
 .sass-cache/
-/themes/*/sass/
 *.xml
 composer.lock
 /vendor/
