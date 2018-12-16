@@ -6,7 +6,7 @@ body{
 .container{
   max-width: 1200px;
   @include margin(0 auto);
-  padding: 1rem;
+  @include padding(1rem);
 }
 a{
   color: $text-light;
@@ -14,4 +14,11 @@ a{
   &:hover{
     color: $accent-color;
   }
+}
+section{
+  @include margin(null null 100px);
+}
+
+button, [type=button], [type=reset], [type=submit]{
+  background-color: $primary-color;
 }

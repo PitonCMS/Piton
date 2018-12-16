@@ -10,15 +10,13 @@
 {% block body %}
 
 {# Fetch all elements in the "aboveTheFoldHero" section #}
-{% for el in page.sections.aboveTheFoldHero %}
-{{ fetchElementHtml(el.element_type, el.element_title, el.content, el.collection_id, el.media_group, el.media_path)
-}}
+{% for element in page.sections.aboveTheFoldHero %}
+{{ getElementHtml(element) }}
 {% endfor %}
 <div class="container">
     {# Fetch all elements in the "introBlock" section #}
-    {% for el in page.sections.introBlock %}
-    {{ fetchElementHtml(el.element_type, el.element_title, el.content, el.collection_id, el.media_group, el.media_path)
-    }}
+    {% for element in page.sections.introBlock %}
+    {{ getElementHtml(element) }}
     {% endfor %}
 </div>
 

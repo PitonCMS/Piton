@@ -11,7 +11,7 @@ footer{
 .footer1{
   max-width: 1200px;
   @include margin(0 auto);
-  padding: 2rem 1rem;
+  @include padding(2rem 1rem);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, auto));
   grid-gap: 2rem;
@@ -40,13 +40,13 @@ footer{
 /* footer2 */
 .footer2{
   background-color: darken($primary-color,5);
-  padding: 1rem 1rem;
+  @include padding(1rem);
   display: flex;
   justify-content: center;
   align-content: center;
   p{
-    margin: 0;
-    color: $text-gray;
+    @include margin(0);
+    color: $gray1;
     font-weight: 300;
   }
 }

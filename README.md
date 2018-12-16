@@ -28,3 +28,30 @@ git pull origin master
 ```
 
 Once we have stable releases semantic versioned tags will be added to simplify updates.
+
+
+### Elements
+
+#### text
+
+Markdown editor for basic content. No external linking necessary.
+
+#### hero
+
+Hero Image for a page. Can add a title, text and a link to an image. External link necessary.
+
+#### mediaGroup
+
+Think gallery of images, or similar items. Will need to create the 'gallery' before this can be created.
+
+#### media
+
+Add a link to a media item i.e. image, youtube video. Need the external reference before.
+
+#### contactForm
+
+Add a contact form with title and blurb to a page. No external link required.
+
+#### calendar
+
+Add a calendar to a page. No external link required.

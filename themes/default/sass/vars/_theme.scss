@@ -1,8 +1,12 @@
 $primary-color: #336699;
+$accent-color: lighten($primary-color, 5);
+
 $text-dark: #333;
 $text-light: #ffffff;
-$text-gray: #ddd;
-$accent-color: #669933;
+
+$gray1: #ddd;
+$dark1: #000;
+ 
 
 $border-radius: 4px;
 $box-shadow: 0 0 25px rgba(0,0,0,.25);

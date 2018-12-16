@@ -72,7 +72,7 @@ header {
   color: $light-gray;
   font-size: 1rem;
   display: block;
-  // @include padding(1rem 2rem);
+  @include padding(1rem 2rem);
   text-transform: uppercase;
   text-decoration: none;
 }
@@ -87,7 +87,7 @@ header {
 .site-nav--icon {
   display: inline-block;
   font-size: 1.5em;
-  margin-right: 1em;
+  @include margin(null 1em null null);
   width: 1.1em;
   text-align: right;
   color: rgba(255, 255, 255, .4);
