@@ -92,3 +92,19 @@ $('.jsElementType').on('click', 'input[type="radio"]', function() {
         return;
     }
 });
+
+// Smooth Scroll to named anchor for Page editor
+var smoothScroll = function(hash) {
+    $('.scroll-container').animate({
+        scrollTop: $(hash).offset().top - 50
+    }, 500, 'easeInOutSine');
+}
+$('.jsSmoothScroll').on('click', 'a', function(e) {
+    e.preventDefault();
+    var hash = $(this).attr('href');
+    smoothScroll(hash);
+});
+// If deep linking to a named anchor, scroll to target
+if (window.location.hash) {
+    smoothScroll(window.location.hash);
+}
