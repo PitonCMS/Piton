@@ -79,12 +79,16 @@ $('.jsElementType').on('click', 'input[type="radio"]', function() {
     var selectedTypeOption = $(this).val();
     $('.jsElementOptional.d-block').toggleClass('d-block d-none');
 
-    if (selectedTypeOption === 'media' || selectedTypeOption === 'hero') {
+    if (selectedTypeOption === 'image' || selectedTypeOption === 'hero') {
         $(this).parents('.jsElementType').siblings('.jsElementMediaPath').toggleClass('d-none d-block');
         return;
     }
-    if (selectedTypeOption === 'mediaGroup') {
-        $(this).parents('.jsElementType').siblings('.jsElementMediaGroup').toggleClass('d-none d-block');
+    if (selectedTypeOption === 'video') {
+        $(this).parents('.jsElementType').siblings('.jsElementVideoPath').toggleClass('d-none d-block');
+        return;
+    }
+    if (selectedTypeOption === 'gallery') {
+        $(this).parents('.jsElementType').siblings('.jsElementGallery').toggleClass('d-none d-block');
         return;
     }
     if (selectedTypeOption === 'collection') {

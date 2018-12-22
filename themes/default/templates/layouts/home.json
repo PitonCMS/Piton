@@ -7,7 +7,7 @@
             "codeName": "aboveTheFoldHero",
             "description": "Large full width image",
             "elementType": "hero",
-            "elementTypeOptions": ["media","text","hero"]
+            "elementTypeOptions": ["image","text","hero"]
         },
         {
             "name": "Text",
