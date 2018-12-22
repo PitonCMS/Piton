@@ -51,12 +51,12 @@ $('.jsSectionParent').on('click', '.jsDeleteSectionElement', function () {
     if (!confirmDeletePrompt('Are you sure you want to delete this element?')) {
         return;
     }
-    var sectionElementId = $(this).data('section-element-id') || 'x';
+    var sectionElementId = $(this).data('element-id') || 'x';
     var physicalDelete = true;
 
     if (!isNaN(sectionElementId)) {
         $.ajax({
-            url: '/admin/page/section/deleteelement/' + sectionElementId,
+            url: '/admin/page/element/delete/' + sectionElementId,
             method: "GET",
             success: function (r) {
                 if (r.status != 'success') {
