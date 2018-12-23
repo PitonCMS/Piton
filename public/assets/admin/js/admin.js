@@ -1,4 +1,8 @@
-$('.datepicker').datepicker();
+$('.jsDatePicker').datepicker({
+    format: 'mm/dd/yyyy',
+    todayHighlight: true,
+    orientation: 'bottom'
+});
 
 // Delete confirm prompt
 var confirmDeletePrompt = function(msg) {
