@@ -35,13 +35,32 @@ $('.jsAddElement').on('click', function() {
         },
         success: function (r) {
             var $newElement = $(r.html);
+
+            // Increment element sort value
+            var lastElementSortValue = $sectionParent.find('.jsElementParent:last-child .jsElementSortValue').val();
+
+            if (!isNaN(lastElementSortValue)) {
+                lastElementSortValue++;
+            } else {
+                lastElementSortValue = 1;
+            }
+
             $newElement.appendTo($sectionParent);
+            $newElement.find('.jsElementSortValue').val(lastElementSortValue);
             $newElement.find('.jsMDE').each(function() {
                 simplemde = new SimpleMDE({
                     element: this,
                     forceSync: true
                 });
             });
+
+            // Scroll to new element and add to navigation
+            var newElementID = $newElement.attr('id');
+            window.location.hash = newElementID;
+
+            var $el = $('#page-edit-nav').find('.jsPageSubSection-'+sectionCodeName).append(
+                '<a class="nav-link ml-3 my-1" href="#'+newElementID+'">New (Element)</a>'
+                );
         }
     });
 });
@@ -98,11 +117,11 @@ $('.jsElementType').on('click', 'input[type="radio"]', function() {
 });
 
 // Smooth Scroll to named anchor for Page editor
-var smoothScroll = function(hash) {
-    $('.scroll-container').animate({
-        scrollTop: $(hash).offset().top - 200
-    }, 500, 'easeInOutSine');
-}
+// var smoothScroll = function(hash) {
+//     $('.scroll-container').animate({
+//         scrollTop: $(hash).offset().top - 200
+//     }, 500, 'easeInOutSine');
+// }
 // TODO Need to work on making this target accurate
 // $('.jsSmoothScroll').on('click', 'a', function(e) {
 //     e.preventDefault();
@@ -111,6 +130,6 @@ var smoothScroll = function(hash) {
 // });
 
 // If deep linking to a named anchor, scroll to target
-if (window.location.hash) {
-    smoothScroll(window.location.hash);
-}
+// if (window.location.hash) {
+//     smoothScroll(window.location.hash);
+// }
