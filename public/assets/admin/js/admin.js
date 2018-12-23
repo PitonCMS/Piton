@@ -100,14 +100,16 @@ $('.jsElementType').on('click', 'input[type="radio"]', function() {
 // Smooth Scroll to named anchor for Page editor
 var smoothScroll = function(hash) {
     $('.scroll-container').animate({
-        scrollTop: $(hash).offset().top - 50
+        scrollTop: $(hash).offset().top - 200
     }, 500, 'easeInOutSine');
 }
-$('.jsSmoothScroll').on('click', 'a', function(e) {
-    e.preventDefault();
-    var hash = $(this).attr('href');
-    smoothScroll(hash);
-});
+// TODO Need to work on making this target accurate
+// $('.jsSmoothScroll').on('click', 'a', function(e) {
+//     e.preventDefault();
+//     var hash = $(this).attr('href');
+//     smoothScroll(hash);
+// });
+
 // If deep linking to a named anchor, scroll to target
 if (window.location.hash) {
     smoothScroll(window.location.hash);
