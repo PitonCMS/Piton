@@ -1,5 +1,6 @@
 $('.jsDatePicker').datepicker({
-    format: 'mm/dd/yyyy',
+    format: pitonDateSettings.dateFormat,
+    weekStart: pitonDateSettings.weekStart,
     todayHighlight: true,
     orientation: 'bottom'
 });
