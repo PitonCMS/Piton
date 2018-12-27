@@ -1,7 +1,7 @@
 {
     "name": "pitoncms/piton",
-    "description": "Simple CMS for small websites",
-    "type": "library",
+    "description": "CMS for small websites",
+    "type": "project",
     "license": "MIT",
     "homepage": "https://github.com/PitonCMS/Piton",
     "authors": [
