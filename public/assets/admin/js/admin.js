@@ -1,3 +1,7 @@
+// --------------------------------------------------------
+// Misc Statements
+// --------------------------------------------------------
+
 $('.jsDatePicker').datepicker({
     format: pitonDateSettings.dateFormat,
     weekStart: pitonDateSettings.weekStart,
@@ -15,6 +19,10 @@ $('body').on('click', '.jsDeleteConfirm', function() {
   return confirmDeletePrompt();
 });
 
+// --------------------------------------------------------
+// User Management
+// --------------------------------------------------------
+
 // Add user row
 $('.jsAddUserRow').on('click', function() {
     var $userRow = $(this).parent('.jsUserForm').find('div:last').clone();
@@ -23,6 +31,9 @@ $('.jsAddUserRow').on('click', function() {
     $(this).before($userRow);
 });
 
+// --------------------------------------------------------
+// Page Management
+// --------------------------------------------------------
 // Add Page Section Element
 $('.jsAddElement').on('click', function() {
     var $sectionParent = $(this).parent('.jsSectionParent');
@@ -31,7 +42,7 @@ $('.jsAddElement').on('click', function() {
     var elementTypeOptions = $(this).data('element-type-options');
 
     $.ajax({
-        url: '/admin/page/element/fetch',
+        url: '/admin/page/element/new',
         method: "POST",
         data: {
             sectionCodeName: sectionCodeName,
@@ -71,7 +82,8 @@ $('.jsAddElement').on('click', function() {
 });
 
 // Delete page section element
-$('.jsSectionParent').on('click', '.jsDeleteSectionElement', function () {
+$('.jsSectionParent').on('click', '.jsDeleteSectionElement', function (e) {
+    e.preventDefault();
     if (!confirmDeletePrompt('Are you sure you want to delete this element?')) {
         return;
     }
@@ -120,6 +132,76 @@ $('.jsElementType').on('click', 'input[type="radio"]', function() {
         return;
     }
 });
+
+// --------------------------------------------------------
+// Setting Management
+// --------------------------------------------------------
+
+// Add custom setting
+$('.jsAddCustomSetting').on('click', function() {
+    $.ajax({
+        url: '/admin/settings/custom/new',
+        method: "GET",
+        success: function (r) {
+            var $newSetting = $(r.html);
+            var newSettingKey = $newSetting.attr('id');
+
+            // Increment setting sort value
+            var lastSettingSortVal = $('.jsCustomSettingsParent').find('.jsCustomSettingSort:last').val();
+            lastSettingSortVal = parseInt(lastSettingSortVal);
+
+            if (!isNaN(lastSettingSortVal)) {
+                lastSettingSortVal++;
+            } else {
+                lastSettingSortVal = 1;
+            }
+
+            $newSetting.appendTo('.jsCustomSettingsParent');
+            $newSetting.find('.jsCustomSettingSort').val(lastSettingSortVal);
+
+            // Remove no custom setting found heading tag
+            $('.jsCustomSettingsParent').find('h5').remove();
+
+            // Scroll to new element
+            window.location.hash = newSettingKey;
+        }
+    });
+});
+
+// Delete custom setting
+$('.jsCustomSettingsParent').on('click', '.jsDeleteConfirm', function(e) {
+    e.preventDefault();
+    if (!confirmDeletePrompt('Are you sure you want to delete this custom setting?')) {
+        return;
+    }
+    var settingId = $(this).data('id') || 'x';
+    var physicalDelete = true;
+
+    if (!isNaN(settingId)) {
+        $.ajax({
+            url: '/admin/settings/custom/delete/' + settingId,
+            method: "GET",
+            success: function (r) {
+                if (r.status != 'success') {
+                    physicalDelete = false;
+                }
+            }
+        });
+    }
+
+    // Remove element HTML
+    if (physicalDelete) {
+        $(this).parents('.jsCustomSetting').slideUp('normal', function () {
+            $(this).remove();
+        });
+    }
+
+})
+
+
+// --------------------------------------------------------
+// Scroll Management
+// --------------------------------------------------------
 
 // Smooth Scroll to named anchor for Page editor
 // var smoothScroll = function(hash) {
