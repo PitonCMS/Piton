@@ -3,8 +3,8 @@
 // --------------------------------------------------------
 
 $('.jsDatePicker').datepicker({
-    format: pitonDateSettings.dateFormat,
-    weekStart: pitonDateSettings.weekStart,
+    format: pitonConfig.dateFormat,
+    weekStart: pitonConfig.weekStart,
     todayHighlight: true,
     orientation: 'bottom'
 });
