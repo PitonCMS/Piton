@@ -88,7 +88,12 @@ $('.jsSectionParent').on('click', '.jsDeleteSectionElement', function (e) {
         return;
     }
     var sectionElementId = $(this).data('element-id') || 'x';
-    var physicalDelete = true;
+    var $element = $(this).parents('.jsElementParent');
+    var removeElement = function() {
+        $element.slideUp('normal', function () {
+            $element.remove();
+        });
+    }
 
     if (!isNaN(sectionElementId)) {
         $.ajax({
@@ -98,18 +103,17 @@ $('.jsSectionParent').on('click', '.jsDeleteSectionElement', function (e) {
                 id: sectionElementId
             },
             success: function (r) {
-                if (r.status != 'success') {
-                    physicalDelete = false;
+                if (r.status === 'success') {
+                    removeElement();
                 }
+            },
+            error: function(r) {
+                console.log('error')
+                console.log(r)
             }
         });
-    }
-
-    // Remove element HTML
-    if (physicalDelete) {
-        $(this).parents('.jsElementParent').slideUp('normal', function () {
-            $(this).remove();
-        });
+    } else {
+        removeElement();
     }
 });
 
@@ -137,23 +141,40 @@ $('.jsElementType').on('click', 'input[type="radio"]', function() {
 });
 
 // --------------------------------------------------------
-// Scroll Management
+// Setting Management
 // --------------------------------------------------------
+// Delete custom setting
+$('.jsDeleteCustomSetting').on('click', function (e) {
+    e.preventDefault();
+    if (!confirmDeletePrompt('Are you sure you want to delete this setting?')) {
+        return;
+    }
+    var settingId = $(this).data('setting-id') || 'x';
+    var $setting = $(this).parents('.jsSettingParent');
+    var removeElement = function() {
+        $setting.slideUp('normal', function () {
+            $setting.remove();
+        });
+    }
 
-// Smooth Scroll to named anchor for Page editor
-// var smoothScroll = function(hash) {
-//     $('.scroll-container').animate({
-//         scrollTop: $(hash).offset().top - 200
-//     }, 500, 'easeInOutSine');
-// }
-// TODO Need to work on making this target accurate
-// $('.jsSmoothScroll').on('click', 'a', function(e) {
-//     e.preventDefault();
-//     var hash = $(this).attr('href');
-//     smoothScroll(hash);
-// });
-
-// If deep linking to a named anchor, scroll to target
-// if (window.location.hash) {
-//     smoothScroll(window.location.hash);
-// }
+    if (!isNaN(settingId)) {
+        $.ajax({
+            url: '/admin/settings/custom/delete',
+            method: "POST",
+            data: {
+                id: settingId
+            },
+            success: function (r) {
+                if (r.status == 'success') {
+                    removeElement();
+                }
+            },
+            error: function(r) {
+                console.log('error')
+                console.log(r)
+            }
+        });
+    } else {
+        removeElement();
+    }
+});
