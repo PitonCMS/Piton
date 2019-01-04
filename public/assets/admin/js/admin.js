@@ -92,8 +92,11 @@ $('.jsSectionParent').on('click', '.jsDeleteSectionElement', function (e) {
 
     if (!isNaN(sectionElementId)) {
         $.ajax({
-            url: '/admin/page/element/delete/' + sectionElementId,
-            method: "GET",
+            url: '/admin/page/element/delete',
+            method: "POST",
+            data: {
+                id: sectionElementId
+            },
             success: function (r) {
                 if (r.status != 'success') {
                     physicalDelete = false;
