@@ -120,7 +120,7 @@ $('.jsSectionParent').on('click', '.jsDeleteSectionElement', function (e) {
 });
 
 // Toggle element selector
-$('.jsElementType').on('click', 'input[type="radio"]', function() {
+$('.jsSectionParent').on('click', '.jsElementType input[type="radio"]', function() {
     var selectedTypeOption = $(this).val();
     $('.jsElementOptional.d-block').toggleClass('d-block d-none');
 
