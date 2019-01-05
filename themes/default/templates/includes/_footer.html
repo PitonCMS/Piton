@@ -15,8 +15,7 @@
         </div>
         <div class="footer-about">
             <h5>About PitonCMS</h5>
-            <p>This section is hard coded into the page currently. We may want to setup an area that allows for
-                this to be controlled by the admin.</p>
+          {{ site.settings.footerAboutUs}}
         </div>
         <div class="footer-social">
                 <h5>Get Social</h5>
@@ -30,7 +29,10 @@
     </div>
     <div class="footer2">
 
-            <p>Piton CMS &copy; 2018</>
+        <p>Piton CMS &copy; 2018<p/>
+            <p>Website built by <a href="{{ site.settings.urlScheme }}://{{ site.settings.urlDomainName }}">Moritz Media</a></p>
 
+
+           
     </div>
 </footer>

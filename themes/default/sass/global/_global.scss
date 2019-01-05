@@ -10,7 +10,7 @@ body{
   @include padding(1rem);
 }
 a{
-  color: $text-light;
+
   text-decoration: none;
   &:hover{
     color: $accent-color;

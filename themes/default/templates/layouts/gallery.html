@@ -1,0 +1,16 @@
+{% extends 'layouts/_base_layout.html' %}
+
+{% block body %}
+
+<div class="container">
+    <section id="galleryGuide">
+        {# Fetch all elements in the "galleryGuide" section #}
+        {% for element in page.sections.galleryGuide %}
+        {{ getElementHtml(element) }}
+        {% endfor %}
+      </section>
+</div>
+
+</div>
+
+{% endblock %}

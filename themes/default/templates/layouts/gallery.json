@@ -1,0 +1,14 @@
+{
+  "pageName": "Gallery",
+  "pageLayoutDescription": "Gallery Page.",
+  "sections": [
+      
+      {
+          "name": "Gallery Guide",
+          "codeName": "galleryGuide",
+          "description": "Gallery style guide",
+          "elementType": "gallery",
+          "elementTypeOptions": ["text","gallery"]
+      }
+  ]
+}
