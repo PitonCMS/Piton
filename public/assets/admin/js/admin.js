@@ -40,15 +40,17 @@ $('.jsAddElement').on('click', function() {
     var elementType = $(this).data('element-type');
     var sectionCodeName = $(this).data('section-code-name');
     var elementTypeOptions = $(this).data('element-type-options');
+    var postData = {
+            sectionCodeName: sectionCodeName,
+            elementType: elementType,
+            elementTypeOptions: elementTypeOptions
+    }
+    postData[pitonConfig.csrfTokenName] = pitonConfig.csrfTokenValue;
 
     $.ajax({
         url: '/admin/page/element/new',
         method: "POST",
-        data: {
-            sectionCodeName: sectionCodeName,
-            elementType: elementType,
-            elementTypeOptions: elementTypeOptions
-        },
+        data: postData,
         success: function (r) {
             var $newElement = $(r.html);
 
@@ -94,14 +96,14 @@ $('.jsSectionParent').on('click', '.jsDeleteSectionElement', function (e) {
             $element.remove();
         });
     }
+    var postData = {id: sectionElementId}
+    postData[pitonConfig.csrfTokenName] = pitonConfig.csrfTokenValue;
 
     if (!isNaN(sectionElementId)) {
         $.ajax({
             url: '/admin/page/element/delete',
             method: "POST",
-            data: {
-                id: sectionElementId
-            },
+            data: postData,
             success: function (r) {
                 if (r.status === 'success') {
                     removeElement();
@@ -156,14 +158,14 @@ $('.jsDeleteCustomSetting').on('click', function (e) {
             $setting.remove();
         });
     }
+    var postData = { id: settingId }
+    postData[pitonConfig.csrfTokenName] = pitonConfig.csrfTokenValue;
 
     if (!isNaN(settingId)) {
         $.ajax({
             url: '/admin/settings/custom/delete',
             method: "POST",
-            data: {
-                id: settingId
-            },
+            data: postData,
             success: function (r) {
                 if (r.status == 'success') {
                     removeElement();
