@@ -1,47 +1,17 @@
 {# Collection Element #}
 
-<h2>Collection Group Element</h2>
+{% set collection = getCollection(data.collection_id) %}
+
+<h2>{{ collection.title }}</h2>
 {{ data.content }}
+
+{{ collection.content }}
 <div class="card-wrapper">
+  {% for detail in collection.details %}
   <div class="card">
-    <div class="card-header">Card 1</div>
-    <div class="card-body"><p>This is a card with content inside it.</p></div>
+    <div class="card-header">{{ detail.title }}</div>
+    <div class="card-body">{{ detail.content|slice(0,50) }}</div>
     <div class="card-footer"><button>Read More</button></div>
   </div>
-  <div class="card">
-    <div class="card-header">Card 2</div>
-    <div class="card-body">This is a card with content inside it</div>
-    <div class="card-footer"><button>Read More</button></div>
-  </div>
-  <div class="card">
-    <div class="card-header">Card 3</div>
-    <div class="card-body"><p>This is a card with content inside it.</p></div>
-    <div class="card-footer"><button>Read More</button></div>
-  </div>
-  <div class="card">
-    <div class="card-header">Card 4</div>
-    <div class="card-body"><p>This is a card with content inside it.</p>
-    <p>This card has more text in it and is longer.</p></div>
-    <div class="card-footer"><button>Read More</button></div>
-  </div>
-  <div class="card">
-    <div class="card-header">Card 5</div>
-    <div class="card-body"><p>This is a card with content inside it.</p></div>
-    <div class="card-footer"><button>Read More</button></div>
-  </div>
-  <div class="card">
-    <div class="card-header">Card 6</div>
-    <div class="card-body">This is a card with content inside it</div>
-    <div class="card-footer"><button>Read More</button></div>
-  </div>
-  <div class="card">
-    <div class="card-header">Card 7</div>
-    <div class="card-body"><p>This is a card with content inside it.</p></div>
-    <div class="card-footer"><button>Read More</button></div>
-  </div>
-  <div class="card">
-    <div class="card-header">Card 8</div>
-    <div class="card-body"><p>This is a card with content inside it.</p></div>
-    <div class="card-footer"><button>Read More</button></div>
-  </div>
+  {% endfor %}
 </div>
