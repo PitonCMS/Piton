@@ -8,8 +8,6 @@ composer.lock
 /vendor/
 /themes/test/
 prepros-6.config
-style.json
-style.html
 /themes/peri/
 /public/assets/peri/
 *.map
