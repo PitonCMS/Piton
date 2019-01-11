@@ -436,6 +436,10 @@ button, [type=button], [type=reset], [type=submit] {
   object-fit: cover;
 }
 
+.video-wrapper {
+  margin-top: 2rem;
+}
+
 header {
   background: #336699;
   color: #ffffff;
