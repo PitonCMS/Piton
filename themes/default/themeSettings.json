@@ -1,40 +1,43 @@
-[
-    {
-        "sort": 1,
-        "label": "Google Maps Link",
-        "key": "gmLink",
-        "value": "https://maps.google.com",
-        "inputType": "input",
-        "help": "Link to Google Maps location."
-    },
-    {
-        "sort": 2,
-        "label": "Facebook Tracking Code",
-        "key": "fbAnalyticsCode",
-        "value": "<tracking code>",
-        "inputType": "textarea",
-        "help": "Facebook tracking code."
-    },
-    {
-        "sort": 3,
-        "label": "Favorite Color",
-        "key": "favColor",
-        "value": "green",
-        "inputType": "select",
-        "help": "Select your favorite color.",
-        "options": [
-            {
-                "value": "blue",
-                "name": "Blue"
-            },
-            {
-                "value": "green",
-                "name": "Green"
-            },
-            {
-                "value": "orange",
-                "name": "Orange"
-            }
-        ]
-    }
-]
+{
+    "description": "Example theme settings",
+    "settings": [
+        {
+            "sort": 1,
+            "label": "Google Maps Link",
+            "key": "gmLink",
+            "value": "https://maps.google.com",
+            "inputType": "input",
+            "help": "Link to Google Maps location."
+        },
+        {
+            "sort": 2,
+            "label": "Facebook Tracking Code",
+            "key": "fbAnalyticsCode",
+            "value": "<tracking code>",
+            "inputType": "textarea",
+            "help": "Facebook tracking code."
+        },
+        {
+            "sort": 3,
+            "label": "Favorite Color",
+            "key": "favColor",
+            "value": "green",
+            "inputType": "select",
+            "help": "Select your favorite color.",
+            "options": [
+                {
+                    "value": "blue",
+                    "name": "Blue"
+                },
+                {
+                    "value": "green",
+                    "name": "Green"
+                },
+                {
+                    "value": "orange",
+                    "name": "Orange"
+                }
+            ]
+        }
+    ]
+}

@@ -120,7 +120,7 @@ $('.jsSectionParent').on('click', '.jsDeleteSectionElement', function (e) {
 });
 
 // Toggle element selector
-$('.jsElementType').on('click', 'input[type="radio"]', function() {
+$('.jsSectionParent').on('click', '.jsElementType input[type="radio"]', function() {
     var selectedTypeOption = $(this).val();
     $('.jsElementOptional.d-block').toggleClass('d-block d-none');
 
@@ -145,8 +145,8 @@ $('.jsElementType').on('click', 'input[type="radio"]', function() {
 // --------------------------------------------------------
 // Setting Management
 // --------------------------------------------------------
-// Delete custom setting
-$('.jsDeleteCustomSetting').on('click', function (e) {
+// Delete theme setting
+$('.jsDeleteThemeSetting').on('click', function (e) {
     e.preventDefault();
     if (!confirmDeletePrompt('Are you sure you want to delete this setting?')) {
         return;
@@ -163,7 +163,7 @@ $('.jsDeleteCustomSetting').on('click', function (e) {
 
     if (!isNaN(settingId)) {
         $.ajax({
-            url: '/admin/settings/custom/delete',
+            url: '/admin/settings/theme/delete',
             method: "POST",
             data: postData,
             success: function (r) {
