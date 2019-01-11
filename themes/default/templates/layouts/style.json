@@ -1,0 +1,47 @@
+{
+    "pageName": "Style",
+    "pageLayoutDescription": "Styles guide page.",
+    "sections": [
+        {
+            "name": "Typography Styles",
+            "codeName": "typoGuide",
+            "description": "Typography style guide",
+            "elementType": ""
+        },
+        {
+            "name": "Style Guide - Hero",
+            "codeName": "heroGuide",
+            "description": "Hero style guide",
+            "elementType": "hero",
+            "elementTypeOptions": ["text","hero"]
+        },
+        {
+            "name": "Gallery Guide",
+            "codeName": "galleryGuide",
+            "description": "Gallery style guide",
+            "elementType": "gallery",
+            "elementTypeOptions": ["text","gallery"]
+        },
+        {
+            "name": "Collection Guide",
+            "codeName": "collectionGuide",
+            "description": "collection style guide",
+            "elementType": "collection",
+            "elementTypeOptions": ["text","collection"]
+        },
+        {
+            "name": "Image Guide",
+            "codeName": "imageGuide",
+            "description": "image style guide",
+            "elementType": "image",
+            "elementTypeOptions": ["text","image"]
+        },
+        {
+            "name": "Video Guide",
+            "codeName": "videoGuide",
+            "description": "video style guide",
+            "elementType": "video",
+            "elementTypeOptions": ["text","video"]
+        }
+    ]
+}
