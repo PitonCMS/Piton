@@ -7,7 +7,7 @@
                 <ul>
                     {% for pl in site.pages %}
                     <li>
-                        <a href="{{ pathFor('showPage', {'url': pl.url}) }}">{{ pl.title }}</a>
+                        <a href="{{ pathFor('showPage', {'slug': pl.slug}) }}">{{ pl.title }}</a>
                     </li>
                     {% endfor %}
                 </ul>
@@ -33,6 +33,6 @@
             <p>Website built by <a href="{{ site.settings.urlScheme }}://{{ site.settings.urlDomainName }}">Moritz Media</a></p>
 
 
-           
+
     </div>
 </footer>
