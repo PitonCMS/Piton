@@ -1,0 +1,14 @@
+{
+  "pageName": "Gallery",
+  "pageLayoutDescription": "Gallery Page.",
+  "sections": [
+      
+      {
+          "name": "Video Guide",
+          "codeName": "videoGuide",
+          "description": "video style guide",
+          "elementType": "video",
+          "elementTypeOptions": ["text","video"]
+      }
+  ]
+}

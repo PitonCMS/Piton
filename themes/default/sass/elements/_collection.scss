@@ -13,11 +13,13 @@
 }
 .card-header{
   @include padding(1rem);
-  background-color: lighten($gray1, 2);
+  background-color: lighten($gray2, 2);
+  color: $text-light;
   text-align: center;
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  letter-spacing: 1.9px;
 }
 .card-body{
   @include padding(1rem);

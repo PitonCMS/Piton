@@ -302,9 +302,15 @@ body {
 }
 
 .container {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem;
+}
+@media screen and (min-width: 1024px) {
+  .container {
+    width: 80%;
+  }
 }
 
 a {
@@ -315,7 +321,14 @@ a:hover {
 }
 
 section {
-  margin-bottom: 100px;
+  width: 100vw;
+  padding-top: 0px;
+  padding-bottom: 50px;
+}
+
+section:nth-of-type(even) {
+  background-color: #caccce !important;
+  color: #ffffff !important;
 }
 
 button, [type=button], [type=reset], [type=submit] {
@@ -384,11 +397,13 @@ button, [type=button], [type=reset], [type=submit] {
 
 .card-header {
   padding: 1rem;
-  background-color: #f1efef;
+  background-color: #cfd1d3;
+  color: #ffffff;
   text-align: center;
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  letter-spacing: 1.9px;
 }
 
 .card-body {
@@ -438,6 +453,22 @@ button, [type=button], [type=reset], [type=submit] {
 
 .video-wrapper {
   margin-top: 2rem;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe, .video-container object, .video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 header {
