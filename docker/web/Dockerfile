@@ -1,27 +1,27 @@
-FROM ubuntu:16.04
-MAINTAINER Alexander Schenkel <alex@alexi.ch>
+FROM ubuntu:18.10
 
+ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get dist-upgrade -y && \
     apt-get install -y \
       apache2 \
-      php7.0 \
-      php7.0-cli \
-      libapache2-mod-php7.0 \
+      php7.2 \
+      php7.2-cli \
+      libapache2-mod-php7.2 \
       php-apcu \
       php-xdebug \
-      php7.0-gd \
-      php7.0-json \
-      php7.0-ldap \
-      php7.0-mbstring \
-      php7.0-mysql \
-      php7.0-pgsql \
-      php7.0-sqlite3 \
-      php7.0-xml \
-      php7.0-xsl \
-      php7.0-zip \
-      php7.0-soap \
-      php7.0-opcache \
+      php7.2-gd \
+      php7.2-json \
+      php7.2-ldap \
+      php7.2-mbstring \
+      php7.2-mysql \
+      php7.2-pgsql \
+      php7.2-sqlite3 \
+      php7.2-xml \
+      php7.2-xsl \
+      php7.2-zip \
+      php7.2-soap \
+      php7.2-opcache \
       nano \
       sendmail \
       composer
