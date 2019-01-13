@@ -38,10 +38,10 @@ $('.jsAddUserRow').on('click', function() {
 $('.jsAddElement').on('click', function() {
     var $sectionParent = $(this).parent('.jsSectionParent');
     var elementType = $(this).data('element-type');
-    var sectionCodeName = $(this).data('section-code-name');
+    var sectionKey = $(this).data('section-key');
     var elementTypeOptions = $(this).data('element-type-options');
     var postData = {
-            sectionCodeName: sectionCodeName,
+            sectionKey: sectionKey,
             elementType: elementType,
             elementTypeOptions: elementTypeOptions
     }
@@ -76,7 +76,7 @@ $('.jsAddElement').on('click', function() {
             var newElementID = $newElement.attr('id');
             window.location.hash = newElementID;
 
-            var $el = $('#page-edit-nav').find('.jsPageSubSection-'+sectionCodeName).append(
+            var $el = $('#page-edit-nav').find('.jsPageSubSection-'+sectionKey).append(
                 '<a class="nav-link ml-3 my-1" href="#'+newElementID+'">New (Element)</a>'
                 );
         }
