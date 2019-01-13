@@ -7,7 +7,7 @@
             "key": "aboveTheFoldHero",
             "description": "Large full width image",
             "elementType": "hero",
-            "elementTypeOptions": ["image","text","hero"]
+            "elementTypeOptions": ["hero"]
         },
         {
             "name": "Text",
