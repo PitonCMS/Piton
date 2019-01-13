@@ -1,6 +1,6 @@
 {
-  "pageName": "Gallery",
-  "pageTemplateDescription": "Gallery Page.",
+  "templateName": "Gallery",
+  "templateDescription": "Gallery Page.",
   "blocks": [
 
       {

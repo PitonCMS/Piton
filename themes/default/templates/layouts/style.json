@@ -1,6 +1,6 @@
 {
-    "pageName": "Style",
-    "pageTemplateDescription": "Styles guide page.",
+    "templateName": "Style",
+    "templateDescription": "Styles guide page.",
     "blocks": [
         {
             "name": "Typography Styles",

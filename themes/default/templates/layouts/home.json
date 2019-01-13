@@ -1,6 +1,6 @@
 {
-    "pageName": "Home",
-    "pageTemplateDescription": "Home page with hero image and text blocks.",
+    "templateName": "Home",
+    "templateDescription": "Home page with hero image and text blocks.",
     "blocks": [
         {
             "name": "Hero Image",
