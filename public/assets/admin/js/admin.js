@@ -136,10 +136,6 @@ $('.jsBlockParent').on('click', '.jsElementType input[type="radio"]', function()
         $(this).parents('.jsElementType').siblings('.jsElementGallery').toggleClass('d-none d-block');
         return;
     }
-    if (selectedTypeOption === 'collection') {
-        $(this).parents('.jsElementType').siblings('.jsElementCollection').toggleClass('d-none d-block');
-        return;
-    }
 });
 
 // --------------------------------------------------------
