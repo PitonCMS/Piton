@@ -5,8 +5,8 @@
 
 <section id="galleryGuide">
     <div class="container">
-        {# Fetch all elements in the "galleryGuide" section #}
-        {% for element in page.sections.galleryGuide %}
+        {# Fetch all elements in the "galleryGuide" block #}
+        {% for element in page.blocks.galleryGuide %}
         {{ getElementHtml(element) }}
         {% endfor %}
     </div>

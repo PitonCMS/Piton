@@ -34,14 +34,14 @@ $('.jsAddUserRow').on('click', function() {
 // --------------------------------------------------------
 // Page Management
 // --------------------------------------------------------
-// Add Page Section Element
+// Add Page Block Element
 $('.jsAddElement').on('click', function() {
-    var $sectionParent = $(this).parent('.jsSectionParent');
+    var $blockParent = $(this).parent('.jsBlockParent');
     var elementType = $(this).data('element-type');
-    var sectionKey = $(this).data('section-key');
+    var blockKey = $(this).data('block-key');
     var elementTypeOptions = $(this).data('element-type-options');
     var postData = {
-            sectionKey: sectionKey,
+            blockKey: blockKey,
             elementType: elementType,
             elementTypeOptions: elementTypeOptions
     }
@@ -55,7 +55,7 @@ $('.jsAddElement').on('click', function() {
             var $newElement = $(r.html);
 
             // Increment element sort value
-            var lastElementSortValue = $sectionParent.find('.jsElementParent:last-child .jsElementSortValue').val();
+            var lastElementSortValue = $blockParent.find('.jsElementParent:last-child .jsElementSortValue').val();
 
             if (!isNaN(lastElementSortValue)) {
                 lastElementSortValue++;
@@ -63,7 +63,7 @@ $('.jsAddElement').on('click', function() {
                 lastElementSortValue = 1;
             }
 
-            $newElement.appendTo($sectionParent);
+            $newElement.appendTo($blockParent);
             $newElement.find('.jsElementSortValue').val(lastElementSortValue);
             $newElement.find('.jsMDE').each(function() {
                 simplemde = new SimpleMDE({
@@ -76,30 +76,30 @@ $('.jsAddElement').on('click', function() {
             var newElementID = $newElement.attr('id');
             window.location.hash = newElementID;
 
-            var $el = $('#page-edit-nav').find('.jsPageSubSection-'+sectionKey).append(
+            var $el = $('#page-edit-nav').find('.jsPageSubBlock-'+blockKey).append(
                 '<a class="nav-link ml-3 my-1" href="#'+newElementID+'">New (Element)</a>'
                 );
         }
     });
 });
 
-// Delete page section element
-$('.jsSectionParent').on('click', '.jsDeleteSectionElement', function (e) {
+// Delete page block element
+$('.jsBlockParent').on('click', '.jsDeleteBlockElement', function (e) {
     e.preventDefault();
     if (!confirmDeletePrompt('Are you sure you want to delete this element?')) {
         return;
     }
-    var sectionElementId = $(this).data('element-id') || 'x';
+    var blockElementId = $(this).data('element-id') || 'x';
     var $element = $(this).parents('.jsElementParent');
     var removeElement = function() {
         $element.slideUp('normal', function () {
             $element.remove();
         });
     }
-    var postData = {id: sectionElementId}
+    var postData = {id: blockElementId}
     postData[pitonConfig.csrfTokenName] = pitonConfig.csrfTokenValue;
 
-    if (!isNaN(sectionElementId)) {
+    if (!isNaN(blockElementId)) {
         $.ajax({
             url: '/admin/page/element/delete',
             method: "POST",
@@ -120,7 +120,7 @@ $('.jsSectionParent').on('click', '.jsDeleteSectionElement', function (e) {
 });
 
 // Toggle element selector
-$('.jsSectionParent').on('click', '.jsElementType input[type="radio"]', function() {
+$('.jsBlockParent').on('click', '.jsElementType input[type="radio"]', function() {
     var selectedTypeOption = $(this).val();
     $('.jsElementOptional.d-block').toggleClass('d-block d-none');
 

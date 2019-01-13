@@ -3,8 +3,8 @@
 {% block body %}
 
 <div id="heroGuide">
-  {# Fetch all elements in the "heroGuide" section #}
-  {% for element in page.sections.heroGuide %}
+  {# Fetch all elements in the "heroGuide" block #}
+  {% for element in page.blocks.heroGuide %}
   {{ getElementHtml(element) }}
   {% endfor %}
 </div>
@@ -12,41 +12,41 @@
 
 <section id="typoGuide">
   <div class="container">
-  {# Fetch all elements in the "typoGuide" section #}
-  {% for element in page.sections.typoGuide %}
+  {# Fetch all elements in the "typoGuide" block #}
+  {% for element in page.blocks.typoGuide %}
   {{ getElementHtml(element) }}
-  {% endfor %} 
+  {% endfor %}
 </div>
 </section>
 
 <section id="galleryGuide">
   <div class="container">
-    {# Fetch all elements in the "galleryGuide" section #}
-    {% for element in page.sections.galleryGuide %}
+    {# Fetch all elements in the "galleryGuide" block #}
+    {% for element in page.blocks.galleryGuide %}
     {{ getElementHtml(element) }}
-    {% endfor %} 
+    {% endfor %}
   </div>
 </section>
 <section id="collectionGuide">
   <div class="container">
-    {# Fetch all elements in the "collectionGuide" section #}
-    {% for element in page.sections.collectionGuide %}
+    {# Fetch all elements in the "collectionGuide" block #}
+    {% for element in page.blocks.collectionGuide %}
     {{ getElementHtml(element) }}
-    {% endfor %} 
+    {% endfor %}
   </div>
 </section>
 <section id="imageGuide">
   <div class="container">
-    {# Fetch all elements in the "imageGuide" section #}
-    {% for element in page.sections.imageGuide %}
+    {# Fetch all elements in the "imageGuide" block #}
+    {% for element in page.blocks.imageGuide %}
     {{ getElementHtml(element) }}
-    {% endfor %} 
+    {% endfor %}
   </div>
 </section>
 <section id="videoGuide">
   <div class="container">
-    {# Fetch all elements in the "videoGuide" section #}
-    {% for element in page.sections.videoGuide %}
+    {# Fetch all elements in the "videoGuide" block #}
+    {% for element in page.blocks.videoGuide %}
     {{ getElementHtml(element) }}
     {% endfor %}
   </div>

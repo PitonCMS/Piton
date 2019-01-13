@@ -1,7 +1,7 @@
 {% extends 'layouts/_base_layout.html' %}
 
 {% block headStyle %}
-    {% set image = page.sections.aboveTheFoldHero|first %}
+    {% set image = page.blocks.aboveTheFoldHero|first %}
     <style>
         .hero-image {background-image: url("{{ image.media_path }}");}
     </style>
@@ -9,13 +9,13 @@
 
 {% block body %}
 
-{# Fetch all elements in the "aboveTheFoldHero" section #}
-{% for element in page.sections.aboveTheFoldHero %}
+{# Fetch all elements in the "aboveTheFoldHero" block #}
+{% for element in page.blocks.aboveTheFoldHero %}
 {{ getElementHtml(element) }}
 {% endfor %}
 <div class="container">
-    {# Fetch all elements in the "introBlock" section #}
-    {% for element in page.sections.introBlock %}
+    {# Fetch all elements in the "introBlock" block #}
+    {% for element in page.blocks.introBlock %}
     {{ getElementHtml(element) }}
     {% endfor %}
 </div>

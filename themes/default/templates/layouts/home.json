@@ -1,7 +1,7 @@
 {
     "pageName": "Home",
-    "pageTemplateDescription": "Home page with hero image and text sections.",
-    "sections": [
+    "pageTemplateDescription": "Home page with hero image and text blocks.",
+    "blocks": [
         {
             "name": "Hero Image",
             "key": "aboveTheFoldHero",

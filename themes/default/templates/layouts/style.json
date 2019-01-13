@@ -1,7 +1,7 @@
 {
     "pageName": "Style",
     "pageTemplateDescription": "Styles guide page.",
-    "sections": [
+    "blocks": [
         {
             "name": "Typography Styles",
             "key": "typoGuide",
