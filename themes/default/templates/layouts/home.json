@@ -1,6 +1,6 @@
 {
     "pageName": "Home",
-    "pageLayoutDescription": "Home page with hero image and text sections.",
+    "pageTemplateDescription": "Home page with hero image and text sections.",
     "sections": [
         {
             "name": "Hero Image",

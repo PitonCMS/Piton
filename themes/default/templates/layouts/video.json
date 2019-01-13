@@ -1,8 +1,8 @@
 {
   "pageName": "Gallery",
-  "pageLayoutDescription": "Gallery Page.",
+  "pageTemplateDescription": "Gallery Page.",
   "sections": [
-      
+
       {
           "name": "Video Guide",
           "codeName": "videoGuide",

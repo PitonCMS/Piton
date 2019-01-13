@@ -1,6 +1,6 @@
 {
     "pageName": "Style",
-    "pageLayoutDescription": "Styles guide page.",
+    "pageTemplateDescription": "Styles guide page.",
     "sections": [
         {
             "name": "Typography Styles",
