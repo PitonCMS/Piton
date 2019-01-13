@@ -5,7 +5,7 @@
 
       {
           "name": "Gallery Guide",
-          "codeName": "galleryGuide",
+          "key": "galleryGuide",
           "description": "Gallery style guide",
           "elementType": "gallery",
           "elementTypeOptions": ["text","gallery"]

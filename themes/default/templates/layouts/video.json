@@ -5,7 +5,7 @@
 
       {
           "name": "Video Guide",
-          "codeName": "videoGuide",
+          "key": "videoGuide",
           "description": "video style guide",
           "elementType": "video",
           "elementTypeOptions": ["text","video"]

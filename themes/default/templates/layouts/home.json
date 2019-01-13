@@ -4,14 +4,14 @@
     "sections": [
         {
             "name": "Hero Image",
-            "codeName": "aboveTheFoldHero",
+            "key": "aboveTheFoldHero",
             "description": "Large full width image",
             "elementType": "hero",
             "elementTypeOptions": ["image","text","hero"]
         },
         {
             "name": "Text",
-            "codeName": "introBlock",
+            "key": "introBlock",
             "description": "Home page text areas",
             "elementType": ""
         }
