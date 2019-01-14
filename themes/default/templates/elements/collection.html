@@ -1,16 +1,19 @@
 {# Collection Element #}
+{% set collection = getCollectionPages(data.collection_id) %}
 
-{% set collection = getCollection(data.collection_id) %}
-
-<h2>{{ collection.title }}</h2>
+<h2>{{ data.title }}</h2>
 {{ data.content }}
 
+<h1>this</h1>
+
 <div class="card-wrapper">
-  {% for detail in collection.details %}
+  {% for detail in collection %}
   <div class="card">
     <div class="card-header">{{ detail.title }}</div>
-    <div class="card-body">{{ detail.content|slice(0,50) }}</div>
-    <div class="card-footer"><button>Read More</button></div>
+    <div class="card-body">{{ detail.sub_title }}</div>
+    <div class="card-footer">
+        <a href="{{ pathFor('showPage', {'slug1': detail.collection_slug, 'slug2': detail.slug}) }}" class="btn btn-primary">Read More</a>
+    </div>
   </div>
   {% endfor %}
 </div>
