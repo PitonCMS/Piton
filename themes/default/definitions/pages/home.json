@@ -2,6 +2,7 @@
     "templateTitle": "Home",
     "templateDescription": "Home page with hero image and text blocks.",
     "templateFile": "home.html",
+    "templateType": "page",
     "blocks": [
         {
             "name": "Hero Image",

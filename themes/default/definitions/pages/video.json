@@ -2,6 +2,7 @@
   "templateTitle": "Video",
   "templateDescription": "Video Page.",
   "templateFile": "video.html",
+  "templateType": "page",
   "blocks": [
 
       {

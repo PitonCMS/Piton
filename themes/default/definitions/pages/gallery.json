@@ -2,6 +2,7 @@
   "templateTitle": "Gallery",
   "templateDescription": "Gallery Page.",
   "templateFile": "gallery.html",
+  "templateType": "page",
   "blocks": [
 
       {
