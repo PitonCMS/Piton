@@ -1,6 +1,7 @@
 {
-  "templateName": "Gallery",
+  "templateTitle": "Gallery",
   "templateDescription": "Gallery Page.",
+  "templateFile": "gallery.html",
   "blocks": [
 
       {

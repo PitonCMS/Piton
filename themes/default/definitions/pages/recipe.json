@@ -1,0 +1,81 @@
+{
+    "templateTitle": "Recipe Collection",
+    "templateDescription": "Recipe collection example",
+    "templateFile": "recipeDetail.html",
+    "templateType": "collection",
+    "collectionSummaryFile": "recipeSummary.html",
+    "blocks": [
+        {
+            "name": "Ingredients",
+            "key": "ingr",
+            "description": "List all recipe ingredients",
+            "elementType": "text",
+            "elementTypeOptions": ["text"]
+        },
+        {
+            "name": "Preparation",
+            "key": "prep",
+            "description": "Instructions",
+            "elementType": "text",
+            "elementTypeOptions": ["text"]
+        },
+        {
+            "name": "Notes",
+            "key": "note",
+            "description": "Additional notes",
+            "elementType": "text",
+            "elementTypeOptions": ["text"]
+        }
+    ],
+    "fields": [
+        {
+            "label": "Servings",
+            "key": "servings",
+            "value": "",
+            "inputType": "input",
+            "help": "Number of servings."
+        },
+        {
+            "label": "Oven Temperature",
+            "key": "ovenTemp",
+            "value": "",
+            "inputType": "input",
+            "help": "In Farenheit."
+        },
+        {
+            "label": "Prep Time",
+            "key": "prepTime",
+            "value": "",
+            "inputType": "input",
+            "help": "In hours:minutes."
+        },
+        {
+            "label": "Cook Time",
+            "key": "cookTime",
+            "value": "",
+            "inputType": "input",
+            "help": "In hours:minutes."
+        },
+        {
+            "label": "Categories",
+            "key": "categories",
+            "value": "Entree",
+            "inputType": "select",
+            "help": "Select the category.",
+            "options": [
+                {
+                    "value": "entree",
+                    "name": "Entree"
+                },
+                {
+                    "value": "meat",
+                    "name": "Meat"
+                },
+                {
+                    "value": "vegetable",
+                    "name": "Vegetarian"
+                }
+            ]
+        }
+    ]
+}

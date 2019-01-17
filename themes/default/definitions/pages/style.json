@@ -1,6 +1,7 @@
 {
-    "templateName": "Style",
+    "templateTitle": "Style",
     "templateDescription": "Styles guide page.",
+    "templateFile": "style.html",
     "blocks": [
         {
             "name": "Typography Styles",

@@ -1,0 +1,17 @@
+{# Recipe Collection Element #}
+{% set collection = getCollectionPages(data.collection_id) %}
+
+<h2>{{ data.title }}</h2>
+{{ data.content }}
+
+<div class="card-wrapper">
+  {% for detail in collection %}
+  <div class="card">
+    <div class="card-header">{{ detail.title }}</div>
+    <div class="card-body">{{ detail.sub_title }}</div>
+    <div class="card-footer">
+        <a href="{{ pathFor('showPage', {'slug1': detail.collection_slug, 'slug2': detail.slug}) }}" class="btn btn-primary">Read More</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>

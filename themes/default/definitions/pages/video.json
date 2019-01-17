@@ -1,6 +1,7 @@
 {
-  "templateName": "Gallery",
-  "templateDescription": "Gallery Page.",
+  "templateTitle": "Video",
+  "templateDescription": "Video Page.",
+  "templateFile": "video.html",
   "blocks": [
 
       {
