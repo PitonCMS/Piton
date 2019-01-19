@@ -29,6 +29,12 @@
     ],
     "fields": [
         {
+            "label": "Image",
+            "key": "featuredImage",
+            "inputType": "input",
+            "help": "Featured Image"
+        },
+        {
             "label": "Servings",
             "key": "servings",
             "value": "",

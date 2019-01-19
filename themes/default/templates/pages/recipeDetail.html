@@ -8,8 +8,12 @@
 
 <section id="galleryGuide">
     <div class="container">
+
+        <img src="{{ page.fields.featuredImage }}">
         <ul>
+            {% if page.fields.servings %}
             <li><strong>Serves:</strong> {{ page.fields.servings }}</li>
+            {% endif %}
             <li><strong>Oven Temp:</strong> {{ page.fields.ovenTemp }}</li>
             <li><strong>Prep Time:</strong> {{ page.fields.prepTime }}</li>
             <li><strong>Cook Time:</strong> {{ page.fields.cookTime }}</li>
