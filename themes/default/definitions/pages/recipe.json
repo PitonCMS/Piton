@@ -27,7 +27,7 @@
             "elementTypeOptions": ["text"]
         }
     ],
-    "fields": [
+    "settings": [
         {
             "label": "Image",
             "key": "featuredImage",
