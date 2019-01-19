@@ -8,6 +8,14 @@
 
 <section id="galleryGuide">
     <div class="container">
+        <ul>
+            <li><strong>Serves:</strong> {{ page.fields.servings }}</li>
+            <li><strong>Oven Temp:</strong> {{ page.fields.ovenTemp }}</li>
+            <li><strong>Prep Time:</strong> {{ page.fields.prepTime }}</li>
+            <li><strong>Cook Time:</strong> {{ page.fields.cookTime }}</li>
+            <li><strong>Category:</strong> {{ page.fields.categories }}</li>
+        </ul>
+
         {% for element in page.blocks.ingr %}
             {{ getElementHtml(element) }}
         {% endfor %}
