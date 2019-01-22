@@ -3,7 +3,6 @@
     "templateDescription": "Recipe collection example",
     "templateFile": "recipeDetail.html",
     "templateType": "collection",
-    "collectionElementTemplateFile": "recipeSummary.html",
     "blocks": [
         {
             "name": "Ingredients",
