@@ -121,23 +121,19 @@ $('.jsBlockParent').on('click', '.jsDeleteBlockElement', function (e) {
 
 // Toggle element selector
 $('.jsBlockParent').on('click', '.jsElementType input[type="radio"]', function() {
-    var selectedTypeOption = $(this).val();
-    $('.jsElementOptional.d-block').toggleClass('d-block d-none');
+    var selectedTypeOption = $(this).data('input-option');
+    $('.jsElementOption.d-block').toggleClass('d-block d-none');
 
     if (selectedTypeOption === 'image' || selectedTypeOption === 'hero') {
-        $(this).parents('.jsElementType').siblings('.jsElementMediaPath').toggleClass('d-none d-block');
+        $(this).parents('.jsElementType').siblings('.jsMediaInput').toggleClass('d-none d-block');
         return;
     }
     if (selectedTypeOption === 'video') {
-        $(this).parents('.jsElementType').siblings('.jsElementVideoPath').toggleClass('d-none d-block');
+        $(this).parents('.jsElementType').siblings('.jsVideoInput').toggleClass('d-none d-block');
         return;
     }
-    if (selectedTypeOption === 'gallery') {
-        $(this).parents('.jsElementType').siblings('.jsElementGallery').toggleClass('d-none d-block');
-        return;
-    }
-    if (selectedTypeOption === 'collection') {
-        $(this).parents('.jsElementType').siblings('.jsElementCollection').toggleClass('d-none d-block');
+    if (selectedTypeOption === 'gallery' || selectedTypeOption === 'collection') {
+        $(this).parents('.jsElementType').siblings('.jsCollectionInput').toggleClass('d-none d-block');
         return;
     }
 });
