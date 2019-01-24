@@ -1,6 +1,5 @@
 {
     "elementTitle": "Recipe Cards",
-    "templateDescription": "Recipe collection example",
     "elementTemplateFile": "recipeDetail.html",
     "inputTypeOption": "collection"
 }
