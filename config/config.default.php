@@ -29,3 +29,22 @@ $config['session']['checkIpAddress'] = true;
 $config['session']['checkUserAgent'] = true;
 $config['session']['salt'] = ''; // Salt key to hash
 $config['session']['secondsUntilExpiration'] = 7200;
+
+/**
+ * Email
+ *
+ * from:     Send-from email address
+ * protocol: 'mail' (default) or 'smtp'
+ *
+ * These settings below only apply for SMTP connections
+ * smtpHost: SMTP server name
+ * smtpUser: User name
+ * smtpPass: Password
+ * smtpPort: Port to use, likely 465
+ */
+$config['email']['from'] = 'pitoncms@localhost.com';
+$config['email']['protocol'] = 'mail';
+$config['email']['smtpHost'] = '';
+$config['email']['smtpUser'] = '';
+$config['email']['smtpPass'] = '';
+$config['email']['smtpPort'] = '';
