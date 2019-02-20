@@ -9,7 +9,7 @@
           "name": "Gallery Guide",
           "key": "galleryGuide",
           "description": "Gallery style guide",
-          "elementType": "gallery",
+          "elementTypeDefault": "gallery",
           "elementTypeOptions": ["text","gallery"]
       }
   ]

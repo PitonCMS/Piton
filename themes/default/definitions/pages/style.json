@@ -8,41 +8,41 @@
             "name": "Typography Styles",
             "key": "typoGuide",
             "description": "Typography style guide",
-            "elementType": ""
+            "elementTypeDefault": ""
         },
         {
             "name": "Style Guide - Hero",
             "key": "heroGuide",
             "description": "Hero style guide",
-            "elementType": "hero",
+            "elementTypeDefault": "hero",
             "elementTypeOptions": ["text","hero"]
         },
         {
             "name": "Gallery Guide",
             "key": "galleryGuide",
             "description": "Gallery style guide",
-            "elementType": "gallery",
+            "elementTypeDefault": "gallery",
             "elementTypeOptions": ["text","gallery"]
         },
         {
             "name": "Collection Guide",
             "key": "collectionGuide",
             "description": "collection style guide",
-            "elementType": "collection",
+            "elementTypeDefault": "collection",
             "elementTypeOptions": ["text","collection"]
         },
         {
             "name": "Image Guide",
             "key": "imageGuide",
             "description": "image style guide",
-            "elementType": "image",
+            "elementTypeDefault": "image",
             "elementTypeOptions": ["text","image"]
         },
         {
             "name": "Video Guide",
             "key": "videoGuide",
             "description": "video style guide",
-            "elementType": "video",
+            "elementTypeDefault": "video",
             "elementTypeOptions": ["text","video"]
         }
     ]

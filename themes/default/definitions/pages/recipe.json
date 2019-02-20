@@ -8,21 +8,21 @@
             "name": "Ingredients",
             "key": "ingr",
             "description": "List all recipe ingredients",
-            "elementType": "text",
+            "elementTypeDefault": "text",
             "elementTypeOptions": ["text"]
         },
         {
             "name": "Preparation",
             "key": "prep",
             "description": "Instructions",
-            "elementType": "text",
+            "elementTypeDefault": "text",
             "elementTypeOptions": ["text"]
         },
         {
             "name": "Notes",
             "key": "note",
             "description": "Additional notes",
-            "elementType": "text",
+            "elementTypeDefault": "text",
             "elementTypeOptions": ["text"]
         }
     ],

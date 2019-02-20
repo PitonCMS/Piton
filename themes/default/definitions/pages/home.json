@@ -8,14 +8,14 @@
             "name": "Hero Image",
             "key": "aboveTheFoldHero",
             "description": "Large full width image",
-            "elementType": "hero",
+            "elementTypeDefault": "hero",
             "elementTypeOptions": ["hero"]
         },
         {
             "name": "Text",
             "key": "introBlock",
             "description": "Home page text areas",
-            "elementType": ""
+            "elementTypeDefault": ""
         }
     ]
 }

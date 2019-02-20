@@ -9,7 +9,7 @@
           "name": "Video Guide",
           "key": "videoGuide",
           "description": "video style guide",
-          "elementType": "video",
+          "elementTypeDefault": "video",
           "elementTypeOptions": ["text","video"]
       }
   ]
