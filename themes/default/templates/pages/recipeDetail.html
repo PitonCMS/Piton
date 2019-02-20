@@ -9,15 +9,13 @@
 <section id="galleryGuide">
     <div class="container">
 
-        <img src="{{ page.fields.featuredImage }}">
+        <img src="{{ page.image_path }}">
         <ul>
-            {% if page.fields.servings %}
-            <li><strong>Serves:</strong> {{ page.fields.servings }}</li>
-            {% endif %}
-            <li><strong>Oven Temp:</strong> {{ page.fields.ovenTemp }}</li>
-            <li><strong>Prep Time:</strong> {{ page.fields.prepTime }}</li>
-            <li><strong>Cook Time:</strong> {{ page.fields.cookTime }}</li>
-            <li><strong>Category:</strong> {{ page.fields.categories }}</li>
+            <li><strong>Serves:</strong> {{ page.settings.servings }}</li>
+            <li><strong>Oven Temp:</strong> {{ page.settings.ovenTemp }}</li>
+            <li><strong>Prep Time:</strong> {{ page.settings.prepTime }}</li>
+            <li><strong>Cook Time:</strong> {{ page.settings.cookTime }}</li>
+            <li><strong>Category:</strong> {{ page.settings.categories }}</li>
         </ul>
 
         {% for element in page.blocks.ingr %}

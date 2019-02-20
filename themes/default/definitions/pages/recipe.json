@@ -1,7 +1,7 @@
 {
     "templateName": "Recipe Collection",
     "templateDescription": "Recipe collection example",
-    "templateFile": "recipeDetail.html",
+    "templateFile": "recipeSummary.html",
     "templateType": "collection",
     "blocks": [
         {
@@ -27,12 +27,6 @@
         }
     ],
     "settings": [
-        {
-            "label": "Image",
-            "key": "featuredImage",
-            "inputType": "input",
-            "help": "Featured Image"
-        },
         {
             "label": "Servings",
             "key": "servings",
