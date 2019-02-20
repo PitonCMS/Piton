@@ -1,5 +1,5 @@
 {
-    "templateTitle": "Home",
+    "templateName": "Home",
     "templateDescription": "Home page with hero image and text blocks.",
     "templateFile": "home.html",
     "templateType": "page",

@@ -1,5 +1,5 @@
 {
-  "templateTitle": "Gallery",
+  "templateName": "Gallery",
   "templateDescription": "Gallery Page.",
   "templateFile": "gallery.html",
   "templateType": "page",

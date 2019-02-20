@@ -1,5 +1,5 @@
 {
-    "templateTitle": "Recipe Collection",
+    "templateName": "Recipe Collection",
     "templateDescription": "Recipe collection example",
     "templateFile": "recipeDetail.html",
     "templateType": "collection",

@@ -1,5 +1,5 @@
 {
-    "templateTitle": "Style",
+    "templateName": "Style",
     "templateDescription": "Styles guide page.",
     "templateFile": "style.html",
     "templateType": "page",

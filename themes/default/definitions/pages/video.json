@@ -1,5 +1,5 @@
 {
-  "templateTitle": "Video",
+  "templateName": "Video",
   "templateDescription": "Video Page.",
   "templateFile": "video.html",
   "templateType": "page",
