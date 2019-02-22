@@ -22,6 +22,12 @@
     "config": {
         "optimize-autoloader": true
     },
+    "scripts": {
+        "post-create-project-cmd": [
+            "Piton\\Library\\Utilities\\PitonInstall::updateDockerYaml",
+            "Piton\\Library\\Utilities\\PitonInstall::updateApacheHost"
+        ]
+    },
     "minimum-stability": "stable",
     "prefer-stable": true
 }
