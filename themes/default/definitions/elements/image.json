@@ -1,0 +1,5 @@
+{
+    "elementName": "Image",
+    "elementTemplateFile": "image.html",
+    "enableInput": "image"
+}

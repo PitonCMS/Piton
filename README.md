@@ -5,7 +5,7 @@ Simple Content Management System
 To install `cd` to where you want to create a new project directory, update `<my-project-name>` to your folder name and run:
 
 ```
-composer create-project pitoncms/piton <my-project-name> "dev-master"
+composer create-project pitoncms/piton <my-project-name>
 ```
 
 When composer asks to delete git files, say no.

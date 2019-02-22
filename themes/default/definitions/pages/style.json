@@ -14,36 +14,87 @@
             "name": "Style Guide - Hero",
             "key": "heroGuide",
             "description": "Hero style guide",
-            "elementTypeDefault": "hero",
-            "elementTypeOptions": ["text","hero"]
+            "elementTypeDefault": "hero.json",
+            "elementTypeOptions": ["text.json","hero.json"]
         },
         {
             "name": "Gallery Guide",
             "key": "galleryGuide",
             "description": "Gallery style guide",
-            "elementTypeDefault": "gallery",
-            "elementTypeOptions": ["text","gallery"]
+            "elementTypeDefault": "gallery.json",
+            "elementTypeOptions": ["text.json","gallery.json"]
         },
         {
             "name": "Collection Guide",
             "key": "collectionGuide",
             "description": "collection style guide",
-            "elementTypeDefault": "collection",
-            "elementTypeOptions": ["text","collection"]
+            "elementTypeDefault": "recipe.json",
+            "elementTypeOptions": ["text.json","recipe.json"]
         },
         {
             "name": "Image Guide",
             "key": "imageGuide",
             "description": "image style guide",
-            "elementTypeDefault": "image",
-            "elementTypeOptions": ["text","image"]
+            "elementTypeDefault": "image.json",
+            "elementTypeOptions": ["text.json","image.json"]
         },
         {
             "name": "Video Guide",
             "key": "videoGuide",
             "description": "video style guide",
-            "elementTypeDefault": "video",
-            "elementTypeOptions": ["text","video"]
+            "elementTypeDefault": "video.json",
+            "elementTypeOptions": ["text.json","video.json"]
+        }
+    ],
+    "settings": [
+        {
+            "label": "Servings",
+            "key": "servings",
+            "value": "",
+            "inputType": "input",
+            "help": "Number of servings."
+        },
+        {
+            "label": "Oven Temperature",
+            "key": "ovenTemp",
+            "value": "",
+            "inputType": "input",
+            "help": "In Farenheit."
+        },
+        {
+            "label": "Prep Time",
+            "key": "prepTime",
+            "value": "",
+            "inputType": "input",
+            "help": "In hours:minutes."
+        },
+        {
+            "label": "Cook Time",
+            "key": "cookTime",
+            "value": "",
+            "inputType": "input",
+            "help": "In hours:minutes."
+        },
+        {
+            "label": "Categories",
+            "key": "categories",
+            "value": "Entree",
+            "inputType": "select",
+            "help": "Select the category.",
+            "options": [
+                {
+                    "value": "entree",
+                    "name": "Entree"
+                },
+                {
+                    "value": "meat",
+                    "name": "Meat"
+                },
+                {
+                    "value": "vegetable",
+                    "name": "Vegetarian"
+                }
+            ]
         }
     ]
 }

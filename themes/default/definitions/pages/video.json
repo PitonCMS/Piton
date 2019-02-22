@@ -9,8 +9,8 @@
           "name": "Video Guide",
           "key": "videoGuide",
           "description": "video style guide",
-          "elementTypeDefault": "video",
-          "elementTypeOptions": ["text","video"]
+          "elementTypeDefault": "video.json",
+          "elementTypeOptions": ["text.json","video.json"]
       }
   ]
 }

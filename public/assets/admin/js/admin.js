@@ -83,7 +83,7 @@ $('.jsAddElement').on('click', function() {
     });
 });
 
-// Delete page block element
+// Delete page element
 $('.jsBlockParent').on('click', '.jsDeleteBlockElement', function (e) {
     e.preventDefault();
     if (!confirmDeletePrompt('Are you sure you want to delete this element?')) {
@@ -121,7 +121,7 @@ $('.jsBlockParent').on('click', '.jsDeleteBlockElement', function (e) {
 
 // Toggle element selector
 $('.jsBlockParent').on('click', '.jsElementType input[type="radio"]', function() {
-    var selectedTypeOption = $(this).data('input-option');
+    var selectedTypeOption = $(this).data('enable-input');
     $('.jsElementOption.d-block').toggleClass('d-block d-none');
 
     if (selectedTypeOption === 'image' || selectedTypeOption === 'hero') {

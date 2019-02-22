@@ -8,22 +8,22 @@
             "name": "Ingredients",
             "key": "ingr",
             "description": "List all recipe ingredients",
-            "elementTypeDefault": "text",
-            "elementTypeOptions": ["text"]
+            "elementTypeDefault": "text.json",
+            "elementTypeOptions": ["text.json"]
         },
         {
             "name": "Preparation",
             "key": "prep",
             "description": "Instructions",
-            "elementTypeDefault": "text",
-            "elementTypeOptions": ["text"]
+            "elementTypeDefault": "text.json",
+            "elementTypeOptions": ["text.json"]
         },
         {
             "name": "Notes",
             "key": "note",
             "description": "Additional notes",
-            "elementTypeDefault": "text",
-            "elementTypeOptions": ["text"]
+            "elementTypeDefault": "text.json",
+            "elementTypeOptions": ["text.json"]
         }
     ],
     "settings": [

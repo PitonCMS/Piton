@@ -9,8 +9,8 @@
           "name": "Gallery Guide",
           "key": "galleryGuide",
           "description": "Gallery style guide",
-          "elementTypeDefault": "gallery",
-          "elementTypeOptions": ["text","gallery"]
+          "elementTypeDefault": "gallery.json",
+          "elementTypeOptions": ["text.json","gallery.json"]
       }
   ]
 }

@@ -1,0 +1,5 @@
+{
+    "elementName": "Gallery",
+    "elementTemplateFile": "gallery.html",
+    "enableInput": "collection"
+}

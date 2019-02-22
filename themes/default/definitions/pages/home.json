@@ -8,8 +8,8 @@
             "name": "Hero Image",
             "key": "aboveTheFoldHero",
             "description": "Large full width image",
-            "elementTypeDefault": "hero",
-            "elementTypeOptions": ["hero"]
+            "elementTypeDefault": "hero.json",
+            "elementTypeOptions": ["hero.json"]
         },
         {
             "name": "Text",
