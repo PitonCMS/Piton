@@ -128,8 +128,8 @@ $('.jsBlockParent').on('click', '.jsElementType input[type="radio"]', function()
         $(this).parents('.jsElementType').siblings('.jsMediaInput').toggleClass('d-none d-block');
         return;
     }
-    if (selectedTypeOption === 'video') {
-        $(this).parents('.jsElementType').siblings('.jsVideoInput').toggleClass('d-none d-block');
+    if (selectedTypeOption === 'embedded') {
+        $(this).parents('.jsElementType').siblings('.jsEmbeddedInput').toggleClass('d-none d-block');
         return;
     }
     if (selectedTypeOption === 'gallery' || selectedTypeOption === 'collection') {
