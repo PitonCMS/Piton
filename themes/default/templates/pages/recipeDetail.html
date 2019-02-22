@@ -18,17 +18,11 @@
             <li><strong>Category:</strong> {{ page.settings.categories }}</li>
         </ul>
 
-        {% for element in page.blocks.ingr %}
-            {{ getElementHtml(element) }}
-        {% endfor %}
+        {{ getBlockElementsHtml(page.blocks.ingr) }}
 
-        {% for element in page.blocks.prep %}
-            {{ getElementHtml(element) }}
-        {% endfor %}
+        {{ getBlockElementsHtml(page.blocks.prep) }}
 
-        {% for element in page.blocks.note %}
-            {{ getElementHtml(element) }}
-        {% endfor %}
+        {{ getBlockElementsHtml(page.blocks.note) }}
     </div>
 </section>
 

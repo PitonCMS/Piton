@@ -9,15 +9,10 @@
 
 {% block body %}
 
-{# Fetch all elements in the "aboveTheFoldHero" block #}
-{% for element in page.blocks.aboveTheFoldHero %}
-{{ getElementHtml(element) }}
-{% endfor %}
+    {{ getBlockElementsHtml(page.blocks.aboveTheFoldHero) }}
+
 <div class="container">
-    {# Fetch all elements in the "introBlock" block #}
-    {% for element in page.blocks.introBlock %}
-    {{ getElementHtml(element) }}
-    {% endfor %}
+    {{ getBlockElementsHtml(page.blocks.introBlock) }}
 </div>
 
 {% endblock %}
