@@ -24,7 +24,8 @@ RUN apt-get update && \
       php7.2-opcache \
       nano \
       sendmail \
-      composer
+      composer \
+      php-curl
 
 COPY apache-host.conf /etc/apache2/sites-available/000-default.conf
 COPY run.sh /usr/local/bin/run
