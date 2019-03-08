@@ -1,35 +1,43 @@
-body{
+body {
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
 }
 
-.container{
+.container {
   width: 100%;
+
   @media screen and (min-width: 1024px) {
     width: 80%;
   }
-  
+
   max-width: 1200px;
   @include margin(0 auto);
   @include padding(1rem);
 }
-a{
+
+a {
 
   text-decoration: none;
-  &:hover{
+
+  &:hover {
     color: $accent-color;
   }
 }
-section{width: 100vw;
+
+section {
+  width: 100vw;
   @include padding(0px null 50px);
 }
-section:nth-of-type(even){
 
-  background-color: $gray2 !important;
-  color: $text-light !important;
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  // background-color: $primary-color;
 }
 
-button, [type=button], [type=reset], [type=submit]{
-  background-color: $primary-color;
+img {
+  width: 100%;
+  display: block;
 }

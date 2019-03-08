@@ -17,5 +17,14 @@
             "description": "Home page text areas",
             "elementTypeDefault": ""
         }
+    ],
+    "settings": [
+        {
+            "label": "Link in Hero",
+            "key": "cta",
+            "value": "",
+            "inputType": "input",
+            "help": "Enter verbiage for cta."
+        }
     ]
 }

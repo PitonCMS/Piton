@@ -1,0 +1,16 @@
+{
+  "templateName": "Collection",
+  "templateDescription": "Collection Page.",
+  "templateFile": "collection.html",
+  "templateType": "page",
+  "blocks": [
+
+      {
+          "name": "Collection Guide",
+          "key": "collectionGuide",
+          "description": "collection style guide",
+          "elementTypeDefault": "collection.json",
+          "elementTypeOptions": ["collection.json"]
+      }
+  ]
+}

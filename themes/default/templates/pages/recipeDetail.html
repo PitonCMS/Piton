@@ -1,15 +1,20 @@
 {% extends 'pages/_base_layout.html' %}
 
 {% block body %}
+<div class="hero hero--ratio">
+        <div class="hero__content">
+                <h1>{{ page.title }}</h1>
+                <h4>{{ page.sub_title }}</h4>
+          {{ data.content }}
+      
+        </div>
+        <img class="hero__bg" src="{{ page.image_path }}" alt="Hero Image"/>
+      </div>
 
-<h1>{{ page.title }}</h1>
-<h4>{{ page.sub_title }}</h4>
-<h5>From the {{ page.collection_title }} Collection</h5>
 
 <section id="galleryGuide">
     <div class="container">
 
-        <img src="{{ page.image_path }}">
         <ul>
             <li><strong>Serves:</strong> {{ page.settings.servings }}</li>
             <li><strong>Oven Temp:</strong> {{ page.settings.ovenTemp }}</li>
@@ -23,6 +28,7 @@
         {{ getBlockElementsHtml(page.blocks.prep) }}
 
         {{ getBlockElementsHtml(page.blocks.note) }}
+        <h5>From the {{ page.collection_title }} Collection</h5>
     </div>
 </section>
 

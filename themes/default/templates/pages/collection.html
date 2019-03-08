@@ -1,0 +1,20 @@
+{% extends 'pages/_base_layout.html' %}
+
+{% block body %}
+<div class="hero hero--ratio">
+        <div class="hero__content">
+          <h1>{{ page.title }}</h1>
+          <h3>{{ page.sub_title }}</h3>
+          {{ data.content }}
+         
+        </div>
+        <img class="hero__bg" src="{{ page.image_path }}" alt="Hero Image"/>
+      </div>
+
+<section id="collectionGuide">
+    <div class="container">
+        {{ getBlockElementsHtml(page.blocks.collectionGuide) }}
+    </div>
+</section>
+
+{% endblock %}

@@ -9686,23 +9686,23 @@ h1 {
 }
 
 h2 {
-  font-size: 2.75rem;
-}
-
-h3 {
   font-size: 2.5rem;
 }
 
-h4 {
-  font-size: 2.25rem;
-}
-
-h5 {
+h3 {
   font-size: 2rem;
 }
 
-h6 {
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
   font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
 }
 
 body {
@@ -9736,9 +9736,9 @@ section {
   padding-bottom: 50px;
 }
 
-section:nth-of-type(even) {
-  background-color: #caccce !important;
-  color: #ffffff !important;
+img {
+  width: 100%;
+  display: block;
 }
 
 .hero {
@@ -9748,6 +9748,10 @@ section:nth-of-type(even) {
   justify-content: center;
   font-size: 1.25rem;
   color: #ffffff;
+  background-color: rgba(51, 102, 153, 0.5);
+  z-index: -999;
+  opacity: 0;
+  animation: fadeIn 500ms ease 1 forwards;
 }
 .hero:after {
   content: "";
@@ -9787,6 +9791,14 @@ section:nth-of-type(even) {
   min-height: calc((9 / 16) * 100vw);
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .card-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -9794,7 +9806,7 @@ section:nth-of-type(even) {
 }
 
 .card {
-  border-radius: 3px;
+  border-radius: 7px;
   display: flex;
   flex-flow: column nowrap;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
@@ -9822,15 +9834,15 @@ section:nth-of-type(even) {
   border-top: solid 1px #000;
 }
 
-.gallery-wrapper {
+#galleryGuide .gallery-wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 1rem;
+  margin-bottom: 2rem;
 }
-
-.gallery-img {
+#galleryGuide .gallery-img img {
+  border-radius: 7px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
-  border-radius: 3px;
 }
 
 .imageElement-wrapper {

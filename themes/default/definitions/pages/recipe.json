@@ -1,7 +1,7 @@
 {
     "templateName": "Recipe Collection",
     "templateDescription": "Recipe collection example",
-    "templateFile": "recipeSummary.html",
+    "templateFile": "recipeDetail.html",
     "templateType": "collection",
     "blocks": [
         {
