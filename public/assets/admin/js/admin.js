@@ -36,10 +36,12 @@ $('.jsAddUserRow').on('click', function() {
 // --------------------------------------------------------
 // Add Page Block Element
 $('.jsAddElement').on('click', function() {
+    let $addButton = $(this);
     var $blockParent = $(this).parent('.jsBlockParent');
     var elementType = $(this).data('element-type');
     var blockKey = $(this).data('block-key');
     var elementTypeOptions = $(this).data('element-type-options');
+    let elementLimit = $(this).data('element-count-limit') || 100;
     var postData = {
             blockKey: blockKey,
             elementType: elementType,
@@ -72,6 +74,11 @@ $('.jsAddElement').on('click', function() {
                 });
             });
 
+            // If number of elements matches or exceeds the limit, disable the button
+            if ($blockParent.children('.jsElementParent').length >= elementLimit) {
+                $addButton.prop('disabled', true);
+            }
+
             // Scroll to new element and add to navigation
             var newElementID = $newElement.attr('id');
             window.location.hash = newElementID;
@@ -91,10 +98,17 @@ $('.jsBlockParent').on('click', '.jsDeleteBlockElement', function (e) {
     }
     var blockElementId = $(this).data('element-id') || 'x';
     var $element = $(this).parents('.jsElementParent');
+    let $blockParent = $(this).parents('.jsBlockParent');
+    let elementLimit = $blockParent.find('.jsAddElement').data('element-count-limit') || 100;
     var removeElement = function() {
         $element.slideUp('normal', function () {
             $element.remove();
         });
+
+        // If element count is now within limits for this block, enable add element button
+        if ($blockParent.children('.jsElementParent').length >= elementLimit) {
+            $blockParent.find('.jsAddElement').prop('disabled', false);
+        }
     }
     var postData = {id: blockElementId}
     postData[pitonConfig.csrfTokenName] = pitonConfig.csrfTokenValue;
