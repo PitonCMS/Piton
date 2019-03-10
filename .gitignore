@@ -10,4 +10,5 @@ composer.lock
 prepros-6.config
 /themes/peri/
 /public/assets/peri/
+/public/media/
 *.map
