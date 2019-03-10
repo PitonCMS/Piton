@@ -1,0 +1,9 @@
+{
+    "description": "Available site themes",
+    "themes": [
+        {
+            "value": "Default",
+            "name": "main"
+        }
+    ]
+}
