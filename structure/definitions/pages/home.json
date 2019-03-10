@@ -9,7 +9,8 @@
             "key": "aboveTheFoldHero",
             "description": "Large full width image",
             "elementTypeDefault": "hero.json",
-            "elementTypeOptions": ["hero.json"]
+            "elementTypeOptions": ["hero.json"],
+            "elementCountLimit": 1
         },
         {
             "name": "Text",
