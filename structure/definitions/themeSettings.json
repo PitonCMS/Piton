@@ -13,7 +13,7 @@
             "sort": 2,
             "label": "Facebook Tracking Code",
             "key": "fbAnalyticsCode",
-            "value": "<tracking code>",
+            "value": "",
             "inputType": "textarea",
             "help": "Facebook tracking code."
         },
