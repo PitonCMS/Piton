@@ -2,8 +2,12 @@
     "description": "Available site themes",
     "themes": [
         {
-            "value": "Default",
-            "name": "main"
+            "name": "Default",
+            "value": "default"
+        },
+        {
+            "name": "New Theme",
+            "value": "theme1"
         }
     ]
 }
