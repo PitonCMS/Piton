@@ -9,6 +9,8 @@ composer.lock
 /themes/test/
 prepros-6.config
 /themes/peri/
-/public/assets/peri/
+/public/assets/css/theme1/
 /public/media/
 *.map
+/structure/sass/
+/structure/definitions/themes.json
