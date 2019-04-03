@@ -13,3 +13,4 @@ prepros-6.config
 /public/media/
 *.map
 /structure/definitions/themes.json
+/structure/sass/
