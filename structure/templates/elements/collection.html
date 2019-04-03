@@ -1,8 +1,8 @@
 {# Collection Element #}
-{% set collection = getCollectionPages(data.collection_id) %}
+{% set collection = getCollectionPages(element.collection_id) %}
 
-<h2>{{ data.title }}</h2>
-{{ data.content }}
+<h2>{{ element.title }}</h2>
+{{ element.content }}
 
 <div class="card-wrapper">
   {% for detail in collection %}
