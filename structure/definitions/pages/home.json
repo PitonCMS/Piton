@@ -21,11 +21,19 @@
     ],
     "settings": [
         {
-            "label": "Link in Hero",
-            "key": "cta",
+            "label": "Link Title in Hero",
+            "key": "ctaTitle",
             "value": "",
             "inputType": "input",
-            "help": "Enter verbiage for cta."
+            "help": "Enter Title for cta."
+        },
+        {
+            "label": "Link Target in Hero",
+            "key": "ctaTarget",
+            "value": "",
+            "inputType": "input",
+            "help": "Enter Target for cta."
         }
+
     ]
 }
