@@ -1,0 +1,50 @@
+.hero{
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: $text-light;
+  // z-index: -999;
+  // Optional overlay
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: rgba($dark1, 0.15);
+  }
+   
+  &__content {
+    text-align: center;
+    flex-basis: 50%;
+    width: 60%;
+  }
+  
+  &__bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: -2; 
+  }
+  // Add your aspect ratios
+  &--ratio {
+    @include ratio(4,5);
+    @media screen and (min-width: 768px){
+      @include ratio(16,9);
+    }
+    @media screen and(min-width: 1000px){
+      @include ratio(21,7);
+    }
+  }
+   
+  &--16-9 {
+    @include ratio(16, 9);
+  }
+ 
+} 

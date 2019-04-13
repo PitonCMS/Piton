@@ -1,19 +1,15 @@
 {# Hero Element #}
 
 
+<div class="hero hero--ratio">
+  
+    <img class="hero__bg" src="{{ getMediaPath(element.image_path) }}" alt="Hero Image"/>
+  <div class="hero__content">
+    <h1>{{ element.title }}</h1>
+    {{ element.content }}
+    <button type="button" class="btn btn-primary">{{ page.settings.cta }}</button>
+    
 
-
-
-<div class="jarallax">
-  <img class="jarallax-img" src="{{ getMediaPath(element.image_path) }}" alt="">
-  <div class="demo-table">
-      <div class="demo-table-cell">
-        <h1>{{ element.title }}</h1>
-        {{ element.content }}
-          <div class="btn btn-primary">
-            {{ page.settings.cta }}
-          </div>
-      </div>
   </div>
+  
 </div>
-

@@ -10,9 +10,11 @@
 {% block body %}
 
     {{ getBlockElementsHtml(page.blocks.aboveTheFoldHero) }}
+<section>
+        <div class="container">
+                {{ getBlockElementsHtml(page.blocks.introBlock) }}
+            </div>
+</section>
 
-<div class="container">
-    {{ getBlockElementsHtml(page.blocks.introBlock) }}
-</div>
 
 {% endblock %}

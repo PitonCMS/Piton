@@ -1,0 +1,20 @@
+// Images
+
+#imageGuide{
+  .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 1rem;
+  }
+  .image-wrapper{
+    display: flex;
+    flex-flow: column nowrap;
+    box-shadow: $box-shadow;
+    justify-content: center;
+    align-items: center;
+  }
+  .img-meta{
+    @include margin(auto null null);
+    @include padding(1rem);
+  }
+  }

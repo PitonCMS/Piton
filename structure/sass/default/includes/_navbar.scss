@@ -1,0 +1,30 @@
+.navbar {
+  background-color: $primary-color !important;
+  box-shadow: $box-shadow;
+
+  .nav-link active,
+  .navbar-brand {
+    color: $text-light !important;
+  }
+
+  >.container {
+    @include padding(0);
+   
+  }
+}
+
+.navbar-light .navbar-nav .show>.nav-link,
+.navbar-light .navbar-nav .active>.nav-link,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .nav-link.active {
+  color: rgba($text-light, 0.9);
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: rgba($text-light, 0.5);
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus {
+  color: rgba($text-light, 0.7);
+}
