@@ -6,9 +6,6 @@
 *.xml
 composer.lock
 /vendor/
-/themes/test/
-prepros-6.config
-/themes/peri/
 /public/assets/css/theme1/
 /public/media/
 *.map
