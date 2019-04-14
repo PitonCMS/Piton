@@ -4,10 +4,6 @@
         {
             "name": "Default",
             "value": "default"
-        },
-        {
-            "name": "New Theme",
-            "value": "theme1"
         }
     ]
 }

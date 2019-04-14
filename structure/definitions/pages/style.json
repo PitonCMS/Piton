@@ -46,56 +46,5 @@
             "elementTypeDefault": "video.json",
             "elementTypeOptions": ["video.json"]
         }
-    ],
-    "settings": [
-        {
-            "label": "Servings",
-            "key": "servings",
-            "value": "",
-            "inputType": "input",
-            "help": "Number of servings."
-        },
-        {
-            "label": "Oven Temperature",
-            "key": "ovenTemp",
-            "value": "",
-            "inputType": "input",
-            "help": "In Farenheit."
-        },
-        {
-            "label": "Prep Time",
-            "key": "prepTime",
-            "value": "",
-            "inputType": "input",
-            "help": "In hours:minutes."
-        },
-        {
-            "label": "Cook Time",
-            "key": "cookTime",
-            "value": "",
-            "inputType": "input",
-            "help": "In hours:minutes."
-        },
-        {
-            "label": "Categories",
-            "key": "categories",
-            "value": "Entree",
-            "inputType": "select",
-            "help": "Select the category.",
-            "options": [
-                {
-                    "value": "entree",
-                    "name": "Entree"
-                },
-                {
-                    "value": "meat",
-                    "name": "Meat"
-                },
-                {
-                    "value": "vegetable",
-                    "name": "Vegetarian"
-                }
-            ]
-        }
     ]
 }

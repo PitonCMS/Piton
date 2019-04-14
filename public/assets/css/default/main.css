@@ -9657,12 +9657,12 @@ h3 {
   }
 }
 :root {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 @media (min-width: 576px) and (max-width: 991px) {
   :root {
-    font-size: calc(16px + (18 - 16) * ((100vw - 576px) / (991 - 576)));
+    font-size: calc(14px + (18 - 14) * ((100vw - 576px) / (991 - 576)));
   }
 }
 @media (min-width: 991px) {
@@ -9713,8 +9713,12 @@ h6 {
 body {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: flex-start;
   padding-top: 61px;
+  min-height: 100vh;
+}
+
+footer {
+  margin-top: auto;
 }
 
 a {

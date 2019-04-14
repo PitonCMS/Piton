@@ -1,5 +1,0 @@
-{
-    "elementName": "Recipe Cards",
-    "elementTemplateFile": "recipeSummary.html",
-    "enableInput": "collection"
-}

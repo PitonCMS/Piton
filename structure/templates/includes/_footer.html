@@ -20,19 +20,35 @@
         <div class="footer-social">
                 <h5>Get Social</h5>
                 <div class="get-social-icons">
+                    {% if site.settings.githubLink %}
                         <a href="{{ site.settings.githubLink }}"><i class="social-icon fab fa-github fa-2x"></i></a>
+                        {% endif %}
+                        {% if site.settings.facebookLink %}
                         <a href="{{ site.settings.facebookLink }}"><i class="social-icon fab fa-facebook fa-2x"></i></a>
+                        {% endif %}
+                        {% if site.settings.twitterLink %}
+
                         <a href="{{ site.settings.twitterLink }}"><i class="social-icon fab fa-twitter fa-2x"></i></a>
-                        <a href="#!"><i class="social-icon fab fa-creative-commons fa-2x"></i></a>
+                        {% endif %}
+                        {% if site.settings.instagramLink %}
+
+                        <a href="{{ site.settings.instagramLink }}"><i class="social-icon fab fa-instagram fa-2x"></i></a>
+                        {% endif %}
+                        {% if site.settings.linkedinLink %}
+
+                        <a href="{{ site.settings.linkedinLink }}"><i class="social-icon fab fa-linkedin fa-2x"></i></a>
+                        {% endif %}
+
                 </div>
         </div>
     </div>
     <div class="footer2">
 
         <p>Piton CMS &copy; 2018 - {{ "now"|date('Y') }}</p>
-            <p>Website built by <a href="{{ site.settings.urlScheme }}://{{ site.settings.urlDomainName }}">Moritz Media</a></p>
+        {% if site.settings.siteAuthor %}
+            <p>Website built by <a href="{{ site.settings.siteAuthorUrl }}">{{ site.settings.siteAuthor }}</a></p>
 
-
+{% endif %}
 
     </div>
 </footer>
