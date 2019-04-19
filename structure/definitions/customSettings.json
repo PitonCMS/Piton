@@ -2,7 +2,6 @@
     "description": "Example custom site settings",
     "settings": [
         {
-            "sort": 1,
             "label": "Google Maps Link",
             "key": "gmLink",
             "value": "https://maps.google.com",
@@ -10,7 +9,6 @@
             "help": "Link to Google Maps location."
         },
         {
-            "sort": 2,
             "label": "Facebook Tracking Code",
             "key": "fbAnalyticsCode",
             "value": "",
@@ -18,7 +16,6 @@
             "help": "Facebook tracking code."
         },
         {
-            "sort": 3,
             "label": "Favorite Color",
             "key": "favColor",
             "value": "green",
