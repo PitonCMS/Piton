@@ -3,6 +3,8 @@
     "templateDescription": "Home page with hero image and text blocks.",
     "templateFile": "home.html",
     "templateType": "page",
+    "hideSubTitle": true,
+    "hideFeaturedImage": true,
     "blocks": [
         {
             "name": "Hero Image",
