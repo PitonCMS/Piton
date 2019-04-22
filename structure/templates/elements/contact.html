@@ -1,0 +1,77 @@
+{# Contact Form Element #}
+
+<h2>Contact Us</h2>
+{{ element.content }}
+
+<div>
+  <form action="{{ pathFor('submitMessage') }}" method="post" accept-charset="utf-8">
+    <input type="hidden" name="{{ site.csrf.name }}" value="{{ site.csrf.value }}">
+
+    <div class="form-group">
+      <label>Your Name</label>
+      <input type="text" class="form-control" name="name" maxlength="100" placeholder="Name">
+    </div>
+
+    <div class="form-group">
+      <label>Your Email<span class="text-danger">*</span></label>
+      <input type="email" class="form-control" name="email" maxlength="100" placeholder="Email address" required>
+    </div>
+
+    <div class="form-group">
+      <label>{{ site.settings.contactFormAttribute1 }}</label>
+      <input type="text" class="form-control" name="attribute1" maxlength="100" placeholder="{{ site.settings.contactFormAttribute1 }}">
+    </div>
+
+    <div class="form-group">
+      <label>{{ site.settings.contactFormAttribute2 }}</label>
+      <input type="text" class="form-control" name="attribute2" maxlength="100" placeholder="{{ site.settings.contactFormAttribute2 }}">
+    </div>
+
+{# Uncomment additional input groups as needed
+    <div class="form-group">
+      <label>{{ site.settings.contactFormAttribute3 }}</label>
+      <input type="text" class="form-control" name="attribute3" maxlength="100" placeholder="{{ site.settings.contactFormAttribute3 }}">
+    </div>
+
+    <div class="form-group">
+      <label>{{ site.settings.contactFormAttribute4 }}</label>
+      <input type="text" class="form-control" name="attribute4" maxlength="100" placeholder="{{ site.settings.contactFormAttribute4 }}">
+    </div>
+
+    <div class="form-group">
+      <label>{{ site.settings.contactFormAttribute5 }}</label>
+      <input type="text" class="form-control" name="attribute5" maxlength="100" placeholder="{{ site.settings.contactFormAttribute5 }}">
+    </div>
+
+    <div class="form-group">
+      <label>{{ site.settings.contactFormAttribute6 }}</label>
+      <input type="text" class="form-control" name="attribute6" maxlength="100" placeholder="{{ site.settings.contactFormAttribute6 }}">
+    </div>
+
+    <div class="form-group">
+      <label>{{ site.settings.contactFormAttribute7 }}</label>
+      <input type="text" class="form-control" name="attribute7" maxlength="100" placeholder="{{ site.settings.contactFormAttribute7 }}">
+    </div>
+
+    <div class="form-group">
+      <label>{{ site.settings.contactFormAttribute8 }}</label>
+      <input type="text" class="form-control" name="attribute8" maxlength="100" placeholder="{{ site.settings.contactFormAttribute8 }}">
+    </div>
+
+    <div class="form-group">
+      <label>{{ site.settings.contactFormAttribute9 }}</label>
+      <input type="text" class="form-control" name="attribute9" maxlength="100" placeholder="{{ site.settings.contactFormAttribute9 }}">
+    </div>
+
+    <div class="form-group">
+      <label>{{ site.settings.contactFormAttribute10 }}</label>
+      <input type="text" class="form-control" name="attribute10" maxlength="100" placeholder="{{ site.settings.contactFormAttribute10 }}">
+    </div>
+  #}
+    <div class="form-group">
+      <label>Message</label>
+      <textarea class="form-control" rows="5" name="message"></textarea>
+    </div>
+    <button class="btn btn-primary" type="submit" name="button">Submit</button>
+  </form>
+</div>
