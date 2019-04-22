@@ -24,8 +24,11 @@
     },
     "scripts": {
         "post-create-project-cmd": [
-            "Piton\\Library\\Utilities\\PitonInstall::updateDockerYaml",
-            "Piton\\Library\\Utilities\\PitonInstall::updateApacheHost"
+            "Piton\\Library\\Utilities\\PitonBuild::createProject",
+            "sh vendor/pitoncms/engine/postUpdate.sh"
+        ],
+        "post-update-cmd": [
+            "sh vendor/pitoncms/engine/postUpdate.sh"
         ]
     },
     "minimum-stability": "stable",
