@@ -2,6 +2,8 @@
     "templateName": "Home",
     "templateDescription": "Home page with hero image and text blocks.",
     "templateFile": "home.html",
+    "hideSubTitle": true,
+    "hideFeaturedImage": false,
     "templateType": "page",
     "hideSubTitle": true,
     "hideFeaturedImage": true,
@@ -23,19 +25,19 @@
     ],
     "settings": [
         {
-            "label": "Link Title in Hero",
+            "label": "Hero Button Title",
             "key": "ctaTitle",
             "value": "",
             "inputType": "input",
             "help": "Enter Title for cta."
         },
         {
-            "label": "Link Target in Hero",
+            "label": "Hero Button Link",
             "key": "ctaTarget",
             "value": "",
             "inputType": "input",
             "help": "Enter Target for cta."
         }
-
+       
     ]
 }
