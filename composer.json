@@ -24,11 +24,7 @@
     },
     "scripts": {
         "post-create-project-cmd": [
-            "Piton\\Library\\Utilities\\PitonBuild::createProject",
-            "sh vendor/pitoncms/engine/postUpdate.sh"
-        ],
-        "post-update-cmd": [
-            "sh vendor/pitoncms/engine/postUpdate.sh"
+            "Piton\\Library\\Utilities\\PitonBuild::createProject"
         ]
     },
     "minimum-stability": "stable",
