@@ -35,14 +35,14 @@ $('.jsAddUserRow').on('click', function() {
 // Page Management
 // --------------------------------------------------------
 // Add Page Block Element
-let buttonText = {
-    addElement: "Add Element",
-    loading: `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-              <span class="sr-only">Loading...</span>Loading...`
-}
 $('.jsAddElement').on('click', function() {
     let $addButton = $(this);
-    $addButton.html(buttonText.loading);
+    let buttonText = {
+        addElement: "Add Element",
+        loading: `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                  <span class="sr-only">Loading...</span>Loading...`
+    }
+    $addButton.prop('disabled',true).html(buttonText.loading);
     let $blockParent = $(this).parents('.jsBlockParent');
     let elementType = $(this).data('element-type');
     let blockKey = $(this).data('block-key');
@@ -88,7 +88,7 @@ $('.jsAddElement').on('click', function() {
             // Scroll to new element and add to navigation
             let newElementID = $newElement.attr('id');
             window.location.hash = newElementID;
-            $addButton.html(buttonText.addElement);
+            $addButton.html(buttonText.addElement).prop('disabled',false);
             let $el = $('#page-edit-nav').find('.jsPageSubBlock-'+blockKey).append(
                 '<a class="nav-link ml-3 my-1" href="#'+newElementID+'">New (Element)</a>'
                 );
