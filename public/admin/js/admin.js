@@ -37,7 +37,7 @@ $('.jsAddUserRow').on('click', function() {
 // Add Page Block Element
 $('.jsAddElement').on('click', function() {
     let $addButton = $(this);
-    var $blockParent = $(this).parent('.jsBlockParent');
+    var $blockParent = $(this).parents('.jsBlockParent');
     var elementType = $(this).data('element-type');
     var blockKey = $(this).data('block-key');
     var elementTypeOptions = $(this).data('element-type-options');
