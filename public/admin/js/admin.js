@@ -35,14 +35,20 @@ $('.jsAddUserRow').on('click', function() {
 // Page Management
 // --------------------------------------------------------
 // Add Page Block Element
+let buttonText = {
+    addElement: "Add Element",
+    loading: `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+              <span class="sr-only">Loading...</span>Loading...`
+}
 $('.jsAddElement').on('click', function() {
     let $addButton = $(this);
-    var $blockParent = $(this).parents('.jsBlockParent');
-    var elementType = $(this).data('element-type');
-    var blockKey = $(this).data('block-key');
-    var elementTypeOptions = $(this).data('element-type-options');
+    $addButton.html(buttonText.loading);
+    let $blockParent = $(this).parents('.jsBlockParent');
+    let elementType = $(this).data('element-type');
+    let blockKey = $(this).data('block-key');
+    let elementTypeOptions = $(this).data('element-type-options');
     let elementLimit = $(this).data('element-count-limit') || 100;
-    var postData = {
+    let postData = {
             blockKey: blockKey,
             elementType: elementType,
             elementTypeOptions: elementTypeOptions
@@ -54,10 +60,10 @@ $('.jsAddElement').on('click', function() {
         method: "POST",
         data: postData,
         success: function (r) {
-            var $newElement = $(r.html);
+            let $newElement = $(r.html);
 
             // Increment element sort value
-            var lastElementSortValue = $blockParent.find('.jsElementParent:last-child .jsElementSortValue').val();
+            let lastElementSortValue = $blockParent.find('.jsElementParent:last-child .jsElementSortValue').val();
 
             if (!isNaN(lastElementSortValue)) {
                 lastElementSortValue++;
@@ -80,10 +86,10 @@ $('.jsAddElement').on('click', function() {
             }
 
             // Scroll to new element and add to navigation
-            var newElementID = $newElement.attr('id');
+            let newElementID = $newElement.attr('id');
             window.location.hash = newElementID;
-
-            var $el = $('#page-edit-nav').find('.jsPageSubBlock-'+blockKey).append(
+            $addButton.html(buttonText.addElement);
+            let $el = $('#page-edit-nav').find('.jsPageSubBlock-'+blockKey).append(
                 '<a class="nav-link ml-3 my-1" href="#'+newElementID+'">New (Element)</a>'
                 );
         }
