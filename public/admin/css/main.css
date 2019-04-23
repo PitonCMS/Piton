@@ -8,6 +8,15 @@
   box-shadow: 0 2px 3px rgba(51, 51, 51, 0.25);
 }
 
+.alert-fixed {
+  position: fixed;
+  top: 100px;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  z-index: 99;
+}
+
 *,
 *::before,
 *::after {
@@ -53,7 +62,8 @@ body {
 }
 
 header {
-  background-color: #efefef !important;
+  background-color: #336699 !important;
+  color: #ffffff !important;
   height: 100px;
   display: flex;
   flex-flow: column wrap;
@@ -102,20 +112,23 @@ h3 {
 
 form {
   border-radius: 5px;
-  padding: 0.25rem;
+  padding: 0 0.25rem 0.25rem;
   display: grid;
   grid-template-rows: auto;
 }
 @media (min-width: 800px) {
   form {
     grid-template-columns: 3.5fr 1fr;
-    gap: 1rem;
   }
 }
 form .scroll-container {
-  height: calc(100vh - 150px);
+  height: calc(100vh - 175px);
   overflow-y: scroll;
   position: relative;
+  scroll-behavior: smooth;
+}
+form .sidebar {
+  padding: 1rem;
 }
 form label {
   margin: 0;
@@ -143,17 +156,29 @@ form .form-group {
 }
 form .block-title-wrapper {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   flex-flow: row wrap;
   position: sticky;
   top: 0px;
   z-index: 100;
-  height: 120px;
   box-shadow: 0 2px 3px rgba(51, 51, 51, 0.25);
   border-radius: 5px;
   background: #efefef;
-  padding: 1rem;
+  padding: 0.25rem;
+}
+form h5, form h2, form p {
+  padding: 0;
+  margin: 0;
+}
+
+.nav-link.ml-3.active {
+  background-color: rgba(239, 239, 239, 0.5) !important;
+  color: #333 !important;
+}
+
+.jsElementParent {
+  padding-top: 30px;
 }
 
 /*# sourceMappingURL=main.css.map */
