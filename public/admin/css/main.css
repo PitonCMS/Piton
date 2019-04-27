@@ -9769,31 +9769,76 @@ h3 {
 }
 
 form {
-  background-color: #ecec11;
+  border-radius: 5px;
+  padding: 0 0.25rem 0.25rem;
+  display: grid;
+  grid-template-rows: auto;
+}
+@media (min-width: 800px) {
+  form {
+    grid-template-columns: 3.5fr 1fr;
+  }
+}
+form .scroll-container {
+  height: calc(100vh - 175px);
+  overflow-y: scroll;
+  position: relative;
+  scroll-behavior: smooth;
+}
+form .sidebar {
+  padding: 1rem;
+}
+form label {
+  margin: 0;
+}
+form h5 {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+form label {
+  font-weight: 700;
+  font-size: 1.2rem;
 }
 form .page-settings-wrapper {
-  background-color: #ecec22;
-}
-form .block-title-wrapper {
-  background-color: #ecec33;
+  padding: 1rem 0.5rem;
 }
 form .form-group-wrapper {
-  background-color: #ecec44;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
 }
 form .form-group {
-  background-color: #ecec55;
+  border-radius: 5px;
+  padding: 0.5rem;
 }
-form .form-control {
-  background-color: #ecec;
+form .block-title-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-flow: row wrap;
+  position: sticky;
+  top: 0px;
+  z-index: 100;
+  box-shadow: 0 2px 3px rgba(51, 51, 51, 0.25);
+  border-radius: 5px;
+  background: #efefef;
+  padding: 0.25rem;
 }
-form .block-element-wrapper {
-  background-color: #efef;
+form h5,
+form h2,
+form p {
+  padding: 0;
+  margin: 0;
 }
-form .element-block {
-  background-color: #eded;
+
+.nav-link.ml-3.active {
+  background-color: rgba(239, 239, 239, 0.5) !important;
+  color: #333 !important;
 }
-form .jsBlockParent {
-  background-color: #e1e1;
+
+.jsElementParent {
+  padding-top: 30px;
 }
 
 /*# sourceMappingURL=main.css.map */
