@@ -11,7 +11,7 @@
  * Boolean variable controls debug and environment modes
  * Set to false in config.local.php on a development environment.
  */
-$config['production'] = true;
+$config['site']['production'] = true;
 
 /**
  * Database
