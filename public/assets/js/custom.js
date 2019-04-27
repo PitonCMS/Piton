@@ -7,6 +7,13 @@ $('.menu-toggle').click(function () {
 // Contact form submission
 $("#contact-form").on('submit', function(e) {
   e.preventDefault();
+  let $button = $(this).find('button');
+  let buttonText = {
+    submit: "Submit",
+    loading: `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+              <span class="sr-only">Sending...</span>Sending...`
+  }
+  $button.prop('disabled',true).html(buttonText.loading);
   let $parentDiv = $(this).parent('div');
   let postData = $(this).serialize();
   $.ajax({
@@ -19,6 +26,7 @@ $("#contact-form").on('submit', function(e) {
     },
     error: function(r) {
       console.log('There was an error submitting the form. Contact your administrator.')
+      $button.html(buttonText.submit).prop('disabled',false);
     }
   });
 });
