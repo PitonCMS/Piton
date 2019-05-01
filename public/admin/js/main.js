@@ -151,8 +151,12 @@ $('.jsBlockParent').on('click', '.jsElementType input[type="radio"]', function()
         $(this).parents('.jsElementType').siblings('.jsEmbeddedInput').toggleClass('d-none d-block');
         return;
     }
-    if (selectedTypeOption === 'gallery' || selectedTypeOption === 'collection') {
+    if (selectedTypeOption === 'collection') {
         $(this).parents('.jsElementType').siblings('.jsCollectionInput').toggleClass('d-none d-block');
+        return;
+    }
+    if (selectedTypeOption === 'gallery') {
+        $(this).parents('.jsElementType').siblings('.jsGalleryInput').toggleClass('d-none d-block');
         return;
     }
 });
