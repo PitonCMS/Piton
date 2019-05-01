@@ -130,8 +130,7 @@ $('.jsBlockParent').on('click', '.jsDeleteBlockElement', function (e) {
                 }
             },
             error: function(r) {
-                console.log('error')
-                console.log(r)
+                console.log('There was an error deleting this element. Contact your administrator.')
             }
         });
     } else {
@@ -199,7 +198,7 @@ let changeMessageCount = (sign) => {
     $('.jsMessageCount').html(count);
 }
 let removeMessage = ($message, sign) => {
-    $message.slideUp(() => {
+    $message.slideUp(function() {
         $message.remove();
     });
     changeMessageCount(sign);
@@ -216,7 +215,7 @@ let messageStates = {
         isRead: "N"
     }
 }
-$('.jsAllMessagesWrap').on('click', 'button', (e) => {
+$('.jsAllMessagesWrap').on('click', 'button', function(e) {
     e.preventDefault();
     let request = $(e.target).attr('value');
     if ('delete' === request && !confirmDeletePrompt()) {
@@ -230,8 +229,7 @@ $('.jsAllMessagesWrap').on('click', 'button', (e) => {
         url: '/admin/message/save',
         method: "POST",
         data: postData,
-        success: (r) => {
-            console.log(r)
+        success: function(r) {
             if (r.status === "success" && 'delete' === request) {
                 removeMessage($message);
             } else if (r.status === "success" && "toggle" === request) {
@@ -253,7 +251,56 @@ $('.jsAllMessagesWrap').on('click', 'button', (e) => {
                 }
             }
         },
-        error: (r) => {
+        error: function(r) {
+            console.log('There was an error submitting the form. Contact your administrator.')
+        }
+    });
+});
+
+// --------------------------------------------------------
+// Media management
+// --------------------------------------------------------
+// Add category input to form
+$('form.jsEditMediaCategory').on('focus', 'input[name^=category]:last', function() {
+    let $newInputRow = $(this).parents('.jsMediaCategory').clone();
+    $newInputRow.find('input[name^=category]').val('');
+    $(this).parents('form.jsEditMediaCategory').append($newInputRow);
+});
+
+// Show user that a media input changed and needs to be saved
+$('.jsMediaCard form').each(function(i) {
+    let $form = $(this);
+    let $saveButton = $form.find('button[value=save]');
+    $form.on('input', function() {
+        if ($saveButton.hasClass('btn-primary')) return;
+        $saveButton.removeClass('btn-outline-primary').addClass('btn-primary');
+    });
+});
+
+// Save media form edits when viewing all media
+$('.jsMediaCard').on('click', 'button', function(e) {
+    e.preventDefault();
+    let $button = $(e.target);
+    let $medium = $(e.target).parents('.jsMediaCard');
+    if ('delete' === $button.attr('value') && !confirmDeletePrompt()) {
+        return false;
+    }
+    // jQuery ignores the button value, so append that to post data
+    let postData = $button.parents('form').serialize() + '&button=' + encodeURI($button.attr('value'));
+    $.ajax({
+        url: '/admin/media/save',
+        method: "POST",
+        data: postData,
+        success: function(r) {
+            if (r.status === "success" && 'delete' === $button.attr('value')) {
+                $medium.fadeOut(function() {
+                    $(this).remove();
+                });
+            } else if (r.status === "success" && "save" === $button.attr('value')) {
+                $button.removeClass('btn-primary').addClass('btn-outline-primary');
+            }
+        },
+        error: function(r) {
             console.log('There was an error submitting the form. Contact your administrator.')
         }
     });

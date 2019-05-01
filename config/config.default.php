@@ -48,3 +48,12 @@ $config['email']['smtpHost'] = '';
 $config['email']['smtpUser'] = '';
 $config['email']['smtpPass'] = '';
 $config['email']['smtpPort'] = '';
+
+/**
+ * ONLY for local development on core Piton!
+ *
+ * Do not include in any configuration files unless you are contributing to PitonCMS
+ * If you are contributing to PitonCMS, include this in your config.local.php
+ *
+ * $config['site']['pitonDev'] = true;
+ */
