@@ -4,14 +4,15 @@
 {{ element.content }}
 <div class="gallery-wrapper">
   {% for g in getGallery(element.gallery_id) %}
-  <a data-fancybox="gallery" class="gallery-img" data-caption="Image Caption Here" href="{{ getMediaPath(g.file) }}"><img src="{{ getMediaPath(g.file) }}" alt=""></a>
+  <a data-fancybox="gallery" class="gallery-img" data-caption="Image Caption Here"
+    href="{{ getMediaPath(g.file) }}"><img src="{{ getMediaPath(g.file) }}" alt=""></a>
   {% endfor %}
 </div>
 
 
 
-<h3>Gallery Requirements</h3>
+<!-- <h3>Gallery Requirements</h3>
 <p>The gallery will require a thumbnail, large image and a caption. The thumbnail should be no smaller than 250px
   wide.
 </p>
-<p>The light box <a href="https://fancyapps.com/fancybox/3/">https://fancyapps.com/fancybox/3/</a></p>
+<p>The light box <a href="https://fancyapps.com/fancybox/3/">https://fancyapps.com/fancybox/3/</a></p> -->

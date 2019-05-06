@@ -9839,15 +9839,19 @@ img {
   border-top: solid 1px #000;
 }
 
-#galleryGuide .gallery-wrapper {
+.gallery-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-rows: 250px;
   grid-gap: 1rem;
   margin-bottom: 2rem;
 }
-#galleryGuide .gallery-img img {
+
+.gallery-img img {
   border-radius: 7px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+  height: 250px;
+  object-fit: cover;
 }
 
 #imageGuide .container {

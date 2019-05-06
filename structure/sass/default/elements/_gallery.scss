@@ -1,16 +1,16 @@
 // Gallery
 
-#galleryGuide {
-  .gallery-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-gap: 1rem;
-    @include margin(null null 2rem null);
-  }
+.gallery-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-rows: 250px;
+  grid-gap: 1rem;
+  @include margin(null null 2rem null);
+}
 
-  .gallery-img img {
+.gallery-img img {
   border-radius: $border-radius;
   box-shadow: $box-shadow;
-    
-  }
+  height: 250px;
+  object-fit: cover;
 }
