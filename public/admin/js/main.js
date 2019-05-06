@@ -100,7 +100,7 @@ $('.jsAddElement').on('click', function() {
 $('.jsBlockParent').on('click', '.jsDeleteBlockElement', function (e) {
     e.preventDefault();
     if (!confirmDeletePrompt('Are you sure you want to delete this element?')) {
-        return;
+        return false;
     }
     let blockElementId = $(this).data('element-id') || 'x';
     let $element = $(this).parents('.jsElementParent');
@@ -264,11 +264,39 @@ $('.jsAllMessagesWrap').on('click', 'button', function(e) {
 // --------------------------------------------------------
 // Media management
 // --------------------------------------------------------
-// Add category input to form
+// Append category input to media categories form
 $('form.jsEditMediaCategory').on('focus', 'input[name^=category]:last', function() {
     let $newInputRow = $(this).parents('.jsMediaCategory').clone();
     $newInputRow.find('input[name^=category]').val('');
     $(this).parents('form.jsEditMediaCategory').append($newInputRow);
+});
+
+// Delete category from media categories form
+$('.jsMediaCategory').on('click', 'button[type=button]', function(e) {
+    e.preventDefault();
+    if (!confirmDeletePrompt()) {
+        return false;
+    }
+    let $category = $(e.target).parents('.jsMediaCategory');
+    let postData = {
+        "id": $(e.target).attr('value')
+    }
+    postData[pitonConfig.csrfTokenName] = pitonConfig.csrfTokenValue;
+    $.ajax({
+        url: '/admin/media/category/delete',
+        method: "POST",
+        data: postData,
+        success: function(r) {
+            if (r.status === "success") {
+                $category.fadeOut(function() {
+                    $(this).remove();
+                });
+            }
+        },
+        error: function(r) {
+            console.log('There was an error submitting the form. Contact your administrator.')
+        }
+    });
 });
 
 // Show user that a media input changed and needs to be saved
