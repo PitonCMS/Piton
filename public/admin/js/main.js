@@ -337,3 +337,10 @@ $('.jsMediaCard').on('click', 'button', function(e) {
         }
     });
 });
+
+// Upload media action
+$('.jsMediaUploadForm').on('submit', function(e) {
+    let processingText = `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+    <span class="sr-only">Loading...</span>Uploading and optimizing media...`;
+    $(this).find('button').prop('disabled',true).html(processingText);
+});
