@@ -9715,7 +9715,12 @@ h3 {
   padding: 0;
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  min-height: 100%;
   padding-top: 50px;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.15;
@@ -9740,6 +9745,9 @@ header {
 header p,
 header h2 {
   line-height: 1;
+}
+header .text-muted {
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 ul {
@@ -9778,6 +9786,18 @@ h3 {
 
 section {
   width: 100%;
+}
+
+#default > * {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  padding: 1rem 1.5rem;
+}
+
+.section-inner {
+  width: 80vw;
+  max-width: 1200px;
+  margin: 1rem auto 0;
 }
 
 #pages {
@@ -9898,14 +9918,21 @@ section {
   padding-top: 30px;
 }
 
+#media,
+#mediaUpload,
+#mediaCategories {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
 #media .section-inner,
 #mediaUpload .section-inner,
 #mediaCategories .section-inner {
   all: unset;
-  width: 100%;
-  min-width: 100%;
   display: grid;
   grid-template-columns: 1fr;
+  grid-auto-rows: 100%;
+  height: 100%;
 }
 @media (min-width: 900px) {
   #media .section-inner,
@@ -9913,6 +9940,23 @@ section {
 #mediaCategories .section-inner {
     grid-template-columns: max-content 1fr;
   }
+}
+#media nav,
+#mediaUpload nav,
+#mediaCategories nav {
+  padding: 1rem;
+}
+#media nav .nav-item .nav-link,
+#mediaUpload nav .nav-item .nav-link,
+#mediaCategories nav .nav-item .nav-link {
+  color: white !important;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+#media nav .nav-item .nav-link:hover,
+#mediaUpload nav .nav-item .nav-link:hover,
+#mediaCategories nav .nav-item .nav-link:hover {
+  color: var(--primary) !important;
 }
 
 #media .card-wrapper {
@@ -9938,8 +9982,29 @@ section {
   text-align: center;
   padding: 0.5rem;
 }
+#media .nav-link a {
+  color: white;
+}
 #media .card-body > * {
   flex: 1;
+}
+
+#mediaUpload main,
+#mediaCategories main {
+  padding: 1rem;
+}
+#mediaUpload main .button-group,
+#mediaUpload main .input-group,
+#mediaCategories main .button-group,
+#mediaCategories main .input-group {
+  display: flex;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  justify-content: flex-start;
+}
+#mediaUpload main input,
+#mediaCategories main input {
+  margin-right: 1rem;
 }
 
 #editSettings .tab-content {
