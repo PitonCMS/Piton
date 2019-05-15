@@ -1,3 +1,6 @@
+// Make file name appear after browing for file to upload
+bsCustomFileInput.init()
+
 // --------------------------------------------------------
 // Misc Statements
 // --------------------------------------------------------
@@ -10,13 +13,13 @@ $('.jsDatePicker').datepicker({
 });
 
 // Delete confirm prompt
-let confirmDeletePrompt = function(msg) {
+let confirmDeletePrompt = function (msg) {
     let message = msg || 'Are you sure you want to delete?';
     return confirm(message);
 }
 
-$('body').on('click', '.jsDeleteConfirm', function() {
-  return confirmDeletePrompt();
+$('body').on('click', '.jsDeleteConfirm', function () {
+    return confirmDeletePrompt();
 });
 
 // --------------------------------------------------------
@@ -24,7 +27,7 @@ $('body').on('click', '.jsDeleteConfirm', function() {
 // --------------------------------------------------------
 
 // Add user row
-$('.jsAddUserRow').on('click', function() {
+$('.jsAddUserRow').on('click', function () {
     let $userRow = $(this).parent('.jsUserForm').find('div:last').clone();
     $userRow.find('input').val('');
     $userRow.find('a').attr('href', '#');
@@ -35,23 +38,23 @@ $('.jsAddUserRow').on('click', function() {
 // Page Management
 // --------------------------------------------------------
 // Add Page Block Element
-$('.jsAddElement').on('click', function() {
+$('.jsAddElement').on('click', function () {
     let $addButton = $(this);
     let buttonText = {
         addElement: "Add Element",
         loading: `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
                   <span class="sr-only">Loading...</span>Loading...`
     }
-    $addButton.prop('disabled',true).html(buttonText.loading);
+    $addButton.prop('disabled', true).html(buttonText.loading);
     let $blockParent = $(this).parents('.jsBlockParent');
     let elementType = $(this).data('element-type');
     let blockKey = $(this).data('block-key');
     let elementTypeOptions = $(this).data('element-type-options');
     let elementLimit = $(this).data('element-count-limit') || 100;
     let postData = {
-            blockKey: blockKey,
-            elementType: elementType,
-            elementTypeOptions: elementTypeOptions
+        blockKey: blockKey,
+        elementType: elementType,
+        elementTypeOptions: elementTypeOptions
     }
     postData[pitonConfig.csrfTokenName] = pitonConfig.csrfTokenValue;
 
@@ -73,7 +76,7 @@ $('.jsAddElement').on('click', function() {
 
             $newElement.appendTo($blockParent);
             $newElement.find('.jsElementSortValue').val(lastElementSortValue);
-            $newElement.find('.jsMDE').each(function() {
+            $newElement.find('.jsMDE').each(function () {
                 simplemde = new SimpleMDE({
                     element: this,
                     forceSync: true
@@ -88,10 +91,10 @@ $('.jsAddElement').on('click', function() {
             // Scroll to new element and add to navigation
             let newElementID = $newElement.attr('id');
             window.location.hash = newElementID;
-            $addButton.html(buttonText.addElement).prop('disabled',false);
-            let $el = $('#page-edit-nav').find('.jsPageSubBlock-'+blockKey).append(
-                '<a class="nav-link ml-3 my-1" href="#'+newElementID+'">New (Element)</a>'
-                );
+            $addButton.html(buttonText.addElement).prop('disabled', false);
+            let $el = $('#page-edit-nav').find('.jsPageSubBlock-' + blockKey).append(
+                '<a class="nav-link ml-3 my-1" href="#' + newElementID + '">New (Element)</a>'
+            );
         }
     });
 });
@@ -106,7 +109,7 @@ $('.jsBlockParent').on('click', '.jsDeleteBlockElement', function (e) {
     let $element = $(this).parents('.jsElementParent');
     let $blockParent = $(this).parents('.jsBlockParent');
     let elementLimit = $blockParent.find('.jsAddElement').data('element-count-limit') || 100;
-    let removeElement = function() {
+    let removeElement = function () {
         $element.slideUp('normal', function () {
             $element.remove();
         });
@@ -116,7 +119,9 @@ $('.jsBlockParent').on('click', '.jsDeleteBlockElement', function (e) {
             $blockParent.find('.jsAddElement').prop('disabled', false);
         }
     }
-    let postData = {id: blockElementId}
+    let postData = {
+        id: blockElementId
+    }
     postData[pitonConfig.csrfTokenName] = pitonConfig.csrfTokenValue;
 
     if (!isNaN(blockElementId)) {
@@ -129,7 +134,7 @@ $('.jsBlockParent').on('click', '.jsDeleteBlockElement', function (e) {
                     removeElement();
                 }
             },
-            error: function(r) {
+            error: function (r) {
                 console.log('There was an error deleting this element. Contact your administrator.')
             }
         });
@@ -139,7 +144,7 @@ $('.jsBlockParent').on('click', '.jsDeleteBlockElement', function (e) {
 });
 
 // Toggle element selector
-$('.jsBlockParent').on('click', '.jsElementType input[type="radio"]', function() {
+$('.jsBlockParent').on('click', '.jsElementType input[type="radio"]', function () {
     let selectedTypeOption = $(this).data('enable-input');
     $('.jsElementOption.d-block').toggleClass('d-block d-none');
 
@@ -162,18 +167,18 @@ $('.jsBlockParent').on('click', '.jsElementType input[type="radio"]', function()
 });
 
 // Clear media input and remove image from page editor
-$('.block-element-wrapper').on('change', 'input[name^=element_image_path]', function() {
+$('.block-element-wrapper').on('change', 'input[name^=element_image_path]', function () {
     if ($(this).val() === '') {
-    $(this).parents('.jsMediaInput').find('img').attr('src','');
+        $(this).parents('.jsMediaInput').find('img').attr('src', '');
     }
 });
 
 // Select media for page element
-$('.block-element-wrapper').on('click', '.jsSelectMediaFile', function() {
+$('.block-element-wrapper').on('click', '.jsSelectMediaFile', function () {
     let $input = $(this).parents('.input-group').find('input');
     let $img = $(this).parents('.jsMediaInput').find('img');
 
-    $('#mediaModal').on('click', 'img', function() {
+    $('#mediaModal').on('click', 'img', function () {
         $input.val($(this).data('source'));
         $img.attr('src', $(this).data('source')).removeClass('d-none');
         $('#mediaModal').modal('hide');
@@ -202,7 +207,7 @@ let changeMessageCount = (sign) => {
     $('.jsMessageCount').html(count);
 }
 let removeMessage = ($message, sign) => {
-    $message.slideUp(function() {
+    $message.slideUp(function () {
         $message.remove();
     });
     changeMessageCount(sign);
@@ -219,7 +224,7 @@ let messageStates = {
         isRead: "N"
     }
 }
-$('.jsAllMessagesWrap').on('click', 'button', function(e) {
+$('.jsAllMessagesWrap').on('click', 'button', function (e) {
     e.preventDefault();
     let request = $(e.target).attr('value');
     if ('delete' === request && !confirmDeletePrompt()) {
@@ -233,7 +238,7 @@ $('.jsAllMessagesWrap').on('click', 'button', function(e) {
         url: '/admin/message/save',
         method: "POST",
         data: postData,
-        success: function(r) {
+        success: function (r) {
             if (r.status === "success" && 'delete' === request) {
                 removeMessage($message);
             } else if (r.status === "success" && "toggle" === request) {
@@ -242,20 +247,20 @@ $('.jsAllMessagesWrap').on('click', 'button', function(e) {
                     $clonedMessage.find('button[value=toggle]')
                         .data('isRead', messageStates.unread.isRead)
                         .html(messageStates.unread.button)
-                        .toggleClass(messageStates.read.class+' '+messageStates.unread.class);
+                        .toggleClass(messageStates.read.class + ' ' + messageStates.unread.class);
                     $('.jsUnreadMessages').prepend($clonedMessage);
                     removeMessage($message, '+');
                 } else {
                     $clonedMessage.find('button[value=toggle]')
                         .data('isRead', messageStates.read.isRead)
                         .html(messageStates.read.button)
-                        .toggleClass(messageStates.unread.class+' '+messageStates.read.class);
-                        $('.jsReadMessages').prepend($clonedMessage);
-                        removeMessage($message);
+                        .toggleClass(messageStates.unread.class + ' ' + messageStates.read.class);
+                    $('.jsReadMessages').prepend($clonedMessage);
+                    removeMessage($message);
                 }
             }
         },
-        error: function(r) {
+        error: function (r) {
             console.log('There was an error submitting the form. Contact your administrator.')
         }
     });
@@ -265,14 +270,14 @@ $('.jsAllMessagesWrap').on('click', 'button', function(e) {
 // Media management
 // --------------------------------------------------------
 // Append category input to media categories form
-$('form.jsEditMediaCategory').on('focus', 'input[name^=category]:last', function() {
+$('form.jsEditMediaCategory').on('focus', 'input[name^=category]:last', function () {
     let $newInputRow = $(this).parents('.jsMediaCategory').clone();
     $newInputRow.find('input[name^=category]').val('');
     $(this).parents('form.jsEditMediaCategory').append($newInputRow);
 });
 
 // Delete category from media categories form
-$('.jsMediaCategory').on('click', 'button[type=button]', function(e) {
+$('.jsMediaCategory').on('click', 'button[type=button]', function (e) {
     e.preventDefault();
     if (!confirmDeletePrompt()) {
         return false;
@@ -286,31 +291,31 @@ $('.jsMediaCategory').on('click', 'button[type=button]', function(e) {
         url: '/admin/media/category/delete',
         method: "POST",
         data: postData,
-        success: function(r) {
+        success: function (r) {
             if (r.status === "success") {
-                $category.fadeOut(function() {
+                $category.fadeOut(function () {
                     $(this).remove();
                 });
             }
         },
-        error: function(r) {
+        error: function (r) {
             console.log('There was an error submitting the form. Contact your administrator.')
         }
     });
 });
 
 // Show user that a media input changed and needs to be saved
-$('.jsMediaCard form').each(function(i) {
+$('.jsMediaCard form').each(function (i) {
     let $form = $(this);
     let $saveButton = $form.find('button[value=save]');
-    $form.on('input', function() {
+    $form.on('input', function () {
         if ($saveButton.hasClass('btn-primary')) return;
         $saveButton.removeClass('btn-outline-primary').addClass('btn-primary');
     });
 });
 
 // Save media form edits when viewing all media
-$('.jsMediaCard').on('click', 'button', function(e) {
+$('.jsMediaCard').on('click', 'button', function (e) {
     e.preventDefault();
     let $button = $(e.target);
     let $medium = $(e.target).parents('.jsMediaCard');
@@ -323,24 +328,26 @@ $('.jsMediaCard').on('click', 'button', function(e) {
         url: '/admin/media/save',
         method: "POST",
         data: postData,
-        success: function(r) {
+        success: function (r) {
             if (r.status === "success" && 'delete' === $button.attr('value')) {
-                $medium.fadeOut(function() {
+                $medium.fadeOut(function () {
                     $(this).remove();
                 });
             } else if (r.status === "success" && "save" === $button.attr('value')) {
                 $button.removeClass('btn-primary').addClass('btn-outline-primary');
             }
         },
-        error: function(r) {
+        error: function (r) {
             console.log('There was an error submitting the form. Contact your administrator.')
         }
     });
 });
 
+
+
 // Upload media action
-$('.jsMediaUploadForm').on('submit', function(e) {
+$('.jsMediaUploadForm').on('submit', function (e) {
     let processingText = `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
     <span class="sr-only">Loading...</span>Uploading and optimizing media...`;
-    $(this).find('button').prop('disabled',true).html(processingText);
+    $(this).find('button').prop('disabled', true).html(processingText);
 });
