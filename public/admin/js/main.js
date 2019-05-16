@@ -1,6 +1,3 @@
-// Make file name appear after browing for file to upload
-bsCustomFileInput.init()
-
 // --------------------------------------------------------
 // Misc Statements
 // --------------------------------------------------------
