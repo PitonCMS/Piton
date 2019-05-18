@@ -132,7 +132,7 @@ $('.jsBlockParent').on('click', '.jsDeleteBlockElement', function (e) {
                 }
             },
             error: function (r) {
-                console.log('There was an error deleting this element. Contact your administrator.')
+                console.log('PitonCMS: There was an error deleting this element. Contact your administrator.')
             }
         });
     } else {
@@ -209,19 +209,7 @@ let removeMessage = ($message, sign) => {
     });
     changeMessageCount(sign);
 }
-let messageStates = {
-    read: {
-        button: "Mark as Unread",
-        class: "btn-outline-primary",
-        isRead: "Y"
-    },
-    unread: {
-        button: "Mark as Read",
-        class: "btn-primary",
-        isRead: "N"
-    }
-}
-$('.jsAllMessagesWrap').on('click', 'button', function (e) {
+$('.jsMessageWrap').on('click', 'button', function (e) {
     e.preventDefault();
     let request = $(e.target).attr('value');
     if ('delete' === request && !confirmDeletePrompt()) {
@@ -238,27 +226,13 @@ $('.jsAllMessagesWrap').on('click', 'button', function (e) {
         success: function (r) {
             if (r.status === "success" && 'delete' === request) {
                 removeMessage($message);
-            } else if (r.status === "success" && "toggle" === request) {
-                $clonedMessage = $message.clone();
-                if (isRead === 'Y') {
-                    $clonedMessage.find('button[value=toggle]')
-                        .data('isRead', messageStates.unread.isRead)
-                        .html(messageStates.unread.button)
-                        .toggleClass(messageStates.read.class + ' ' + messageStates.unread.class);
-                    $('.jsUnreadMessages').prepend($clonedMessage);
-                    removeMessage($message, '+');
-                } else {
-                    $clonedMessage.find('button[value=toggle]')
-                        .data('isRead', messageStates.read.isRead)
-                        .html(messageStates.read.button)
-                        .toggleClass(messageStates.unread.class + ' ' + messageStates.read.class);
-                    $('.jsReadMessages').prepend($clonedMessage);
-                    removeMessage($message);
-                }
+            } else if (r.status === "success" && 'toggle' === request) {
+                let updown = (isRead === 'Y') ? '+' : '-';
+                removeMessage($message, updown);
             }
         },
         error: function (r) {
-            console.log('There was an error submitting the form. Contact your administrator.')
+            console.log('PitonCMS: There was an error submitting the form. Contact your administrator.')
         }
     });
 });
@@ -296,7 +270,7 @@ $('.jsMediaCategory').on('click', 'button[type=button]', function (e) {
             }
         },
         error: function (r) {
-            console.log('There was an error submitting the form. Contact your administrator.')
+            console.log('PitonCMS: There was an error submitting the form. Contact your administrator.')
         }
     });
 });
@@ -335,7 +309,7 @@ $('.jsMediaCard').on('click', 'button', function (e) {
             }
         },
         error: function (r) {
-            console.log('There was an error submitting the form. Contact your administrator.')
+            console.log('PitonCMS: There was an error submitting the form. Contact your administrator.')
         }
     });
 });
