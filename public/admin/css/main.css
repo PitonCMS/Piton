@@ -9766,23 +9766,76 @@ body {
   padding-right: 1rem;
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
+  box-shadow: 0 2px 3px rgba(51, 51, 51, 0.25);
 }
-.sidebar .button-group, .sidebar .form-group {
+.sidebar .button-group,
+.sidebar .form-group {
   padding-right: 1rem;
   padding-left: 1rem;
 }
-.sidebar .button-group a, .sidebar .button-group button, .sidebar .form-group a, .sidebar .form-group button {
+.sidebar .button-group a,
+.sidebar .button-group button,
+.sidebar .form-group a,
+.sidebar .form-group button {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
   box-shadow: 0 2px 3px rgba(51, 51, 51, 0.25);
 }
-.sidebar .button-group, .sidebar .form-group, .sidebar .pageNavigator, .sidebar .page-edit-nav {
+.sidebar .button-group,
+.sidebar .form-group,
+.sidebar .pageNavigator,
+.sidebar .page-edit-nav {
   display: flex;
   flex-flow: column nowrap;
 }
 .sidebar input {
   margin-top: 0.5rem;
   margin-bottom: nul;
+}
+
+.contentTwoCol {
+  padding: 1rem 0 1rem 1rem;
+  display: flex;
+  flex: 1;
+}
+.contentTwoCol .form-wrapper {
+  width: 100%;
+  padding: 1rem;
+}
+.contentTwoCol .scroll-container {
+  padding: 1rem;
+}
+.contentTwoCol form {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.contentTwoCol .tab-content {
+  padding: 1rem;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  border-right-color: #dee2e6;
+  border-bottom-color: #dee2e6;
+  border-left-color: #dee2e6;
+}
+
+.two-col-sidebar {
+  display: flex;
+  flex-flow: column nowrap;
+  background: #efefef;
+  min-width: 150px;
+  text-align: center;
+  padding: 1rem 2rem;
+  margin-top: -1rem;
+}
+.two-col-sidebar .btn {
+  padding-right: 2rem;
+  padding-left: 2rem;
+  box-shadow: 0 2px 3px rgba(51, 51, 51, 0.25);
 }
 
 img {
