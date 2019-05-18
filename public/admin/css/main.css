@@ -9727,8 +9727,9 @@ body {
 }
 
 header {
-  padding-top: 65px;
-  border-bottom: solid #333 3px;
+  padding-top: 75px;
+  padding-bottom: 1rem;
+  background-color: #336699;
 }
 header p,
 header h2 {
@@ -9748,16 +9749,20 @@ header .text-muted {
 }
 
 .sidebar {
-  padding: 1rem 0rem;
+  padding: 1rem 0.25rem;
   min-height: 100%;
 }
 .sidebar .nav-link {
-  color: rgba(255, 255, 255, 0.5);
+  color: #333;
   font-size: 1.1rem;
   letter-spacing: 1px;
 }
 .sidebar .nav-link:hover {
   color: var(--primary) !important;
+}
+.sidebar .active {
+  background-color: #336699 !important;
+  border-radius: 30px;
 }
 
 .content {
@@ -9774,122 +9779,49 @@ img {
   color: #ffffff !important;
 }
 
-#pages {
-  background-color: #fff;
+#adminHome .sidebar {
+  min-width: 100px;
 }
-#pages .section-inner {
-  width: 80vw;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
+
+#pages.content-wrapper .sidebar {
+  padding-right: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  position: sticky;
+  top: 100px;
 }
-#pages .card-wrapper {
+#pages.content-wrapper .card-wrapper {
+  max-width: 960px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-gap: 1rem;
+}
+#pages .sidebar-link {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 0 0.25rem;
+  justify-content: space-between;
+  align-items: center;
+}
+#pages .sidebar-link .fa-info-circle {
+  color: #d4d4d4;
+}
+#pages .sidebar-link .fa-info-circle:hover {
+  cursor: pointer;
 }
 #pages .card {
   box-shadow: 0 2px 3px rgba(51, 51, 51, 0.25);
   border: none;
 }
 
-#editPage .section-inner {
-  width: 100%;
-  padding: 1rem;
-}
-#editPage .page-settings-wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px));
-}
-#editPage .card-wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-gap: 1rem;
-}
-#editPage .element-block-title {
-  padding: 1rem;
-}
-#editPage .card {
-  box-shadow: 0 2px 3px rgba(51, 51, 51, 0.25);
-  border: none;
-}
-#editPage .alert-fixed {
-  position: fixed;
-  top: 100px;
-  left: 0px;
-  right: 0px;
-  width: 100%;
-  z-index: 99;
-}
 #editPage form {
-  border-radius: 5px;
-  padding: 0 0.25rem 0.25rem;
-  display: grid;
-  grid-template-rows: auto;
-}
-@media (min-width: 800px) {
-  #editPage form {
-    grid-template-columns: 3.5fr 1fr;
-  }
-}
-#editPage form .scroll-container {
-  height: calc(100vh - 175px);
-  overflow-y: scroll;
-  position: relative;
-  scroll-behavior: smooth;
+  display: flex;
 }
 #editPage form .sidebar {
-  padding: 1rem;
-}
-#editPage form label {
-  margin: 0;
-}
-#editPage form h5 {
-  font-weight: 700;
-  font-size: 1.5rem;
-}
-#editPage form label {
-  font-weight: 700;
-  font-size: 1.2rem;
-}
-#editPage form .page-settings-wrapper {
-  padding: 1rem 0.5rem;
-}
-#editPage form .form-group-wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 1rem;
-  margin: 1rem 0;
-}
-#editPage form .form-group {
-  border-radius: 5px;
-  padding: 0.5rem;
-}
-#editPage form .block-title-wrapper {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-flow: row wrap;
+  align-self: flex-start;
+  width: 250px;
   position: sticky;
-  top: 0px;
-  z-index: 100;
-  box-shadow: 0 2px 3px rgba(51, 51, 51, 0.25);
-  border-radius: 5px;
-  background: #efefef;
-  padding: 1rem;
-}
-#editPage form h5,
-#editPage form h2,
-#editPage form p {
-  padding: 0;
-  margin: 0;
-}
-#editPage .nav-link.ml-3.active {
-  background-color: rgba(239, 239, 239, 0.5) !important;
-  color: #333 !important;
-}
-#editPage .jsElementParent {
-  padding-top: 30px;
+  top: 60px;
 }
 
 #media .card-wrapper {

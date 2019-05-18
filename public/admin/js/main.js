@@ -348,3 +348,11 @@ $('.jsMediaUploadForm').on('submit', function (e) {
     <span class="sr-only">Loading...</span>Uploading and optimizing media...`;
     $(this).find('button').prop('disabled', true).html(processingText);
 });
+
+// Enable Popovers
+$(function () {
+    $('[data-toggle="popover"]').popover()
+})
+$('.popover-dismiss').popover({
+    trigger: 'focus'
+})
