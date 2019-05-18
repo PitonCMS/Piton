@@ -9779,6 +9779,10 @@ img {
   color: #ffffff !important;
 }
 
+.nav-tabs .active {
+  color: #333 !important;
+}
+
 #adminHome .sidebar {
   min-width: 100px;
 }
