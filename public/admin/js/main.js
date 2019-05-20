@@ -6,7 +6,9 @@ $('.jsDatePicker').datepicker({
     format: pitonConfig.dateFormat,
     weekStart: pitonConfig.weekStart,
     todayHighlight: true,
-    orientation: 'bottom'
+    orientation: 'bottom',
+    autoclose: true,
+    clearBtn: true
 });
 
 // Delete confirm prompt
