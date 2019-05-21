@@ -9745,8 +9745,7 @@ body {
 #media.content-wrapper,
 #mediaUpload.content-wrapper,
 #mediaCategories.content-wrapper,
-#messages.content-wrapper,
-#tools.content-wrapper {
+#messages.content-wrapper {
   display: flex;
 }
 #pages.content-wrapper .sidebar,
@@ -9758,17 +9757,14 @@ body {
 #mediaCategories.content-wrapper .sidebar,
 #mediaCategories.content-wrapper .content,
 #messages.content-wrapper .sidebar,
-#messages.content-wrapper .content,
-#tools.content-wrapper .sidebar,
-#tools.content-wrapper .content {
+#messages.content-wrapper .content {
   min-height: calc(100vh - 1px);
 }
 #pages.content-wrapper .sidebar,
 #media.content-wrapper .sidebar,
 #mediaUpload.content-wrapper .sidebar,
 #mediaCategories.content-wrapper .sidebar,
-#messages.content-wrapper .sidebar,
-#tools.content-wrapper .sidebar {
+#messages.content-wrapper .sidebar {
   background: #efefef;
   padding: 1rem 1rem 1rem 0rem;
 }
@@ -9776,8 +9772,7 @@ body {
 #media.content-wrapper .sidebar nav,
 #mediaUpload.content-wrapper .sidebar nav,
 #mediaCategories.content-wrapper .sidebar nav,
-#messages.content-wrapper .sidebar nav,
-#tools.content-wrapper .sidebar nav {
+#messages.content-wrapper .sidebar nav {
   padding: 0.25rem 0.25rem 0.25rem 0;
 }
 #pages.content-wrapper .sidebar h3,
@@ -9789,9 +9784,7 @@ body {
 #mediaCategories.content-wrapper .sidebar h3,
 #mediaCategories.content-wrapper .sidebar h4,
 #messages.content-wrapper .sidebar h3,
-#messages.content-wrapper .sidebar h4,
-#tools.content-wrapper .sidebar h3,
-#tools.content-wrapper .sidebar h4 {
+#messages.content-wrapper .sidebar h4 {
   text-align: center;
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -9800,8 +9793,7 @@ body {
 #media.content-wrapper .sidebar .nav-link,
 #mediaUpload.content-wrapper .sidebar .nav-link,
 #mediaCategories.content-wrapper .sidebar .nav-link,
-#messages.content-wrapper .sidebar .nav-link,
-#tools.content-wrapper .sidebar .nav-link {
+#messages.content-wrapper .sidebar .nav-link {
   color: #333;
   letter-spacing: 1px;
   padding: 0.25rem 0.5rem;
@@ -9811,16 +9803,14 @@ body {
 #media.content-wrapper .sidebar .nav-link:hover,
 #mediaUpload.content-wrapper .sidebar .nav-link:hover,
 #mediaCategories.content-wrapper .sidebar .nav-link:hover,
-#messages.content-wrapper .sidebar .nav-link:hover,
-#tools.content-wrapper .sidebar .nav-link:hover {
+#messages.content-wrapper .sidebar .nav-link:hover {
   color: var(--primary) !important;
 }
 #pages.content-wrapper .sidebar .active,
 #media.content-wrapper .sidebar .active,
 #mediaUpload.content-wrapper .sidebar .active,
 #mediaCategories.content-wrapper .sidebar .active,
-#messages.content-wrapper .sidebar .active,
-#tools.content-wrapper .sidebar .active {
+#messages.content-wrapper .sidebar .active {
   background-color: rgba(51, 102, 153, 0.5) !important;
   color: #ffffff;
   padding-right: 1rem;
@@ -9832,16 +9822,18 @@ body {
 #media.content-wrapper .content,
 #mediaUpload.content-wrapper .content,
 #mediaCategories.content-wrapper .content,
-#messages.content-wrapper .content,
-#tools.content-wrapper .content {
+#messages.content-wrapper .content {
   flex: 1;
   padding: 1rem;
 }
 
 #editPage,
 #tools {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
   width: 100vw;
-  margin-top: 57px;
 }
 #editPage.content-wrapper form,
 #tools.content-wrapper form {
@@ -9849,7 +9841,7 @@ body {
 }
 #editPage.content-wrapper form .sidebar,
 #tools.content-wrapper form .sidebar {
-  top: 60px;
+  top: 0px;
   justify-self: flex-start;
   background: #efefef;
 }
@@ -9886,7 +9878,7 @@ body {
 #editPage.content-wrapper form .sidebar .pageNavigator,
 #tools.content-wrapper form .sidebar .pageNavigator {
   position: sticky;
-  top: 60px;
+  top: 70px;
   overflow-y: scroll;
 }
 #editPage.content-wrapper form .contentTwoCol,
@@ -9899,6 +9891,14 @@ body {
   flex: 1;
   margin: 1rem;
 }
+#editPage.content-wrapper form .contentTwoCol .scroll-container .element-block,
+#editPage.content-wrapper form .contentTwoCol .scroll-container .form-group-wrapper,
+#tools.content-wrapper form .contentTwoCol .scroll-container .element-block,
+#tools.content-wrapper form .contentTwoCol .scroll-container .form-group-wrapper {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: solid 2px #efefef;
+}
 #editPage.content-wrapper form .contentTwoCol .two-col-sidebar,
 #tools.content-wrapper form .contentTwoCol .two-col-sidebar {
   padding: 1rem;
@@ -9908,7 +9908,7 @@ body {
 #tools.content-wrapper form .contentTwoCol .two-col-sidebar .two-col-sidebar-inner {
   padding-top: 0.25rem;
   position: sticky;
-  top: 60px;
+  top: 70px;
 }
 #editPage.content-wrapper form .contentTwoCol .two-col-sidebar .two-col-sidebar-inner .status,
 #tools.content-wrapper form .contentTwoCol .two-col-sidebar .two-col-sidebar-inner .status {
