@@ -9732,7 +9732,7 @@ body {
   overflow-y: scroll;
   position: relative;
   scroll-behavior: smooth;
-  height: calc(100vh - 56px);
+  height: calc(100vh - 10px);
 }
 
 .small-sidebar-text {
@@ -9780,12 +9780,18 @@ body {
 #tools.content-wrapper .sidebar nav {
   padding: 0.25rem 0.25rem 0.25rem 0;
 }
-#pages.content-wrapper .sidebar h5,
-#media.content-wrapper .sidebar h5,
-#mediaUpload.content-wrapper .sidebar h5,
-#mediaCategories.content-wrapper .sidebar h5,
-#messages.content-wrapper .sidebar h5,
-#tools.content-wrapper .sidebar h5 {
+#pages.content-wrapper .sidebar h3,
+#pages.content-wrapper .sidebar h4,
+#media.content-wrapper .sidebar h3,
+#media.content-wrapper .sidebar h4,
+#mediaUpload.content-wrapper .sidebar h3,
+#mediaUpload.content-wrapper .sidebar h4,
+#mediaCategories.content-wrapper .sidebar h3,
+#mediaCategories.content-wrapper .sidebar h4,
+#messages.content-wrapper .sidebar h3,
+#messages.content-wrapper .sidebar h4,
+#tools.content-wrapper .sidebar h3,
+#tools.content-wrapper .sidebar h4 {
   text-align: center;
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -9835,6 +9841,7 @@ body {
 #editPage,
 #tools {
   width: 100vw;
+  margin-top: 57px;
 }
 #editPage.content-wrapper form,
 #tools.content-wrapper form {
@@ -9845,7 +9852,6 @@ body {
   top: 60px;
   justify-self: flex-start;
   background: #efefef;
-  padding: 1rem 1rem 1rem 0rem;
 }
 #editPage.content-wrapper form .sidebar nav,
 #tools.content-wrapper form .sidebar nav {
@@ -9877,6 +9883,12 @@ body {
   border-bottom-right-radius: 30px;
   box-shadow: 0 2px 3px rgba(51, 51, 51, 0.25);
 }
+#editPage.content-wrapper form .sidebar .pageNavigator,
+#tools.content-wrapper form .sidebar .pageNavigator {
+  position: sticky;
+  top: 60px;
+  overflow-y: scroll;
+}
 #editPage.content-wrapper form .contentTwoCol,
 #tools.content-wrapper form .contentTwoCol {
   flex: 1;
@@ -9891,6 +9903,29 @@ body {
 #tools.content-wrapper form .contentTwoCol .two-col-sidebar {
   padding: 1rem;
   background: #efefef;
+}
+#editPage.content-wrapper form .contentTwoCol .two-col-sidebar .two-col-sidebar-inner,
+#tools.content-wrapper form .contentTwoCol .two-col-sidebar .two-col-sidebar-inner {
+  padding-top: 0.25rem;
+  position: sticky;
+  top: 60px;
+}
+#editPage.content-wrapper form .contentTwoCol .two-col-sidebar .two-col-sidebar-inner .status,
+#tools.content-wrapper form .contentTwoCol .two-col-sidebar .two-col-sidebar-inner .status {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.25rem;
+}
+#editPage.content-wrapper form .contentTwoCol .two-col-sidebar .two-col-sidebar-inner .status input,
+#tools.content-wrapper form .contentTwoCol .two-col-sidebar .two-col-sidebar-inner .status input {
+  text-align: center;
+}
+#editPage.content-wrapper form .contentTwoCol .two-col-sidebar .two-col-sidebar-inner .button-group,
+#tools.content-wrapper form .contentTwoCol .two-col-sidebar .two-col-sidebar-inner .button-group {
+  display: flex;
+  flex-flow: column nowrap;
 }
 
 #editPage .sidebar {

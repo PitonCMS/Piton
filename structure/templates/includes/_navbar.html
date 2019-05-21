@@ -8,11 +8,11 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto"> 
+      <ul class="navbar-nav ml-auto">
         {% for pl in site.pages %}
 
         <li class="nav-item {% if pl.currentPage %}active{% endif %}">
-          <a class="nav-link" href="{{ pathFor('showPage', {'slug1': pl.slug}) }}">{{ pl.title }}</a>
+          <a class="nav-link" href="{{ pathFor('showPage', {'slug1': pl.page_slug}) }}">{{ pl.title }}</a>
         </li>
 
         {% endfor %}

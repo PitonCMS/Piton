@@ -2,35 +2,55 @@
 
 {% block body %}
 
-
-
+{% if elements.page.blocks.heroGuide %}
+{{ getBlockElementsHtml(page.blocks.heroGuide) }}
 <section id="typoGuide">
   <div class="container">
     {{ getBlockElementsHtml(page.blocks.typoGuide) }}
-</div>
+  </div>
 </section>
+{% endif %}
 
+{% if page.blocks.galleryGuide %}
 <section id="galleryGuide">
   <div class="container">
     {{ getBlockElementsHtml(page.blocks.galleryGuide) }}
   </div>
 </section>
-<!-- <section id="collectionGuide">
+{% endif %}
+
+{% if page.blocks.collectionGuide %}
+<section id="collectionGuide">
   <div class="container">
     {{ getBlockElementsHtml(page.blocks.collectionGuide) }}
   </div>
-</section> -->
-<section id="imageGuide">
+</section>
+{% endif %}
+
+{% if page.blocks.imageFigure %}
+<section id="imageFigureElement">
   <div class="container">
-    {{ getBlockElementsHtml(page.blocks.imageGuide) }}
+    {{ getBlockElementsHtml(page.blocks.imageFigure) }}
   </div>
 </section>
+{% endif %}
+
+{% if page.blocks.imageText %}
+<section id="imageTextElement">
+  <div class="container">
+    {{ getBlockElementsHtml(page.blocks.imageText) }}
+  </div>
+</section>
+{% endif %}
+
+{% if page.blocks.videoGuide %}
 <section id="videoGuide">
   <div class="container">
-   
+
     {{ getBlockElementsHtml(page.blocks.videoGuide) }}
   </div>
 </section>
+{% endif %}
 
 
 </div>
