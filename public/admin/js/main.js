@@ -92,7 +92,7 @@ $('.jsAddElement').on('click', function () {
             window.location.hash = newElementID;
             $addButton.html(buttonText.addElement).prop('disabled', false);
             let $el = $('#page-edit-nav').find('.jsPageSubBlock-' + blockKey).append(
-                '<a class="nav-link ml-3 my-1" href="#' + newElementID + '">New (Element)</a>'
+                '<a class="nav-link small-sidebar-text" href="#' + newElementID + '">New</a>'
             );
         }
     });
