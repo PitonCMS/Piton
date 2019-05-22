@@ -10158,6 +10158,11 @@ body {
   border-radius: 5px;
 }
 
+#mediaUpload form,
+#mediaCategories form {
+  padding: 1rem;
+}
+
 #editPage .sidebar {
   display: flex;
   flex-flow: column nowrap;
