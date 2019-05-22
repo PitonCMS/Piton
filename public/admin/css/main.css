@@ -9680,6 +9680,11 @@ h3 {
   margin-top: -56px;
 }
 
+.popover {
+  box-shadow: 0 2px 3px rgba(51, 51, 51, 0.25);
+  background-color: lightblue;
+}
+
 /*  These are the media queries and how to use them. Copy/paste into sass file.
 
 --
