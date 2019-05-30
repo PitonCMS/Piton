@@ -3,6 +3,16 @@
     "settings": [
         {
             "category": "site",
+            "label": "Theme",
+            "key": "theme",
+            "value": "default",
+            "inputType": "select",
+            "options": [
+                {"name": "Default", "value": "default"}
+            ]
+        },
+        {
+            "category": "site",
             "label": "Google Webmaster Verification Link",
             "key": "googleWebMaster",
             "value": "",
