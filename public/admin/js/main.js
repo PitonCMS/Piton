@@ -327,8 +327,11 @@ $('.jsMediaUploadForm').on('submit', function (e) {
 
 // Enable Popovers
 $(function () {
-    $('[data-toggle="popover"]').popover()
+    $('[data-toggle="popover"]').popover({
+        container: 'html',
+    })
 })
 $('.popover-dismiss').popover({
-    trigger: 'focus'
+    trigger: 'focus',
+
 })
