@@ -1,40 +1,47 @@
 {
-    "description": "Example custom site settings",
+    "description": "Example site settings",
     "settings": [
         {
-            "label": "Google Maps Link",
-            "key": "gmLink",
-            "value": "https://maps.google.com",
-            "inputType": "input",
-            "help": "Link to Google Maps location."
-        },
-        {
-            "label": "Facebook Tracking Code",
-            "key": "fbAnalyticsCode",
+            "category": "site",
+            "label": "Google Webmaster Verification Link",
+            "key": "googleWebMaster",
             "value": "",
-            "inputType": "textarea",
-            "help": "Facebook tracking code."
+            "inputType": "input"
         },
         {
-            "label": "Favorite Color",
-            "key": "favColor",
-            "value": "green",
-            "inputType": "select",
-            "help": "Select your favorite color.",
-            "options": [
-                {
-                    "value": "blue",
-                    "name": "Blue"
-                },
-                {
-                    "value": "green",
-                    "name": "Green"
-                },
-                {
-                    "value": "orange",
-                    "name": "Orange"
-                }
-            ]
+            "category": "site",
+            "label": "Google Analytics Code",
+            "key": "googleAnalytics",
+            "value": "",
+            "inputType": "textarea"
+        },
+        {
+            "category": "site",
+            "label": "Stat Counter",
+            "key": "statCounter",
+            "value": "",
+            "inputType": "textarea"
+        },
+        {
+            "category": "social",
+            "label": "Facebook Link",
+            "key": "facebookLink",
+            "value": "https://www.facebook.com",
+            "inputType": "input"
+        },
+        {
+            "category": "social",
+            "label": "Twitter Link",
+            "key": "twitterLink",
+            "value": "https://twitter.com",
+            "inputType": "input"
+        },
+        {
+            "category": "social",
+            "label": "Instagram Link",
+            "key": "instagramLink",
+            "value": "https://www.instagram.com",
+            "inputType": "input"
         }
     ]
 }
