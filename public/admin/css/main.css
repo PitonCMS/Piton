@@ -10082,6 +10082,26 @@ body {
   flex: 1;
   height: calc(100vh - 75px);
 }
+#editPage form .two-col-sidebar,
+#collectionDetail form .two-col-sidebar,
+#users form .two-col-sidebar {
+  background-color: #efefef;
+  height: 100%;
+  position: relative;
+}
+#editPage form .two-col-sidebar .two-col-sidebar-inner,
+#collectionDetail form .two-col-sidebar .two-col-sidebar-inner,
+#users form .two-col-sidebar .two-col-sidebar-inner {
+  padding: 1em;
+  position: sticky;
+  top: 0;
+}
+#editPage form .two-col-sidebar .two-col-sidebar-inner .button-group,
+#collectionDetail form .two-col-sidebar .two-col-sidebar-inner .button-group,
+#users form .two-col-sidebar .two-col-sidebar-inner .button-group {
+  display: flex;
+  flex-flow: column nowrap;
+}
 #editPage form .active,
 #collectionDetail form .active,
 #users form .active {
@@ -10120,9 +10140,66 @@ body {
   margin-bottom: 1em;
 }
 
-#tools form .grid-wrapper {
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+#tools form main {
+  padding: 0;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+}
+#tools form main .grid-wrapper {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   grid-gap: 1em;
+  padding: 1em;
+}
+#tools form main .two-col-sidebar {
+  background-color: #efefef;
+  height: 100%;
+  position: relative;
+}
+#tools form main .two-col-sidebar .two-col-sidebar-inner {
+  padding: 1em 1.5em;
+  position: sticky;
+  top: 72px;
+}
+#tools form main .two-col-sidebar .two-col-sidebar-inner .button-group {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+#users form main {
+  padding: 0;
+  display: flex;
+}
+#users form main .form-wrapper {
+  padding: 1em;
+  flex: 1;
+}
+#users form main .form-wrapper .user-card {
+  margin-bottom: 1.5em;
+}
+#users form main .form-wrapper .user-card input {
+  padding: 1em;
+  border-radius: 5px;
+}
+#users form main .two-col-sidebar {
+  background-color: #efefef;
+  height: 100%;
+  position: relative;
+}
+#users form main .two-col-sidebar .two-col-sidebar-inner {
+  padding: 1em 1.5em;
+  position: sticky;
+  top: 0;
+}
+#users form main .two-col-sidebar .two-col-sidebar-inner .button-group {
+  display: flex;
+  flex-flow: column nowrap;
+}
+#users form main .two-col-sidebar .two-col-sidebar-inner .button-group button,
+#users form main .two-col-sidebar .two-col-sidebar-inner .button-group a {
+  margin-bottom: 1em;
 }
 
 /*# sourceMappingURL=main.css.map */
