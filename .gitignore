@@ -1,7 +1,7 @@
 # Things to ignore
 /config/config.local.php
-/logs/
-/twigcache/
+logs/
+cache/
 .sass-cache/
 *.xml
 composer.lock
