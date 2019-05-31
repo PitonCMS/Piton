@@ -9730,7 +9730,7 @@ body {
 body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5;
-  margin-top: 56px;
+  padding-top: 56px;
   position: relative;
 }
 
@@ -9760,7 +9760,9 @@ body {
 #mediaAll,
 #mediaUpload,
 #mediaCategories,
-#messages {
+#messages,
+#tools form,
+#users form {
   display: flex;
   flex-flow: row nowrap;
 }
@@ -9779,8 +9781,12 @@ body {
 #mediaCategories aside,
 #mediaCategories main,
 #messages aside,
-#messages main {
-  min-height: calc(100vh - 1px);
+#messages main,
+#tools form aside,
+#tools form main,
+#users form aside,
+#users form main {
+  min-height: calc(100vh - 56px);
   padding: 1em;
 }
 #adminHome aside,
@@ -9790,60 +9796,83 @@ body {
 #mediaAll aside,
 #mediaUpload aside,
 #mediaCategories aside,
-#messages aside {
+#messages aside,
+#tools form aside,
+#users form aside {
   background-color: #efefef;
   padding: 1em 0.5em 1em 0;
   min-width: 200px;
+  position: relative;
 }
-#adminHome aside .sidebar-links,
-#releaseNotes aside .sidebar-links,
-#pages aside .sidebar-links,
-#collections aside .sidebar-links,
-#mediaAll aside .sidebar-links,
-#mediaUpload aside .sidebar-links,
-#mediaCategories aside .sidebar-links,
-#messages aside .sidebar-links {
+#adminHome .aside-inner,
+#releaseNotes .aside-inner,
+#pages .aside-inner,
+#collections .aside-inner,
+#mediaAll .aside-inner,
+#mediaUpload .aside-inner,
+#mediaCategories .aside-inner,
+#messages .aside-inner,
+#tools form .aside-inner,
+#users form .aside-inner {
+  position: sticky;
+  top: 72px;
+}
+#adminHome .aside-inner .sidebar-links,
+#releaseNotes .aside-inner .sidebar-links,
+#pages .aside-inner .sidebar-links,
+#collections .aside-inner .sidebar-links,
+#mediaAll .aside-inner .sidebar-links,
+#mediaUpload .aside-inner .sidebar-links,
+#mediaCategories .aside-inner .sidebar-links,
+#messages .aside-inner .sidebar-links,
+#tools form .aside-inner .sidebar-links,
+#users form .aside-inner .sidebar-links {
   display: flex;
   align-items: center;
 }
-#adminHome aside .sidebar-links .nav-link,
-#releaseNotes aside .sidebar-links .nav-link,
-#pages aside .sidebar-links .nav-link,
-#collections aside .sidebar-links .nav-link,
-#mediaAll aside .sidebar-links .nav-link,
-#mediaUpload aside .sidebar-links .nav-link,
-#mediaCategories aside .sidebar-links .nav-link,
-#messages aside .sidebar-links .nav-link {
+#adminHome .aside-inner .sidebar-links .nav-link,
+#releaseNotes .aside-inner .sidebar-links .nav-link,
+#pages .aside-inner .sidebar-links .nav-link,
+#collections .aside-inner .sidebar-links .nav-link,
+#mediaAll .aside-inner .sidebar-links .nav-link,
+#mediaUpload .aside-inner .sidebar-links .nav-link,
+#mediaCategories .aside-inner .sidebar-links .nav-link,
+#messages .aside-inner .sidebar-links .nav-link,
+#tools form .aside-inner .sidebar-links .nav-link,
+#users form .aside-inner .sidebar-links .nav-link {
   flex: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: #333;
   letter-spacing: 1px;
-  padding: 0.25em 0.5em;
+  padding: 0.25em 1.5em;
   margin-left: 0;
 }
-#adminHome aside .sidebar-links .nav-link:hover,
-#releaseNotes aside .sidebar-links .nav-link:hover,
-#pages aside .sidebar-links .nav-link:hover,
-#collections aside .sidebar-links .nav-link:hover,
-#mediaAll aside .sidebar-links .nav-link:hover,
-#mediaUpload aside .sidebar-links .nav-link:hover,
-#mediaCategories aside .sidebar-links .nav-link:hover,
-#messages aside .sidebar-links .nav-link:hover {
+#adminHome .aside-inner .sidebar-links .nav-link:hover,
+#releaseNotes .aside-inner .sidebar-links .nav-link:hover,
+#pages .aside-inner .sidebar-links .nav-link:hover,
+#collections .aside-inner .sidebar-links .nav-link:hover,
+#mediaAll .aside-inner .sidebar-links .nav-link:hover,
+#mediaUpload .aside-inner .sidebar-links .nav-link:hover,
+#mediaCategories .aside-inner .sidebar-links .nav-link:hover,
+#messages .aside-inner .sidebar-links .nav-link:hover,
+#tools form .aside-inner .sidebar-links .nav-link:hover,
+#users form .aside-inner .sidebar-links .nav-link:hover {
   color: var(--primary) !important;
 }
-#adminHome aside .sidebar-links .active,
-#releaseNotes aside .sidebar-links .active,
-#pages aside .sidebar-links .active,
-#collections aside .sidebar-links .active,
-#mediaAll aside .sidebar-links .active,
-#mediaUpload aside .sidebar-links .active,
-#mediaCategories aside .sidebar-links .active,
-#messages aside .sidebar-links .active {
+#adminHome .aside-inner .sidebar-links .active,
+#releaseNotes .aside-inner .sidebar-links .active,
+#pages .aside-inner .sidebar-links .active,
+#collections .aside-inner .sidebar-links .active,
+#mediaAll .aside-inner .sidebar-links .active,
+#mediaUpload .aside-inner .sidebar-links .active,
+#mediaCategories .aside-inner .sidebar-links .active,
+#messages .aside-inner .sidebar-links .active,
+#tools form .aside-inner .sidebar-links .active,
+#users form .aside-inner .sidebar-links .active {
   background-color: rgba(51, 102, 153, 0.5) !important;
   color: #ffffff;
-  padding-right: 1rem;
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
   box-shadow: 0 2px 3px rgba(51, 51, 51, 0.25);
@@ -9855,7 +9884,9 @@ body {
 #mediaAll main,
 #mediaUpload main,
 #mediaCategories main,
-#messages main {
+#messages main,
+#tools form main,
+#users form main {
   flex: 1;
 }
 #adminHome .grid-wrapper,
@@ -9865,7 +9896,9 @@ body {
 #mediaAll .grid-wrapper,
 #mediaUpload .grid-wrapper,
 #mediaCategories .grid-wrapper,
-#messages .grid-wrapper {
+#messages .grid-wrapper,
+#tools form .grid-wrapper,
+#users form .grid-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1em;
@@ -9877,7 +9910,9 @@ body {
 #mediaAll .grid-wrapper .card-title,
 #mediaUpload .grid-wrapper .card-title,
 #mediaCategories .grid-wrapper .card-title,
-#messages .grid-wrapper .card-title {
+#messages .grid-wrapper .card-title,
+#tools form .grid-wrapper .card-title,
+#users form .grid-wrapper .card-title {
   margin: 0;
   display: flex;
   justify-content: space-between;
@@ -9890,7 +9925,9 @@ body {
 #mediaAll .grid-wrapper .card-title h5,
 #mediaUpload .grid-wrapper .card-title h5,
 #mediaCategories .grid-wrapper .card-title h5,
-#messages .grid-wrapper .card-title h5 {
+#messages .grid-wrapper .card-title h5,
+#tools form .grid-wrapper .card-title h5,
+#users form .grid-wrapper .card-title h5 {
   margin: 0;
   padding: 0;
 }
@@ -9901,7 +9938,9 @@ body {
 #mediaAll .grid-wrapper .card-footer,
 #mediaUpload .grid-wrapper .card-footer,
 #mediaCategories .grid-wrapper .card-footer,
-#messages .grid-wrapper .card-footer {
+#messages .grid-wrapper .card-footer,
+#tools form .grid-wrapper .card-footer,
+#users form .grid-wrapper .card-footer {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -9913,9 +9952,11 @@ body {
 #mediaAll .fa-info-circle,
 #mediaUpload .fa-info-circle,
 #mediaCategories .fa-info-circle,
-#messages .fa-info-circle {
+#messages .fa-info-circle,
+#tools form .fa-info-circle,
+#users form .fa-info-circle {
   cursor: pointer;
-  color: #dfdfdf;
+  color: #afafaf;
 }
 #adminHome .card,
 #releaseNotes .card,
@@ -9924,20 +9965,18 @@ body {
 #mediaAll .card,
 #mediaUpload .card,
 #mediaCategories .card,
-#messages .card {
+#messages .card,
+#tools form .card,
+#users form .card {
   border: none;
   box-shadow: 0 2px 3px rgba(51, 51, 51, 0.25);
 }
 
-#collections .collection-wrapper {
-  padding: 1em 0.5em;
+#collections .card .card {
+  box-shadow: none;
+  border: 1px solid rgba(0, 0, 0, 0.125);
 }
-#collections .collection-wrapper .collection-title {
-  border-bottom: solid 1px #efefef;
-  margin-bottom: 0.5em;
-  padding-bottom: 0.25em;
-}
-#collections .collection-wrapper .collection-title h3 {
+#collections h3 {
   margin-bottom: 0;
   padding-bottom: 0;
 }
@@ -9954,9 +9993,29 @@ body {
 }
 
 #messages .jsMessageWrap {
-  margin-bottom: 1.5em;
-  padding-bottom: 1.5em;
-  border-bottom: solid 1px #efefef;
+  margin-bottom: 1em;
+  display: flex;
+  border-radius: 5px;
+}
+#messages .message-wrapper {
+  flex: 2;
+  padding: 0.5em;
+  margin-right: 0.25em;
+  background: #f6f6f6;
+  box-shadow: 0 2px 3px rgba(51, 51, 51, 0.25);
+}
+#messages .button-wrapper {
+  padding: 0.5em;
+  box-shadow: 0 2px 3px rgba(51, 51, 51, 0.25);
+  background: #f6f6f6;
+}
+#messages .button-wrapper form {
+  display: flex;
+  flex-flow: column nowrap;
+}
+#messages .button-wrapper form button {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 /******************************************/
@@ -9964,7 +10023,6 @@ body {
 /******************************************/
 #editPage form,
 #collectionDetail form,
-#tools form,
 #users form {
   display: flex;
   flex-flow: row nowrap;
@@ -9975,44 +10033,44 @@ body {
 #editPage form main,
 #collectionDetail form aside,
 #collectionDetail form main,
-#tools form aside,
-#tools form main,
 #users form aside,
 #users form main {
-  min-height: calc(100vh - 1px);
+  min-height: calc(100vh - 56px);
 }
 #editPage form aside,
 #collectionDetail form aside,
-#tools form aside,
 #users form aside {
-  background-color: #dfdfdf;
+  background-color: #efefef;
   min-width: 225px;
+  position: relative;
+}
+#editPage form aside .aside-inner,
+#collectionDetail form aside .aside-inner,
+#users form aside .aside-inner {
+  position: sticky;
+  top: 0px;
 }
 #editPage form aside a,
 #collectionDetail form aside a,
-#tools form aside a,
 #users form aside a {
   letter-spacing: 1px;
   color: #333;
 }
 #editPage form aside a:hover,
 #collectionDetail form aside a:hover,
-#tools form aside a:hover,
 #users form aside a:hover {
   color: #336699 !important;
 }
 #editPage form main,
 #collectionDetail form main,
-#tools form main,
 #users form main {
-  background: #efefef;
+  background: #f6f6f6;
   display: flex;
   flex: 1;
   overflow: hidden;
 }
 #editPage form .scroll-container,
 #collectionDetail form .scroll-container,
-#tools form .scroll-container,
 #users form .scroll-container {
   margin: 0 1em;
   padding-right: 1em;
@@ -10026,7 +10084,6 @@ body {
 }
 #editPage form .active,
 #collectionDetail form .active,
-#tools form .active,
 #users form .active {
   background-color: rgba(51, 102, 153, 0.8) !important;
   color: #ffffff;
@@ -10037,7 +10094,6 @@ body {
 }
 #editPage form a.small-sidebar-text.active,
 #collectionDetail form a.small-sidebar-text.active,
-#tools form a.small-sidebar-text.active,
 #users form a.small-sidebar-text.active {
   background-color: rgba(51, 102, 153, 0.5) !important;
   padding-left: 4em !important;
@@ -10045,13 +10101,11 @@ body {
 }
 #editPage form .navbar,
 #collectionDetail form .navbar,
-#tools form .navbar,
 #users form .navbar {
   padding-left: 0;
 }
 #editPage form .two-col-sidebar,
 #collectionDetail form .two-col-sidebar,
-#tools form .two-col-sidebar,
 #users form .two-col-sidebar {
   padding: 1em;
 }
@@ -10066,12 +10120,9 @@ body {
   margin-bottom: 1em;
 }
 
-#tools main .active {
-  all: unset;
-}
-#tools main .tab-content {
-  flex: 1;
-  padding: 1em;
+#tools form .grid-wrapper {
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 1em;
 }
 
 /*# sourceMappingURL=main.css.map */
