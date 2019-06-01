@@ -4,7 +4,7 @@
 
 <div class="imageElement-wrapper">
   <div class="image-wrapper">
-    <img src="{{ getMediaPath(element.image_path) }}">
+    <img src="{{ getMediaPath(element.media.filename) }}" alt="{{ element.media.caption }}">
   </div>
   <div class="content-wrapper">
     {{ element.content }}

@@ -10,7 +10,7 @@
     <div class="card-header">{{ detail.title }}</div>
     <div class="card-body">{{ detail.sub_title }}</div>
     <div class="card-footer">
-        <a href="{{ pathFor('showPage', {'slug1': detail.collection_slug, 'slug2': detail.slug}) }}" class="btn btn-primary">Read More</a>
+        <a href="{{ pathFor('showPage', {'slug1': detail.collection_slug, 'slug2': detail.page_slug}) }}" class="btn btn-primary">Read More</a>
     </div>
   </div>
   {% endfor %}

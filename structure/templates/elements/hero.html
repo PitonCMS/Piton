@@ -1,10 +1,13 @@
-{# Hero Element #} 
-<div class="hero hero--ratio"> 
-  {% if element.imgage_path|default('/assets/img/heroDefault.jpg')%}
-  <img class="hero__bg" src="{{ getMediaPath(element.image_path)|default('/assets/img/heroDefault.jpg') }}"
-    alt="{{ element.media_caption|default('Photo of Mt. Rainier -- Peri Moritz ') }}" /> {% endif %} <div
-    class="hero__content">
-    <h1>{{ element.title }}</h1> {{ element.content }} {% if page.settings.ctaTitle %} 
-    <a class="btn btn-primary" href="{{page.settings.ctaTarget}}" target="_blank" >{{ page.settings.ctaTitle }}</a> {% endif %}
+{# Hero Element #}
+<div class="hero hero--ratio">
+  {% set heroSource = element.media.filename ? getMediaPath(element.media.filename) : '/assets/img/heroDefault.jpg'  %}
+  <img class="hero__bg" src="{{ heroSource }}"
+    alt="{{ element.media.caption|default('Photo of Mt. Rainier -- Peri Moritz ') }}" />
+  <div class="hero__content">
+    <h1>{{ element.title }}</h1>
+    {{ element.content }}
+    {% if page.settings.ctaTitle %}
+    <a class="btn btn-primary" href="{{page.settings.ctaTarget}}" target="_blank" >{{ page.settings.ctaTitle }}</a>
+    {% endif %}
   </div>
 </div>
