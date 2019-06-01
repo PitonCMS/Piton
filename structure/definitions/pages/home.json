@@ -5,8 +5,6 @@
     "hideSubTitle": true,
     "hideFeaturedImage": false,
     "templateType": "page",
-    "hideSubTitle": true,
-    "hideFeaturedImage": true,
     "blocks": [
         {
             "name": "Hero Image",
