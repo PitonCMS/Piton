@@ -13,7 +13,9 @@
             "key": "aboveTheFoldHero",
             "description": "Large full width image",
             "elementTypeDefault": "hero.json",
-            "elementTypeOptions": ["hero.json"],
+            "elementTypeOptions": [
+                "hero.json"
+            ],
             "elementCountLimit": 1
         },
         {
@@ -25,6 +27,7 @@
     ],
     "settings": [
         {
+            "category": "page",
             "label": "Hero Button Title",
             "key": "ctaTitle",
             "value": "",
@@ -32,12 +35,12 @@
             "help": "Enter Title for cta."
         },
         {
+            "category": "page",
             "label": "Hero Button Link",
             "key": "ctaTarget",
             "value": "",
             "inputType": "input",
             "help": "Enter Target for cta."
         }
-       
     ]
 }
