@@ -58,7 +58,7 @@ $('.jsAddElement').on('click', function () {
     postData[pitonConfig.csrfTokenName] = pitonConfig.csrfTokenValue;
 
     $.ajax({
-        url: '/admin/page/element/new',
+        url: pitonConfig.routes.adminNewElement,
         method: "POST",
         data: postData,
         success: function (r) {
@@ -104,12 +104,13 @@ $('.jsBlockParent').on('click', '.jsDeleteBlockElement', function (e) {
     if (!confirmDeletePrompt('Are you sure you want to delete this element?')) {
         return false;
     }
-    let blockElementId = $(this).data('element-id') || 'x';
+    let blockElementId = $(this).data('element-id');
     let $element = $(this).parents('.jsElementParent');
     let $blockParent = $(this).parents('.jsBlockParent');
     let elementLimit = $blockParent.find('.jsAddElement').data('element-count-limit') || 100;
     let removeElement = function () {
         $element.slideUp('normal', function () {
+            $('#page-edit-nav').find('a[href="#page-element-'+blockElementId+'"]').remove();
             $element.remove();
         });
 
@@ -125,7 +126,7 @@ $('.jsBlockParent').on('click', '.jsDeleteBlockElement', function (e) {
 
     if (!isNaN(blockElementId)) {
         $.ajax({
-            url: '/admin/page/element/delete',
+            url: pitonConfig.routes.adminDeleteElement,
             method: "POST",
             data: postData,
             success: function (r) {
@@ -184,7 +185,7 @@ $('.block-element-wrapper').on('click', '.jsSelectMediaFile', function () {
     });
 
     $.ajax({
-        url: '/admin/media/get',
+        url: pitonConfig.routes.adminGetMedia,
         method: "GET",
         success: function (r) {
             $('#mediaModal').find('.modal-body').html(r.html).end().modal();
@@ -197,13 +198,15 @@ $('.block-element-wrapper').on('click', '.jsSelectMediaFile', function () {
 // --------------------------------------------------------
 // +/- Message count
 let changeMessageCount = (sign) => {
-    let count = parseInt($('.jsMessageCount').html() || 0);
-    if ('+' === sign) {
-        count++
-    } else {
-        if (--count == 0) count = null;
+    if (sign) {
+        let count = parseInt($('.jsMessageCount').html() || 0);
+        if ('+' === sign) {
+            count++
+        } else if ('-' === sign) {
+            if (--count == 0) count = null;
+        }
+        $('.jsMessageCount').html(count);
     }
-    $('.jsMessageCount').html(count);
 }
 let removeMessage = ($message, sign) => {
     $message.slideUp(function () {
@@ -219,18 +222,20 @@ $('.jsMessageWrap').on('click', 'button', function (e) {
     }
     let isRead = $(e.target).data('isRead');
     let $message = $(e.target).parents('.jsMessageWrap');
-    // jQuery ignores the button value, so append that to post data
-    let postData = $message.find('form').serialize() + '&button=' + encodeURI($(e.target).attr('value'));
+    let postData = $message.find('form').serialize();
     $.ajax({
-        url: '/admin/message/save',
+        url: (request == 'delete') ? pitonConfig.routes.adminDeleteMessage : pitonConfig.routes.adminSaveMessage,
         method: "POST",
         data: postData,
         success: function (r) {
-            if (r.status === "success" && 'delete' === request) {
-                removeMessage($message);
-            } else if (r.status === "success" && 'toggle' === request) {
-                let updown = (isRead === 'Y') ? '+' : '-';
-                removeMessage($message, updown);
+            if (r.status === "success") {
+                if ('toggle' === request) {
+                    let updown = (isRead === 'Y') ? '+' : '-';
+                    removeMessage($message, updown);
+                } else if ('delete' === request) {
+                    let updown = (isRead === 'N') ? '-' : undefined;
+                    removeMessage($message, updown);
+                }
             }
         },
         error: function (r) {
@@ -261,7 +266,7 @@ $('.jsMediaCategory').on('click', 'button[type=button]', function (e) {
     }
     postData[pitonConfig.csrfTokenName] = pitonConfig.csrfTokenValue;
     $.ajax({
-        url: '/admin/media/category/delete',
+        url: pitonConfig.routes.adminDeleteMediaCategory,
         method: "POST",
         data: postData,
         success: function (r) {
@@ -296,17 +301,17 @@ $('.jsMediaCard').on('click', 'button', function (e) {
         return false;
     }
     // jQuery ignores the button value, so append that to post data
-    let postData = $button.parents('form').serialize() + '&button=' + encodeURI($button.attr('value'));
+    let postData = $button.parents('form').serialize();
     $.ajax({
-        url: '/admin/media/save',
+        url: ('delete' === $button.attr('value')) ? pitonConfig.routes.adminDeleteMedia : pitonConfig.routes.adminSaveMedia,
         method: "POST",
         data: postData,
         success: function (r) {
-            if (r.status === "success" && 'delete' === $button.attr('value')) {
+            if ('delete' === $button.attr('value') && r.status === "success") {
                 $medium.fadeOut(function () {
                     $(this).remove();
                 });
-            } else if (r.status === "success" && "save" === $button.attr('value')) {
+            } else if ("save" === $button.attr('value') && r.status === "success") {
                 $button.removeClass('btn-primary').addClass('btn-outline-primary');
             }
         },
