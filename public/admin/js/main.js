@@ -146,22 +146,27 @@ $('.jsBlockParent').on('click', '.jsDeleteBlockElement', function (e) {
 // Toggle element selector
 $('.jsBlockParent').on('click', '.jsElementType input[type="radio"]', function () {
     let selectedTypeOption = $(this).data('enable-input');
-    $('.jsElementOption.d-block').toggleClass('d-block d-none');
+    let $elementParent = $(this).parents('.jsElementParent');
+    $elementParent
+        .find('.jsElementOption.d-block').toggleClass('d-block d-none')
+        .find('input').prop('required', false).end()
+        .find('textarea').prop('required', false).end()
+        .find('select').prop('required', false);
 
     if (selectedTypeOption === 'image' || selectedTypeOption === 'hero') {
-        $(this).parents('.jsElementType').siblings('.jsMediaInput').toggleClass('d-none d-block');
+        $(this).parents('.jsElementType').siblings('.jsMediaInput').toggleClass('d-none d-block').find('input').prop('required', true);
         return;
     }
     if (selectedTypeOption === 'embedded') {
-        $(this).parents('.jsElementType').siblings('.jsEmbeddedInput').toggleClass('d-none d-block');
+        $(this).parents('.jsElementType').siblings('.jsEmbeddedInput').toggleClass('d-none d-block').find('textarea').prop('required', true);
         return;
     }
     if (selectedTypeOption === 'collection') {
-        $(this).parents('.jsElementType').siblings('.jsCollectionInput').toggleClass('d-none d-block');
+        $(this).parents('.jsElementType').siblings('.jsCollectionInput').toggleClass('d-none d-block').find('select').prop('required', true);
         return;
     }
     if (selectedTypeOption === 'gallery') {
-        $(this).parents('.jsElementType').siblings('.jsGalleryInput').toggleClass('d-none d-block');
+        $(this).parents('.jsElementType').siblings('.jsGalleryInput').toggleClass('d-none d-block').find('select').prop('required', true);
         return;
     }
 });
