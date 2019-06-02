@@ -8,7 +8,7 @@ sed -ri 's/^display_errors\s*=\s*Off/display_errors = On/g' /etc/php/7.2/apache2
 sed -ri 's/^display_errors\s*=\s*Off/display_errors = On/g' /etc/php/7.2/cli/php.ini
 sed -ri "s/^error_reporting\s*=.*$//g" /etc/php/7.2/apache2/php.ini
 sed -ri "s/^error_reporting\s*=.*$//g" /etc/php/7.2/cli/php.ini
-sed -ri "s/^upload_max_filesize\s*=.*$/upload_max_filesize = 4M/" /etc/php/7.2/apache2/php.ini
+sed -ri "s/^upload_max_filesize\s*=.*$/upload_max_filesize = 10M/" /etc/php/7.2/apache2/php.ini
 
 grep -qxF "error_reporting = $PHP_ERROR_REPORTING" /etc/php/7.2/apache2/php.ini || echo "error_reporting = $PHP_ERROR_REPORTING" >> /etc/php/7.2/apache2/php.ini
 grep -qxF "error_reporting = $PHP_ERROR_REPORTING" /etc/php/7.2/cli/php.ini || echo "error_reporting = $PHP_ERROR_REPORTING" >> /etc/php/7.2/cli/php.ini
