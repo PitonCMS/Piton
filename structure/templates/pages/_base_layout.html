@@ -11,10 +11,20 @@
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <!-- Fancybox is a lightbox plugin -->
     <link rel="stylesheet" href="/assets/vendor/fancybox-master/dist/jquery.fancybox.min.css" />
-
     <link rel="stylesheet" href="/assets/css/{{ site.settings.theme|default('default') }}/main.css">
 
     {% block headStyle %}{% endblock %}
+
+    <script>
+        let pitonConfig = {
+          csrfTokenName: "{{ site.csrf.name }}",
+          csrfTokenValue: "{{ site.csrf.value }}",
+          routes: {
+            submitMessage: "{{ pathFor('submitMessage') }}",
+          },
+          {% block jsPitonConfig '' %}
+        };
+      </script>
 </head>
 
 <body>

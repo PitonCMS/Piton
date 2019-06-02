@@ -17,15 +17,18 @@ $("#contact-form").on('submit', function(e) {
   let $parentDiv = $(this).parent('div');
   let postData = $(this).serialize();
   $.ajax({
-    url: '/contact',
+    url: pitonConfig.routes.submitMessage,
     method: "POST",
     data: postData,
     success: function (r) {
-      $parentDiv.fadeOut().empty();
-      $parentDiv.append(r.response).fadeIn();
+      $('#contact-thankyou').find('.modal-body').html(r.response);
+      $('#contact-thankyou').modal('show');
+      $parentDiv.find('input').not('.alt-email').not('input[name="'+pitonConfig.csrfTokenName+'"]').val('');
+      $parentDiv.find('textarea').val('');
+      $button.html(buttonText.submit).prop('disabled',false);
     },
     error: function(r) {
-      console.log('There was an error submitting the form. Contact your administrator.')
+      console.log('PitonCMS: There was an error submitting the form. Contact your administrator.')
       $button.html(buttonText.submit).prop('disabled',false);
     }
   });
