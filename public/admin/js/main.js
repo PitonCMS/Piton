@@ -149,16 +149,14 @@ $('.jsBlockParent').on('click', '.jsElementType input[type="radio"]', function (
     let $elementParent = $(this).parents('.jsElementParent');
     $elementParent
         .find('.jsElementOption.d-block').toggleClass('d-block d-none')
-        .find('input').prop('required', false).end()
-        .find('textarea').prop('required', false).end()
         .find('select').prop('required', false);
 
     if (selectedTypeOption === 'image' || selectedTypeOption === 'hero') {
-        $(this).parents('.jsElementType').siblings('.jsMediaInput').toggleClass('d-none d-block').find('input').prop('required', true);
+        $(this).parents('.jsElementType').siblings('.jsMediaInput').toggleClass('d-none d-block');
         return;
     }
     if (selectedTypeOption === 'embedded') {
-        $(this).parents('.jsElementType').siblings('.jsEmbeddedInput').toggleClass('d-none d-block').find('textarea').prop('required', true);
+        $(this).parents('.jsElementType').siblings('.jsEmbeddedInput').toggleClass('d-none d-block');
         return;
     }
     if (selectedTypeOption === 'collection') {
@@ -171,16 +169,18 @@ $('.jsBlockParent').on('click', '.jsElementType input[type="radio"]', function (
     }
 });
 
+// --------------------------------------------------------
+// Media Management
+// --------------------------------------------------------
 // Clear media input and remove image from page editor
-$('.block-element-wrapper').on('change', 'input[name^=element_image_path]', function () {
-    if ($(this).val() === '') {
-        $(this).parents('.jsMediaInput').find('img').attr('src', '');
-    }
+$('.jsEditPageContainer').on('click', '.jsMediaClear', function () {
+    $(this).parents('.jsMediaInput').find('img').attr('src', '');
+    $(this).parents('.jsMediaInput').find('input.jsMediaInputField').val('');
 });
 
 // Select media for page element
-$('.block-element-wrapper').on('click', '.jsSelectMediaFile', function () {
-    let $input = $(this).parents('.input-group').find('input');
+$('.jsEditPageContainer').on('click', '.jsSelectMediaFile', function () {
+    let $input = $(this).parents('.jsMediaInput').find('input.jsMediaInputField');
     let $img = $(this).parents('.jsMediaInput').find('img');
 
     $('#mediaModal').on('click', 'img', function () {
