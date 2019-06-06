@@ -1,0 +1,57 @@
+{% extends 'pages/_base_layout.html' %}
+{% block headStyle %}
+<style>
+  .hero{
+    {% set bgImage = page.blocks.heroElement|first %}
+  
+    background-image: url('{{ getMediaPath(bgImage.media.filename, 'thumb')|default('/assets/img/heroDefault.jpg') }}');
+  }
+  @media (min-width: 768px){
+    .hero {
+    background-image: url('{{ getMediaPath(bgImage.media.filename, 'large')|default('/assets/img/heroDefault.jpg') }}');
+    background-position: {{ page.settings.placement }};
+    background-attachment: {{ page.settings.attachment }};
+  }
+  .hero::after{
+    background-color: rgba(0, 0, 0, 0.{{ page.settings.overlay }});
+  }
+  }
+ 
+</style>
+{% endblock headStyle %}
+
+{% block body %}
+
+{{ getBlockElementsHtml(page.blocks.heroElement) }}
+
+<section id="demoPage">
+  <div class="container">
+    {% if page.blocks.textElement %}
+    {{ getBlockElementsHtml(page.blocks.textElement) }}
+    <hr>
+    {% endif %}
+    {% if page.blocks.collectionElement %}
+    {{ getBlockElementsHtml(page.blocks.collectionElement) }}
+    <hr>
+    {% endif %}
+    {% if page.blocks.galleryElement %}
+    {{ getBlockElementsHtml(page.blocks.galleryElement) }}
+    <hr>
+    {% endif %}
+    {% if page.blocks.videoElement %}
+    {{ getBlockElementsHtml(page.blocks.videoElement) }}
+    <hr>
+    {% endif %}
+    {% if page.blocks.contactElement %}
+    {{ getBlockElementsHtml(page.blocks.contactElement) }}
+    <hr>
+    {% endif %}
+    {% if page.blocks.imageElement %}
+    {{ getBlockElementsHtml(page.blocks.imageElement) }}
+   
+    {% endif %}
+  </div>
+</section>
+
+
+{% endblock %}

@@ -1,20 +1,32 @@
 {% extends 'pages/_base_layout.html' %}
+{% block headStyle %}
+<style>
+  .hero {
+    {% set bgImage = page.blocks.collectionHero|first %}
+    background-image: url('{{ getMediaPath(bgImage.media.filename, 'thumb')|default('/assets/img/heroDefault.jpg') }}');
+  }
+  @media screen and (min-width: 768px){
+    .hero {
+    background-image: url('{{ getMediaPath(bgImage.media.filename, 'large')|default('/assets/img/heroDefault.jpg') }}');
+    background-position: {{ page.settings.placement }};
+    background-attachment: {{ page.settings.attachment }};
+  }
+  .hero::after{
+    background-color: rgba(0, 0, 0, 0.{{ page.settings.overlay }});
+  }
+  }
+ 
+</style>
+{% endblock headStyle %}
 
 {% block body %}
-<div class="hero hero--ratio">
-        <div class="hero__content">
-          <h1>{{ page.title }}</h1>
-          <h3>{{ page.sub_title }}</h3>
-          {{ data.content }}
 
-        </div>
-        <img class="hero__bg" src="{{ page.image_path }}" alt="Hero Image"/>
-      </div>
+{{ getBlockElementsHtml(page.blocks.collectionHero) }}
 
-<section id="collectionGuide">
+
+<section id="collection">
     <div class="container">
-        {{ getBlockElementsHtml(page.blocks.collectionGuide) }}
+        {{ getBlockElementsHtml(page.blocks.collectionTextArea) }}
     </div>
 </section>
-
 {% endblock %}

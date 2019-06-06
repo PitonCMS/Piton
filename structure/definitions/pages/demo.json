@@ -1,24 +1,72 @@
 {
-  "templateName": "Collection Demo",
-  "templateDescription": "Collection Page.",
-  "templateFile": "collection.html",
-  "templateType": "collection",
-  "collectionSlug": "collectionSlug",
+  "templateName": "Demo",
+  "templateDescription": "Piton Demo Page.",
+  "templateFile": "demo.html",
+  "templateType": "page",
   "blocks": [
-      {
-          "name": "Collection Demo Hero",
-          "key": "collectionHero",
-          "description": "collection Hero Block",
-          "elementTypeDefault": "hero.json",
-          "elementTypeOptions": ["hero.json"],
-          "elementCountLimit": 1
-      },
-      {
-          "name": "Collection Demo Text Area",
-          "key": "collectionTextArea",
-          "description": "Collection Text Area",
-          "elementTypeDefault": "text.json"
-      }
+    {
+      "name": "Hero Element",
+      "key": "heroElement",
+      "description": "Hero Element Demo",
+      "elementTypeDefault": "hero.json",
+      "elementTypeOptions": [
+        "hero.json"
+      ]
+    },
+    {
+      "name": "Text Element",
+      "key": "textElement",
+      "description": "Text Element Demo",
+      "elementTypeDefault": "text.json",
+      "elementTypeOptions": [
+        "text.json"
+      ]
+    },
+    {
+      "name": "Collection Element",
+      "key": "collectionElement",
+      "description": "collection Element Block",
+      "elementTypeDefault": "collection.json",
+      "elementTypeOptions": [
+        "collection.json"
+      ]
+    },
+    {
+      "name": "Gallery Element",
+      "key": "galleryElement",
+      "description": "Gallery Element Block",
+      "elementTypeDefault": "gallery.json",
+      "elementTypeOptions": [
+        "gallery.json"
+      ]
+    },
+    {
+      "name": "Collection Element",
+      "key": "collectionElement",
+      "description": "Collection Element Block",
+      "elementTypeDefault": "servicesCollection.json",
+      "elementTypeOptions": [
+        "servicesCollection.json"
+      ]
+    },
+    {
+      "name": "Contact Element",
+      "key": "contactElement",
+      "description": "Contact Element Block",
+      "elementTypeDefault": "contact.json",
+      "elementTypeOptions": [
+        "contact.json"
+      ]
+    },
+    {
+      "name": "Video Element",
+      "key": "videoElement",
+      "description": "Video Element Block",
+      "elementTypeDefault": "video.json",
+      "elementTypeOptions": [
+        "video.json"
+      ]
+    }
   ],
   "settings": [
     {
