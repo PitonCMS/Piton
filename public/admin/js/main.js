@@ -184,20 +184,30 @@ $('.jsBlockParent').on('click', '.jsElementType input[type="radio"]', function (
 // --------------------------------------------------------
 // Media Management
 // --------------------------------------------------------
-// Clear media input and remove image from page editor
+
+// Clear media input and remove image display
 $('.jsEditPageContainer').on('click', '.jsMediaClear', function () {
-    $(this).parents('.jsMediaInput').find('img').attr('src', '');
-    $(this).parents('.jsMediaInput').find('input.jsMediaInputField').val('');
+    $(this).parents('.jsMediaInput').find('.jsMediaInputField').val('').trigger("input");
 });
+
+// Listen for media input changes by user to update media img display
+$('.jsEditPageContainer').on('input', '.jsMediaInputField', function() {
+    let src = $(this).val();
+    let $img = $(this).parents('.jsMediaInput').find('img');
+    $img.attr('src', src);
+    if (src.length > 0) {
+        $img.removeClass('d-none').addClass('d-block');
+    } else {
+        $img.removeClass('d-block').addClass('d-none');
+    }
+})
 
 // Select media for page element
 $('.jsEditPageContainer').on('click', '.jsSelectMediaFile', function () {
     let $input = $(this).parents('.jsMediaInput').find('input.jsMediaInputField');
-    let $img = $(this).parents('.jsMediaInput').find('img');
 
     $('#mediaModal').on('click', 'img', function () {
-        $input.val($(this).data('source'));
-        $img.attr('src', $(this).data('source')).removeClass('d-none');
+        $input.val($(this).data('source')).trigger("input");
         $('#mediaModal').modal('hide');
     });
 
