@@ -1,23 +1,24 @@
 {
-  "templateName": "Collection Demo",
-  "templateDescription": "Collection Page.",
-  "templateFile": "collection.html",
-  "templateType": "collection",
-  "collectionSlug": "collectionSlug",
+  "templateName": "Contact",
+  "templateDescription": "Contact Page.",
+  "templateFile": "contact.html",
+  "templateType": "page",
   "blocks": [
+
       {
-          "name": "Collection Demo Hero",
+          "name": "Hero Block",
           "key": "heroBlock",
-          "description": "Collection Hero Block",
+          "description": "Contact Hero Block",
           "elementTypeDefault": "hero.json",
-          "elementTypeOptions": ["hero.json"],
-          "elementCountLimit": 1
+          "elementTypeOptions": ["hero.json"]
       },
+ 
       {
-          "name": "Collection Demo Text Area",
-          "key": "collectionTextArea",
-          "description": "Collection Text Area",
-          "elementTypeDefault": "text.json"
+          "name": "Contact Page",
+          "key": "contactPage",
+          "description": "Contact Page",
+          "elementTypeDefault": "contact.json",
+          "elementTypeOptions": ["contact.json"]
       }
   ],
   "settings": [

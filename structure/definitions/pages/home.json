@@ -8,7 +8,7 @@
     "blocks": [
         {
             "name": "Hero Image",
-            "key": "aboveTheFoldHero",
+            "key": "heroBlock",
             "description": "Large full width image",
             "elementTypeDefault": "hero.json",
             "elementTypeOptions": [

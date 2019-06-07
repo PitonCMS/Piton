@@ -9730,9 +9730,14 @@ a:hover {
 }
 
 section {
-  width: 100vw;
+  width: 100%;
   padding-top: 2rem;
-  padding-bottom: 4rem;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+section:nth-child(even) {
+  background-color: #efefef;
 }
 
 img {
@@ -9785,7 +9790,7 @@ img {
   text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
 }
 
-.card-wrapper {
+.collection-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 2rem;
@@ -9953,17 +9958,6 @@ footer a {
   color: #eceaea;
   font-size: 0.8rem;
   font-weight: 300;
-}
-
-#home .collection-summary-block .card-wrapper {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-}
-#home .collection-summary-block .card-header {
-  background-color: #336699;
-}
-#home .collection-summary-block .card-footer {
-  background-color: #2f5e8e;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,12 +1,12 @@
 {
-  "templateName": "Demo",
-  "templateDescription": "Piton Demo Page.",
+  "templateName": "Everything",
+  "templateDescription": "All Piton Element Blocks.",
   "templateFile": "demo.html",
   "templateType": "page",
   "blocks": [
     {
       "name": "Hero Element",
-      "key": "heroElement",
+      "key": "heroBlock",
       "description": "Hero Element Demo",
       "elementTypeDefault": "hero.json",
       "elementTypeOptions": [
@@ -38,15 +38,6 @@
       "elementTypeDefault": "gallery.json",
       "elementTypeOptions": [
         "gallery.json"
-      ]
-    },
-    {
-      "name": "Collection Element",
-      "key": "collectionElement",
-      "description": "Collection Element Block",
-      "elementTypeDefault": "servicesCollection.json",
-      "elementTypeOptions": [
-        "servicesCollection.json"
       ]
     },
     {

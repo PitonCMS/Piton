@@ -21,8 +21,12 @@ a {
 }
 
 section {
-  width: 100vw;
-  @include padding(2rem null 4rem);
+  width: 100%;
+  @include padding(2rem null);
+  @include margin(null null 2rem);
+}
+section:nth-child(even){
+  background-color: $primary-light-grey;
 }
 
 img {

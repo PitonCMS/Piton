@@ -19,7 +19,7 @@ header{
   top: 0;
   left: 0;
   width: 100%;
-  background: #336699;
+  background: $primary-color;
   color: #fff;
   @include padding(1rem);
 }
