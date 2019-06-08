@@ -9684,6 +9684,10 @@ h3 {
   font-style: italic;
   padding-left: 4em !important;
   margin-left: -1em !important;
+  padding-top: 0.15em;
+  padding-bottom: 0.15em;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /*  These are the media queries and how to use them. Copy/paste into sass file.
@@ -9853,15 +9857,15 @@ body {
 #users form .aside-inner .sidebar-links .nav-link:hover {
   color: var(--primary) !important;
 }
-#adminHome .aside-inner .sidebar-links .active,
-#pages .aside-inner .sidebar-links .active,
-#collections .aside-inner .sidebar-links .active,
-#mediaAll .aside-inner .sidebar-links .active,
-#mediaUpload .aside-inner .sidebar-links .active,
-#mediaCategories .aside-inner .sidebar-links .active,
-#messages .aside-inner .sidebar-links .active,
-#tools form .aside-inner .sidebar-links .active,
-#users form .aside-inner .sidebar-links .active {
+#adminHome .aside-inner .sidebar-links .nav-link .active,
+#pages .aside-inner .sidebar-links .nav-link .active,
+#collections .aside-inner .sidebar-links .nav-link .active,
+#mediaAll .aside-inner .sidebar-links .nav-link .active,
+#mediaUpload .aside-inner .sidebar-links .nav-link .active,
+#mediaCategories .aside-inner .sidebar-links .nav-link .active,
+#messages .aside-inner .sidebar-links .nav-link .active,
+#tools form .aside-inner .sidebar-links .nav-link .active,
+#users form .aside-inner .sidebar-links .nav-link .active {
   background-color: rgba(51, 102, 153, 0.5) !important;
   color: #ffffff;
   border-top-right-radius: 30px;
