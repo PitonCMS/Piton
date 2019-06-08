@@ -9765,7 +9765,8 @@ body {
 #mediaCategories,
 #messages,
 #tools form,
-#users form {
+#users form,
+#sitemap {
   display: flex;
   flex-flow: row nowrap;
 }
@@ -9786,7 +9787,9 @@ body {
 #tools form aside,
 #tools form main,
 #users form aside,
-#users form main {
+#users form main,
+#sitemap aside,
+#sitemap main {
   min-height: calc(100vh - 56px);
   padding: 1em;
 }
@@ -9798,7 +9801,8 @@ body {
 #mediaCategories aside,
 #messages aside,
 #tools form aside,
-#users form aside {
+#users form aside,
+#sitemap aside {
   background-color: #efefef;
   padding: 1em 0.5em 1em 0;
   min-width: 200px;
@@ -9812,7 +9816,8 @@ body {
 #mediaCategories .aside-inner,
 #messages .aside-inner,
 #tools form .aside-inner,
-#users form .aside-inner {
+#users form .aside-inner,
+#sitemap .aside-inner {
   position: sticky;
   top: 72px;
 }
@@ -9824,7 +9829,8 @@ body {
 #mediaCategories .aside-inner .sidebar-links,
 #messages .aside-inner .sidebar-links,
 #tools form .aside-inner .sidebar-links,
-#users form .aside-inner .sidebar-links {
+#users form .aside-inner .sidebar-links,
+#sitemap .aside-inner .sidebar-links {
   display: flex;
   align-items: center;
 }
@@ -9836,7 +9842,8 @@ body {
 #mediaCategories .aside-inner .sidebar-links .nav-link,
 #messages .aside-inner .sidebar-links .nav-link,
 #tools form .aside-inner .sidebar-links .nav-link,
-#users form .aside-inner .sidebar-links .nav-link {
+#users form .aside-inner .sidebar-links .nav-link,
+#sitemap .aside-inner .sidebar-links .nav-link {
   flex: 1;
   display: flex;
   justify-content: space-between;
@@ -9854,7 +9861,8 @@ body {
 #mediaCategories .aside-inner .sidebar-links .nav-link:hover,
 #messages .aside-inner .sidebar-links .nav-link:hover,
 #tools form .aside-inner .sidebar-links .nav-link:hover,
-#users form .aside-inner .sidebar-links .nav-link:hover {
+#users form .aside-inner .sidebar-links .nav-link:hover,
+#sitemap .aside-inner .sidebar-links .nav-link:hover {
   color: var(--primary) !important;
 }
 #adminHome .aside-inner .sidebar-links .nav-link .active,
@@ -9865,7 +9873,8 @@ body {
 #mediaCategories .aside-inner .sidebar-links .nav-link .active,
 #messages .aside-inner .sidebar-links .nav-link .active,
 #tools form .aside-inner .sidebar-links .nav-link .active,
-#users form .aside-inner .sidebar-links .nav-link .active {
+#users form .aside-inner .sidebar-links .nav-link .active,
+#sitemap .aside-inner .sidebar-links .nav-link .active {
   background-color: rgba(51, 102, 153, 0.5) !important;
   color: #ffffff;
   border-top-right-radius: 30px;
@@ -9880,7 +9889,8 @@ body {
 #mediaCategories main,
 #messages main,
 #tools form main,
-#users form main {
+#users form main,
+#sitemap main {
   flex: 1;
 }
 #adminHome .grid-wrapper,
@@ -9891,7 +9901,8 @@ body {
 #mediaCategories .grid-wrapper,
 #messages .grid-wrapper,
 #tools form .grid-wrapper,
-#users form .grid-wrapper {
+#users form .grid-wrapper,
+#sitemap .grid-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1em;
@@ -9904,7 +9915,8 @@ body {
 #mediaCategories .grid-wrapper .card-title,
 #messages .grid-wrapper .card-title,
 #tools form .grid-wrapper .card-title,
-#users form .grid-wrapper .card-title {
+#users form .grid-wrapper .card-title,
+#sitemap .grid-wrapper .card-title {
   margin: 0;
   display: flex;
   justify-content: space-between;
@@ -9918,7 +9930,8 @@ body {
 #mediaCategories .grid-wrapper .card-title h5,
 #messages .grid-wrapper .card-title h5,
 #tools form .grid-wrapper .card-title h5,
-#users form .grid-wrapper .card-title h5 {
+#users form .grid-wrapper .card-title h5,
+#sitemap .grid-wrapper .card-title h5 {
   margin: 0;
   padding: 0;
 }
@@ -9930,7 +9943,8 @@ body {
 #mediaCategories .grid-wrapper .card-footer,
 #messages .grid-wrapper .card-footer,
 #tools form .grid-wrapper .card-footer,
-#users form .grid-wrapper .card-footer {
+#users form .grid-wrapper .card-footer,
+#sitemap .grid-wrapper .card-footer {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -9943,7 +9957,8 @@ body {
 #mediaCategories .fa-info-circle,
 #messages .fa-info-circle,
 #tools form .fa-info-circle,
-#users form .fa-info-circle {
+#users form .fa-info-circle,
+#sitemap .fa-info-circle {
   cursor: pointer;
   color: #afafaf;
 }
@@ -9955,7 +9970,8 @@ body {
 #mediaCategories .card,
 #messages .card,
 #tools form .card,
-#users form .card {
+#users form .card,
+#sitemap .card {
   border: none;
   box-shadow: 0 2px 3px rgba(51, 51, 51, 0.25);
 }
