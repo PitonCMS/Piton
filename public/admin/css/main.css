@@ -10069,6 +10069,16 @@ body {
 #users form aside a:hover {
   color: #336699 !important;
 }
+#editPage form aside .active,
+#collectionDetail form aside .active,
+#users form aside .active {
+  background-color: rgba(51, 102, 153, 0.8) !important;
+  color: #ffffff;
+  padding-right: 1rem;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  box-shadow: 0 2px 3px rgba(51, 51, 51, 0.25);
+}
 #editPage form main,
 #collectionDetail form main,
 #users form main {
@@ -10110,16 +10120,6 @@ body {
   display: flex;
   flex-flow: column nowrap;
 }
-#editPage form .active,
-#collectionDetail form .active,
-#users form .active {
-  background-color: rgba(51, 102, 153, 0.8) !important;
-  color: #ffffff;
-  padding-right: 1rem;
-  border-top-right-radius: 25px;
-  border-bottom-right-radius: 25px;
-  box-shadow: 0 2px 3px rgba(51, 51, 51, 0.25);
-}
 #editPage form a.small-sidebar-text.active,
 #collectionDetail form a.small-sidebar-text.active,
 #users form a.small-sidebar-text.active {
@@ -10152,6 +10152,14 @@ body {
   margin-bottom: 1em;
 }
 
+#tools form aside .active {
+  background-color: rgba(51, 102, 153, 0.8) !important;
+  color: #ffffff !important;
+  padding-right: 1rem;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  box-shadow: 0 2px 3px rgba(51, 51, 51, 0.25);
+}
 #tools form main {
   padding: 0;
   display: flex;
