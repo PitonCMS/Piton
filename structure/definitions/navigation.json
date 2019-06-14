@@ -1,0 +1,7 @@
+{
+    "description": "Navigations",
+    "navigators": [
+        "main",
+        "footer"
+    ]
+}
