@@ -8,19 +8,13 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
-        {% for pl in site.pages %}
+        {% for navLink in getNavigator('main') %}
 
-        <li class="nav-item {% if pl.currentPage %}active{% endif %}">
-          <a class="nav-link" href="{{ pathFor('showPage', {'slug1': pl.page_slug}) }}">{{ pl.title }}</a>
+        <li class="nav-item {% if navLink.currentPage %}active{% endif %}">
+          <a class="nav-link" href="{{ pathFor('showPage', {'slug1': navLink.page_slug}) }}">{{ navLink.title }}</a>
         </li>
 
         {% endfor %}
-
-
-        {# <li>
-            <a href="#">Home <span class="sr-only">(current)</span></a>
-          </li> #}
-
       </ul>
 
     </div>
