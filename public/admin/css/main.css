@@ -9759,14 +9759,14 @@ body {
 
 #adminHome,
 #pages,
+#navigation,
 #collections,
 #mediaAll,
 #mediaUpload,
 #mediaCategories,
 #messages,
 #tools form,
-#users form,
-#sitemap {
+#users form {
   display: flex;
   flex-flow: row nowrap;
 }
@@ -9774,6 +9774,8 @@ body {
 #adminHome main,
 #pages aside,
 #pages main,
+#navigation aside,
+#navigation main,
 #collections aside,
 #collections main,
 #mediaAll aside,
@@ -9787,22 +9789,20 @@ body {
 #tools form aside,
 #tools form main,
 #users form aside,
-#users form main,
-#sitemap aside,
-#sitemap main {
+#users form main {
   min-height: calc(100vh - 56px);
   padding: 1em;
 }
 #adminHome aside,
 #pages aside,
+#navigation aside,
 #collections aside,
 #mediaAll aside,
 #mediaUpload aside,
 #mediaCategories aside,
 #messages aside,
 #tools form aside,
-#users form aside,
-#sitemap aside {
+#users form aside {
   background-color: #efefef;
   padding: 1em 0.5em 1em 0;
   min-width: 200px;
@@ -9810,40 +9810,40 @@ body {
 }
 #adminHome .aside-inner,
 #pages .aside-inner,
+#navigation .aside-inner,
 #collections .aside-inner,
 #mediaAll .aside-inner,
 #mediaUpload .aside-inner,
 #mediaCategories .aside-inner,
 #messages .aside-inner,
 #tools form .aside-inner,
-#users form .aside-inner,
-#sitemap .aside-inner {
+#users form .aside-inner {
   position: sticky;
   top: 72px;
 }
 #adminHome .aside-inner .sidebar-links,
 #pages .aside-inner .sidebar-links,
+#navigation .aside-inner .sidebar-links,
 #collections .aside-inner .sidebar-links,
 #mediaAll .aside-inner .sidebar-links,
 #mediaUpload .aside-inner .sidebar-links,
 #mediaCategories .aside-inner .sidebar-links,
 #messages .aside-inner .sidebar-links,
 #tools form .aside-inner .sidebar-links,
-#users form .aside-inner .sidebar-links,
-#sitemap .aside-inner .sidebar-links {
+#users form .aside-inner .sidebar-links {
   display: flex;
   align-items: center;
 }
 #adminHome .aside-inner .sidebar-links .nav-link,
 #pages .aside-inner .sidebar-links .nav-link,
+#navigation .aside-inner .sidebar-links .nav-link,
 #collections .aside-inner .sidebar-links .nav-link,
 #mediaAll .aside-inner .sidebar-links .nav-link,
 #mediaUpload .aside-inner .sidebar-links .nav-link,
 #mediaCategories .aside-inner .sidebar-links .nav-link,
 #messages .aside-inner .sidebar-links .nav-link,
 #tools form .aside-inner .sidebar-links .nav-link,
-#users form .aside-inner .sidebar-links .nav-link,
-#sitemap .aside-inner .sidebar-links .nav-link {
+#users form .aside-inner .sidebar-links .nav-link {
   flex: 1;
   display: flex;
   justify-content: space-between;
@@ -9855,26 +9855,26 @@ body {
 }
 #adminHome .aside-inner .sidebar-links .nav-link:hover,
 #pages .aside-inner .sidebar-links .nav-link:hover,
+#navigation .aside-inner .sidebar-links .nav-link:hover,
 #collections .aside-inner .sidebar-links .nav-link:hover,
 #mediaAll .aside-inner .sidebar-links .nav-link:hover,
 #mediaUpload .aside-inner .sidebar-links .nav-link:hover,
 #mediaCategories .aside-inner .sidebar-links .nav-link:hover,
 #messages .aside-inner .sidebar-links .nav-link:hover,
 #tools form .aside-inner .sidebar-links .nav-link:hover,
-#users form .aside-inner .sidebar-links .nav-link:hover,
-#sitemap .aside-inner .sidebar-links .nav-link:hover {
+#users form .aside-inner .sidebar-links .nav-link:hover {
   color: var(--primary) !important;
 }
 #adminHome .aside-inner .sidebar-links .nav-link .active,
 #pages .aside-inner .sidebar-links .nav-link .active,
+#navigation .aside-inner .sidebar-links .nav-link .active,
 #collections .aside-inner .sidebar-links .nav-link .active,
 #mediaAll .aside-inner .sidebar-links .nav-link .active,
 #mediaUpload .aside-inner .sidebar-links .nav-link .active,
 #mediaCategories .aside-inner .sidebar-links .nav-link .active,
 #messages .aside-inner .sidebar-links .nav-link .active,
 #tools form .aside-inner .sidebar-links .nav-link .active,
-#users form .aside-inner .sidebar-links .nav-link .active,
-#sitemap .aside-inner .sidebar-links .nav-link .active {
+#users form .aside-inner .sidebar-links .nav-link .active {
   background-color: rgba(51, 102, 153, 0.5) !important;
   color: #ffffff;
   border-top-right-radius: 30px;
@@ -9883,40 +9883,40 @@ body {
 }
 #adminHome main,
 #pages main,
+#navigation main,
 #collections main,
 #mediaAll main,
 #mediaUpload main,
 #mediaCategories main,
 #messages main,
 #tools form main,
-#users form main,
-#sitemap main {
+#users form main {
   flex: 1;
 }
 #adminHome .grid-wrapper,
 #pages .grid-wrapper,
+#navigation .grid-wrapper,
 #collections .grid-wrapper,
 #mediaAll .grid-wrapper,
 #mediaUpload .grid-wrapper,
 #mediaCategories .grid-wrapper,
 #messages .grid-wrapper,
 #tools form .grid-wrapper,
-#users form .grid-wrapper,
-#sitemap .grid-wrapper {
+#users form .grid-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1em;
 }
 #adminHome .grid-wrapper .card-title,
 #pages .grid-wrapper .card-title,
+#navigation .grid-wrapper .card-title,
 #collections .grid-wrapper .card-title,
 #mediaAll .grid-wrapper .card-title,
 #mediaUpload .grid-wrapper .card-title,
 #mediaCategories .grid-wrapper .card-title,
 #messages .grid-wrapper .card-title,
 #tools form .grid-wrapper .card-title,
-#users form .grid-wrapper .card-title,
-#sitemap .grid-wrapper .card-title {
+#users form .grid-wrapper .card-title {
   margin: 0;
   display: flex;
   justify-content: space-between;
@@ -9924,54 +9924,54 @@ body {
 }
 #adminHome .grid-wrapper .card-title h5,
 #pages .grid-wrapper .card-title h5,
+#navigation .grid-wrapper .card-title h5,
 #collections .grid-wrapper .card-title h5,
 #mediaAll .grid-wrapper .card-title h5,
 #mediaUpload .grid-wrapper .card-title h5,
 #mediaCategories .grid-wrapper .card-title h5,
 #messages .grid-wrapper .card-title h5,
 #tools form .grid-wrapper .card-title h5,
-#users form .grid-wrapper .card-title h5,
-#sitemap .grid-wrapper .card-title h5 {
+#users form .grid-wrapper .card-title h5 {
   margin: 0;
   padding: 0;
 }
 #adminHome .grid-wrapper .card-footer,
 #pages .grid-wrapper .card-footer,
+#navigation .grid-wrapper .card-footer,
 #collections .grid-wrapper .card-footer,
 #mediaAll .grid-wrapper .card-footer,
 #mediaUpload .grid-wrapper .card-footer,
 #mediaCategories .grid-wrapper .card-footer,
 #messages .grid-wrapper .card-footer,
 #tools form .grid-wrapper .card-footer,
-#users form .grid-wrapper .card-footer,
-#sitemap .grid-wrapper .card-footer {
+#users form .grid-wrapper .card-footer {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 #adminHome .fa-info-circle,
 #pages .fa-info-circle,
+#navigation .fa-info-circle,
 #collections .fa-info-circle,
 #mediaAll .fa-info-circle,
 #mediaUpload .fa-info-circle,
 #mediaCategories .fa-info-circle,
 #messages .fa-info-circle,
 #tools form .fa-info-circle,
-#users form .fa-info-circle,
-#sitemap .fa-info-circle {
+#users form .fa-info-circle {
   cursor: pointer;
   color: #afafaf;
 }
 #adminHome .card,
 #pages .card,
+#navigation .card,
 #collections .card,
 #mediaAll .card,
 #mediaUpload .card,
 #mediaCategories .card,
 #messages .card,
 #tools form .card,
-#users form .card,
-#sitemap .card {
+#users form .card {
   border: none;
   box-shadow: 0 2px 3px rgba(51, 51, 51, 0.25);
 }
@@ -10242,6 +10242,60 @@ body {
   display: grid !important;
   grid-template-columns: repeat(auto-fill, minmax(125px, 1fr)) !important;
   gap: 1em !important;
+}
+
+#navigation .jsNavigatorForm {
+  width: 100%;
+}
+#navigation .jsEditNavBlock {
+  width: 100%;
+}
+#navigation .nav-item-level-1 {
+  display: grid;
+  grid-template-columns: 100px auto auto;
+  grid-gap: 1em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  padding: 0.5em;
+  border-radius: 5px;
+  justify-content: flex-start;
+  align-items: center;
+}
+#navigation .jsNavItem:nth-child(odd):not(.nav-item-level-2) {
+  background-color: #efefef;
+}
+#navigation .nav-controls i {
+  cursor: pointer;
+  font-size: 1.25rem;
+  padding-right: 0.25em;
+  padding-left: 0.25em;
+}
+#navigation input[type=text] {
+  padding: 0.25em;
+  border-radius: 5px;
+}
+#navigation .nav-item-level-2 {
+  display: grid;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  padding-left: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: 125px;
+  display: grid;
+  grid-template-columns: repeat(2, 125px) max-content;
+  grid-gap: 1em;
+  border-radius: 5px;
+  justify-content: flex-start;
+  align-items: center;
+}
+#navigation .fa-trash-alt:hover {
+  color: red;
+}
+#navigation li.nav-item:first-child .fa-arrow-up,
+#navigation li.nav-item:last-child .fa-arrow-down,
+#navigation li.nav-item.nav-item-level-1 > .nav-controls > .fa-arrow-left {
+  color: #afafaf;
+  cursor: not-allowed;
 }
 
 /*# sourceMappingURL=main.css.map */
