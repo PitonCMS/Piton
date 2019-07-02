@@ -9690,6 +9690,12 @@ h3 {
   margin-bottom: 0;
 }
 
+.help {
+  margin: 1em;
+  max-width: 75ch;
+  font-size: 1.2rem;
+}
+
 /*  These are the media queries and how to use them. Copy/paste into sass file.
 
 --
@@ -10244,25 +10250,30 @@ body {
   gap: 1em !important;
 }
 
+#navigation ol {
+  margin: 0;
+}
 #navigation .jsNavigatorForm {
-  width: 100%;
+  width: 50vw;
 }
 #navigation .jsEditNavBlock {
   width: 100%;
+  border: solid 1px rgba(51, 102, 153, 0.4);
+  border-radius: 5px;
 }
 #navigation .nav-item-level-1 {
   display: grid;
   grid-template-columns: 100px auto auto;
   grid-gap: 1em;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
   padding: 0.5em;
-  border-radius: 5px;
   justify-content: flex-start;
   align-items: center;
 }
 #navigation .jsNavItem:nth-child(odd):not(.nav-item-level-2) {
-  background-color: #efefef;
+  background-color: rgba(51, 102, 153, 0.4);
+}
+#navigation .jsNavItem:nth-child(even):not(.nav-item-level-2) {
+  background-color: #f6f6f6;
 }
 #navigation .nav-controls i {
   cursor: pointer;
@@ -10288,6 +10299,27 @@ body {
   justify-content: flex-start;
   align-items: center;
 }
+#navigation .nav-parent > li {
+  position: relative;
+}
+#navigation .nav-parent > li:before {
+  position: absolute;
+  left: 2px;
+  top: 13px;
+  content: "→";
+}
+#navigation .nav-parent-title {
+  padding-left: 0.75em;
+}
+#navigation .nav-child > li {
+  position: relative;
+}
+#navigation .nav-child > li:before {
+  position: absolute;
+  left: 0px;
+  top: 13px;
+  content: "↵";
+}
 #navigation .fa-trash-alt:hover {
   color: red;
 }
@@ -10296,6 +10328,15 @@ body {
 #navigation li.nav-item.nav-item-level-1 > .nav-controls > .fa-arrow-left {
   color: #afafaf;
   cursor: not-allowed;
+}
+#navigation .form-control {
+  width: 50%;
+}
+#navigation .help ol {
+  margin-bottom: 1em;
+}
+#navigation .help li {
+  margin-bottom: 0.5em;
 }
 
 /*# sourceMappingURL=main.css.map */
