@@ -4,7 +4,6 @@ logs/
 cache/
 .sass-cache/
 *.xml
-composer.lock
 /vendor/
 /public/assets/css/theme1/
 /public/media/
