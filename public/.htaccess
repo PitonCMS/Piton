@@ -4,6 +4,19 @@ Allow from all
 # However, prevent direct directory access
 Options -Indexes
 
+<Files sitemap.xml>
+  Header set X-Robots-Tag "noindex"
+</Files>
+
+# Headers
+Header set Strict-Transport-Security "max-age=631138519; includeSubDomains"
+Header set Content-Security-Policy "default-src 'self' *.googleapis.com *.gstatic.com *.bootstrapcdn.com *.statcounter.com *.google-analytics.com *.cloudflare.com *.googleusercontent.com"
+Header set X-Frame-Options DENY
+Header set X-Content-Type-Options nosniff
+Header set Referrer-Policy no-referrer-when-downgrade
+Header set Feature-Policy 'self'
+Header set X-XSS-Protection "1; mode=block"
+
 RewriteEngine On
 
 # Check to see if the user is attempting to access a valid file, such as an image
