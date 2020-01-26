@@ -10,7 +10,7 @@ Options -Indexes
 
 # Headers
 Header set Strict-Transport-Security "max-age=631138519; includeSubDomains"
-Header set Content-Security-Policy "default-src 'self' *.googleapis.com *.gstatic.com *.bootstrapcdn.com *.statcounter.com *.google-analytics.com *.cloudflare.com *.googleusercontent.com"
+#Header set Content-Security-Policy "default-src 'self'; img-src *; script-src 'self' *.googleapis.com *.gstatic.com *.bootstrapcdn.com *.statcounter.com *.google-analytics.com *.cloudflare.com *.jsdelivr.net; style-src: 'self' *.bootstrapcdn.com *.com *.cloudflare.com *.jsdelivr.net"
 Header set X-Frame-Options DENY
 Header set X-Content-Type-Options nosniff
 Header set Referrer-Policy no-referrer-when-downgrade
