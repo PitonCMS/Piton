@@ -7,6 +7,8 @@
  * @license   https://github.com/PitonCMS/Piton/blob/master/LICENSE (MIT License)
  */
 
+declare(strict_types=1);
+
 // Application entry point for all requests
 
 // Set encoding
