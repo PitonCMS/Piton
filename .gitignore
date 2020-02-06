@@ -1,12 +1,12 @@
 # Things to ignore
-/config/config.local.php
+config/config.local.php
 logs/
 cache/
 .sass-cache/
 *.xml
-/vendor/
-/public/assets/css/theme1/
-/public/media/
+vendor/
+public/assets/css/theme1/
+public/media/
 *.map
 
 # Remove this and commit your composer.lock file when building a project site

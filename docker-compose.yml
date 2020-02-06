@@ -18,9 +18,9 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      - ~/.mysql-data/pitoncms:/var/lib/mysql
+      - ~/.mysql-data/piton:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=rootpassword
-      - MYSQL_DATABASE=pitoncms
-      - MYSQL_USER=pitoncms
-      - MYSQL_PASSWORD=pitoncmspassword
+      - MYSQL_DATABASE=piton
+      - MYSQL_USER=piton
+      - MYSQL_PASSWORD=piton

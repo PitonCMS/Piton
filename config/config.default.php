@@ -23,11 +23,13 @@ $config['database']['password'] = '';
 
 /**
  * Sessions
+ *
+ * Set 'salt' to a long hash.
  */
-$config['session']['cookieName'] = 'pitoncms'; // Name of the cookie
+$config['session']['cookieName'] = 'pitoncms';
 $config['session']['checkIpAddress'] = true;
 $config['session']['checkUserAgent'] = true;
-$config['session']['salt'] = ''; // Salt key to hash
+$config['session']['salt'] = '';
 $config['session']['secondsUntilExpiration'] = 7200;
 
 /**
