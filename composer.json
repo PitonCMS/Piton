@@ -25,6 +25,9 @@
     "scripts": {
         "post-create-project-cmd": [
             "Piton\\Library\\Utilities\\PitonBuild::createProject"
+        ],
+        "post-update-cmd": [
+            "Piton\\Library\\Utilities\\PitonBuild::updateEngine"
         ]
     }
 }
