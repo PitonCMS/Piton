@@ -10273,48 +10273,32 @@ body {
 /******************************************/
 /********* Detail Pages for Admin *********/
 /******************************************/
-#editPage form,
-#collectionDetail form,
 #users form {
   display: flex;
   flex-flow: row nowrap;
   max-height: calc(100vh - 56px);
   overflow: scroll;
 }
-#editPage form aside,
-#editPage form main,
-#collectionDetail form aside,
-#collectionDetail form main,
 #users form aside,
 #users form main {
   min-height: calc(100vh - 56px);
 }
-#editPage form aside,
-#collectionDetail form aside,
 #users form aside {
   background-color: #efefef;
   min-width: 225px;
   position: relative;
 }
-#editPage form aside .aside-inner,
-#collectionDetail form aside .aside-inner,
 #users form aside .aside-inner {
   position: sticky;
   top: 0px;
 }
-#editPage form aside a,
-#collectionDetail form aside a,
 #users form aside a {
   letter-spacing: 1px;
   color: #333;
 }
-#editPage form aside a:hover,
-#collectionDetail form aside a:hover,
 #users form aside a:hover {
   color: #336699 !important;
 }
-#editPage form aside .active,
-#collectionDetail form aside .active,
 #users form aside .active {
   background-color: rgba(51, 102, 153, 0.8) !important;
   color: #ffffff;
@@ -10323,16 +10307,12 @@ body {
   border-bottom-right-radius: 25px;
   box-shadow: 0 2px 3px rgba(51, 51, 51, 0.25);
 }
-#editPage form main,
-#collectionDetail form main,
 #users form main {
   background: #f6f6f6;
   display: flex;
   flex: 1;
   overflow: hidden;
 }
-#editPage form .scroll-container,
-#collectionDetail form .scroll-container,
 #users form .scroll-container {
   margin: 0 1em;
   padding-right: 1em;
@@ -10344,56 +10324,30 @@ body {
   flex: 1;
   height: calc(100vh - 75px);
 }
-#editPage form .two-col-sidebar,
-#collectionDetail form .two-col-sidebar,
 #users form .two-col-sidebar {
   background-color: #efefef;
   height: 100%;
   position: relative;
 }
-#editPage form .two-col-sidebar .two-col-sidebar-inner,
-#collectionDetail form .two-col-sidebar .two-col-sidebar-inner,
 #users form .two-col-sidebar .two-col-sidebar-inner {
   padding: 1em;
   position: sticky;
   top: 0;
 }
-#editPage form .two-col-sidebar .two-col-sidebar-inner .button-group,
-#collectionDetail form .two-col-sidebar .two-col-sidebar-inner .button-group,
 #users form .two-col-sidebar .two-col-sidebar-inner .button-group {
   display: flex;
   flex-flow: column nowrap;
 }
-#editPage form a.small-sidebar-text.active,
-#collectionDetail form a.small-sidebar-text.active,
 #users form a.small-sidebar-text.active {
   background-color: rgba(51, 102, 153, 0.5) !important;
   padding-left: 4em !important;
   margin-left: -1em !important;
 }
-#editPage form .navbar,
-#collectionDetail form .navbar,
 #users form .navbar {
   padding-left: 0;
 }
-#editPage form .two-col-sidebar,
-#collectionDetail form .two-col-sidebar,
 #users form .two-col-sidebar {
   padding: 1em;
-}
-
-#editPage .block-title-wrapper {
-  background: #f6f6f6;
-  padding: 1em 2em 1em 1em;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0px;
-  z-index: 1049;
-}
-#editPage .card {
-  margin-bottom: 1em;
 }
 
 #tools form aside .active {
@@ -10464,6 +10418,124 @@ body {
 #users form main .two-col-sidebar .two-col-sidebar-inner .button-group button,
 #users form main .two-col-sidebar .two-col-sidebar-inner .button-group a {
   margin-bottom: 1em;
+}
+
+/********************************************/
+/******* Page & Collection Edit Pages *******/
+/********************************************/
+#editPage .pageEditForm,
+#collectionDetail .pageEditForm {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  #editPage .pageEditForm,
+#collectionDetail .pageEditForm {
+    grid-template-columns: max-content 1fr;
+  }
+}
+#editPage .pageEditForm .sidebar,
+#collectionDetail .pageEditForm .sidebar {
+  height: 100%;
+  width: 100%;
+  background: #efefef;
+  position: relative;
+}
+#editPage .pageEditForm .sidebar .aside-inner,
+#collectionDetail .pageEditForm .sidebar .aside-inner {
+  padding: 1em;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+  position: sticky;
+  top: 60px;
+  z-index: 5;
+}
+@media screen and (min-width: 768px) {
+  #editPage .pageEditForm .sidebar .aside-inner,
+#collectionDetail .pageEditForm .sidebar .aside-inner {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (min-width: 768px) {
+  #editPage .pageEditForm .sidebar .sidebar-block,
+#collectionDetail .pageEditForm .sidebar .sidebar-block {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+}
+#editPage .pageEditForm .content,
+#collectionDetail .pageEditForm .content {
+  position: relative;
+  padding-right: 1em;
+  padding-left: 1em;
+}
+@media screen and (min-width: 768px) {
+  #editPage .pageEditForm .content,
+#collectionDetail .pageEditForm .content {
+    padding-top: 1em;
+  }
+}
+#editPage .pageEditForm .content .block-element-wrapper,
+#collectionDetail .pageEditForm .content .block-element-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+}
+#editPage .pageEditForm .content .nav-tabs,
+#collectionDetail .pageEditForm .content .nav-tabs {
+  background: white;
+  position: sticky;
+  top: 55px;
+  z-index: 5;
+}
+#editPage .form-group-wrapper,
+#collectionDetail .form-group-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  background: #efefef;
+  border-radius: 7px;
+}
+#editPage .form-group-wrapper .form-group,
+#collectionDetail .form-group-wrapper .form-group {
+  background: white;
+  border-radius: 7px;
+  padding: 1em;
+  margin: 1em;
+}
+#editPage .form-group-wrapper .form-group,
+#collectionDetail .form-group-wrapper .form-group {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5em;
+}
+#editPage .block-element-wrapper,
+#collectionDetail .block-element-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+}
+#editPage .block-element-wrapper .element-block,
+#collectionDetail .block-element-wrapper .element-block {
+  position: relative;
+}
+#editPage .block-element-wrapper .block-title-wrapper,
+#collectionDetail .block-element-wrapper .block-title-wrapper {
+  background: white;
+}
+#editPage .block-element-wrapper .block-content,
+#collectionDetail .block-element-wrapper .block-content {
+  background: #efefef;
+  padding: 1em;
+  border-radius: 7px;
+}
+#editPage .block-element-wrapper .block-content .jsAddElement,
+#collectionDetail .block-element-wrapper .block-content .jsAddElement {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .modal-body .card-wrapper {
