@@ -12,13 +12,17 @@ $('.jsDatePicker').datepicker({
 });
 
 // Delete confirm prompt
-let confirmDeletePrompt = function (msg) {
+let confirmPrompt = function (msg) {
     let message = msg || 'Are you sure you want to delete?';
     return confirm(message);
 }
 
 $('body').on('click', '.jsDeleteConfirm', function () {
-    return confirmDeletePrompt();
+    return confirmPrompt();
+});
+
+$('.jsLogout').on('click', function () {
+    return confirmPrompt('Are you sure you want to logout?');
 });
 
 // --------------------------------------------------------
@@ -113,7 +117,7 @@ $('.jsAddElement').on('click', function () {
 // Delete page element
 $('.jsBlockParent').on('click', '.jsDeleteBlockElement', function (e) {
     e.preventDefault();
-    if (!confirmDeletePrompt('Are you sure you want to delete this element?')) {
+    if (!confirmPrompt('Are you sure you want to delete this element?')) {
         return false;
     }
     let blockElementId = $(this).data('element-id');
@@ -244,7 +248,7 @@ let removeMessage = ($message, sign) => {
 $('.jsMessageWrap').on('click', 'button', function (e) {
     e.preventDefault();
     let request = $(e.target).attr('value');
-    if ('delete' === request && !confirmDeletePrompt()) {
+    if ('delete' === request && !confirmPrompt()) {
         return false;
     }
     let isRead = $(e.target).data('isRead');
@@ -284,7 +288,7 @@ $('form.jsEditMediaCategory').on('focus', 'input[name^=category]:last', function
 // Delete category from media categories form
 $('.jsMediaCategory').on('click', 'button[type=button]', function (e) {
     e.preventDefault();
-    if (!confirmDeletePrompt()) {
+    if (!confirmPrompt()) {
         return false;
     }
     let $category = $(e.target).parents('.jsMediaCategory');
@@ -324,7 +328,7 @@ $('.jsMediaCard').on('click', 'button', function (e) {
     e.preventDefault();
     let $button = $(e.target);
     let $medium = $(e.target).parents('.jsMediaCard');
-    if ('delete' === $button.attr('value') && !confirmDeletePrompt()) {
+    if ('delete' === $button.attr('value') && !confirmPrompt()) {
         return false;
     }
     // jQuery ignores the button value, so append that to post data
