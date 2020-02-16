@@ -9,5 +9,5 @@ public/assets/css/theme1/
 public/media/
 *.map
 
-# Remove this and commit your composer.lock file when building a project site
+# Do not ignore composer.lock file when committing projects
 composer.lock
