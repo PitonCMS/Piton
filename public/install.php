@@ -149,7 +149,7 @@ if (isset($_POST['submit'])) {
     }
 
     // Redirect to login page
-    header("Location: /letmein", true, 302);
+    header("Location: /login", true, 302);
 
     // Self destruct
     unlink(__FILE__);
