@@ -1,11 +1,10 @@
 {% extends 'pages/_base_layout.html' %}
 
 {% block headStyle %}
-
 <style>
   .hero{
     {% set bgImage = page.blocks.heroBlock|first %}
-  
+
     background-image: url('{{ getMediaPath(bgImage.media.filename, 'small')|default('/assets/img/heroDefault.jpg') }}');
   }
   @media (min-width: 768px){
@@ -21,8 +20,8 @@
 </style>
 {% endblock headStyle %}
 
-{% block body %}
 
+{% block body %}
 {{ getBlockElementsHtml(page.blocks.heroBlock) }}
 
 <section id="introBlock">
@@ -42,5 +41,4 @@
     {{ getBlockElementsHtml(page.blocks.secondaryTextBlock) }}
   </div>
 </section>
-
-{% endblock %}
+{% endblock body %}
