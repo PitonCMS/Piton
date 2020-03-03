@@ -3,7 +3,7 @@
 <style>
   .hero{
     {% set bgImage = page.blocks.heroBlock|first %}
-  
+
     background-image: url('{{ getMediaPath(bgImage.media.filename, 'small')|default('/assets/img/heroDefault.jpg') }}');
   }
   @media (min-width: 768px){
@@ -16,47 +16,41 @@
     background-color: rgba(0, 0, 0, 0.{{ page.settings.overlay }});
   }
   }
- 
 </style>
 {% endblock headStyle %}
 
-{% block body %}
 
+{% block body %}
 {{ getBlockElementsHtml(page.blocks.heroBlock) }}
 
 <section class="textBlock">
   <div class="container">
-    {% if page.blocks.textElement %}
     {{ getBlockElementsHtml(page.blocks.textElement) }}
-    {% endif %}
+  </div>
+</section>
+<section class="imageBlock">
+  <div class="container">
+    {{ getBlockElementsHtml(page.blocks.imageElement) }}
   </div>
 </section>
 <section id="collectionBlock">
   <div class="container">
-    {% if page.blocks.collectionElement %}
     {{ getBlockElementsHtml(page.blocks.collectionElement) }}
-    {% endif %}
   </div>
 </section>
 <section id="galleryBlock">
   <div class="container">
-    {% if page.blocks.galleryElement %}
     {{ getBlockElementsHtml(page.blocks.galleryElement) }}
-    {% endif %}
   </div>
 </section>
 <section id="vidoeBlock">
   <div class="container">
-    {% if page.blocks.videoElement %}
     {{ getBlockElementsHtml(page.blocks.videoElement) }}
-    {% endif %}
   </div>
 </section>
 <section id="contactBlock">
   <div class="container">
-    {% if page.blocks.contactElement %}
     {{ getBlockElementsHtml(page.blocks.contactElement) }}
-    {% endif %}
   </div>
 </section>
-{% endblock %}
+{% endblock body %}

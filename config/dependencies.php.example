@@ -1,5 +1,10 @@
 <?php
-// Dependency Injection Container (DIC) Configuration
+
+/**
+ * Dependency Injection Container (DIC) Custom Configuration
+ */
+
+declare(strict_types=1);
 
 /**
  * Override default Piton services using this file.

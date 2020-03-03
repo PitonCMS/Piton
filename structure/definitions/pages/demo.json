@@ -23,6 +23,14 @@
       ]
     },
     {
+      "name": "Image Element",
+      "key": "imageElement",
+      "description": "Image Element Demo",
+      "elementTypeDefault": "image.json",
+      "elementTypeOptions": [
+      ]
+    },
+    {
       "name": "Collection Element",
       "key": "collectionElement",
       "description": "collection Element Block",

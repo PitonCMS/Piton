@@ -1,9 +1,10 @@
 {% extends 'pages/_base_layout.html' %}
+
 {% block headStyle %}
 <style>
   .hero{
     {% set bgImage = page.blocks.heroBlock|first %}
-  
+
     background-image: url('{{ getMediaPath(bgImage.media.filename, 'small')|default('/assets/img/heroDefault.jpg') }}');
   }
   @media (min-width: 768px){
@@ -16,9 +17,10 @@
     background-color: rgba(0, 0, 0, 0.{{ page.settings.overlay }});
   }
   }
- 
 </style>
 {% endblock headStyle %}
+
+
 {% block body %}
 {{ getBlockElementsHtml(page.blocks.heroBlock) }}
 
@@ -27,5 +29,4 @@
         {{ getBlockElementsHtml(page.blocks.contactPage) }}
     </div>
 </section>
-
-{% endblock %}
+{% endblock body %}

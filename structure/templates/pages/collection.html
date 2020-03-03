@@ -1,4 +1,5 @@
 {% extends 'pages/_base_layout.html' %}
+
 {% block headStyle %}
 <style>
   .hero {
@@ -15,18 +16,16 @@
     background-color: rgba(0, 0, 0, 0.{{ page.settings.overlay }});
   }
   }
- 
 </style>
 {% endblock headStyle %}
 
+
 {% block body %}
+  {{ getBlockElementsHtml(page.blocks.heroBlock) }}
 
-{{ getBlockElementsHtml(page.blocks.heroBlock) }}
-
-
-<section id="collection">
-    <div class="container">
-        {{ getBlockElementsHtml(page.blocks.collectionTextArea) }}
-    </div>
-</section>
-{% endblock %}
+  <section id="collection">
+      <div class="container">
+          {{ getBlockElementsHtml(page.blocks.collectionTextArea) }}
+      </div>
+  </section>
+{% endblock body %}
