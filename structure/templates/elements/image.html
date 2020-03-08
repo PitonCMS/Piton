@@ -1,10 +1,11 @@
 {# Media Element #}
+{% import "includes/_componentMacros.html" as html %}
 
 <h3>{{ element.title }}</h3>
 
 <div class="imageElement-wrapper">
   <div class="image-wrapper">
-    <img src="{{ getMediaPath(element.media.filename) }}" alt="{{ element.media.caption }}">
+    {{ html.mediaSrcSet(element.media.filename, element.media.caption) }}
   </div>
   <div class="content-wrapper">
     {{ element.content }}
