@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PitonCMS (https://github.com/PitonCMS)
  *
