@@ -50,3 +50,9 @@ $config['email']['smtpHost'] = '';
 $config['email']['smtpUser'] = '';
 $config['email']['smtpPass'] = '';
 $config['email']['smtpPort'] = '';
+
+/**
+ * Pagination Row Limits
+ */
+$config['pagination']['adminPagePagination']['resultsPerPage'] = 6;
+$config['pagination']['adminMediaPagination']['resultsPerPage'] = 10;
