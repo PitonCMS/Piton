@@ -25,9 +25,6 @@ section {
   @include padding(2rem null);
   @include margin(null null 2rem);
 }
-section:nth-child(even){
-  background-color: $primary-light-grey;
-}
 
 img {
   width: 100%;
