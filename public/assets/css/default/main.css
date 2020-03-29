@@ -9933,8 +9933,6 @@ h6 {
 body {
   display: flex;
   flex-flow: column nowrap;
-  padding-top: 61px;
-  padding-top: 49px;
   min-height: 100vh;
 }
 

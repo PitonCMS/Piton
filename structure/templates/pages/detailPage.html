@@ -20,25 +20,9 @@
 </style>
 {% endblock headStyle %}
 
-
 {% block body %}
 {{ getBlockElementsHtml(page.blocks.heroBlock) }}
 
-<section id="introBlock">
-  <div class="container">
-    {{ getBlockElementsHtml(page.blocks.introBlock) }}
-  </div>
-</section>
+{{ getBlockElementsHtml(page.blocks.contentBlock) }}
 
-<section id="collectionBlock">
-  <div class="container">
-    {{ getBlockElementsHtml(page.blocks.collectionBlock) }}
-  </div>
-</section>
-
-<section id="secondaryTextBlock">
-  <div class="container">
-    {{ getBlockElementsHtml(page.blocks.secondaryTextBlock) }}
-  </div>
-</section>
 {% endblock body %}

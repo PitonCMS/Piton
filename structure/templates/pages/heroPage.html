@@ -2,11 +2,12 @@
 
 {% block headStyle %}
 <style>
-  .hero {
+  .hero{
     {% set bgImage = page.blocks.heroBlock|first %}
+
     background-image: url('{{ getMediaPath(bgImage.media.filename, 'small')|default('/assets/img/heroDefault.jpg') }}');
   }
-  @media screen and (min-width: 768px){
+  @media (min-width: 768px){
     .hero {
     background-image: url('{{ getMediaPath(bgImage.media.filename, 'large')|default('/assets/img/heroDefault.jpg') }}');
     background-position: {{ page.settings.placement }};
@@ -19,13 +20,9 @@
 </style>
 {% endblock headStyle %}
 
-
 {% block body %}
-  {{ getBlockElementsHtml(page.blocks.heroBlock) }}
+{{ getBlockElementsHtml(page.blocks.heroBlock) }}
 
-  <section id="collection">
-      <div class="container">
-          {{ getBlockElementsHtml(page.blocks.collectionTextArea) }}
-      </div>
-  </section>
+{{ getBlockElementsHtml(page.blocks.contentBlock) }}
+
 {% endblock body %}
