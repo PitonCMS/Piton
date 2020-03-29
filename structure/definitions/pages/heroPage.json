@@ -19,7 +19,7 @@
         {
             "name": "Content",
             "key": "contentBlock",
-            "description": "Home page text areas",
+            "description": "Page Content Blocks",
             "elementTypeDefault": ""
         }
     ],
