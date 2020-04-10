@@ -8,17 +8,17 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
-        {% for navLink in getNavigator('main') %}
+        {% for navItem in getNavigator('main') %}
 
-        {% if navLink.childNav %}
+        {% if navItem.childNav %}
         {# This is the case for a parent with a child nav dropdown #}
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            {{ navLink.title }}
+            {{ navItem.title }}
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            {% for child in navLink.childNav %}
+            {% for child in navItem.childNav %}
             <a class="dropdown-item" href="{{ pathFor('showPage', {'slug1': child.page_slug}) }}">{{ child.title }}</a>
             {% endfor %}
           </div>
@@ -27,8 +27,8 @@
         {% else %}
         {# This is the case for a parent nav link #}
 
-        <li class="nav-item {% if navLink.currentPage %}active{% endif %}">
-          <a class="nav-link" href="{{ pathFor('showPage', {'slug1': navLink.page_slug}) }}">{{ navLink.title }}</a>
+        <li class="nav-item {% if navItem.currentPage %}active{% endif %}">
+          <a class="nav-link" href="{{ pathFor('showPage', {'slug1': navItem.page_slug}) }}">{{ navItem.title }}</a>
         </li>
 
         {% endif %}
