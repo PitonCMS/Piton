@@ -1,5 +1,5 @@
 {
-    "templateName": "Page without Hero",
+    "templateName": "Without Hero",
     "templateDescription": "Page without hero image and with content blocks.",
     "templateFile": "contentPage.html",
     "hideFeaturedImage": false,
@@ -9,7 +9,7 @@
             "name": "Content",
             "key": "contentBlock",
             "description": "Home page text areas",
-            "elementTypeDefault": ""
+            "elementTypeDefault": "text"
         }
     ]
 }
