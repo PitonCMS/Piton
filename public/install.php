@@ -134,11 +134,8 @@ if (isset($_POST['submit'])) {
     }
 
     // Insert engine version as key to avoid running install again
-    $insertEngineSetting = 'insert into `setting` (`category`, `setting_key`, `setting_value`, `created_date`, `updated_date`) values (?, ?, ?, ?, ?);';
-    $settingValue[] = 'piton';
-    $settingValue[] = 'engine';
+    $insertEngineSetting = 'update `data_store` set `setting_value` = ?, `updated_date` = ? where `category` = \'piton\' and  `setting_key` = \'engine\';';
     $settingValue[] = $engineVersion;
-    $settingValue[] = date('Y-m-d H:i:s');
     $settingValue[] = date('Y-m-d H:i:s');
 
     try {

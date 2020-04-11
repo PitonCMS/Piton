@@ -1,7 +1,7 @@
 {
-    "templateName": "Home",
-    "templateDescription": "Home page with hero image and text blocks.",
-    "templateFile": "home.html",
+    "templateName": "With Hero",
+    "templateDescription": "Page with hero image and content blocks.",
+    "templateFile": "heroPage.html",
     "hideSubTitle": true,
     "hideFeaturedImage": false,
     "templateType": "page",
@@ -17,35 +17,11 @@
             "elementCountLimit": 1
         },
         {
-            "name": "Text",
-            "key": "introBlock",
-            "description": "Home page text areas",
-            "elementTypeDefault": "text.json",
-            "elementTypeOptions": [
-              "text.json"
-          ],
-          "elementCountLimit": 1
-        },
-        {
-            "name": "Collection",
-            "key": "collectionBlock",
-            "description": "Home page collection areas",
-            "elementTypeDefault": "collection.json",
-            "elementTypeOptions": [
-              "collection.json"
-          ],
-          "elementCountLimit": 1
-        },
-        {
-          "name": "Secondary Text",
-          "key": "secondaryTextBlock",
-          "description": "Home page secondary text areas",
-          "elementTypeDefault": "text.json",
-          "elementTypeOptions": [
-            "text.json"
-        ],
-        "elementCountLimit": 1
-      }
+            "name": "Content",
+            "key": "contentBlock",
+            "description": "Page Content Blocks",
+            "elementTypeDefault": "text"
+        }
     ],
     "settings": [
         {
@@ -90,7 +66,7 @@
             "category": "page",
             "label": "Hero Image Vertical/Horizontal Placement",
             "key": "placement",
-            "value": "",
+            "value": "Center Center",
             "inputType": "select",
             "help": "Select a placement combination to optimze your hero image above 768px.",
             "options": [
@@ -112,7 +88,7 @@
               },
               {
                 "name": "Center Center",
-                "value": "Center center"
+                "value": "Center Center"
               },
               {
                 "name": "Center Right",

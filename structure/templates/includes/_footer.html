@@ -5,10 +5,15 @@
             <nav class="nav2">
                 <h5>Navigation</h5>
                 <ul>
-                    {% for pl in site.pages %}
-                    <li>
-                        <a href="{{ pathFor('showPage', {'slug1': pl.page_slug}) }}">{{ pl.title }}</a>
-                    </li>
+                    {% for navItem in getNavigator('footer') %}
+                        {% if navItem.childNav %}
+                            {# Nav item with dropdown #}
+                        {% else %}
+                            {# Nav link without dropdown #}
+                        <li class="{% if navItem.currentPage %}active{% endif %}">
+                            <a href="{{ pathFor('showPage', {'slug1': navItem.page_slug}) }}">{{ navItem.title }}</a>
+                        </li>
+                        {% endif %}
                     {% endfor %}
                 </ul>
             </nav>
@@ -20,23 +25,17 @@
         <div class="footer-social">
             <h5>Get Social</h5>
             <div class="get-social-icons">
-                {% if site.settings.githubLink %}
-                <a href="{{ site.settings.githubLink }}"><i class="social-icon fab fa-github fa-2x"></i></a>
-                {% endif %}
+
                 {% if site.settings.facebookLink %}
                 <a href="{{ site.settings.facebookLink }}"><i class="social-icon fab fa-facebook fa-2x"></i></a>
                 {% endif %}
-                {% if site.settings.twitterLink %}
 
+                {% if site.settings.twitterLink %}
                 <a href="{{ site.settings.twitterLink }}"><i class="social-icon fab fa-twitter fa-2x"></i></a>
                 {% endif %}
+
                 {% if site.settings.instagramLink %}
-
                 <a href="{{ site.settings.instagramLink }}"><i class="social-icon fab fa-instagram fa-2x"></i></a>
-                {% endif %}
-                {% if site.settings.linkedinLink %}
-
-                <a href="{{ site.settings.linkedinLink }}"><i class="social-icon fab fa-linkedin fa-2x"></i></a>
                 {% endif %}
 
             </div>
@@ -47,7 +46,6 @@
         <p>Piton CMS &copy; 2018 - {{ "now"|date('Y') }}</p>
         {% if site.settings.siteAuthor %}
         <p>Website built by <a href="{{ site.settings.siteAuthorUrl }}">{{ site.settings.siteAuthor }}</a></p>
-
         {% endif %}
 
     </div>

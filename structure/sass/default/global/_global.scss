@@ -4,8 +4,8 @@ body {
   display: flex;
   flex-flow: column nowrap;
   // justify-content: flex-start;
-  @include padding(61px null null);
-  @include padding(49px null null);
+  // @include padding(61px null null);
+  // @include padding(49px null null);
   min-height: 100vh;
 }
 footer{
@@ -24,9 +24,6 @@ section {
   width: 100%;
   @include padding(2rem null);
   @include margin(null null 2rem);
-}
-section:nth-child(even){
-  background-color: $primary-light-grey;
 }
 
 img {
