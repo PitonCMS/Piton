@@ -77,7 +77,7 @@ if (isset($_POST['submit'])) {
         throwPitonError("Unable to read PitonCMS/Engine version from composer.lock.");
     }
     $engineKey = array_search('pitoncms/engine', array_column($definition->packages, 'name'));
-    $engineVersion = $definition->packages[$engineKey]->version;
+    $engineVersion = $definition->packages[$engineKey]->version ?? 'dev';
 
     // Setup database config
     $dbConfig = $config['database'];
@@ -133,7 +133,7 @@ if (isset($_POST['submit'])) {
         throwPitonError("Failed to insert new user: {$e->getMessage()}.");
     }
 
-    // Insert engine version as key to avoid running install again
+    // Set engine version as key to avoid running install again
     $insertEngineSetting = 'update `data_store` set `setting_value` = ?, `updated_date` = ? where `category` = \'piton\' and  `setting_key` = \'engine\';';
     $settingValue[] = $engineVersion;
     $settingValue[] = date('Y-m-d H:i:s');

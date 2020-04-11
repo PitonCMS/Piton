@@ -17,20 +17,12 @@
 
     {% block headStyle %}{% endblock %}
 
-    <script>
-        let pitonConfig = {
-          csrfTokenName: "{{ site.csrf.name }}",
-          csrfTokenValue: "{{ site.csrf.value }}",
-          routes: {
-            submitMessage: "{{ pathFor('submitMessage') }}",
-          },
-          {% block jsPitonConfig '' %}
-        };
-      </script>
+    {{ include ('includes/_pitonConfigJs.html') }}
 </head>
 
 <body>
     {{ include ("includes/_navbar.html") }}
+
     {% block body %}
     <h2>Default body content</h2>
     {% endblock %}
