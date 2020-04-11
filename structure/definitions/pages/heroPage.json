@@ -1,5 +1,5 @@
 {
-    "templateName": "Page with Hero",
+    "templateName": "With Hero",
     "templateDescription": "Page with hero image and content blocks.",
     "templateFile": "heroPage.html",
     "hideSubTitle": true,
@@ -20,7 +20,7 @@
             "name": "Content",
             "key": "contentBlock",
             "description": "Page Content Blocks",
-            "elementTypeDefault": ""
+            "elementTypeDefault": "text"
         }
     ],
     "settings": [
