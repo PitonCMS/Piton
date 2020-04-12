@@ -1,6 +1,6 @@
 {
     "name": "pitoncms/piton",
-    "description": "CMS for small websites",
+    "description": "Designer Forward CMS",
     "type": "project",
     "license": "MIT",
     "homepage": "https://github.com/PitonCMS/Piton",
@@ -12,11 +12,11 @@
     ],
     "require": {
         "php": ">=7.1",
-        "pitoncms/engine": "~0"
+        "pitoncms/engine": "dev-master"
         },
     "autoload": {
         "psr-4": {
-            "Piton\\": "app/"
+            "PitonCMS\\": "app/"
         }
     },
     "config": {
