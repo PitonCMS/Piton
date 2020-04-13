@@ -1,0 +1,40 @@
+// global
+
+body {
+ display: flex;
+ flex-flow: column nowrap;
+ min-height: 100vh;
+
+}
+footer{
+ @include margin(auto null null);
+}
+
+a {
+ text-decoration: none;
+
+ &:hover {
+   color: $accent-color;
+ }
+}
+
+section {
+ width: 100%;
+ @include padding(2rem null);
+ @include margin(null null 2rem);
+}
+
+img {
+ width: 100%;
+ display: block;
+}
+.container {
+ @include margin(0 auto);
+ @include padding(null null 2rem null);
+ width: 90%;
+ max-width: $max-width;
+
+}
+
+// Buttons
+

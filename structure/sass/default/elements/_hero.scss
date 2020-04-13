@@ -1,40 +1,62 @@
-.hero-container {
-  width: 100vw;
-  min-height: 75vh;
-  display: flex;
-}
 .hero {
-  min-width: 100%;
-  min-height: 100%;
-  background-size: cover;
-  background-attachment: scroll;
-  background-repeat: no-repeat;
-  object-fit: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  box-shadow: $box-shadow;
-}
-.hero::after {
+ @include padding(10rem null);
+ background-size: cover;
+ background-attachment: scroll;
+ background-repeat: no-repeat;
+ object-fit: contain;
+
+ display: flex;
+ align-items: center;
+ justify-content: center;
+
+ position: relative;
+
+ box-shadow: $box-shadow;
+ // z-index: -10;
+
+ // hero overlay
+ &::after {
   content: "";
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 2;
-}
-.hero-content {
+
+ }
+
+ .hero-content {
   color: $text-light;
   text-align: center;
   max-width: 75ch;
-  padding: 1em;
-  margin: 0 auto;
-  z-index: 3;
+  @include padding(null 1em);
+  @include margin(0 auto);
+  position: relative;
+  z-index: 50;
   text-shadow: $text-shadow;
-}
-.hero-content h1 {
-  font-size: 4rem;
-  text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+
+  h1 {
+   font-size: 4rem;
+   @include margin(0);
+   line-height: 1;
+  }
+
+  a {
+   display: inline-block;
+   background: $clr-primary;
+   text-shadow: none;
+   @include padding(.75em 1em);
+   // @include margin(1em null);
+   border: solid 1px darken($clr-secondary, 50);
+   border-radius: $br;
+   color: $clr-secondary;
+   z-index: 999;
+
+   &:hover {
+    color: $clr-primary;
+    background: $clr-secondary;
+
+   }
+  }
+ }
 }
