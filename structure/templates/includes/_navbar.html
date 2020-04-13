@@ -1,42 +1,35 @@
-<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="{{ pathFor('home') }}">{{ site.settings.displayName|default('Piton<span>CMS</span>') }}</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-      aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<header>
+ <div class="logo">
+  <a href="{{ pathFor('home') }}">{{ site.settings.displayName|default('Piton<span>CMS</span>') }}</a>
+</div>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
-        {% for navItem in getNavigator('main') %}
+  <input type="checkbox" name="nav-toggle" class="nav-toggle" id="nav-toggle">
+  <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
 
-        {% if navItem.childNav %}
-        {# This is the case for a parent with a child nav dropdown #}
+  <nav class="navbar">
+   <ul class="top-nav">
+    {% for navLink in getNavigator('main') %}
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            {{ navItem.title }}
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            {% for child in navItem.childNav %}
-            <a class="dropdown-item" href="{{ pathFor('showPage', {'slug1': child.page_slug}) }}">{{ child.title }}</a>
-            {% endfor %}
-          </div>
-        </li>
+    {% if navLink.childNav %}
+    {# This is the case for a parent with a child nav dropdown #}
+    <li class="nav-link with-sub-nav {% if navLink.currentPage %}active{% endif %}">
+     <input type="checkbox" name="sub-nav-toggle-{{ loop.index }}" class="sub-nav-toggle" id="sub-nav-toggle-{{ loop.index }}">
+     <label for="sub-nav-toggle-{{ loop.index }}" class="sub-nav-toggle-label">{{ navLink.title }}</label>
+     <ul class="sub-nav">
+      {% for child in navLink.childNav %}
+      <li class="sub-nav-link"><a class="dropdown-item" href="{{ pathFor('showPage', {'slug1': child.page_slug}) }}">{{ child.title }}</a></li>
+      {% endfor %}
+     </ul>
+    </li> 
 
-        {% else %}
-        {# This is the case for a parent nav link #}
+    {% else %}
+    <li class="nav-link {% if navLink.currentPage %}active{% endif %}">
+     <a class="" href="{{ pathFor('showPage', {'slug1': navLink.page_slug}) }}">{{ navLink.title }}</a>
+    </li>
+    {% endif %}
 
-        <li class="nav-item {% if navItem.currentPage %}active{% endif %}">
-          <a class="nav-link" href="{{ pathFor('showPage', {'slug1': navItem.page_slug}) }}">{{ navItem.title }}</a>
-        </li>
+    {% endfor %}
 
-        {% endif %}
-
-        {% endfor %}
-      </ul>
-
-    </div>
-  </div>
-
-</nav>
+   </ul>
+  </nav>
+</header>

@@ -1,21 +1,45 @@
-// theme
+/* Color Theme */
 
-$primary-color: #336699;
-$accent-color: darken($primary-color, 3);
-$primary-light-grey: #efefef;
-$primary-medium-grey: #ddd;
-$primary-dark-grey: #ccc;
 
-$text-dark: #333;
-$text-light: #ffffff;
+$clr-primary: #336699;
+$clr-secondary: lighten($clr-primary, 50);
+$clr-dark: #000;
+$clr-light: #fff;
+$clr-accent: orange;
+$clr-hover: gold;
 
-$gray1: rgb(236, 234, 234);
-$gray2: rgb(202, 204, 206);
-$dark1: #000;
- 
+// Default Element Styles 
 
+$bs: 0 2px 2px rgba($clr-dark, .5);
+$br: 7px;
+
+// Navigation Variables
+$breakpoint: 768px;
+$nav-height: 70px;
+$nav-background: $clr-primary;
+$nav-font-color: $clr-light;
+$link-hover-color: $clr-hover;
+
+
+$box-shadow: 0 2px 2px rgba($clr-dark, .5);
 $border-radius: 7px;
-$box-shadow: 0 5px 10px rgba(150, 150, 150, .05 ), 0 15px 40px rgba(150,150,150,.2);
-$text-shadow: 0 2px 2px rgba(0,0,0,.5);
-$letter-spacing: 4px;
+$ls: 2px;
 
+$nav-gtc: .5rem auto 1fr .5rem;
+
+
+:root {
+ --clr-primary: #{$clr-primary};
+ --clr-secondary: #{$clr-secondary};
+ --clr-dark: #{$clr-dark};
+ --clr-light: #{$clr-light};
+ --clr-accent: #{$clr-accent};
+ --clr-hover: #{$clr-hover};
+}
+
+$text-light: $clr-light;
+$text-shadow: $bs;
+$gray1: #efefef;
+$gray2: #ccc;
+$dark1: #2f2f2f;
+$primary-color: $clr-primary;
