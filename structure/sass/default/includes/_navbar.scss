@@ -4,7 +4,11 @@ header {
  background-color: $nav-background;
  height: $nav-height;
  color: $nav-font-color;
- position: relative;
+ position: sticky;
+ top: 0;
+ width: 100%;
+ opacity: 1;
+ z-index: 100;
 
  @media screen and (min-width: $breakpoint) {
   display: grid;
@@ -51,12 +55,6 @@ header {
    box-sizing: border-box;
   }
  }
-
- // .sub-nav-toggle {
- //  top: 100px !important;
- //  left: 100px !important;
- //  color: red;
- // }
 
  // Nav Toggle Label & hamburger icon w/animation
  .nav-toggle-label {
@@ -137,7 +135,7 @@ header {
   position: absolute;
   top: 100%;
   box-shadow: $bs;
-  background: $nav-background;
+  // background: $nav-background;
   transform: scale(1, 0);
   transform-origin: top;
   transition: transform 125ms ease-in-out;

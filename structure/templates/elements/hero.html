@@ -1,14 +1,15 @@
 {# Hero Element #}
 
 
-<div class="hero-container">
-  <div class="hero">
+<div class="hero">
+  {# <div class="hero"> #}
      <div class="hero-content">
       <h1>{{ element.title }}</h1>
       {{ element.content }}
       {% if page.settings.ctaTitle %}
-      <a class="btn btn-primary" href="{{page.settings.ctaTarget}}" target="_blank">{{ page.settings.ctaTitle }}</a>
+      <a class="btn btn-cta" href="{{page.settings.ctaTarget}}" target="_blank">{{ page.settings.ctaTitle }}</a>
       {% endif %}
-     </div>
+     {# </div> #}
+  
   </div>
 </div>
