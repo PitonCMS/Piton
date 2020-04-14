@@ -6,7 +6,8 @@ body {
  min-height: 100vh;
 
 }
-footer{
+
+footer {
  @include margin(auto null null);
 }
 
@@ -14,20 +15,21 @@ a {
  text-decoration: none;
 
  &:hover {
-   color: $accent-color;
+  color: $accent-color;
  }
 }
 
 section {
- width: 100%;
- @include padding(2rem null);
- @include margin(null null 2rem);
+ // width: 100%;
+ // @include padding(2rem null);
+ // @include margin(null null 2rem);
 }
 
 img {
  width: 100%;
  display: block;
 }
+
 .container {
  @include margin(0 auto);
  @include padding(null null 2rem null);
@@ -37,4 +39,21 @@ img {
 }
 
 // Buttons
+.btn {
 
+ display: inline-block;
+ background: $clr-primary;
+ text-shadow: none;
+ @include padding(.75em 1em);
+ border: solid 1px darken($clr-secondary, 50);
+ border-radius: $br;
+ color: $clr-secondary;
+ z-index: 999;
+ transition: all ease-in-out 125ms;
+
+ &:hover {
+  color: $clr-primary;
+  background: $clr-secondary;
+  cursor: pointer;
+ }
+}

@@ -135,7 +135,7 @@ header {
   position: absolute;
   top: 100%;
   box-shadow: $bs;
-  // background: $nav-background;
+  background: $nav-background;
   transform: scale(1, 0);
   transform-origin: top;
   transition: transform 125ms ease-in-out;
