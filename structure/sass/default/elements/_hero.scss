@@ -40,23 +40,5 @@
    @include margin(0);
    line-height: 1;
   }
-
-  a {
-   display: inline-block;
-   background: $clr-primary;
-   text-shadow: none;
-   @include padding(.75em 1em);
-   // @include margin(1em null);
-   border: solid 1px darken($clr-secondary, 50);
-   border-radius: $br;
-   color: $clr-secondary;
-   z-index: 999;
-
-   &:hover {
-    color: $clr-primary;
-    background: $clr-secondary;
-
-   }
-  }
  }
 }

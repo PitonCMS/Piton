@@ -1,0 +1,46 @@
+.contact-form {
+ display: grid;
+ grid-template-columns: 1fr 5fr 1fr;
+ gap: 1em;
+ align-items: center;
+}
+
+/* Add styles to 'label' selector */
+label {
+ font-size: 1.2em;
+ align-self: flex-start;
+ justify-self: flex-end;
+ grid-column: 1 / 2;
+}
+
+/* Add styles to 'input' and 'textarea' selectors */
+input[type=text],
+input[type=email],
+textarea {
+ width: 100%;
+ @include padding(.75em 1em);
+ border: 1px solid $gray2;
+ border-radius: $br;
+ grid-column: 2 / 3;
+ font-size: 1rem;
+}
+
+/* Add styles to show 'focus' of selector */
+input[type=text]:focus,
+input[type=email]:focus,
+textarea:focus {
+ border: 1px solid $clr-primary;
+}
+
+/* Add styles to the submit button */
+input[type=submit] {
+ justify-self: flex-start;
+ grid-column: 2 / 3;
+ font-size: 1rem;
+}
+
+/* Add styles for 'focus' property */
+input[type=submit]:focus {
+ background: var(--clr-accent) ;
+ color: var(--clr-light);
+}

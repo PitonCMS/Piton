@@ -1,59 +1,40 @@
-/* Navbar Styles */
-
-header {
- background-color: $nav-background;
- height: $nav-height;
- color: $nav-font-color;
- position: sticky;
- top: 0;
+.navbar {
  width: 100%;
- opacity: 1;
+ height: $nav-height;
+ line-height: $nav-height;
+ background: $nav-background;
+ position: relative;
  z-index: 100;
+ display: flex;
+ flex-flow: column nowrap;
+ box-shadow: $bs;
 
- @media screen and (min-width: $breakpoint) {
-  display: grid;
-  grid-template-columns: $nav-gtc;
-  box-shadow: $bs;
- }
-
-
- // Nav Logo
- .logo {
-  font-size: 2rem;
-  font-weight: 900;
-  line-height: $nav-height;
+ @media Screen and (min-width: $breakpoint) {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  letter-spacing: $ls;
+  padding: 0 1rem;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+ }
 
-  @media screen and (min-width: $breakpoint) {
-   grid-column: 2 / 3;
-   display: block;
-  }
-
+ // Logo
+ .logo {
   a {
-   text-decoration: none;
    color: $nav-font-color;
+   text-decoration: none;
+   font-size: 2rem;
    text-transform: uppercase;
-
-   &:hover {
-    color: $link-hover-color;
-   }
+   font-weight: 700;
+   width: 100%;
+   display: block;
+   text-align: center;
   }
  }
 
- // Nav Toggle (using checkbox :checked)
+ // Toggle Off Screen 
  .nav-toggle,
  .sub-nav-toggle {
-  position: absolute !important;
-  top: -9999px !important;
-  left: -9999px !important;
-
-  &:focus~.nav-toggle-label {
-   outline: 4px solid lighten($clr-primary, 3%);
-   box-sizing: border-box;
-  }
+  position: absolute;
+  top: -9999px;
  }
 
  // Nav Toggle Label & hamburger icon w/animation
@@ -66,7 +47,7 @@ header {
   top: 0px;
   right: 1rem;
 
-  @media screen and (min-width: $breakpoint) {
+  @media Screen and (min-width: $breakpoint) {
    display: none;
   }
 
@@ -75,8 +56,8 @@ header {
   span::after {
    width: 2rem;
    height: 4px;
-   border-radius: $border-radius;
-   background: $nav-font-color;
+   border-radius: 7px;
+   background: white;
   }
 
   span::before,
@@ -100,9 +81,6 @@ header {
  .nav-toggle:checked~.navbar,
  .sub-nav-toggle:checked~.sub-nav {
   transform: scale(1, 1);
- }
- .sub-nav-toggle:checked~.sub-nav {
-
  }
 
  .nav-toggle:checked~.navbar a,
@@ -128,122 +106,122 @@ header {
   bottom: 30px;
  }
 
-
- // Nav Links Style
- .navbar {
-  width: 100%;
-  position: absolute;
-  top: 100%;
-  box-shadow: $bs;
-  // background: $nav-background;
+ // Top Nav Styles
+ .topnav {
+  background: $nav-background;
   transform: scale(1, 0);
   transform-origin: top;
-  transition: transform 125ms ease-in-out;
+  transition: all 125ms ease-in-out;
 
-  @media screen and (min-width: $breakpoint) {
-   // Reset Navbar from responsive state
-   position: relative;
+  @media Screen and (min-width: $breakpoint) {
    transform: scale(1);
-   top: initial;
-   box-shadow: none;
+   flex: 1;
+  }
+ }
 
-   // Full Width
-   grid-column: 3 / 4;
+ .nav-toggle:checked~.topnav {
+  transform: scale(1, 1);
+ }
+
+ .topnav ul {
+  width: 100%;
+  text-align: center;
+  list-style: none;
+
+  @media Screen and (min-width: $breakpoint) {
+   width: 100%;
+   flex: 1;
    display: flex;
    justify-content: flex-end;
-
-  }
-
-  .top-nav {
-   @include padding(0);
-   @include margin(0);
-   list-style: none;
-   text-align: center;
-
-   @media screen and (min-width: $breakpoint) {
-    display: flex;
-    justify-content: space-between;
-   }
-  }
-
-  .nav-link {
-   height: $nav-height;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-
-   @media screen and (min-width: $breakpoint) {}
-
-   a,
-   .sub-nav-toggle-label {
-    height: $nav-height;
-    width: 100%;
-    text-transform: uppercase;
-    cursor: pointer;
-    text-decoration: none;
-    color: $nav-font-color;
-    font-weight: 700;
-    letter-spacing: $ls;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    @media screen and (min-width: $breakpoint) {
-     font-size: .8rem;
-     @include margin(null null null 1em);
-     @include padding(null 1em);
-     letter-spacing: .7px;
-    }
-
-    &:hover {
-     color: $link-hover-color;
-     background: $clr-dark;
-    }
-   }
   }
  }
 
- // Sub Nav {
+ .topnav li {
+  @media Screen and (min-width: $breakpoint) {
+   // margin-left: 1rem;
+   position: relative;
+  }
+ }
+
+ .topnav li a,
+ .sub-nav-toggle-label {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: $nav-font-color;
+  font-size: 1.3rem;
+  cursor: pointer;
+
+  @media Screen and (min-width: $breakpoint) {
+   padding: 0 .5rem;
+   font-size: 1rem;
+  }
+ }
+
+ .topnav li a:hover,
+ .sub-nav-toggle-label:hover {
+  color: $nav-font-color;
+  background: $clr-dark;
+
+ }
+
  .sub-nav-toggle-label::after {
-  padding-left: 5px;
-  content: ' ▾';
+  padding-left: 4px;
+  content: ' \25B8';
+  transition: transform 125ms ease-in-out;
  }
 
- .with-sub-nav {
-  height: 100%;
-  position: relative;
+ .sub-nav-toggle:checked~.sub-nav-toggle-label::after {
+  content: ' \25be';
 
-  .sub-nav {
-   list-style: none;
-   margin: 0 !important;
-   padding: 0 !important;
-   background: $nav-background;
+  @media screen and (min-width: $breakpoint) {
+   content: ' \25b8';
+  }
+ }
+
+ .sub-nav-toggle:checked~.sub-nav {
+  display: flex;
+  flex-flow: column nowrap;
+  transform: scale(1, 1);
+
+ }
+
+ .sub-nav {
+  display: none;
+  transform: scale(1, 0);
+  transition: transform 250ms ease-in-out;
+  transform-origin: top;
+  color: $clr-dark;
+  background: $clr-accent;
+
+  @media Screen and (min-width: $breakpoint) {
    position: absolute;
+   width: 100%;
+   min-width: 200px;
    top: 100%;
-   left: 0;
-   right: 0;
-
+   left: 0px;
+   right: 100px;
    transform: scale(1, 0);
-   transform-origin: top;
-   transition: transform 125ms ease;
+   transition: transform 250ms ease-in-out;
+   box-shadow: $bs;
+   display: block;
+   flex-flow: column nowrap;
+   margin: 0;
+  }
 
-   @media screen and (min-width: $breakpoint) {
-    left: 1rem;
-   }
+  &-link {
+   margin-left: 0;
 
-   .sub-nav-link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 !important;
-    padding: 0 !important;
+   a {
+    @media Screen and (min-width: $breakpoint) {
+     font-weight: 300;
+     font-size: 1rem !important;
+     text-align: left;
 
-    .dropdown-item {
-     margin: 0 !important;
     }
    }
   }
  }
 
- // End Header
+ // End Navbar
 }
