@@ -1,154 +1,9 @@
 @charset "UTF-8";
-/* Global Remedies
-******************/
-/* Use border-box by default, globally */
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,700|Lato:300,400,700");
-*,
-::before,
-::after {
-  box-sizing: border-box;
-}
-
-/*
-* Consistent line spacing...
-* CSS Inline Layout Module Level 3: https://drafts.csswg.org/css-inline-3/#line-sizing-property
-*/
-/* Remove the tiny space around the edge of the page */
-body {
-  margin: 0;
-}
-
-/* Headings
-***********/
-/* Switch to rem units for headings */
-/* @@@ Initial values are based on existing browser defaults */
-h1 {
-  font-size: 2rem;
-}
-
-h2 {
-  font-size: 1.5rem;
-}
-
-h3 {
-  font-size: 1.17rem;
-}
-
-h4 {
-  font-size: 1rem;
-}
-
-h5 {
-  font-size: 0.83rem;
-}
-
-h6 {
-  font-size: 0.67rem;
-}
-
-/* Keep h1 margins consistent, even when nested */
-h1 {
-  margin: 0.67em 0;
-}
-
-/* Typography
-*************/
-/* Overflow by default is bad */
-pre {
-  white-space: pre-wrap;
-}
-
-/*
-* 1. Solid, thin horizontal rules
-* 2. Remove Firefox `color: gray`
-* 3. Remove default `1px` height, and common `overflow: hidden`
-*/
-hr {
-  border-style: solid;
-  border-width: 1px 0 0;
-  color: inherit;
-  height: 0;
-  overflow: visible;
-}
-
-/* Embedded Elements
-********************/
-/*
-* 1. Block display is usually what we want
-* 2. Remove strange space-below when inline
-* 3. Responsive by default
-*/
-img,
-svg,
-video,
-canvas,
-audio,
-iframe,
-embed,
-object {
-  display: block;
-  max-width: 100%;
-}
-
-/*
-* Maintain intrinsic aspect ratios when `max-width` is applied
-* (iframe, embed, and object have no intrinsic ratio, set height explicitly)
-*/
-img,
-svg,
-video,
-canvas {
-  height: auto;
-}
-
-/*
-* There is no good reason elements default to 300px,
-* and audio files are unlikely to come with a width attribute
-*/
-audio {
-  width: 100%;
-}
-
-/* Old Browsers
-***************/
-/* Remove the border on images inside links in IE 10 and earlier */
-img {
-  border-style: none;
-}
-
-/* Hide the overflow in IE 10 and earlier */
-svg {
-  overflow: hidden;
-}
-
-/* Default block display on HTML5 elements */
-article,
-aside,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-nav,
-section {
-  display: block;
-}
-
-/*
-* 1. Add the correct box sizing in IE 10
-* 2. Remove the padding in IE 10
-*/
-[type=checkbox],
-[type=radio] {
-  box-sizing: border-box;
-  padding: 0;
-}
-
 /* Color Theme */
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700|Lato:300,400,700");
 :root {
   --clr-primary: #336699;
-  --clr-secondary: #d9e6f2;
+  --clr-secondary: #79a6d2;
   --clr-dark: #000;
   --clr-light: #fff;
   --clr-accent: orange;
@@ -210,6 +65,12 @@ h6 {
   font-size: 1rem;
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   display: flex;
   flex-flow: column nowrap;
@@ -244,71 +105,53 @@ img {
   background: #336699;
   text-shadow: none;
   padding: 0.75em 1em;
-  border: solid 1px #336699;
+  border: solid 1px #132639;
   border-radius: 7px;
-  color: #d9e6f2;
+  color: #fff;
   z-index: 999;
   transition: all ease-in-out 125ms;
 }
 .btn:hover {
   color: #336699;
-  background: #d9e6f2;
+  background: #79a6d2;
   cursor: pointer;
 }
 
-/* Navbar Styles */
-header {
-  background-color: #336699;
-  height: 70px;
-  color: #fff;
-  position: sticky;
-  top: 0;
+.navbar {
   width: 100%;
-  opacity: 1;
-  z-index: 100;
-}
-@media screen and (min-width: 768px) {
-  header {
-    display: grid;
-    grid-template-columns: 0.5rem auto 1fr 0.5rem;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
-  }
-}
-header .logo {
-  font-size: 2rem;
-  font-weight: 900;
+  height: 70px;
   line-height: 70px;
+  background: #336699;
+  position: relative;
+  z-index: 100;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  letter-spacing: 2px;
+  flex-flow: column nowrap;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
 }
-@media screen and (min-width: 768px) {
-  header .logo {
-    grid-column: 2/3;
-    display: block;
+@media Screen and (min-width: 768px) {
+  .navbar {
+    display: flex;
+    padding: 0 1rem;
+    flex-flow: row nowrap;
+    justify-content: space-between;
   }
 }
-header .logo a {
-  text-decoration: none;
+.navbar .logo a {
   color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
   text-transform: uppercase;
+  font-weight: 700;
+  width: 100%;
+  display: block;
+  text-align: center;
 }
-header .logo a:hover {
-  color: gold;
+.navbar .nav-toggle,
+.navbar .sub-nav-toggle {
+  position: absolute;
+  top: -9999px;
 }
-header .nav-toggle,
-header .sub-nav-toggle {
-  position: absolute !important;
-  top: -9999px !important;
-  left: -9999px !important;
-}
-header .nav-toggle:focus ~ .nav-toggle-label,
-header .sub-nav-toggle:focus ~ .nav-toggle-label {
-  outline: 4px solid #376ea4;
-  box-sizing: border-box;
-}
-header .nav-toggle-label {
+.navbar .nav-toggle-label {
   cursor: pointer;
   height: 70px;
   display: flex;
@@ -317,157 +160,159 @@ header .nav-toggle-label {
   top: 0px;
   right: 1rem;
 }
-@media screen and (min-width: 768px) {
-  header .nav-toggle-label {
+@media Screen and (min-width: 768px) {
+  .navbar .nav-toggle-label {
     display: none;
   }
 }
-header .nav-toggle-label span,
-header .nav-toggle-label span::before,
-header .nav-toggle-label span::after {
+.navbar .nav-toggle-label span,
+.navbar .nav-toggle-label span::before,
+.navbar .nav-toggle-label span::after {
   width: 2rem;
   height: 4px;
   border-radius: 7px;
-  background: #fff;
+  background: white;
 }
-header .nav-toggle-label span::before,
-header .nav-toggle-label span::after {
+.navbar .nav-toggle-label span::before,
+.navbar .nav-toggle-label span::after {
   content: "";
   position: absolute;
   transform: rotate(0deg);
   transition: transform 125ms ease;
 }
-header .nav-toggle-label span::before {
+.navbar .nav-toggle-label span::before {
   top: 23px;
 }
-header .nav-toggle-label span::after {
+.navbar .nav-toggle-label span::after {
   bottom: 23px;
 }
-header .nav-toggle:checked ~ .navbar,
-header .sub-nav-toggle:checked ~ .sub-nav {
+.navbar .nav-toggle:checked ~ .navbar,
+.navbar .sub-nav-toggle:checked ~ .sub-nav {
   transform: scale(1, 1);
 }
-header .nav-toggle:checked ~ .navbar a,
-header .nav-toggle:checked ~ .sub-nav-toggle-label {
+.navbar .nav-toggle:checked ~ .navbar a,
+.navbar .nav-toggle:checked ~ .sub-nav-toggle-label {
   opacity: 1;
 }
-header .sub-nav-toggle:checked ~ .sub-nav a {
+.navbar .sub-nav-toggle:checked ~ .sub-nav a {
   opacity: 1;
 }
-header .nav-toggle:checked ~ .nav-toggle-label span {
+.navbar .nav-toggle:checked ~ .nav-toggle-label span {
   background: transparent;
 }
-header .nav-toggle:checked ~ .nav-toggle-label span:before {
+.navbar .nav-toggle:checked ~ .nav-toggle-label span:before {
   transform: rotate(45deg);
   top: 36px;
 }
-header .nav-toggle:checked ~ .nav-toggle-label span:after {
+.navbar .nav-toggle:checked ~ .nav-toggle-label span:after {
   transform: rotate(-45deg);
   bottom: 30px;
 }
-header .navbar {
-  width: 100%;
-  position: absolute;
-  top: 100%;
-  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+.navbar .topnav {
   background: #336699;
   transform: scale(1, 0);
   transform-origin: top;
-  transition: transform 125ms ease-in-out;
+  transition: all 125ms ease-in-out;
 }
-@media screen and (min-width: 768px) {
-  header .navbar {
-    position: relative;
+@media Screen and (min-width: 768px) {
+  .navbar .topnav {
     transform: scale(1);
-    top: initial;
-    box-shadow: none;
-    grid-column: 3/4;
+    flex: 1;
+  }
+}
+.navbar .nav-toggle:checked ~ .topnav {
+  transform: scale(1, 1);
+}
+.navbar .topnav ul {
+  width: 100%;
+  text-align: center;
+  list-style: none;
+}
+@media Screen and (min-width: 768px) {
+  .navbar .topnav ul {
+    width: 100%;
+    flex: 1;
     display: flex;
     justify-content: flex-end;
   }
 }
-header .navbar .top-nav {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  text-align: center;
-}
-@media screen and (min-width: 768px) {
-  header .navbar .top-nav {
-    display: flex;
-    justify-content: space-between;
+@media Screen and (min-width: 768px) {
+  .navbar .topnav li {
+    position: relative;
   }
 }
-header .navbar .nav-link {
-  height: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-header .navbar .nav-link a,
-header .navbar .nav-link .sub-nav-toggle-label {
-  height: 70px;
+.navbar .topnav li a,
+.navbar .sub-nav-toggle-label {
+  display: block;
   width: 100%;
-  text-transform: uppercase;
-  cursor: pointer;
   text-decoration: none;
   color: #fff;
-  font-weight: 700;
-  letter-spacing: 2px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-size: 1.3rem;
+  cursor: pointer;
 }
-@media screen and (min-width: 768px) {
-  header .navbar .nav-link a,
-header .navbar .nav-link .sub-nav-toggle-label {
-    font-size: 0.8rem;
-    margin-left: 1em;
-    padding-right: 1em;
-    padding-left: 1em;
-    letter-spacing: 0.7px;
+@media Screen and (min-width: 768px) {
+  .navbar .topnav li a,
+.navbar .sub-nav-toggle-label {
+    padding: 0 0.5rem;
+    font-size: 1rem;
   }
 }
-header .navbar .nav-link a:hover,
-header .navbar .nav-link .sub-nav-toggle-label:hover {
-  color: gold;
+.navbar .topnav li a:hover,
+.navbar .sub-nav-toggle-label:hover {
+  color: #fff;
   background: #000;
 }
-header .sub-nav-toggle-label::after {
-  padding-left: 5px;
+.navbar .sub-nav-toggle-label::after {
+  padding-left: 4px;
+  content: " ▸";
+  transition: transform 125ms ease-in-out;
+}
+.navbar .sub-nav-toggle:checked ~ .sub-nav-toggle-label::after {
   content: " ▾";
 }
-header .with-sub-nav {
-  height: 100%;
-  position: relative;
-}
-header .with-sub-nav .sub-nav {
-  list-style: none;
-  margin: 0 !important;
-  padding: 0 !important;
-  background: #336699;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  transform: scale(1, 0);
-  transform-origin: top;
-  transition: transform 125ms ease;
-}
 @media screen and (min-width: 768px) {
-  header .with-sub-nav .sub-nav {
-    left: 1rem;
+  .navbar .sub-nav-toggle:checked ~ .sub-nav-toggle-label::after {
+    content: " ▸";
   }
 }
-header .with-sub-nav .sub-nav .sub-nav-link {
+.navbar .sub-nav-toggle:checked ~ .sub-nav {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 !important;
-  padding: 0 !important;
+  flex-flow: column nowrap;
+  transform: scale(1, 1);
 }
-header .with-sub-nav .sub-nav .sub-nav-link .dropdown-item {
-  margin: 0 !important;
+.navbar .sub-nav {
+  display: none;
+  transform: scale(1, 0);
+  transition: transform 250ms ease-in-out;
+  transform-origin: top;
+  color: #000;
+  background: orange;
+}
+@media Screen and (min-width: 768px) {
+  .navbar .sub-nav {
+    position: absolute;
+    width: 100%;
+    min-width: 200px;
+    top: 100%;
+    left: 0px;
+    right: 100px;
+    transform: scale(1, 0);
+    transition: transform 250ms ease-in-out;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+    display: block;
+    flex-flow: column nowrap;
+    margin: 0;
+  }
+}
+.navbar .sub-nav-link {
+  margin-left: 0;
+}
+@media Screen and (min-width: 768px) {
+  .navbar .sub-nav-link a {
+    font-weight: 300;
+    font-size: 1rem !important;
+    text-align: left;
+  }
 }
 
 /* Footer Styles */

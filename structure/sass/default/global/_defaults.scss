@@ -1,5 +1,9 @@
 // global
-
+*, *::before, *::after {
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+}
 body {
  display: flex;
  flex-flow: column nowrap;
@@ -17,12 +21,6 @@ a {
  &:hover {
   color: $accent-color;
  }
-}
-
-section {
- // width: 100%;
- // @include padding(2rem null);
- // @include margin(null null 2rem);
 }
 
 img {
@@ -47,7 +45,7 @@ img {
  @include padding(.75em 1em);
  border: solid 1px darken($clr-secondary, 50);
  border-radius: $br;
- color: $clr-secondary;
+ color: $clr-light;
  z-index: 999;
  transition: all ease-in-out 125ms;
 

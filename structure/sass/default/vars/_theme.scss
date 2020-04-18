@@ -2,7 +2,7 @@
 
 
 $clr-primary: #336699;
-$clr-secondary: lighten($clr-primary, 50);
+$clr-secondary: lighten($clr-primary, 25);
 $clr-dark: #000;
 $clr-light: #fff;
 $clr-accent: orange;
@@ -12,6 +12,8 @@ $clr-hover: gold;
 
 $bs: 0 2px 2px rgba($clr-dark, .5);
 $br: 7px;
+
+$clr-background: $clr-light;
 
 // Navigation Variables
 $breakpoint: 768px;
