@@ -30,7 +30,6 @@ The `create-project` command will automatically run a post create script that:
 
 * Updates the Docker Compose YAML files and Apache config files for your project
 * Copies the `config/config.default.php` file to `config/config.local.php`, and sets appropriate local _development_ settings
-* Updates the project `.gitignore` file to remove the ignore directive on `composer.lock` (so you can version control that file for your project)
 
 ## Run PitonCMS in Docker Container
 If you have a [Docker](https://docs.docker.com/) client installed on your machine, from the command line `cd` into the new project folder and run:
@@ -71,7 +70,6 @@ After logging in to the PitonCMS administration back end, go ahead and explore. 
 ## First Project Commit
 For your project using PitonCMS, before your first commit you should:
 * Make sure that `public/install.php` has been deleted
-* Edit `.gitignore` in the root of the project to remove the ignore on `composer.lock` (which should have been done as part of the automatic install).
 * Consider whether to also remove `vendor/` from `.gitignore`
 
 There are various schools of thought on weather to commit `vendor` folders in your project. If you commit your `composer.lock` you _should_ be able to install the same critical files by running `composer install` from the project root on another environment. But committing those same files assures you of maintaining the same file versions as well.
@@ -166,11 +164,20 @@ $config['pagination']['adminMediaPagination']['resultsPerPage'] = 10;
 ```
 
 ## Updating PitonCMS
-The PitonCMS system relies on a vendor package named `pitoncms/engine` which has nearly all of the PitonCMS code and files. To update the core of PitonCMS, from the command line in the root of your project run:
+The PitonCMS system relies on a vendor package named `pitoncms/engine` which has the core PitonCMS code and files. To update PitonCMS, from the terminal in the root of your project run:
 
 ```
 composer update pitoncms/engine
 ```
 to get the latest version, and then commit the `composer.lock` file (and possibly commit the `vendor` folder).
+
+**Note**: You should run the update command from your live webserver or inside the Docker container, as the update executes a script to set the Engine release number in the database, which needs to be running. To access the Docker container:
+
+```
+docker exec -it piton_web_1 bash
+cd /var/www/piton
+composer update pitoncms/engine
+```
+Where you replace `piton` with your project name.
 
 The PitonCMS frontend project files above the `vendor` folder are never updated, so your custom files are never touched.
