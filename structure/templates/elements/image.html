@@ -1,13 +1,14 @@
 {# Media Element #}
 {% import "includes/_componentMacros.html" as html %}
+<section>
+ <h2>{{ element.title }}</h2>
 
-<h2>{{ element.title }}</h2>
-
-<div class="imageElement-wrapper">
-  <div class="image-wrapper">
-    {{ html.mediaSrcSet(element.media.filename, element.media.caption) }}
-  </div>
-  <div class="content-wrapper">
-    {{ element.content }}
-  </div>
-</div>
+ <div class="imageElement-wrapper">
+   <div class="image-wrapper">
+     {{ html.mediaSrcSet(element.media.filename, element.media.caption) }}
+   </div>
+   <div class="content-wrapper">
+     {{ element.content }}
+   </div>
+ </div>
+</section>
