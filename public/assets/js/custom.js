@@ -4,32 +4,40 @@ $('.menu-toggle').click(function () {
   $(this).toggleClass('open');
 });
 
+const contactMessageDisplay = function(text) {
+  let contactDiv = $('.jsContactForm');
+  if (contactDiv) {
+    contactDiv.slideUp(function() {
+      $(this).html(text);
+      $(this).slideDown();
+    });
+  }
+};
+
 // Contact form submission
 $("#contact-form").on('submit', function(e) {
   e.preventDefault();
   let $button = $(this).find('button');
   let buttonText = {
     submit: "Submit",
-    loading: `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-              <span class="sr-only">Sending...</span>Sending...`
+    loading: "Sending..."
   }
   $button.prop('disabled',true).html(buttonText.loading);
-  let $parentDiv = $(this).parent('div');
+  let $parentDiv = $(this).parent('div.jsContactForm');
   let postData = $(this).serialize();
   $.ajax({
     url: pitonConfig.routes.submitMessage,
     method: "POST",
     data: postData,
     success: function (r) {
-      $('#contact-thankyou').find('.modal-body').html(r.response);
-      $('#contact-thankyou').modal('show');
-      $parentDiv.find('input').not('.alt-email').not('input[name="'+pitonConfig.csrfTokenName+'"]').val('');
-      $parentDiv.find('textarea').val('');
-      $button.html(buttonText.submit).prop('disabled',false);
+      if (r.status == "success") {
+        contactMessageDisplay(r.response);
+      } else {
+        contactMessageDisplay("<strong>Whoops! There was an error submitting your message.</strong>");
+      }
     },
     error: function(r) {
-      console.log('PitonCMS: There was an error submitting the form. Contact your administrator.')
-      $button.html(buttonText.submit).prop('disabled',false);
+      contactMessageDisplay("<strong>Whoops! There was an error submitting your message.</strong>");
     }
   });
 });
