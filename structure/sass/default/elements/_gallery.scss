@@ -9,8 +9,8 @@
 }
 
 .gallery-img img {
-  border-radius: $border-radius;
-  box-shadow: $box-shadow;
+  border-radius: $br;
+  box-shadow: $bs;
   height: 250px;
   object-fit: cover;
 }

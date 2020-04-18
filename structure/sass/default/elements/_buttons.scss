@@ -1,0 +1,19 @@
+// Buttons
+.btn {
+
+ display: inline-block;
+ background: $clr-primary;
+ text-shadow: none; 
+ @include padding(.75em 1em);
+ border: solid 1px darken($clr-black, 50);
+ border-radius: $br;
+ color: $clr-white;
+ z-index: 999;
+ transition: all ease-in-out 125ms;
+
+ &:hover {
+  color: $clr-white;
+  background: $clr-secondary;
+  cursor: pointer;
+ }
+}

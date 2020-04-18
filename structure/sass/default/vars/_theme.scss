@@ -1,51 +1,40 @@
-/* Color Theme */
+/* Colors */
+
+$clr-black: #000;
+$clr-white: #fff;
+$clr-blue: #336699;
+$clr-dark-grey: #595959;
+$clr-medium-grey: #cccccc;
+$clr-light-grey: #efefef;
+$clr-orange: orange;
+$clr-red: red;
+$clr-green: green;
+$clr-yellow: yellow;
+
+/* Theme -- DO NOT CHANGE VARIABLE */
+
+$clr-primary: $clr-blue;
+$clr-secondary: adjust-hue($clr-primary, -90);
+$clr-accent: $clr-orange;
 
 
-$clr-primary: #336699;
-$clr-secondary: lighten($clr-primary, 25);
-$clr-dark: #000;
-$clr-light: #fff;
-$clr-accent: orange;
-$clr-hover: gold;
 
 // Default Element Styles 
 
-$bs: 0 2px 2px rgba($clr-dark, .5);
+$bs: 0 2px 2px rgba($clr-black, .5);
 $br: 7px;
-
-$clr-background: $clr-light;
+$ls: 2px;
+$ts: 0 2px 2px rgba($clr-black, .25);
 
 // Navigation Variables
-$breakpoint: 768px;
 $nav-height: 70px;
 $nav-background: $clr-primary;
-$nav-font-color: $clr-light;
-$link-hover-color: $clr-hover;
+$nav-font-color: $clr-white;
+$nav-hover-color: $clr-accent;
 
 // Layout Variables
 $max-width: 1000px;
 
+// Media Query Breakpoints
+$breakpoint: 768px;
 
-$box-shadow: 0 2px 2px rgba($clr-dark, .5);
-$border-radius: 7px;
-$ls: 2px;
-
-$nav-gtc: .5rem auto 1fr .5rem;
-
-
-:root {
- --clr-primary: #{$clr-primary};
- --clr-secondary: #{$clr-secondary};
- --clr-dark: #{$clr-dark};
- --clr-light: #{$clr-light};
- --clr-accent: #{$clr-accent};
- --clr-hover: #{$clr-hover};
-}
-
-$text-light: $clr-light;
-$text-shadow: $bs;
-$gray1: #efefef;
-$gray2: #ccc;
-$dark1: #2f2f2f;
-$primary-color: $clr-primary;
-$accent-color: $clr-accent;

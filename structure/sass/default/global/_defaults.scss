@@ -1,9 +1,16 @@
 // global
-*, *::before, *::after {
+*,
+*::before,
+*::after {
  box-sizing: border-box;
  margin: 0;
  padding: 0;
 }
+html, body {
+ height: 100%;
+ width: 100%;
+}
+
 body {
  @include margin(70px null null null);
  display: flex;
@@ -21,7 +28,7 @@ a {
  text-decoration: none;
 
  &:hover {
-  color: $accent-color;
+  color: $clr-accent;
  }
 }
 
@@ -37,32 +44,15 @@ img {
  max-width: $max-width;
 
 }
-p{
+
+p {
  @include padding(null null 1em null)
 }
+
 p:last-of-type {
  @include padding(null null 2rem null);
 }
-section { 
+
+section {
  @include padding(2rem null);
-}
-
-// Buttons
-.btn {
-
- display: inline-block;
- background: $clr-primary;
- text-shadow: none; 
- @include padding(.75em 1em);
- border: solid 1px darken($clr-secondary, 50);
- border-radius: $br;
- color: $clr-light;
- z-index: 999;
- transition: all ease-in-out 125ms;
-
- &:hover {
-  color: $clr-primary;
-  background: $clr-secondary;
-  cursor: pointer;
- }
 }
