@@ -114,6 +114,10 @@ section {
   padding-bottom: 2rem;
 }
 
+.span {
+  grid-column: 1/-1;
+}
+
 .hero {
   padding-top: 10rem;
   padding-bottom: 10rem;
@@ -165,7 +169,7 @@ section {
 }
 .btn:hover {
   color: #fff;
-  background: #339933;
+  background: #338899;
   cursor: pointer;
 }
 
@@ -333,6 +337,9 @@ input[type=submit]:focus {
   display: block;
   text-align: center;
   letter-spacing: 2px;
+}
+.navbar .logo a:hover {
+  color: orange;
 }
 .navbar .nav-toggle,
 .navbar .sub-nav-toggle {

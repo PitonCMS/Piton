@@ -56,3 +56,6 @@ p:last-of-type {
 section {
  @include padding(2rem null);
 }
+.span {
+ grid-column: 1 / -1;
+}
