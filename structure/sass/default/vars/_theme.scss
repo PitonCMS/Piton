@@ -16,12 +16,14 @@ $clr-yellow: yellow;
 $clr-primary: $clr-blue;
 $clr-secondary: adjust-hue($clr-primary, -20);
 $clr-accent: $clr-orange;
+$clr-dark-text: $clr-black;
 
 
 
 // Default Element Styles 
 
 $bs: 0 2px 2px rgba($clr-black, .5);
+$bsh: 0px 0px 10px 2px rgba($clr-black, .15); // box shadow hover
 $br: 7px;
 $ls: 2px;
 $ts: 0 2px 2px rgba($clr-black, .25);

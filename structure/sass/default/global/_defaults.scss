@@ -12,11 +12,11 @@ html, body {
 }
 
 body {
- @include margin(70px null null null);
+margin-top: $nav-height;
  display: flex;
  flex-flow: column nowrap;
  min-height: 100vh;
- line-height: 1.5;
+
 
 }
 
@@ -25,6 +25,7 @@ footer {
 }
 
 a {
+ color: $clr-dark-text;
  text-decoration: none;
 
  &:hover {
@@ -48,9 +49,11 @@ img {
 p {
  @include padding(null null 1em null)
 }
-
+hr{
+ @include margin(null null 1em null);
+}
 p:last-of-type {
- @include padding(null null 2rem null);
+ @include padding(null null 1rem null);
 }
 
 section {
