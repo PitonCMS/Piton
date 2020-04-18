@@ -28,6 +28,10 @@
    width: 100%;
    display: block;
    text-align: center;
+   letter-spacing: $ls;
+   &:hover{
+    color: $nav-hover-color;
+   }
   }
  }
 
@@ -152,6 +156,7 @@
   color: $nav-font-color;
   font-size: 1.3rem;
   cursor: pointer;
+  letter-spacing: $ls;
 
   @media Screen and (min-width: $breakpoint) {
    padding: 0 .5rem;
@@ -161,8 +166,8 @@
 
  .topnav li a:hover,
  .sub-nav-toggle-label:hover {
-  color: $nav-font-color;
-  background: $clr-dark;
+  color: $nav-hover-color;
+  background: $clr-black;
 
  }
 
@@ -192,7 +197,7 @@
   transform: scale(1, 0);
   transition: transform 250ms ease-in-out;
   transform-origin: top;
-  color: $clr-dark;
+  color: $clr-black;
   background: $clr-accent;
 
   @media Screen and (min-width: $breakpoint) {
@@ -215,7 +220,6 @@
 
    a {
     @media Screen and (min-width: $breakpoint) {
-     font-weight: 300;
      font-size: 1rem !important;
      text-align: left;
 

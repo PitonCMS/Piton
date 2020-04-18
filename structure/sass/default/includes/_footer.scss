@@ -4,12 +4,12 @@
 
 footer{
   @include margin(auto null null);
-  background-color: $primary-color;
-  color: $text-light;
+  background-color: $clr-primary;
+  color: $clr-white;
   width: 100%;
   position: relative;
   a{
-    color: $text-light;
+    color: $clr-white;
   }
 }
 /* footer1 */
@@ -22,7 +22,7 @@ footer{
   grid-gap: 2rem;
   h5{
     font-size: 1.3rem;
-    text-shadow: $text-shadow;
+    text-shadow: $ts;
   }
   
   .footer-social{
@@ -40,7 +40,7 @@ footer{
 }
 /* footer2 */
 .footer2{
-  background-color: darken($primary-color,5);
+  background-color: darken($clr-primary,5);
   @include padding(1rem);
   display: flex;
   flex-flow: column nowrap;
@@ -49,7 +49,7 @@ footer{
   text-align: center;
   p{
     @include margin(0);
-    color: $gray1;
+    color: $clr-light-grey;
     font-size: .8rem;
     font-weight: 300;
   }

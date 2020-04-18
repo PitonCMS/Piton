@@ -11,7 +11,7 @@
 
  position: relative;
 
- box-shadow: $box-shadow;
+ box-shadow: $bs;
  // z-index: -10;
 
  // hero overlay
@@ -26,14 +26,14 @@
  }
 
  .hero-content {
-  color: $text-light;
+  color: $clr-white;
   text-align: center;
   max-width: 75ch;
   @include padding(null 1em);
   @include margin(0 auto);
   position: relative;
   z-index: 50;
-  text-shadow: $text-shadow;
+  text-shadow: $ts;
 
   h1 {
    font-size: 4rem;

@@ -1,15 +1,8 @@
 @charset "UTF-8";
-/* Color Theme */
+/* Colors */
+/* Theme -- DO NOT CHANGE VARIABLE */
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700|Lato:300,400,700");
-:root {
-  --clr-primary: #336699;
-  --clr-secondary: #996633;
-  --clr-dark: #000;
-  --clr-light: #fff;
-  --clr-accent: orange;
-  --clr-hover: gold;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;900&family=Roboto:wght@300;400;900&display=swap");
 :root {
   font-size: 14px;
 }
@@ -25,9 +18,9 @@
   }
 }
 body {
-  font-family: "Lato", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 h1,
@@ -36,8 +29,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Roboto", serif;
-  font-weight: 700;
+  font-family: "Roboto Slab", serif;
+  font-weight: 900;
   margin: 0;
 }
 
@@ -65,10 +58,17 @@ h6 {
   font-size: 1rem;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
 }
 
 body {
@@ -76,7 +76,6 @@ body {
   display: flex;
   flex-flow: column nowrap;
   min-height: 100vh;
-  line-height: 1.5;
 }
 
 footer {
@@ -84,6 +83,7 @@ footer {
 }
 
 a {
+  color: #000;
   text-decoration: none;
 }
 a:hover {
@@ -106,8 +106,12 @@ p {
   padding-bottom: 1em;
 }
 
+hr {
+  margin-bottom: 1em;
+}
+
 p:last-of-type {
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
 section {
@@ -115,21 +119,8 @@ section {
   padding-bottom: 2rem;
 }
 
-.btn {
-  display: inline-block;
-  background: #336699;
-  text-shadow: none;
-  padding: 0.75em 1em;
-  border: solid 1px black;
-  border-radius: 7px;
-  color: #fff;
-  z-index: 999;
-  transition: all ease-in-out 125ms;
-}
-.btn:hover {
-  color: #336699;
-  background: #996633;
-  cursor: pointer;
+.span {
+  grid-column: 1/-1;
 }
 
 .hero {
@@ -162,12 +153,31 @@ section {
   margin: 0 auto;
   position: relative;
   z-index: 50;
-  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
 }
 .hero .hero-content h1 {
   font-size: 4rem;
   margin: 0;
   line-height: 1;
+}
+
+.btn {
+  font-size: 1rem;
+  display: inline-block;
+  background: #336699;
+  text-shadow: none;
+  padding: 0.75em 1em;
+  border: solid 1px #000, 50;
+  border-radius: 7px;
+  color: #fff;
+  z-index: 999;
+  transition: all ease-in-out 125ms;
+}
+.btn:hover {
+  color: #fff;
+  background: #338899;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.15);
 }
 
 .collection-wrapper {
@@ -202,7 +212,7 @@ section {
   padding: 1rem;
   text-align: center;
   margin-top: auto;
-  border-top: solid 1px #2f2f2f;
+  border-top: solid 1px #000;
 }
 
 .contact-form {
@@ -226,7 +236,7 @@ input[type=email],
 textarea {
   width: 100%;
   padding: 0.75em 1em;
-  border: 1px solid #ccc;
+  border: 1px solid #cccccc;
   border-radius: 7px;
   grid-column: 2/3;
   font-size: 1rem;
@@ -236,7 +246,7 @@ textarea {
 input[type=text]:focus,
 input[type=email]:focus,
 textarea:focus {
-  border: 1px solid #336699;
+  border: 1px solid orange;
 }
 
 /* Add styles to the submit button */
@@ -248,8 +258,8 @@ input[type=submit] {
 
 /* Add styles for 'focus' property */
 input[type=submit]:focus {
-  background: var(--clr-accent);
-  color: var(--clr-light);
+  background: orange;
+  color: #fff;
 }
 
 .gallery-wrapper {
@@ -333,6 +343,10 @@ input[type=submit]:focus {
   width: 100%;
   display: block;
   text-align: center;
+  letter-spacing: 2px;
+}
+.navbar .logo a:hover {
+  color: orange;
 }
 .navbar .nav-toggle,
 .navbar .sub-nav-toggle {
@@ -437,6 +451,7 @@ input[type=submit]:focus {
   color: #fff;
   font-size: 1.3rem;
   cursor: pointer;
+  letter-spacing: 2px;
 }
 @media Screen and (min-width: 768px) {
   .navbar .topnav li a,
@@ -447,7 +462,7 @@ input[type=submit]:focus {
 }
 .navbar .topnav li a:hover,
 .navbar .sub-nav-toggle-label:hover {
-  color: #fff;
+  color: orange;
   background: #000;
 }
 .navbar .sub-nav-toggle-label::after {
@@ -497,7 +512,6 @@ input[type=submit]:focus {
 }
 @media Screen and (min-width: 768px) {
   .navbar .sub-nav-link a {
-    font-weight: 300;
     font-size: 1rem !important;
     text-align: left;
   }
@@ -526,7 +540,7 @@ footer a {
 }
 .footer1 h5 {
   font-size: 1.3rem;
-  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
 }
 .footer1 .footer-social .get-social-icons {
   padding-right: 0.5rem;
