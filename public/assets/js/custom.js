@@ -17,13 +17,11 @@ const contactMessageDisplay = function(text) {
 // Contact form submission
 $("#contact-form").on('submit', function(e) {
   e.preventDefault();
-  let $button = $(this).find('button');
   let buttonText = {
     submit: "Submit",
     loading: "Sending..."
   }
-  $button.prop('disabled',true).html(buttonText.loading);
-  let $parentDiv = $(this).parent('div.jsContactForm');
+  $(this).find('.jsContactSubmitButton').prop('disabled',true).val(buttonText.loading);
   let postData = $(this).serialize();
   $.ajax({
     url: pitonConfig.routes.submitMessage,
