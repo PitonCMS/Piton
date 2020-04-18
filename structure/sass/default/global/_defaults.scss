@@ -5,9 +5,11 @@
  padding: 0;
 }
 body {
+ @include margin(70px null null null);
  display: flex;
  flex-flow: column nowrap;
  min-height: 100vh;
+ line-height: 1.5;
 
 }
 
@@ -35,13 +37,22 @@ img {
  max-width: $max-width;
 
 }
+p{
+ @include padding(null null 1em null)
+}
+p:last-of-type {
+ @include padding(null null 2rem null);
+}
+section { 
+ @include padding(2rem null);
+}
 
 // Buttons
 .btn {
 
  display: inline-block;
  background: $clr-primary;
- text-shadow: none;
+ text-shadow: none; 
  @include padding(.75em 1em);
  border: solid 1px darken($clr-secondary, 50);
  border-radius: $br;

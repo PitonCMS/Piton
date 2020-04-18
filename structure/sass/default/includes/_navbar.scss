@@ -3,7 +3,8 @@
  height: $nav-height;
  line-height: $nav-height;
  background: $nav-background;
- position: relative;
+ position: fixed;
+ top: 0;
  z-index: 100;
  display: flex;
  flex-flow: column nowrap;

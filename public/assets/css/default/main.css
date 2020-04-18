@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700|Lato:300,400,700");
 :root {
   --clr-primary: #336699;
-  --clr-secondary: #79a6d2;
+  --clr-secondary: #996633;
   --clr-dark: #000;
   --clr-light: #fff;
   --clr-accent: orange;
@@ -72,9 +72,11 @@ h6 {
 }
 
 body {
+  margin-top: 70px;
   display: flex;
   flex-flow: column nowrap;
   min-height: 100vh;
+  line-height: 1.5;
 }
 
 footer {
@@ -100,12 +102,25 @@ img {
   max-width: 991;
 }
 
+p {
+  padding-bottom: 1em;
+}
+
+p:last-of-type {
+  padding-bottom: 2rem;
+}
+
+section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 .btn {
   display: inline-block;
   background: #336699;
   text-shadow: none;
   padding: 0.75em 1em;
-  border: solid 1px #132639;
+  border: solid 1px black;
   border-radius: 7px;
   color: #fff;
   z-index: 999;
@@ -113,7 +128,7 @@ img {
 }
 .btn:hover {
   color: #336699;
-  background: #79a6d2;
+  background: #996633;
   cursor: pointer;
 }
 
@@ -294,7 +309,8 @@ input[type=submit]:focus {
   height: 70px;
   line-height: 70px;
   background: #336699;
-  position: relative;
+  position: fixed;
+  top: 0;
   z-index: 100;
   display: flex;
   flex-flow: column nowrap;
