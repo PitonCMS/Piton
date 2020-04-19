@@ -21,7 +21,7 @@ $("#contact-form").on('submit', function(e) {
     submit: "Submit",
     loading: "Sending..."
   }
-  $(this).find('.jsContactSubmitButton').prop('disabled',true).val(buttonText.loading);
+  $(this).find('.jsContactSubmitButton').prop('disabled',true).html(buttonText.loading);
   let postData = $(this).serialize();
   $.ajax({
     url: pitonConfig.routes.submitMessage,
