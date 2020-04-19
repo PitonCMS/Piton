@@ -21,10 +21,12 @@
 {% endblock headStyle %}
 
 {% block body %}
+{{ getMediaSrcSet(page.media.filename, page.media.caption) }}
+
 {{ getBlockElementsHtml(page.blocks.heroBlock) }}
 
 <div class="container">
- 
+
  {{ getBlockElementsHtml(page.blocks.contentBlock) }}
 
 </div>

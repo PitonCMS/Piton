@@ -3,16 +3,3 @@
 
     Miscellaneous reusable HTML snippets that are more than an include.
 #}
-
-{#
-    Media Source Set
-
-    Given a base media filename, returns an image HTML elemet with a media source set with sizes
-#}
-{% macro mediaSrcSet(filename, caption, sizes) %}
-    <img srcset="{{ getMediaSrcSet(filename) }}"
-         sizes="{{ sizes|default('(max-width: 767px) 100vw, (max-width: 899px) 50vw, 33vw') }}"
-         src="{{ getMediaPath(filename, 'xlarge') }}"
-         alt="{{ caption }}">
-{% endmacro mediaSrcSet %}
-

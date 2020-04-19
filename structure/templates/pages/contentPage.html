@@ -1,6 +1,8 @@
 {% extends 'pages/_base_layout.html' %}
 
 {% block body %}
+{{ getMediaSrcSet(page.media.filename, page.media.caption) }}
+
 <div class="container">
  {{ getBlockElementsHtml(page.blocks.contentBlock) }}
 </div>
