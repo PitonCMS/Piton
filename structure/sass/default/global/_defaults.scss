@@ -4,8 +4,9 @@
 *::after {
  box-sizing: border-box;
  margin: 0;
- padding: 0;
+ // padding: 0; 
 }
+
 html, body {
  height: 100%;
  width: 100%;
@@ -46,19 +47,14 @@ img {
 
 }
 
-p {
- @include padding(null null 1em null)
+section {
+ @include padding(1rem null);
 }
-hr{
- @include margin(null null 1em null);
-}
-p:last-of-type {
- @include padding(null null 1rem null);
+section > * + * {
+ margin-top: 1rem;
 }
 
-section {
- @include padding(2rem null);
-}
+/* Utilities */
 .span {
  grid-column: 1 / -1;
 }

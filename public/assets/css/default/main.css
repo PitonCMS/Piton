@@ -63,7 +63,6 @@ h6 {
 *::after {
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
 }
 
 html, body {
@@ -102,23 +101,16 @@ img {
   max-width: 991;
 }
 
-p {
-  padding-bottom: 1em;
-}
-
-hr {
-  margin-bottom: 1em;
-}
-
-p:last-of-type {
+section {
+  padding-top: 1rem;
   padding-bottom: 1rem;
 }
 
-section {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+section > * + * {
+  margin-top: 1rem;
 }
 
+/* Utilities */
 .span {
   grid-column: 1/-1;
 }
@@ -493,6 +485,7 @@ input[type=submit]:focus {
 }
 @media Screen and (min-width: 768px) {
   .navbar .sub-nav {
+    padding: 0;
     position: absolute;
     width: 100%;
     min-width: 200px;

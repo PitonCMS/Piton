@@ -193,6 +193,7 @@
  }
 
  .sub-nav {
+
   display: none;
   transform: scale(1, 0);
   transition: transform 250ms ease-in-out;
@@ -201,6 +202,7 @@
   background: $clr-accent;
 
   @media Screen and (min-width: $breakpoint) {
+   @include padding(0);
    position: absolute;
    width: 100%;
    min-width: 200px;
