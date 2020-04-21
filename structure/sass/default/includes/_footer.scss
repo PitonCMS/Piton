@@ -4,12 +4,12 @@
 
 footer{
   @include margin(auto null null);
-  background-color: $clr-primary;
-  color: $clr-white;
+  background-color: var(--clr-primary);
+  color: var(--clr-white);
   width: 100%;
   position: relative;
   a{
-    color: $clr-white;
+    color: var(--clr-white);
   }
 }
 /* footer1 */
@@ -19,10 +19,10 @@ footer{
   @include padding(2rem 1rem);
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 2rem;
+  grid-gap: 2rem; 
   h5{
     font-size: 1.3rem;
-    text-shadow: $ts;
+    text-shadow: var(--ts);
   }
   
   .footer-social{
@@ -40,7 +40,7 @@ footer{
 }
 /* footer2 */
 .footer2{
-  background-color: darken($clr-primary,5);
+  background-color: var(--clr-primary-dark) !important;
   @include padding(1rem);
   display: flex;
   flex-flow: column nowrap;
@@ -49,7 +49,7 @@ footer{
   text-align: center;
   p{
     @include margin(0);
-    color: $clr-light-grey;
+    color: var(--clr-grey-light);
     font-size: .8rem;
     font-weight: 300;
   }

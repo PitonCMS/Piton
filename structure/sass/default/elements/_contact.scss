@@ -19,8 +19,8 @@ input[type=email],
 textarea {
  width: 100%;
  @include padding(.75em 1em);
- border: 1px solid $clr-medium-grey;
- border-radius: $br;
+ border: 1px solid var(--clr-grey-medium);
+ border-radius: var(--br);
  grid-column: 2 / 3;
  font-size: 1rem;
 }
@@ -29,7 +29,7 @@ textarea {
 input[type=text]:focus,
 input[type=email]:focus,
 textarea:focus {
- border: 1px solid $clr-accent;
+ border: 1px solid var(--clr-accent);
 }
 
 /* Add styles to the submit button */
@@ -41,6 +41,6 @@ input[type=submit], .jsContactSubmitButton {
 
 /* Add styles for 'focus' property */
 input[type=submit]:focus {
- background: $clr-accent;
- color: $clr-white;
+ background: var(--clr-accent);
+ color: var(--clr-white);
 } 

@@ -7,16 +7,16 @@
 }
 .card{
   
-  border-radius: $br;
+  border-radius: var(--br);
   display: flex;
   flex-flow: column nowrap;
-  box-shadow: $bs;
+  box-shadow: var(--bs);
 
 }
 .card-header{
   @include padding(1rem);
-  background-color: lighten($clr-medium-grey, 2);
-  color: $clr-white;
+  background-color: var(--clr-orange);
+  color: var(--clr-white);
   text-align: center;
   text-transform: uppercase;
   font-weight: 700;
@@ -30,5 +30,5 @@
   @include padding(1rem);
   text-align: center;
   @include margin(auto null null);
-  border-top: solid 1px $clr-black;
+  border-top: solid 1px var(--clr-black);
 }

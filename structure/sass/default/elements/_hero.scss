@@ -1,44 +1,51 @@
 .hero {
- @include padding(10rem null);
- background-size: cover;
- background-attachment: scroll;
- background-repeat: no-repeat;
- object-fit: contain;
+    @include padding(6rem null );
+    background-size: cover;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    object-fit: contain;
 
- display: flex;
- align-items: center;
- justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: var(--bs);
+   
+    // hero overlay
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
 
- position: relative;
+    }
 
- box-shadow: $bs;
- // z-index: -10;
+    .hero-content {
+        color: var(--clr-white);
+        text-align: center;
+        max-width: 75ch;
+        @include padding(4rem 1em);
+        @include margin(0 auto);
+        position: relative;
+        z-index: 50;
+        text-shadow: var(--ts);
 
- // hero overlay
- &::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+        h1 {
+            font-size: 4rem;
+            @include margin(0);
+            line-height: 1;
+        }
+        .btn {
+            text-shadow: none;
+            @include margin(2em null null null);
+        }
 
- }
+        &>*+* {
+            @include margin(2em null null null);
+        }
 
- .hero-content {
-  color: $clr-white;
-  text-align: center;
-  max-width: 75ch;
-  @include padding(null 1em);
-  @include margin(0 auto);
-  position: relative;
-  z-index: 50;
-  text-shadow: $ts;
+    }
 
-  h1 {
-   font-size: 4rem;
-   @include margin(0);
-   line-height: 1;
-  }
- }
 }

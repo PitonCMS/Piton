@@ -4,7 +4,6 @@
 *::after {
  box-sizing: border-box;
  margin: 0;
- // padding: 0; 
 }
 
 html, body {
@@ -13,12 +12,10 @@ html, body {
 }
 
 body {
-margin-top: $nav-height;
+margin-top: var(--nav-height);
  display: flex;
  flex-flow: column nowrap;
  min-height: 100vh;
-
-
 }
 
 footer {
@@ -26,11 +23,12 @@ footer {
 }
 
 a {
- color: $clr-dark-text;
+ color: var(--clr-dark-text);
+ color: #343;
  text-decoration: none;
 
  &:hover {
-  color: $clr-accent;
+  color: var(--clr-accent);
  }
 }
 
@@ -43,14 +41,15 @@ img {
  @include margin(0 auto);
  @include padding(null null 2rem null);
  width: 90%;
- max-width: $max-width;
+ max-width: var(--max-width);
 
 }
 
 section {
  @include padding(1rem null);
 }
-section > * + * {
+section > * + *,
+.hero > * + * {
  margin-top: 1rem;
 }
 

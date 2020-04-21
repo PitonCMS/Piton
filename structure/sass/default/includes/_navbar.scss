@@ -1,14 +1,14 @@
 .navbar {
  width: 100%;
- height: $nav-height;
- line-height: $nav-height;
- background: $nav-background;
+ height: var(--nav-height);
+ line-height: var(--nav-height);
+ background: var(--nav-background);
  position: fixed;
  top: 0;
  z-index: 100;
  display: flex;
  flex-flow: column nowrap;
- box-shadow: $bs;
+ box-shadow: var(--bs);
 
  @media Screen and (min-width: $breakpoint) {
   display: flex;
@@ -20,7 +20,7 @@
  // Logo
  .logo {
   a {
-   color: $nav-font-color;
+   color: var(--nav-font-color);
    text-decoration: none;
    font-size: 2rem;
    text-transform: uppercase;
@@ -28,9 +28,9 @@
    width: 100%;
    display: block;
    text-align: center;
-   letter-spacing: $ls;
+   letter-spacing: var(--ls);
    &:hover{
-    color: $nav-hover-color;
+    color: var(--nav-hover-color);
    }
   }
  }
@@ -45,7 +45,7 @@
  // Nav Toggle Label & hamburger icon w/animation
  .nav-toggle-label {
   cursor: pointer;
-  height: $nav-height;
+  height: var(--nav-height);
   display: flex;
   align-items: center;
   position: absolute;
@@ -113,7 +113,7 @@
 
  // Top Nav Styles
  .topnav {
-  background: $nav-background;
+  background: var(--nav-background);
   transform: scale(1, 0);
   transform-origin: top;
   transition: all 125ms ease-in-out;
@@ -153,10 +153,10 @@
   display: block;
   width: 100%;
   text-decoration: none;
-  color: $nav-font-color;
+  color: var(--nav-font-color);
   font-size: 1.3rem;
   cursor: pointer;
-  letter-spacing: $ls;
+  letter-spacing: var(--ls);
 
   @media Screen and (min-width: $breakpoint) {
    padding: 0 .5rem;
@@ -166,8 +166,8 @@
 
  .topnav li a:hover,
  .sub-nav-toggle-label:hover {
-  color: $nav-hover-color;
-  background: $clr-black;
+  color: var(--nav-hover-color);
+  background: var(--clr-black);
 
  }
 
@@ -198,8 +198,8 @@
   transform: scale(1, 0);
   transition: transform 250ms ease-in-out;
   transform-origin: top;
-  color: $clr-black;
-  background: $clr-accent;
+  color: var(--clr-black);
+  background: var(--clr-accent);
 
   @media Screen and (min-width: $breakpoint) {
    @include padding(0);
@@ -211,7 +211,7 @@
    right: 100px;
    transform: scale(1, 0);
    transition: transform 250ms ease-in-out;
-   box-shadow: $bs;
+   box-shadow: var(--bs);
    display: block;
    flex-flow: column nowrap;
    margin: 0;
