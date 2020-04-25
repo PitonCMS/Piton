@@ -2,19 +2,19 @@
 .btn {
  font-size: 1rem;
  display: inline-block;
- background: $clr-primary;
- text-shadow: none; 
- @include padding(.75em 1em);
- border: solid 1px ($clr-black, 50);
- border-radius: $br;
- color: $clr-white;
+ background: var(--clr-primary);
+ @include padding(.5em 1em);
+ border: solid 10px rgba(var(--clr-black), 50);
+ border-radius: var(--br);
+ color: var(--clr-white);
  z-index: 999;
+ box-shadow: none;
  transition: all ease-in-out 125ms;
 
  &:hover {
-  color: $clr-white;
-  background: $clr-secondary;
+  color: var(--clr-accent);
+  background: var(--clr-primary-dark);
   cursor: pointer;
-  box-shadow: $bsh;
+  box-shadow: var(--bsh);
  }
 }

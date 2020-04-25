@@ -9,7 +9,7 @@
   .image-wrapper{
     display: flex;
     flex-flow: column nowrap;
-    box-shadow: $bs;
+    box-shadow: var(--bs);
     justify-content: center;
     align-items: center;
   }
