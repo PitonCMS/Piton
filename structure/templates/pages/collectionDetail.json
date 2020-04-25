@@ -2,7 +2,7 @@
     "templateName": "Collection Detail Page with Hero",
     "templateDescription": "Page with hero image and content blocks.",
     "showSubTitle": true,
-    "hideFeaturedImage": false,
+    "showFeaturedImage": true,
     "templateType": "collection",
     "blocks": [
         {
