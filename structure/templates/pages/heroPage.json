@@ -1,26 +1,25 @@
 {
-    "templateName": "Collection Detail Page with Hero",
+    "templateName": "With Hero",
     "templateDescription": "Page with hero image and content blocks.",
-    "templateFile": "detailPage.html",
-    "hideSubTitle": false,
-    "hideFeaturedImage": false,
-    "templateType": "collection",
+    "showSubTitle": false,
+    "showFeaturedImage": true,
+    "templateType": "page",
     "blocks": [
         {
             "name": "Hero Image",
             "key": "heroBlock",
             "description": "Large full width image",
-            "elementTypeDefault": "hero.json",
+            "elementTypeDefault": "hero",
             "elementTypeOptions": [
-                "hero.json"
+                "hero"
             ],
             "elementCountLimit": 1
         },
         {
             "name": "Content",
             "key": "contentBlock",
-            "description": "Home page text areas",
-            "elementTypeDefault": ""
+            "description": "Page Content Blocks",
+            "elementTypeDefault": "text"
         }
     ],
     "settings": [

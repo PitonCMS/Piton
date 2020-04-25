@@ -1,0 +1,5 @@
+{
+    "elementName": "Video",
+    "elementDescription": "Embed streaming video player HTML",
+    "enableInput": "embedded"
+}
