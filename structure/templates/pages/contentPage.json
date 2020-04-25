@@ -1,7 +1,6 @@
 {
     "templateName": "Without Hero",
     "templateDescription": "Page without hero image and with content blocks.",
-    "templateFile": "contentPage.html",
     "hideFeaturedImage": false,
     "templateType": "page",
     "blocks": [

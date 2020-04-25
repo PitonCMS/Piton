@@ -1,5 +1,5 @@
 {
     "elementName": "Video",
-    "elementTemplateFile": "video.html",
+    "elementDescription": "Embed streaming video player HTML",
     "enableInput": "embedded"
 }

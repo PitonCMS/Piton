@@ -1,5 +1,5 @@
 {
     "elementName": "Collection",
-    "elementTemplateFile": "collection.html",
+    "elementDescription": "Display named collection summary links",
     "enableInput": "collection"
 }

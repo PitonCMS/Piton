@@ -1,4 +1,4 @@
 {
     "elementName": "Contact",
-    "elementTemplateFile": "contact.html"
+    "elementDescription": "Contact message submission form"
 }

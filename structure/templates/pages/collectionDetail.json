@@ -1,7 +1,6 @@
 {
     "templateName": "Collection Detail Page with Hero",
     "templateDescription": "Page with hero image and content blocks.",
-    "templateFile": "detailPage.html",
     "hideSubTitle": false,
     "hideFeaturedImage": false,
     "templateType": "collection",
@@ -10,9 +9,9 @@
             "name": "Hero Image",
             "key": "heroBlock",
             "description": "Large full width image",
-            "elementTypeDefault": "hero.json",
+            "elementTypeDefault": "hero",
             "elementTypeOptions": [
-                "hero.json"
+                "hero"
             ],
             "elementCountLimit": 1
         },

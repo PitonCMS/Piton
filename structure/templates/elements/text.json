@@ -1,4 +1,4 @@
 {
     "elementName": "Text",
-    "elementTemplateFile": "text.html"
+    "elementDescription": "Simple text content"
 }

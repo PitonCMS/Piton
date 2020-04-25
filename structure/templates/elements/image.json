@@ -1,5 +1,5 @@
 {
     "elementName": "Image",
-    "elementTemplateFile": "image.html",
+    "elementDescription": "Display image outside of text",
     "enableInput": "image"
 }
