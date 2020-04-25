@@ -1,7 +1,7 @@
 {
     "templateName": "With Hero",
     "templateDescription": "Page with hero image and content blocks.",
-    "hideSubTitle": true,
+    "showSubTitle": false,
     "hideFeaturedImage": false,
     "templateType": "page",
     "blocks": [
