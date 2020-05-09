@@ -19,8 +19,8 @@ $config['site']['production'] = true;
  * Database
  *
  * Database configuration settings
- * - host: Database server
- * - dbname: Database name
+ * - host:     Database server
+ * - dbname:   Database name
  * - username: Database user name
  * - password: Database password
  */
@@ -33,10 +33,11 @@ $config['database']['password'] = '';
  * Session
  *
  * Session management settings
- * - cookieName: Application cookie name
- * - checkIpAddress: Whether to verify request IP address
- * - checkUserAgent: Whether to verify the request useragent string
- * - salt: Complex string to hash for session ID
+ * - cookieName:             Application cookie name
+ * - checkIpAddress:         Whether to verify request IP address
+ * - checkUserAgent:         Whether to verify the request useragent string
+ * - salt:                   Complex string to hash for session ID
+ * - secureCookie:           Set to true if HTTPS, false if HTTP
  * - secondsUntilExpiration: How many seconds to set the session on each request, defaults to 2 hours.
  *      Can accept expression such as 60*60*24;
  */
@@ -44,6 +45,7 @@ $config['session']['cookieName'] = 'pitoncms';
 $config['session']['checkIpAddress'] = true;
 $config['session']['checkUserAgent'] = true;
 $config['session']['salt'] = '';
+$config['session']['secureCookie'] = true;
 $config['session']['secondsUntilExpiration'] = 7200;
 
 /**
@@ -70,7 +72,7 @@ $config['email']['smtpPort'] = '';
  * Pagination Row Limits
  *
  * Define how many results to display per page.
- * - adminPagePagination: Administration, how many Pages or Collection Detail Pages to display
+ * - adminPagePagination:  Administration, how many Pages or Collection Detail Pages to display
  * - adminMediaPagination: Administration, how many media files to display
  */
 $config['pagination']['adminPagePagination']['resultsPerPage'] = 6;
