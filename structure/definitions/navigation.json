@@ -1,7 +1,14 @@
 {
-    "description": "Navigations",
     "navigators": [
-        "main",
-        "footer"
+        {
+            "key": "main",
+            "name": "Main",
+            "description": "Top of page primary navigation."
+        },
+        {
+            "key": "footer",
+            "name": "Footer",
+            "description": "Bottom of page secondary navigation."
+        }
     ]
 }
