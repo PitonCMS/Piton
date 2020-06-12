@@ -41,6 +41,13 @@
         },
         {
             "category": "social",
+            "label": "Github Link",
+            "key": "githubLink",
+            "value": "https://www.github.com",
+            "inputType": "input"
+        },
+        {
+            "category": "social",
             "label": "Twitter Link",
             "key": "twitterLink",
             "value": "https://twitter.com",
