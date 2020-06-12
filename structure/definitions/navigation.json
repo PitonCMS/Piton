@@ -9,6 +9,11 @@
             "key": "footer",
             "name": "Footer",
             "description": "Bottom of page secondary navigation."
+        },
+        {
+            "key": "sidebar",
+            "name": "Sidebar",
+            "description": "Secondary sidebar navigation."
         }
     ]
 }
