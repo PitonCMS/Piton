@@ -13,7 +13,7 @@
         {
             "key": "sidebar",
             "name": "Sidebar",
-            "description": "Secondary sidebar navigation."
+            "description": "Sidebar navigation."
         }
     ]
 }
