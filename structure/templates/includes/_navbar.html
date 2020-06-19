@@ -1,39 +1,42 @@
- <header class="navbar">
+<header class="navbar">
 
   <input type="checkbox" name="toggle" id="nav-toggle" class="nav-toggle">
   <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
 
   <div class="logo">
-   <a href="{{ pathFor('home') }}">{{ site.settings.displayName|default('Piton<span>CMS</span>') }}</a>
+    <a href="{{ pathFor('home') }}">{{ site.settings.displayName|default('Piton<span>CMS</span>') }}</a>
   </div>
 
   <nav class="topnav">
-   <ul class="topnav__ul">
-    {% for navLink in getNavigator('main') %}
+    <ul class="topnav__ul">
+      {% for navLink in getNavigator('main') %}
 
-    {% if navLink.childNav %}
-    {# This is the case for a parent with a child nav dropdown #}
-    <li class="topnav__li {% if navLink.currentPage %}active{% endif %}">
+      {% if navLink.childNav %}
+      {# This is the case for a parent with a child nav dropdown #}
+      <li class="topnav__li {% if navLink.currentPage %}active{% endif %}">
 
-     <input type="checkbox" name="sub-nav-toggle-{{ loop.index }}" class="sub-nav-toggle" id="sub-nav-toggle-{{ loop.index }}">
-     <label for="sub-nav-toggle-{{ loop.index }}" class="sub-nav-toggle-label">{{ navLink.title }}</label>
+        <input type="checkbox" name="sub-nav-toggle-{{ loop.index }}" class="sub-nav-toggle"
+          id="sub-nav-toggle-{{ loop.index }}">
+        <label for="sub-nav-toggle-{{ loop.index }}" class="sub-nav-toggle-label">{{ navLink.title }}</label>
 
-     <ul class="sub-nav">
-      {% for child in navLink.childNav %}
-      <li class="sub-nav-link"><a class="dropdown-item" href="{{ pathFor('showPage', {'slug1': child.page_slug}) }}">{{ child.title }}</a></li>
+        <ul class="sub-nav">
+          {% for child in navLink.childNav %}
+          <li class="sub-nav-link">
+            <a class="dropdown-item" href="{{ getNavigationLink(child) }}">{{ child.title }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+
+      </li>
+      {% else %}
+      <li class="topnav__li {% if navLink.currentPage %}active{% endif %}">
+        <a href="{{ getNavigationLink(navLink) }}">{{ navLink.title }}
+        </a>
+      </li>
+      {% endif %}
+
       {% endfor %}
-     </ul>
-
-    </li>
-    {% else %}
-    <li class="topnav__li {% if navLink.currentPage %}active{% endif %}"">
-     <a href="{{ pathFor('showPage', {'slug1': navLink.page_slug}) }}">{{ navLink.title }}
-    </a>
-   </li>
-   {% endif %}
-
-   {% endfor %}
-   </ul>
+    </ul>
   </nav>
 
- </header>
+</header>
