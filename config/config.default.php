@@ -13,7 +13,7 @@
  * Always set to true in production.
  * Set to false in config.local.php for development.
  */
-$config['site']['production'] = true;
+$config['environment']['production'] = true;
 
 /**
  * Database

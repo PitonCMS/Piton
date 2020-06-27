@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    {% if site.settings.production and site.settings.googleWebMaster %}
+    {% if site.environment.production and site.settings.googleWebMaster %}
     <meta name="google-site-verification" content="{{ site.settings.googleWebMaster }}">
     {% endif %}
 
@@ -40,11 +40,11 @@
     <script src="/assets/vendor/fancybox-master/dist/jquery.fancybox.min.js"></script>
     <script src="/assets/js/custom.js"></script>
 
-    {% if site.settings.production and site.settings.statCounter %}
+    {% if site.environment.production and site.settings.statCounter %}
     {{ site.settings.statCounter }}
     {% endif %}
 
-    {% if site.settings.production and site.settings.googleAnalytics %}
+    {% if site.environment.production and site.settings.googleAnalytics %}
     {{ site.settings.googleAnalytics }}
     {% endif %}
 </body>
