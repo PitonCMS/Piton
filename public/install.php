@@ -104,8 +104,8 @@ if (isset($_POST['submit'])) {
     }
 
     // Get install script
-    if (file_exists(ROOT_DIR . 'vendor/pitoncms/engine/tables.sql')) {
-        $script = file_get_contents(ROOT_DIR . 'vendor/pitoncms/engine/tables.sql');
+    if (file_exists(ROOT_DIR . 'vendor/pitoncms/engine/schema/build.sql')) {
+        $script = file_get_contents(ROOT_DIR . 'vendor/pitoncms/engine/schema/build.sql');
     } else {
         throwPitonError("Unable to find table install script.");
     }
