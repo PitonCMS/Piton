@@ -1,41 +1,30 @@
-// navbar hamburger toggler
-$('.menu-toggle').click(function () {
-  $('.site-nav').toggleClass('site-nav--open', 500);
-  $(this).toggleClass('open');
-});
 
-const contactMessageDisplay = function(text) {
-  let contactDiv = $('.jsContactForm');
-  if (contactDiv) {
-    contactDiv.slideUp(function() {
-      $(this).html(text);
-      $(this).slideDown();
-    });
+import { postXHRPromise } from '/admin/js/modules/xhrPromise.js';
+
+const contactDisplayResponse = function(text) {
+  let form = document.querySelector(`[data-contact-form="1"]`);
+  if (form) {
+    form.innerHTML = text;
   }
 };
 
-// Contact form submission
-$("#contact-form").on('submit', function(e) {
-  e.preventDefault();
-  let buttonText = {
-    submit: "Submit",
-    loading: "Sending..."
-  }
-  $(this).find('.jsContactSubmitButton').prop('disabled',true).html(buttonText.loading);
-  let postData = $(this).serialize();
-  $.ajax({
-    url: pitonConfig.routes.submitMessage,
-    method: "POST",
-    data: postData,
-    success: function (r) {
-      if (r.status == "success") {
-        contactMessageDisplay(r.response);
-      } else {
-        contactMessageDisplay("<strong>Whoops! There was an error submitting your message.</strong>");
-      }
-    },
-    error: function(r) {
-      contactMessageDisplay("<strong>Whoops! There was an error submitting your message.</strong>");
+const contactSubmitMessage = function(event) {
+  if (event.target.matches(`[type="submit"]`) && event.target.closest(`[data-contact-form="1"]`)) {
+    event.preventDefault();
+    let form = document.querySelector(`[data-contact-form="1"] form`);
+
+    if (form) {
+      // Set indicator of work in progress
+      form.querySelector(`button[type="submit"]`).innerHTML = "Sending...";
+      postXHRPromise(pitonConfig.routes.submitMessage, new FormData(form))
+        .then(text => {
+          contactDisplayResponse(`<p>${text}</p>`);
+        })
+        .catch(error => {
+          contactDisplayResponse(`<p>${error}</p>`);
+        });
     }
-  });
-});
+  }
+}
+
+document.addEventListener("click", contactSubmitMessage, false);
