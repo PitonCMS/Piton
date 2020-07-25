@@ -1,10 +1,12 @@
 {# Contact Form Element #}
+{% import "includes/_macros.html" as pitonMacro %}
+
 <section>
     <h2>{{ element.title }}</h2>
     {{ element.content }}
 
-    <div data-contact-form="1">
-        <form class="contact-form" id="contact-form" method="post" accept-charset="utf-8">
+    <div>
+        <form class="contact-form" id="contact-form" accept-charset="utf-8" data-contact-form="true">
             <input type="hidden" name="context" value="{{ page.title }}">
 
             <label>Your Name</label>
@@ -13,22 +15,13 @@
             <label>Your Email<span class="text-danger">*</span></label>
             <input type="email" class="contact-form__form-control" name="email" maxlength="100" placeholder="Email address" required autocomplete="off">
 
-            {# This is the honeypot to limit spam messages. Keep the inline style and also the javascript at the bottom #}
-            <div style="display:none;">
-                <label>Alternate Email Address</label>
-                <input type="email" class="contact-form__form-control alt-email" name="alt-email" placeholder="Email" autocomplete="off">
-            </div>
-
             <label>Message</label>
             <textarea class="contact-form__form-control" rows="5" name="message"></textarea>
 
-            <button class="btn" type="submit">Submit</button>
-        </form>
+            <button class="btn" type="button">Submit</button>
 
-        {# Keep: this sets a known value in the honeypot #}
-        <script>
-            document.getElementsByClassName('alt-email')[0].setAttribute('value', 'alt@example.com');
-        </script>
+            {{ pitonMacro.contactHoneypot() }}
+        </form>
     </div>
 
 </section>

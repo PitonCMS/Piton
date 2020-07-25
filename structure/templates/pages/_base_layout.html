@@ -15,8 +15,6 @@
     <link rel="stylesheet" href="/assets/vendor/fancybox-master/dist/jquery.fancybox.min.css">
     <link rel="stylesheet" href="/assets/css/{{ site.settings.theme|default('default') }}/main.css">
 
-    {% block headStyle %}{% endblock %}
-
     {{ include('includes/_pitonConfigJs.html') }}
 </head>
 
@@ -32,7 +30,8 @@
     <script src="http://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="/assets/vendor/fancybox-master/dist/jquery.fancybox.min.js"></script>
-    <script src="/assets/js/custom.js" type="module"></script>
+    <script src="/assets/js/custom.js"></script>
+    <script src="/admin/js/dist/contact.js"></script>
 
     {% if site.environment.production and site.settings.statCounter %}
     {{ site.settings.statCounter }}
