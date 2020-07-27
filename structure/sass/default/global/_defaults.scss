@@ -9,6 +9,7 @@
 html {
   min-height: 100vh;
   width: 100vw;
+
 }
 
 img {
@@ -23,7 +24,7 @@ li {
 
 .container {
   width: 100%;
-  max-width: 1200px;
+  width: $max-width;
   @include margin(0 auto);
   display: grid;
   grid-template-columns: minmax(2rem, 1fr) minmax(auto, 100ch) minmax(2rem, 1fr);
@@ -32,36 +33,5 @@ li {
   >* {
     grid-column: 2 / 3;
 
-  }
-}
-
-
-.textElement {
-  @include padding(2rem null);
-  width: 100%;
-  display: grid;
-  grid-template-columns:
-    minmax(2rem, 1fr) minmax(auto, 90ch) minmax(2rem, 1fr);
-
-  p {
-    letter-spacing: .8px;
-  }
-
-  >* {
-    grid-column: 2;
-  }
-
-  img {
-    grid-column: 1 / -1;
-    justify-self: center;
-    width: 100%;
-    max-width: 100ch;
-    max-height: 40vh;
-    box-shadow: $bs-1;
-    object-fit: cover;
-  }
-
-  *+* {
-    @include margin(1.5rem null null null);
   }
 }

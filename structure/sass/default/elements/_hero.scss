@@ -36,10 +36,14 @@
 
     h1 {
       font-weight: 500;
+      color: $clr-white;
+      text-shadow: $ts;
     }
 
     p {
       font-size: 1.5rem;
+      color: $clr-white;
+      text-shadow: $ts;
     }
   }
 }
