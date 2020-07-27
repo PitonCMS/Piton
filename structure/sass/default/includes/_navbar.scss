@@ -1,234 +1,107 @@
-.navbar {
- width: 100%;
- height: var(--nav-height);
- line-height: var(--nav-height);
- background: var(--nav-background);
- position: fixed;
- top: 0;
- z-index: 100;
- display: flex;
- flex-flow: column nowrap;
- box-shadow: var(--bs);
+.nav {
+  @include padding(null 1rem);
+  height: $nav-height;
+  background: $clr-primary;
+  color: $clr-white;
 
- @media Screen and (min-width: $breakpoint) {
-  display: flex;
-  padding: 0 1rem;
-  flex-flow: row nowrap;
-  justify-content: space-between;
- }
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 
- // Logo
- .logo {
-  a {
-   color: var(--nav-font-color);
-   text-decoration: none;
-   font-size: 2rem;
-   text-transform: uppercase;
-   font-weight: 700;
-   width: 100%;
-   display: block;
-   text-align: center;
-   letter-spacing: var(--ls);
-   &:hover{
-    color: var(--nav-hover-color);
-   }
-  }
- }
-
- // Toggle Off Screen 
- .nav-toggle,
- .sub-nav-toggle {
-  position: absolute;
-  top: -9999px;
- }
-
- // Nav Toggle Label & hamburger icon w/animation
- .nav-toggle-label {
-  cursor: pointer;
-  height: var(--nav-height);
-  display: flex;
-  align-items: center;
-  position: absolute;
-  top: 0px;
-  right: 1rem;
-
-  @media Screen and (min-width: $breakpoint) {
-   display: none;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  span,
-  span::before,
-  span::after {
-   width: 2rem;
-   height: 4px;
-   border-radius: 7px;
-   background: white;
-  }
+  .logo a {
+    text-decoration: none;
+    font-size: 2rem;
+    color: $clr-white;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 900;
+    transition: color 125ms ease;
 
-  span::before,
-  span::after {
-   content: '';
-   position: absolute;
-   transform: rotate(0deg);
-   transition: transform 125ms ease;
-  }
-
-  span::before {
-   top: 23px;
-  }
-
-  span::after {
-   bottom: 23px;
-  }
- }
-
- // Nav Toggle show/hide menu Animate Hamburger
- .nav-toggle:checked~.navbar,
- .sub-nav-toggle:checked~.sub-nav {
-  transform: scale(1, 1);
- }
-
- .nav-toggle:checked~.navbar a,
- .nav-toggle:checked~.sub-nav-toggle-label {
-  opacity: 1;
- }
-
- .sub-nav-toggle:checked~.sub-nav a {
-  opacity: 1;
- }
-
- .nav-toggle:checked~.nav-toggle-label span {
-  background: transparent;
- }
-
- .nav-toggle:checked~.nav-toggle-label span:before {
-  transform: rotate(45deg);
-  top: 36px;
- }
-
- .nav-toggle:checked~.nav-toggle-label span:after {
-  transform: rotate(-45deg);
-  bottom: 30px;
- }
-
- // Top Nav Styles
- .topnav {
-  background: var(--nav-background);
-  transform: scale(1, 0);
-  transform-origin: top;
-  transition: all 125ms ease-in-out;
-
-  @media Screen and (min-width: $breakpoint) {
-   transform: scale(1);
-   flex: 1;
-  }
- }
-
- .nav-toggle:checked~.topnav {
-  transform: scale(1, 1);
- }
-
- .topnav ul {
-  width: 100%;
-  text-align: center;
-  list-style: none;
-
-  @media Screen and (min-width: $breakpoint) {
-   width: 100%;
-   flex: 1;
-   display: flex;
-   justify-content: flex-end;
-  }
- }
-
- .topnav li {
-  @media Screen and (min-width: $breakpoint) {
-   // margin-left: 1rem;
-   position: relative;
-  }
- }
-
- .topnav li a,
- .sub-nav-toggle-label {
-  display: block;
-  width: 100%;
-  text-decoration: none;
-  color: var(--nav-font-color);
-  font-size: 1.3rem;
-  cursor: pointer;
-  letter-spacing: var(--ls);
-
-  @media Screen and (min-width: $breakpoint) {
-   padding: 0 .5rem;
-   font-size: 1rem;
-  }
- }
-
- .topnav li a:hover,
- .sub-nav-toggle-label:hover {
-  color: var(--nav-hover-color);
-  background: var(--clr-black);
-
- }
-
- .sub-nav-toggle-label::after {
-  padding-left: 4px;
-  content: ' \25B8';
-  transition: transform 125ms ease-in-out;
- }
-
- .sub-nav-toggle:checked~.sub-nav-toggle-label::after {
-  content: ' \25be';
-
-  @media screen and (min-width: $breakpoint) {
-   content: ' \25b8';
-  }
- }
-
- .sub-nav-toggle:checked~.sub-nav {
-  display: flex;
-  flex-flow: column nowrap;
-  transform: scale(1, 1);
-
- }
-
- .sub-nav {
-
-  display: none;
-  transform: scale(1, 0);
-  transition: transform 250ms ease-in-out;
-  transform-origin: top;
-  color: var(--clr-black);
-  background: var(--clr-accent);
-
-  @media Screen and (min-width: $breakpoint) {
-   @include padding(0);
-   position: absolute;
-   width: 100%;
-   min-width: 200px;
-   top: 100%;
-   left: 0px;
-   right: 100px;
-   transform: scale(1, 0);
-   transition: transform 250ms ease-in-out;
-   box-shadow: var(--bs);
-   display: block;
-   flex-flow: column nowrap;
-   margin: 0;
-  }
-
-  &-link {
-   margin-left: 0;
-
-   a {
-    @media Screen and (min-width: $breakpoint) {
-     font-size: 1rem !important;
-     text-align: left;
-
+    &:hover {
+      color: $clr-accent;
     }
-   }
   }
- }
 
- // End Navbar
+  .topnav {
+    background-color: $clr-primary;
+    box-shadow: $bs-1;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+
+    opacity: 0;
+
+    display: block;
+
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: all 125ms ease;
+
+    @media screen and (min-width: $breakpoint) {
+      @include padding(0rem null);
+      box-shadow: none;
+      opacity: 1;
+      transform: scale(1, 1);
+      width: auto;
+      position: static;
+    }
+
+    &__ul {
+      display: flex;
+      flex-flow: column nowrap;
+      text-align: center;
+
+      @media screen and (min-width: $breakpoint) {
+        flex-flow: row nowrap;
+      }
+    }
+
+    &__li {
+      @include margin(0);
+      @include padding(0);
+      list-style: none;
+
+      &.active a {
+        background: darken($clr-primary, 10%) !important;
+        color: $clr-accent;
+      }
+
+      a {
+        color: $clr-white;
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        line-height: $nav-height;
+        font-size: 1.25rem;
+        transition: all 125ms ease;
+
+        @media screen and (min-width: $breakpoint) {
+          @include padding(null .75em);
+        }
+
+        &:hover {
+          color: $clr-accent;
+          background: darken($clr-primary, 10%);
+        }
+      }
+    }
+  }
+}
+
+.nav-toggle:checked~.topnav {
+  transform: scale(1, 1);
+  opacity: 1;
+}
+
+.nav-toggle:checked~.topnav a {
+  opacity: 1;
 }
