@@ -317,6 +317,48 @@ li {
   margin-top: 1rem;
 }
 
+.embeddedElement {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(2rem, 1fr) minmax(auto, 90ch) minmax(2rem, 1fr);
+}
+.embeddedElement p {
+  letter-spacing: 0.8px;
+}
+.embeddedElement > * {
+  grid-column: 2;
+}
+.embeddedElement img {
+  grid-column: 1/-1;
+  justify-self: center;
+  width: 100%;
+  max-width: 100ch;
+  max-height: 40vh;
+  box-shadow: 0 10px 25px rgba(51, 51, 51, 0.25);
+  object-fit: cover;
+}
+.embeddedElement * + * {
+  margin-top: 1.5rem;
+}
+.embeddedElement .video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+.embeddedElement .video-container iframe,
+.embeddedElement .video-container object,
+.embeddedElement .video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .nav {
   padding-right: 1rem;
   padding-left: 1rem;
