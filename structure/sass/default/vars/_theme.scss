@@ -1,14 +1,14 @@
 // Colors 
 
-$clr-black: rgb(0, 0, 0%);
-$clr-white: hsl(0, 0%, 100%);
-$clr-blue: hsl(210, 50%, 40%);
-$clr-grey-dark: hsl(0, 0%, 35%);
-$clr-grey-medium: hsl(0, 0%, 80%);
-$clr-grey-light: hsl(0, 0%, 94%);
-$clr-orange: hsl(24, 100%, 56%);
-$clr-red: hsl(0, 100%, 50%);
-$clr-green: hsl(120, 100%, 22%);
+$clr-black: hsl(0, 0%, 20%);
+$clr-white: #ffffff;
+$clr-blue: #336699;
+$clr-grey-dark: #595959;
+$clr-grey-medium: #cccccc;
+$clr-grey-light: #f0f0f0;
+$clr-orange: #ff781f;
+$clr-red: #ff0000;
+$clr-green: #007000;
 
 // Theme -- DO NOT CHANGE VARIABLE 
 
@@ -23,19 +23,20 @@ $clr-dark-text: $clr-black;
 // Default Element Styles 
 
 $bs: 0 2px 2px rgba($clr-black, .5);
+$bs-1: 0 10px 25px rgba($clr-black, .25);
 $bsh: 0px 0px 10px 2px rgba($clr-black, .15); // box shadow hover
 $br: 7px;
 $ls: 2px;
-$ts: 0 2px 2px rgba($clr-black, .25);
+$ts: 0 2px 5px rgba($clr-black, .18);
 
 // Navigation Variables
-$nav-height: 70px;
+$nav-height: 60px;
 $nav-background: $clr-primary;
 $nav-font-color: $clr-white;
 $nav-hover-color: $clr-accent;
 
 // Layout Variables
-$max-width: 1000px;
+$max-width: 2000px;
 
 // Media Query Breakpoints
 $breakpoint: 768px;
@@ -50,39 +51,38 @@ $breakpoint: 768px;
     IF YOU ARE USING CSS ONLY, CHANGE THE PROPERTY OF THE VARIABLE 
     INSIDE THE MAIN.CSS AND LOGIN.CSS FILES.
 
-*/ 
+*/
 
 :root {
- /* Color Theme */
- --clr-primary: #{$clr-primary};
- --clr-primary-dark: #{$clr-primary-dark};
- --clr-primary-light: #{$clr-primary-light};
- --clr-secondary: #{$clr-secondary};
- --clr-accent: #{$clr-accent};
- --clr-dark-text: #{$clr-dark-text};
+    /* Color Theme */
+    --clr-primary: #{$clr-primary};
+    --clr-primary-dark: #{$clr-primary-dark};
+    --clr-primary-light: #{$clr-primary-light};
+    --clr-secondary: #{$clr-secondary};
+    --clr-accent: #{$clr-accent};
+    --clr-dark-text: #{$clr-dark-text};
 
- --clr-white: #{$clr-white};
- --clr-black: #{$clr-black};
- --clr-grey-light: #{$clr-grey-light};
- --clr-grey-medium: #{$clr-grey-medium};
- --clr-grey-dark: #{$clr-grey-dark};
+    --clr-white: #{$clr-white};
+    --clr-black: #{$clr-black};
+    --clr-grey-light: #{$clr-grey-light};
+    --clr-grey-medium: #{$clr-grey-medium};
+    --clr-grey-dark: #{$clr-grey-dark};
 
-  /* Default Element Styles */ 
- --bs: #{$bs}; // Box Shadow  
- --br: #{$br}; // Border Radius 
- --ls: #{$ls}; // Letter spacing 
- --ts: #{$ts}; // Text Shadow 
+    /* Default Element Styles */
+    --bs: #{$bs}; // Box Shadow  
+    --br: #{$br}; // Border Radius 
+    --ls: #{$ls}; // Letter spacing 
+    --ts: #{$ts}; // Text Shadow 
 
- /*  Navigation Styles */
- --nav-height: #{$nav-height};
- --nav-background: #{$nav-background};
- --nav-font-color: #{$nav-font-color};
- --nav-hover-color: #{$nav-hover-color};
+    /*  Navigation Styles */
+    --nav-height: #{$nav-height};
+    --nav-background: #{$nav-background};
+    --nav-font-color: #{$nav-font-color};
+    --nav-hover-color: #{$nav-hover-color};
 
- /* Layout Variables */
- --max-width: #{$max-width};
+    /* Layout Variables */
+    --max-width: #{$max-width};
 
- /* Media Queries */
- --breakpoint: #{$breakpoint}
+    /* Media Queries */
+    --breakpoint: #{$breakpoint};
 }
-

@@ -1,33 +1,15 @@
 {% extends 'pages/_base_layout.html' %}
 
-{% block headStyle %}
-<style>
-  .hero{
-    {% set bgImage = page.blocks.heroBlock|first %}
+{%  block hero %}
 
-    background-image: url('{{ getMediaPath(bgImage.media.filename, 'small')|default('/assets/img/heroDefault.jpg') }}');
-  }
-  @media (min-width: 768px){
-    .hero {
-    background-image: url('{{ getMediaPath(bgImage.media.filename, 'large')|default('/assets/img/heroDefault.jpg') }}');
-    background-position: {{ page.settings.placement }};
-    background-attachment: {{ page.settings.attachment }};
-  }
-  .hero::after{
-    background-color: rgba(0, 0, 0, 0.{{ page.settings.overlay }});
-  }
-  }
-</style>
-{% endblock headStyle %}
-
-{% block body %}
 {# {{ getMediaSrcSet(page.media.filename, page.media.caption) }} #}
 
 {{ getBlockElementsHtml(page.blocks.heroBlock) }}
-
+{% endblock hero %}
+{% block body %}
 <div class="container">
 
- {{ getBlockElementsHtml(page.blocks.contentBlock) }}
+  {{ getBlockElementsHtml(page.blocks.contentBlock) }}
 
 </div>
 

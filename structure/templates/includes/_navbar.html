@@ -1,42 +1,41 @@
-<header class="navbar">
+<nav class="nav">
+  <div class="container">
+    <div class="logo">
+      <a href="{{ pathFor('home') }}">{{ site.settings.displayName|default('Piton<span>CMS</span>') }}</a>
+    </div>
+    <input type="checkbox" name="toggle" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
 
-  <input type="checkbox" name="toggle" id="nav-toggle" class="nav-toggle">
-  <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+    <div class="topnav">
+      <ul class="topnav__ul">
+        {% for navLink in getNavigator('main') %}
 
-  <div class="logo">
-    <a href="{{ pathFor('home') }}">{{ site.settings.displayName|default('Piton<span>CMS</span>') }}</a>
+        {% if navLink.childNav %}
+        {# This is the case for a parent with a child nav dropdown #}
+        <li class="topnav__li {% if navLink.currentPage %}active{% endif %}">
+
+          <input type="checkbox" name="sub-nav-toggle-{{ loop.index }}" class="sub-nav-toggle"
+            id="sub-nav-toggle-{{ loop.index }}">
+          <label for="sub-nav-toggle-{{ loop.index }}" class="sub-nav-toggle-label">{{ navLink.title }}</label>
+
+          <ul class="sub-nav">
+            {% for child in navLink.childNav %}
+            <li class="sub-nav-link">
+              <a class="dropdown-item" href="{{ getNavigationLink(child) }}">{{ child.title }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+
+        </li>
+        {% else %}
+        <li class="topnav__li {% if navLink.currentPage %}active{% endif %}">
+          <a href="{{ getNavigationLink(navLink) }}">{{ navLink.title }}
+          </a>
+        </li>
+        {% endif %}
+
+        {% endfor %}
+      </ul>
+    </div>
   </div>
-
-  <nav class="topnav">
-    <ul class="topnav__ul">
-      {% for navLink in getNavigator('main') %}
-
-      {% if navLink.childNav %}
-      {# This is the case for a parent with a child nav dropdown #}
-      <li class="topnav__li {% if navLink.currentPage %}active{% endif %}">
-
-        <input type="checkbox" name="sub-nav-toggle-{{ loop.index }}" class="sub-nav-toggle"
-          id="sub-nav-toggle-{{ loop.index }}">
-        <label for="sub-nav-toggle-{{ loop.index }}" class="sub-nav-toggle-label">{{ navLink.title }}</label>
-
-        <ul class="sub-nav">
-          {% for child in navLink.childNav %}
-          <li class="sub-nav-link">
-            <a class="dropdown-item" href="{{ getNavigationLink(child) }}">{{ child.title }}</a>
-          </li>
-          {% endfor %}
-        </ul>
-
-      </li>
-      {% else %}
-      <li class="topnav__li {% if navLink.currentPage %}active{% endif %}">
-        <a href="{{ getNavigationLink(navLink) }}">{{ navLink.title }}
-        </a>
-      </li>
-      {% endif %}
-
-      {% endfor %}
-    </ul>
-  </nav>
-
-</header>
+</nav>
