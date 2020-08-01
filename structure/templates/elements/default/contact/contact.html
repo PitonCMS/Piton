@@ -6,7 +6,7 @@
     {{ element.content }}
 
     <div>
-        <form class="contact-form" id="contact-form" accept-charset="utf-8" data-contact-form="true">
+        <form class="contact-form" id="contact-form" method="post" accept-charset="utf-8" data-contact-form="true">
             <input type="hidden" name="context" value="{{ page.title }}">
 
             <label>Your Name</label>
@@ -18,7 +18,11 @@
             <label>Message</label>
             <textarea class="contact-form__form-control" rows="5" name="message"></textarea>
 
-            <button class="btn" type="button">Submit</button>
+            {# Custom Field Example #}
+            <label>Favorite Color</label>
+            <input type="text" class="contact-form__form-control" name="favoriteColor">
+
+            <button class="btn" type="submit">Submit</button>
 
             {{ pitonMacro.contactHoneypot() }}
         </form>
