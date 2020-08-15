@@ -36,7 +36,7 @@ $nav-font-color: $clr-white;
 $nav-hover-color: $clr-accent;
 
 // Layout Variables
-$max-width: 2000px;
+$max-container-width: 1200px;
 
 // Media Query Breakpoints
 $breakpoint: 768px;
@@ -81,7 +81,7 @@ $breakpoint: 768px;
     --nav-hover-color: #{$nav-hover-color};
 
     /* Layout Variables */
-    --max-width: #{$max-width};
+    --max-width: #{$max-container-width};
 
     /* Media Queries */
     --breakpoint: #{$breakpoint};
