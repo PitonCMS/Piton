@@ -1,7 +1,7 @@
 # PitonCMS
 Friendly and Flexible Content Management System
 
-## A Designer Forward CMS
+## A Designer Friendly CMS
 PitonCMS was designed to be designer friendly, giving great flexibility to the designer to build creative websites without requiring additional custom backend development.
 
 Page structures, data fields, settings, are all easily extensible by modifying project JSON **Definition** files. These files can be checked into version control and pushed to other environments to promote layout and data changes without having to modify remote databases or push code.
@@ -166,14 +166,14 @@ $config['pagination']['adminMediaPagination']['resultsPerPage'] = 10;
 ## Updating PitonCMS
 The PitonCMS system relies on a vendor package named `pitoncms/engine` which has the core PitonCMS code and files. To update PitonCMS, from the terminal in the root of your project run:
 
-```
+```bash
 composer update pitoncms/engine
 ```
 to get the latest version, and then commit the `composer.lock` file (and possibly commit the `vendor` folder).
 
 **Note**: You should run the update command from your live webserver or inside the Docker container, as the update executes a script to set the Engine release number in the database, which needs to be running. To access the Docker container:
 
-```
+```bash
 docker exec -it piton_web_1 bash
 cd /var/www/piton
 composer update pitoncms/engine
