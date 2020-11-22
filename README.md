@@ -2,9 +2,9 @@
 Friendly and Flexible Content Management System
 
 ## A Designer Forward CMS
-PitonCMS was designed to be _Designer Forward_, giving great flexibility to the designer to build creative websites without requiring additional custom backend development.
+PitonCMS was designed to be designer friendly, giving great flexibility to the designer to build creative websites without requiring additional custom backend development.
 
-Page structures, custom data, settings, are all easily extensible by modifying project JSON **Definition** files. These files can be checked into version control and pushed to other environments to promote layout and data changes without having to modify remote databases or push code.
+Page structures, data fields, settings, are all easily extensible by modifying project JSON **Definition** files. These files can be checked into version control and pushed to other environments to promote layout and data changes without having to modify remote databases or push code.
 
 PitonCMS is built on modern standards and packages:
 * PHP 7.1+
@@ -18,7 +18,7 @@ PitonCMS is built on modern standards and packages:
 * [Composer](https://getcomposer.org/) installed on your development environment
 
 ## Install PitonCMS
-To install PitonCMS using composer from the command line, change directories (`cd`) to where you want to create your new PitonCMS project directory, and run the composer `create-project` command, but update `<my-project-name>` to the new project name:
+To install PitonCMS using composer from the command line, change directories (`cd`) to where you want to create your new PitonCMS project directory, and run the composer `create-project` command, but update `<my-project-name>` to the new project name (to use Docker ensure the project name is all lower case):
 
 ```
 composer create-project pitoncms/piton <my-project-name>
@@ -29,10 +29,10 @@ This will create a new instance of PitonCMS in a folder of the same name. When c
 The `create-project` command will automatically run a post create script that:
 
 * Updates the Docker Compose YAML files and Apache config files for your project
-* Copies the `config/config.default.php` file to `config/config.local.php`, and sets appropriate local _development_ settings
+* Copies the `config/config.default.php` file to `config/config.local.php`, and sets appropriate local _development_ environment settings
 
 ## Run PitonCMS in Docker Container
-If you have a [Docker](https://docs.docker.com/) client installed on your machine, from the command line `cd` into the new project folder and run:
+If you have a [Docker](https://docs.docker.com/) client installed on your computer, from the command line `cd` into the new project folder and run:
 
 ```
 docker-compose build
@@ -58,9 +58,9 @@ After starting your development server, open a browser and go to `http://localho
 **Note:** The installer script (`public/install.php`) deletes itself after creating the database. If for some reason the self-delete fails, be sure to manually delete this file. DO NOT commit `install.php` and/or push to a production environment.
 
 ## Login to PitonCMS
-PitonCMS does not store passwords. PitonCMS uses a Passwordless Authentication by Email system.
+PitonCMS does not store passwords. PitonCMS uses passwordless authentication by email.
 
-To login, navigate to `/login` and enter the email address you used during the install. You will be sent a one-time use hashed token with a login link that is good for five minutes. After logging in, you are welcome to delete the login email.
+To login, navigate to `/login` and enter the email address you used during the install. You will be sent a one-time use hashed token with a login link that is good for 15 minutes.
 
 Sessions are valid for the duration set in the `secondsUntilExpiration` session configuration item, which defaults to two hours from the last request. This can be increased to any session length.
 
@@ -77,9 +77,9 @@ There are various schools of thought on weather to commit `vendor` folders in yo
 ## Backend Configuration Settings
 After installing the project, inspect the `config/config.local.php` configuration file (which was copied from `config.default.php` as part of the composer create project step) to ensure the configuration values are set for your environment.
 
-Do not update the `config.default.php` settings directly, make any desired changes in `config.local.php` as those override the default file.
+Do not update the `config.default.php` settings directly as those override the default file, make any desired changes in `config.local.php`.
 
-For security reasons, **DO NOT** commit `config.local.php` to your version control system as it holds critical passwords and keys. For any instance of your PitonCMS project, you will need a local  `config.local.php` file to manage local server settings.
+**DO NOT** commit `config.local.php` to your version control system as it holds critical passwords and keys. For any instance of your PitonCMS project, you will need a local  `config.local.php` file to manage local server settings.
 
 ### Configuration Setting Options
 
