@@ -1,6 +1,6 @@
 {# Hero Element #}
 <header class="hero" {% if element.settings.overlay %}
-  style="background-color: rgba({{ element.settings.overlayColor}},{{element.settings.overlay }}%) {% endif %}">
+  style="background-color: rgba({{ element.settings.overlayColor}},{{element.settings.overlay }})" {% endif %}>
   <div class="hero__content">
     <h1>{{ element.title }}</h1>
     {{ element.content }}
