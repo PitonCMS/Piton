@@ -1,12 +1,37 @@
+// Top Navigation
+
 .nav {
   @include padding(null 1rem);
   height: $nav-height;
-  background: $clr-primary;
-  color: $clr-white;
+  background: $nav-bg;
+  color: $nav-text;
+  transition: all 500ms ease-out;
 
-  position: sticky;
+  &.scroll {
+    background-color: rgba($clr-primary, .95);
+    box-shadow: $bs-1;
+    opacity: 1;
+
+    @media screen and (min-width: $breakpoint) {
+
+      .logo a,
+      .topnav__li a,
+      .topnav__li.active a {
+        color: $clr-white;
+      }
+      }
+
+  }
+
+  position: fixed;
+  left: 0;
+  right: 0;
   top: 0;
   z-index: 1000;
+
+  @media screen and (min-width: $breakpoint) {
+    background: rgba($nav-bg, $nav-bg-opacity);
+  }
 
   .container {
     display: flex;
@@ -16,26 +41,27 @@
 
   .logo a {
     text-decoration: none;
-    font-size: 2rem;
-    color: $clr-white;
-    font-family: 'Roboto Slab', serif;
-    font-weight: 900;
+    font-size: 2.5rem;
+    color: $nav-text;
+    line-height: $nav-height;
+    font-family: $ff-serif;
+    font-weight: $fw-b;
     transition: color 125ms ease;
 
     &:hover {
-      color: $clr-accent;
+      color: $nav-accent;
     }
   }
 
   .topnav {
-    background-color: $clr-primary;
+    background: $clr-white;
     box-shadow: $bs-1;
 
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    z-index: 100;
+    z-index: 1000;
 
     opacity: 0;
 
@@ -46,12 +72,14 @@
     transition: all 125ms ease;
 
     @media screen and (min-width: $breakpoint) {
-      @include padding(0rem null);
+      @include padding(0 null);
+      @include margin(0);
       box-shadow: none;
       opacity: 1;
       transform: scale(1, 1);
       width: auto;
       position: static;
+      background: transparent;
     }
 
     &__ul {
@@ -70,12 +98,17 @@
       list-style: none;
 
       &.active a {
-        background: darken($clr-primary, 10%) !important;
-        color: $clr-accent;
+        background: rgba($clr-primary, .25);
+        color: darken($nav-text, 30%);
+
+        @media screen and (min-width: $breakpoint) {
+          background: darken($clr-primary, 25%);
+          color: $clr-white;
+        }
       }
 
       a {
-        color: $clr-white;
+        color: $nav-text;
         display: block;
         width: 100%;
         height: 100%;
@@ -89,12 +122,83 @@
         }
 
         &:hover {
-          color: $clr-accent;
-          background: darken($clr-primary, 10%);
-        }
-      }
-    }
+          color: $nav-text;
+          background: rgba($clr-primary, .35);
+          }
+
+          &:focus {
+            outline: none;
+          }
+          }
+          }
+          }
+          }
+
+          // Hamburger 
+
+          // Hide checkbox and remove from the document flow
+          .nav-toggle {
+            position: absolute;
+            top: -999px !important;
+            left: -9999px !important;
+          }
+
+          // Nav Toggle Label & Hamburger icon w/animation
+
+          .nav-toggle-label {
+            @include margin(0);
+            cursor: pointer;
+            height: $nav-height;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 100;
+            width: $nav-height;
+
+            @media screen and (min-width: $breakpoint) {
+              display: none;
+            }
+
+            span,
+            span::before,
+            span::after {
+              width: calc(#{$nav-height}/2);
+              height: 4px;
+              border-radius: $br;
+              background: $nav-text;
+              position: relative;
+            }
+
+            span::before,
+            span::after {
+              content: '';
+              position: absolute;
+              transform: rotate(0deg);
+              transition: transform 125ms ease;
+            }
+
+            span::before {
+              top: 10px;
+            }
+
+            span::after {
+              top: -10px;
   }
+}
+// Nav Toggle Animation
+
+.nav-toggle:checked~.nav-toggle-label span {
+  background: transparent;
+}
+.nav-toggle:checked~.nav-toggle-label span::before {
+  transform: rotate(135deg);
+  top: -0px;
+}
+.nav-toggle:checked~.nav-toggle-label span::after {
+  transform: rotate(-135deg);
+  top: 0px;
 }
 
 .nav-toggle:checked~.topnav {

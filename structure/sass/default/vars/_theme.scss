@@ -2,7 +2,7 @@
 
 $clr-black: hsl(0, 0%, 20%);
 $clr-white: #ffffff;
-$clr-blue: #336699;
+$clr-blue: rgb(51, 102, 153);
 $clr-grey-dark: #595959;
 $clr-grey-medium: #cccccc;
 $clr-grey-light: #f0f0f0;
@@ -40,6 +40,23 @@ $max-container-width: 1200px;
 
 // Media Query Breakpoints
 $breakpoint: 768px;
+
+$fw-l: 300;
+$fw-n: 400;
+$fw-m: 600;
+$fw-b: 700;
+
+$ff-serif: 'PT Serif',
+serif;
+$ff-sans: 'Open Sans',
+sans-serif;
+
+// Set the $nav-color to transparent if dont' want a background color.
+$nav-bg: $clr-white;
+$nav-bg-opacity: 0%;
+$nav-text: $clr-black;
+$nav-accent: $clr-accent;
+$nav-height: 60px;
 
 /* 
     CSS VARIABLES 
