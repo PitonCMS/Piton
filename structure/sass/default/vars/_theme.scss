@@ -1,21 +1,88 @@
-// theme
+// Colors 
 
-$primary-color: #336699;
-$accent-color: darken($primary-color, 3);
-$primary-light-grey: #efefef;
-$primary-medium-grey: #ddd;
-$primary-dark-grey: #ccc;
+$clr-black: hsl(0, 0%, 20%);
+$clr-white: #ffffff;
+$clr-blue: #336699;
+$clr-grey-dark: #595959;
+$clr-grey-medium: #cccccc;
+$clr-grey-light: #f0f0f0;
+$clr-orange: #ff781f;
+$clr-red: #ff0000;
+$clr-green: #007000;
 
-$text-dark: #333;
-$text-light: #ffffff;
+// Theme -- DO NOT CHANGE VARIABLE 
 
-$gray1: rgb(236, 234, 234);
-$gray2: rgb(202, 204, 206);
-$dark1: #000;
- 
+$clr-primary: $clr-blue;
+$clr-primary-dark: darken($clr-primary, 10);
+$clr-primary-light: lighten($clr-primary, 30);
+$clr-secondary: adjust-hue($clr-primary, -20);
+$clr-accent: $clr-orange;
+$clr-dark-text: $clr-black;
 
-$border-radius: 7px;
-$box-shadow: 0 5px 10px rgba(150, 150, 150, .05 ), 0 15px 40px rgba(150,150,150,.2);
-$text-shadow: 0 2px 2px rgba(0,0,0,.5);
-$letter-spacing: 4px;
 
+// Default Element Styles 
+
+$bs: 0 2px 2px rgba($clr-black, .5);
+$bs-1: 0 10px 25px rgba($clr-black, .25);
+$bsh: 0px 0px 10px 2px rgba($clr-black, .15); // box shadow hover
+$br: 7px;
+$ls: 2px;
+$ts: 0 2px 5px rgba($clr-black, .18);
+
+// Navigation Variables
+$nav-height: 60px;
+$nav-background: $clr-primary;
+$nav-font-color: $clr-white;
+$nav-hover-color: $clr-accent;
+
+// Layout Variables
+$max-container-width: 1200px;
+
+// Media Query Breakpoints
+$breakpoint: 768px;
+
+/* 
+    CSS VARIABLES 
+
+    DO NOT CHANGE THE VARIABLE NAME INSIDE OF THE :ROOT.
+    IF YOU ARE USING SASS, CHANGE THE PROPERTY IN THE _THEME.SCSS
+    PARTIAL FILE.
+
+    IF YOU ARE USING CSS ONLY, CHANGE THE PROPERTY OF THE VARIABLE 
+    INSIDE THE MAIN.CSS AND LOGIN.CSS FILES.
+
+*/
+
+:root {
+    /* Color Theme */
+    --clr-primary: #{$clr-primary};
+    --clr-primary-dark: #{$clr-primary-dark};
+    --clr-primary-light: #{$clr-primary-light};
+    --clr-secondary: #{$clr-secondary};
+    --clr-accent: #{$clr-accent};
+    --clr-dark-text: #{$clr-dark-text};
+
+    --clr-white: #{$clr-white};
+    --clr-black: #{$clr-black};
+    --clr-grey-light: #{$clr-grey-light};
+    --clr-grey-medium: #{$clr-grey-medium};
+    --clr-grey-dark: #{$clr-grey-dark};
+
+    /* Default Element Styles */
+    --bs: #{$bs}; // Box Shadow  
+    --br: #{$br}; // Border Radius 
+    --ls: #{$ls}; // Letter spacing 
+    --ts: #{$ts}; // Text Shadow 
+
+    /*  Navigation Styles */
+    --nav-height: #{$nav-height};
+    --nav-background: #{$nav-background};
+    --nav-font-color: #{$nav-font-color};
+    --nav-hover-color: #{$nav-hover-color};
+
+    /* Layout Variables */
+    --max-width: #{$max-container-width};
+
+    /* Media Queries */
+    --breakpoint: #{$breakpoint};
+}

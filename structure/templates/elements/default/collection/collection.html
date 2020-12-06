@@ -1,0 +1,19 @@
+{# Collection Element #}
+{% set collection = getCollectionPages(element.collection_id) %}
+<section>
+ <h2>{{ element.title }}</h2>
+ {{ element.content }}
+ 
+ <div class="container collection-wrapper">
+   {% for detail in collection %}
+   <div class="card">
+     <img src="{{ getMediaPath(detail.media.filename, 'thumb') }}">
+     <div class="card-header">{{ detail.title }}</div>
+     <div class="card-body">{{ detail.sub_title }}</div>
+     <div class="card-footer">
+       <a href="{{ pathFor('showPage', {'slug1': detail.collection_slug, 'slug2': detail.page_slug}) }}" class="btn btn-primary">Read More</a>
+     </div>
+   </div>
+   {% endfor %}
+ </div>
+</section>

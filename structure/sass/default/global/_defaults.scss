@@ -1,0 +1,56 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  @include margin(0);
+  @include padding(0);
+}
+
+html,
+body {
+  min-height: 100vh;
+  width: 100vw;
+
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+
+img {
+  display: block;
+  width: 100%;
+}
+
+li {
+  @include margin(.25rem null null 1rem);
+  @include padding(null null null -1rem)
+}
+
+.mainContent {
+  flex: 1;
+  justify-self: start;
+  align-self: start;
+}
+
+.container {
+  width: 100%;
+  max-width: $max-container-width;
+  @include margin(0 auto);
+  display: grid;
+  grid-template-columns: minmax(2rem, 1fr) minmax(auto, 100ch) minmax(2rem, 1fr);
+
+
+
+  >* {
+    grid-column: 2 / 3;
+  }
+}
+
+.span {
+  grid-column: 1 / -1;
+}

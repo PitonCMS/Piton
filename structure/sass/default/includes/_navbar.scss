@@ -1,30 +1,107 @@
-.navbar {
-  background-color: $primary-color !important;
-  box-shadow: $box-shadow;
+.nav {
+  @include padding(null 1rem);
+  height: $nav-height;
+  background: $clr-primary;
+  color: $clr-white;
 
-  .nav-link active,
-  .navbar-brand {
-    color: $text-light !important;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  >.container {
-    @include padding(0);
-   
+  .logo a {
+    text-decoration: none;
+    font-size: 2rem;
+    color: $clr-white;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 900;
+    transition: color 125ms ease;
+
+    &:hover {
+      color: $clr-accent;
+    }
+  }
+
+  .topnav {
+    background-color: $clr-primary;
+    box-shadow: $bs-1;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+
+    opacity: 0;
+
+    display: block;
+
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: all 125ms ease;
+
+    @media screen and (min-width: $breakpoint) {
+      @include padding(0rem null);
+      box-shadow: none;
+      opacity: 1;
+      transform: scale(1, 1);
+      width: auto;
+      position: static;
+    }
+
+    &__ul {
+      display: flex;
+      flex-flow: column nowrap;
+      text-align: center;
+
+      @media screen and (min-width: $breakpoint) {
+        flex-flow: row nowrap;
+      }
+    }
+
+    &__li {
+      @include margin(0);
+      @include padding(0);
+      list-style: none;
+
+      &.active a {
+        background: darken($clr-primary, 10%) !important;
+        color: $clr-accent;
+      }
+
+      a {
+        color: $clr-white;
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        line-height: $nav-height;
+        font-size: 1.25rem;
+        transition: all 125ms ease;
+
+        @media screen and (min-width: $breakpoint) {
+          @include padding(null .75em);
+        }
+
+        &:hover {
+          color: $clr-accent;
+          background: darken($clr-primary, 10%);
+        }
+      }
+    }
   }
 }
 
-.navbar-light .navbar-nav .show>.nav-link,
-.navbar-light .navbar-nav .active>.nav-link,
-.navbar-light .navbar-nav .nav-link.show,
-.navbar-light .navbar-nav .nav-link.active {
-  color: rgba($text-light, 0.9);
+.nav-toggle:checked~.topnav {
+  transform: scale(1, 1);
+  opacity: 1;
 }
 
-.navbar-light .navbar-nav .nav-link {
-  color: rgba($text-light, 0.5);
-}
-
-.navbar-light .navbar-nav .nav-link:hover,
-.navbar-light .navbar-nav .nav-link:focus {
-  color: rgba($text-light, 0.7);
+.nav-toggle:checked~.topnav a {
+  opacity: 1;
 }

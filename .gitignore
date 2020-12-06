@@ -5,9 +5,5 @@ cache/
 .sass-cache/
 *.xml
 vendor/
-public/assets/css/theme1/
 public/media/
 *.map
-
-# Do not ignore composer.lock file when committing projects
-composer.lock

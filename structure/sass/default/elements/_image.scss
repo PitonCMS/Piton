@@ -1,20 +1,28 @@
-// Images
+.imageElement {
+  @include padding(1em 1em 2em);
+  @include margin(2rem null 1rem);
+  border-radius: $br;
+  box-shadow: $bs-1;
 
-#imageGuide{
-  .container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(45ch, 1fr));
+  grid-template-rows: auto 1fr;
+  width: 100%;
+
+  .image__content {
+    @include padding(1rem 2rem);
+
+    *+* {
+      @include margin(1rem null null null);
+    }
   }
-  .image-wrapper{
-    display: flex;
-    flex-flow: column nowrap;
-    box-shadow: $box-shadow;
-    justify-content: center;
-    align-items: center;
+
+  img {
+    height: auto;
+    max-height: 450px;
+    object-fit: cover;
+    align-self: flex-start;
+    border-radius: $br;
+    @include margin(1rem null null null);
   }
-  .img-meta{
-    @include margin(auto null null);
-    @include padding(1rem);
-  }
-  }
+}

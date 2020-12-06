@@ -9,13 +9,13 @@ Options -Indexes
 </Files>
 
 # Headers
-Header set Strict-Transport-Security "max-age=631138519; includeSubDomains"
+#Header set Strict-Transport-Security "max-age=631138519; includeSubDomains"
 #Header set Content-Security-Policy "default-src 'self'; img-src *; script-src 'self' *.googleapis.com *.gstatic.com *.bootstrapcdn.com *.statcounter.com *.google-analytics.com *.cloudflare.com *.jsdelivr.net; style-src: 'self' *.bootstrapcdn.com *.com *.cloudflare.com *.jsdelivr.net"
-Header set X-Frame-Options SAMEORIGIN
-Header set X-Content-Type-Options nosniff
-Header set Referrer-Policy no-referrer-when-downgrade
-Header set Feature-Policy 'self'
-Header set X-XSS-Protection "1; mode=block"
+#Header set X-Frame-Options SAMEORIGIN
+#Header set X-Content-Type-Options nosniff
+#Header set Referrer-Policy no-referrer-when-downgrade
+#Header set Feature-Policy 'self'
+#Header set X-XSS-Protection "1; mode=block"
 
 RewriteEngine On
 

@@ -77,7 +77,7 @@ if (isset($_POST['submit'])) {
         throwPitonError("Unable to read PitonCMS/Engine version from composer.lock.");
     }
     $engineKey = array_search('pitoncms/engine', array_column($definition->packages, 'name'));
-    $engineVersion = $definition->packages[$engineKey]->version;
+    $engineVersion = $definition->packages[$engineKey]->version ?? 'dev';
 
     // Setup database config
     $dbConfig = $config['database'];
@@ -104,8 +104,8 @@ if (isset($_POST['submit'])) {
     }
 
     // Get install script
-    if (file_exists(ROOT_DIR . 'vendor/pitoncms/engine/tables.sql')) {
-        $script = file_get_contents(ROOT_DIR . 'vendor/pitoncms/engine/tables.sql');
+    if (file_exists(ROOT_DIR . 'vendor/pitoncms/engine/schema/build.sql')) {
+        $script = file_get_contents(ROOT_DIR . 'vendor/pitoncms/engine/schema/build.sql');
     } else {
         throwPitonError("Unable to find table install script.");
     }
@@ -133,12 +133,9 @@ if (isset($_POST['submit'])) {
         throwPitonError("Failed to insert new user: {$e->getMessage()}.");
     }
 
-    // Insert engine version as key to avoid running install again
-    $insertEngineSetting = 'insert into `setting` (`category`, `setting_key`, `setting_value`, `created_date`, `updated_date`) values (?, ?, ?, ?, ?);';
-    $settingValue[] = 'piton';
-    $settingValue[] = 'engine';
+    // Set engine version as key to avoid running install again
+    $insertEngineSetting = 'update `data_store` set `setting_value` = ?, `updated_date` = ? where `category` = \'piton\' and  `setting_key` = \'engine\';';
     $settingValue[] = $engineVersion;
-    $settingValue[] = date('Y-m-d H:i:s');
     $settingValue[] = date('Y-m-d H:i:s');
 
     try {

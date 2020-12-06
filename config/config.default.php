@@ -1,20 +1,28 @@
 <?php
 /**
  * Default Configuration Settings
- * DO NOT CHANGE - Define all instance specific settings in config.local.php.
  *
- * Copy this file to config.local.php and set desired configuration settings.
+ * DO NOT MODIFY THIS FILE
+ * Copy this file to config.local.php to define all environment specific settings.
  */
 
 /**
- * Production
- * Boolean variable controls debug and environment modes
- * Set to false in config.local.php on a development environment.
+ * Production Environment Flag
+ *
+ * Boolean variable controls debug and environment modes.
+ * Always set to true in production.
+ * Set to false in config.local.php for development.
  */
-$config['site']['production'] = true;
+$config['environment']['production'] = true;
 
 /**
  * Database
+ *
+ * Database configuration settings
+ * - host:     Database server
+ * - dbname:   Database name
+ * - username: Database user name
+ * - password: Database password
  */
 $config['database']['host'] = 'localhost';
 $config['database']['dbname'] = '';
@@ -22,27 +30,36 @@ $config['database']['username'] = '';
 $config['database']['password'] = '';
 
 /**
- * Sessions
+ * Session
  *
- * Set 'salt' to a long hash.
+ * Session management settings
+ * - cookieName:             Application cookie name
+ * - checkIpAddress:         Whether to verify request IP address
+ * - checkUserAgent:         Whether to verify the request useragent string
+ * - salt:                   Complex string to hash for session ID
+ * - secureCookie:           Set to true if HTTPS, false if HTTP
+ * - secondsUntilExpiration: How many seconds to set the session on each request, defaults to 2 hours.
+ *      Can accept expression such as 60*60*24;
  */
 $config['session']['cookieName'] = 'pitoncms';
 $config['session']['checkIpAddress'] = true;
 $config['session']['checkUserAgent'] = true;
 $config['session']['salt'] = '';
+$config['session']['secureCookie'] = true;
 $config['session']['secondsUntilExpiration'] = 7200;
 
 /**
  * Email
  *
- * from:     Send-from email address
- * protocol: 'mail' (default) or 'smtp'
+ * Email configuration settings. Defaults to sendmail
+ * - from:     Send-from email address
+ * - protocol: 'mail' (default) or 'smtp'
  *
- * These settings below only apply for SMTP connections
- * smtpHost: SMTP server name
- * smtpUser: User name
- * smtpPass: Password
- * smtpPort: Port to use, likely 465
+ * These settings only apply for SMTP connections
+ * - smtpHost: SMTP server name
+ * - smtpUser: User name
+ * - smtpPass: Password
+ * - smtpPort: Port to use, likely 465
  */
 $config['email']['from'] = 'pitoncms@localhost.com';
 $config['email']['protocol'] = 'mail';
@@ -50,3 +67,13 @@ $config['email']['smtpHost'] = '';
 $config['email']['smtpUser'] = '';
 $config['email']['smtpPass'] = '';
 $config['email']['smtpPort'] = '';
+
+/**
+ * Pagination Row Limits
+ *
+ * Define how many results to display per page.
+ * - adminPagePagination:  Administration, how many Pages or Collection Detail Pages to display
+ * - adminMediaPagination: Administration, how many media files to display
+ */
+$config['pagination']['adminPagePagination']['resultsPerPage'] = 6;
+$config['pagination']['adminMediaPagination']['resultsPerPage'] = 10;
