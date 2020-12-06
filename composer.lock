@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f6533b9f8d5c2426076febf4ac5378a8",
+    "content-hash": "d6f307375ea4911ba0dc589bbf7c1dcb",
     "packages": [
         {
             "name": "erusev/parsedown",
@@ -356,16 +356,16 @@
         },
         {
             "name": "pitoncms/engine",
-            "version": "dev-develop",
+            "version": "0.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PitonCMS/Engine.git",
-                "reference": "b6a42b2929a8ba64a02aed3694dca7146ca7bc5e"
+                "reference": "8e1127f5480365cc26b37191cba979cfaf65fc01"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PitonCMS/Engine/zipball/b6a42b2929a8ba64a02aed3694dca7146ca7bc5e",
-                "reference": "b6a42b2929a8ba64a02aed3694dca7146ca7bc5e",
+                "url": "https://api.github.com/repos/PitonCMS/Engine/zipball/8e1127f5480365cc26b37191cba979cfaf65fc01",
+                "reference": "8e1127f5480365cc26b37191cba979cfaf65fc01",
                 "shasum": ""
             },
             "require": {
@@ -399,7 +399,7 @@
             ],
             "description": "PitonCMS core engine",
             "homepage": "https://github.com/PitonCMS/Engine",
-            "time": "2020-12-06T08:05:20+00:00"
+            "time": "2020-12-06T10:40:23+00:00"
         },
         {
             "name": "pitoncms/orm",
@@ -1049,13 +1049,12 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "pitoncms/engine": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": ">=7.1"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "1.1.0"
 }
