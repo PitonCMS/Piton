@@ -1,11 +1,13 @@
 {# Media Element #}
 
 <section class="imageElement">
-
-  {{ getMediaSrcSet(element.media.filename, element.media.caption) }}
-  <div class="image__content">
-    <h2>{{ element.title }}</h2>
-    {{ element.content }}
-  </div>
-
+  <div class="container">
+    <div class="imageElement__image">
+      {{ getMediaSrcSet(element.media.filename, element.media.caption) }}
+    </div>
+  
+    <div class="imageElement__content">
+      <h2>{{ element.title }}</h2>
+      {{ element.content }}
+    </div> 
 </section>
