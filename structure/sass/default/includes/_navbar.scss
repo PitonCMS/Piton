@@ -15,6 +15,7 @@
   @media screen and (min-width: $breakpoint) {
     background: transparent;
   }
+
   &.scroll {
     box-shadow: var(--bs-1);
     background: rgba(var(--clr-primary-rgb), .85);
@@ -37,7 +38,7 @@
   .logo {
     a {
       text-decoration: none;
-      color       : var(--clr-white);
+      color : var(--nav-text);
       font-size   : 2.5rem;
       line-height : var(--nav-height);
       font-family : var(--ff-sans);
@@ -47,7 +48,8 @@
       @media screen and (min-width: $breakpoint) {
         color: var(--nav-text);
       }
-&:hover {}
+
+      &:hover {}
     }
   }
 
@@ -100,6 +102,7 @@
       }
 
       @media screen and (min-width: $breakpoint) {}
+
       a {
         display : block;
         width   : 100%;
@@ -115,7 +118,7 @@
 
         &:hover {
           // color      : var(--clr-white);
-          background : rgba(var(--clr-accent-rgb), .5);
+          background: rgba(var(--clr-accent-rgb), .5);
         }
 
         &:focus {
@@ -163,13 +166,13 @@
     width : calc(#{var(--nav-height)}/ 2);
     height : 4px;
     border-radius: $br;
-    background : var(--clr-white);
+    background : var(--nav-text);
     position   : relative;
   }
 
   span::before,
   span::after {
-    content  : '';
+    content : '';
     position : absolute;
     transform : rotate(0deg);
     transition: transform 125ms ease;
@@ -184,10 +187,18 @@
   }
 }
 
+.nav.scroll * label>span,
+.nav.scroll * label>span::before,
+.nav.scroll * label>span::after {
+  background: white !important;
+}
 // Nav Toggle Animation
 
 .nav-toggle:checked~.nav-toggle-label span {
   background: transparent;
+}
+.nav.scroll * .nav-toggle:checked~.nav-toggle-label span {
+  background: transparent !important;
 }
 
 .nav-toggle:checked~.nav-toggle-label span::before {
