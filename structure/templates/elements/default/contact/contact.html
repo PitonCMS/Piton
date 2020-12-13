@@ -1,61 +1,34 @@
 {# Contact Form Element #} {% import "includes/_macros.html" as pitonMacro %} {#
 Text Element #}
-<section class="contactElement">
+<section class="contactElement element">
   <div class="container">
     <h2 class="span">{{ element.title }}</h2>
     {{ element.content }}
 
-    <form
-      class="contact-form"
-      id="contact-form"
-      method="post"
-      accept-charset="utf-8"
-      data-contact-form="true"
-    >
+    <form class="contact-form" id="contact-form" method="post" accept-charset="utf-8" data-contact-form="true">
       <input type="hidden" name="context" value="{{ page.title }}" />
 
       <div class="input-group">
         <label>Your Name</label>
-        <input
-          type="text"
-          class="contact-form__form-control"
-          name="name"
-          maxlength="100"
-          placeholder="Name"
-          autocomplete="off"
-        />
+        <input type="text" class="contact-form__form-control" name="name" maxlength="100" placeholder="Name"
+          autocomplete="off" />
       </div>
 
       <div class="input-group">
         <label>Your Email<span class="text-danger">*</span></label>
-        <input
-          type="email"
-          class="contact-form__form-control"
-          name="email"
-          maxlength="100"
-          placeholder="Email address"
-          required
-          autocomplete="off"
-        />
+        <input type="email" class="contact-form__form-control" name="email" maxlength="100" placeholder="Email address" required
+          autocomplete="off" />
       </div>
 
       <div class="input-group span">
         <label>Message</label>
-        <textarea
-          class="contact-form__form-control"
-          rows="5"
-          name="message"
-        ></textarea>
+        <textarea class="contact-form__form-control" rows="5" name="message"></textarea>
       </div>
 
       <div class="input-group">
         {# Custom Field Example #}
         <label>Favorite Color</label>
-        <input
-          type="text"
-          class="contact-form__form-control"
-          name="favoriteColor"
-        />
+        <input type="text" class="contact-form__form-control" name="favoriteColor" />
       </div>
 
       <button class="btn span" type="submit">Submit</button>

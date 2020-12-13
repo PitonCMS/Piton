@@ -7,6 +7,7 @@
 .container{
 
   width: 90%;
+  max-width: var(--max-width);
   @include margin(auto);
  
 }
@@ -16,4 +17,35 @@ section:first-of-type{
 section {
 
   @include margin(#{$section-margin} null);
+}
+img {
+  width  : 100%;
+  display: block;
+  height : auto;
+}
+
+.element {
+  @include padding(2rem null);
+  width  : 100%;
+  display: grid;
+  grid-template-columns:
+    minmax(2rem, 1fr) minmax(auto, 90ch) minmax(2rem, 1fr);
+
+  >* {
+    grid-column: 2;
+  }
+
+  img {
+    grid-column : 1 / -1;
+    justify-self: center;
+    width       : 100%;
+    max-width   : 100ch;
+    max-height  : 40vh;
+    box-shadow  : $bs-1;
+    object-fit  : cover;
+  }
+
+  *+* {
+    @include margin(1.5rem null null null);
+  }
 }

@@ -8,6 +8,7 @@ $clr-white : #ffffff;
 $clr-blue  : #336699;
 $clr-grey-medium: #cccccc;
 $clr-grey-light : #f0f0f0;
+$clr-grey-dark : #777;
 $clr-orange     : #ff781f;
 $clr-red        : #ff0000;
 $clr-green      : #007000;
@@ -34,7 +35,7 @@ $section-margin: 1rem;
 
 // Navigation Variables
 $nav-height: 60px;
-$nav-bg   : $clr-primary;
+$nav-bg : $clr-primary;
 $nav-text : $clr-white;
 $nav-hover : $clr-accent;
 
@@ -84,6 +85,9 @@ $nav-height    : 60px;
   --clr-primary          : #{$clr-primary};
   --clr-white            : #{$clr-white};
   --clr-black            : #{$clr-black};
+  --clr-grey-dark   : #{$clr-grey-dark};
+  --clr-grey-medium : #{$clr-grey-medium};
+  --clr-grey-light  : #{$clr-grey-light};
   /* Color RGB Components */
   --clr-primary-rgb      : #{hexToRGB($clr-primary)};
   --clr-primary-dark-rgb : #{hexToRGB($clr-primary-dark)};
@@ -94,6 +98,9 @@ $nav-height    : 60px;
   --clr-primary-rgb      : #{hexToRGB($clr-primary)};
   --clr-black-rgb        : #{hexToRGB($clr-black)};
   --clr-white-rgb        : #{hexToRGB($clr-white)};
+  --clr-grey-dark-rgb   : #{hexToRGB($clr-grey-dark)};
+  --clr-grey-medium-rgb : #{hexToRGB($clr-grey-medium)};
+  --clr-grey-light-rgb  : #{hexToRGB($clr-grey-light)};
 
   /* Default Element Styles */
   --bs   : #{$bs}; // Box Shadow  
