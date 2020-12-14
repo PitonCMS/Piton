@@ -4,13 +4,13 @@
   <div class="container">
     <h2>{{ element.title }}</h2>
     {{ element.content }}
-    <div class="collection-wrapper">
+    <div class="collectionElement__wrapper">
       {% for detail in collection %}
-      <div class="card">
+      <div class="collectionElement__card">
         <img src="{{ getMediaPath(detail.media.filename, 'thumb') }}">
-        <div class="card-header">{{ detail.title }}</div>
-        <div class="card-body">{{ detail.sub_title }}</div>
-        <div class="card-footer">
+        <div class="collectionElement__card-header">{{ detail.title }}</div>
+        <div class="collectionElement__card-body">{{ detail.sub_title }}</div>
+        <div class="collectionElement__card-footer">
           <a href="{{ pathFor('showPage', {'slug1': detail.collection_slug, 'slug2': detail.page_slug}) }}" class="btn btn-primary">Read More</a>
         </div>
       </div>

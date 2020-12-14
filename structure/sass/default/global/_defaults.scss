@@ -3,20 +3,42 @@
   @include margin(0);
   @include padding(0);
 }
+html,
+body {
+  width : 100vw;
+  height: 100vh;
+}
 
+body {
+  display: flex;
+  flex-flow: column nowrap;
+
+}
+
+.footer {
+  margin-top: auto;
+}
 .container{
-
-  width: 90%;
+  @include padding(null 1rem);
+  width: 100%;
   max-width: var(--max-width);
   @include margin(auto);
  
 }
-section:first-of-type{
-  margin-top: calc(#{$nav-height} + #{$section-margin});
+.hero+.container section:first-of-type {
+  @include margin(#{$section-margin} null);
 }
+
+.nav+section:first-of-type {
+  margin-top: calc(#{$nav-height} + #{$section-margin});
+
+  }
+
+
 section {
 
   @include margin(#{$section-margin} null);
+  flex: 1;
 }
 img {
   width  : 100%;
@@ -29,7 +51,7 @@ img {
   width  : 100%;
   display: grid;
   grid-template-columns:
-    minmax(2rem, 1fr) minmax(auto, 90ch) minmax(2rem, 1fr);
+    minmax(1rem, 1fr) minmax(auto, 90ch) minmax(1rem, 1fr);
 
   >* {
     grid-column: 2;
@@ -47,5 +69,7 @@ img {
 
   *+* {
     @include margin(1.5rem null null null);
+    // outline: dashed red 5px;
   }
 }
+
