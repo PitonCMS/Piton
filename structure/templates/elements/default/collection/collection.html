@@ -1,7 +1,8 @@
 {# Collection Element #}
 {% set collection = getCollectionPages(element.collection_id) %}
+
 <section class="collectionElement element">
-  <div class="container">
+<div class="container1">
     <h2>{{ element.title }}</h2>
     {{ element.content }}
     <div class="collectionElement__wrapper">
@@ -17,4 +18,5 @@
       {% endfor %}
     </div>
   </div>
+
 </section>

@@ -25,13 +25,12 @@
   font-weight    : 500;
   text-decoration: none;
   display        : inline-flex;
-  align-items    : center;
-  justify-content: center;
-  align-self     : start;
+  align-items : center;
   color          : #fff;
   border-radius  : 8px;
   box-shadow     : 1px 3px 5px rgba(0, 0, 0, 0.3);
   padding        : 0.25em 0.75em;
+  @include margin(2rem null 1rem);
   min-width      : 10ch;
   min-height     : 2.5rem;
   text-align     : center;

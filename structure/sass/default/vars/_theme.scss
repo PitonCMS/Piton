@@ -1,6 +1,3 @@
-// Fonts
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=PT+Serif:wght@700&display=swap');
-
 // Color Pallette
 
 $clr-black : #333333;
@@ -31,7 +28,7 @@ $bsh  : 0px 0px 10px 2px rgba($clr-black, .15); // box shadow hover
 $br   : 7px;
 $ls   : 2px;
 $ts   : 0 2px 5px rgba($clr-black, .18);
-$section-margin: 1rem;
+$section-margin: 0rem;
 
 // Navigation Variables
 $nav-height: 60px;

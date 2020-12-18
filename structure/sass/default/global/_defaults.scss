@@ -1,49 +1,65 @@
-*,*::before,*::after {
+/* Default Styles - Global */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   @include margin(0);
   @include padding(0);
 }
+html {
+  scroll-behavior: smooth;
+}
 html,
 body {
-  width : 100vw;
-  height: 100vh;
+  width  : 100vw;
+  height : 100vh;
+  min-height: 100vh;
 }
 
 body {
-  display: flex;
-  flex-flow: column nowrap;
-
-}
-
-.footer {
-  margin-top: auto;
-}
-.container{
-  @include padding(null 1rem);
-  width: 100%;
-  max-width: var(--max-width);
-  @include margin(auto);
- 
-}
-.hero+.container section:first-of-type {
-  @include margin(#{$section-margin} null);
-}
-
-.nav+section:first-of-type {
-  margin-top: calc(#{$nav-height} + #{$section-margin});
-
+  color      : var(--clr-black);
+  font-family: var(--ff-sans);
+  font-weight: var(--fw-n);
+  line-height: 1.6;
+  display    : flex;
+  flex-flow  : column nowrap;
+  overflow-x : hidden;
   }
 
-
-section {
-
-  @include margin(#{$section-margin} null);
-  flex: 1;
-}
 img {
   width  : 100%;
   display: block;
   height : auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ff-serif);
+  font-weight: var(--fw-m);
+  margin     : 0;
+  line-height: 1;
+  color      : var(--clr-accent);
+}
+
+section {
+  @include padding(5rem null);
+  @include margin(0rem null null);
+}
+
+.container {
+  // @include padding(null 2rem);
+  @include margin(auto);
+  width: 100%;
+  max-width: var(--max-width);
+
+}
+
+.footer {
+  @include margin(auto null null null);
 }
 
 .element {
@@ -52,24 +68,19 @@ img {
   display: grid;
   grid-template-columns:
     minmax(1rem, 1fr) minmax(auto, 90ch) minmax(1rem, 1fr);
-
+*+* {
+  @include margin(1.25rem null null null);
+}
   >* {
     grid-column: 2;
   }
+}
+.hero+section:first-of-type {
 
-  img {
-    grid-column : 1 / -1;
-    justify-self: center;
-    width       : 100%;
-    max-width   : 100ch;
-    max-height  : 40vh;
-    box-shadow  : $bs-1;
-    object-fit  : cover;
-  }
-
-  *+* {
-    @include margin(1.5rem null null null);
-    // outline: dashed red 5px;
-  }
+  @include margin(#{$section-margin} null);
 }
 
+.nav+section:first-of-type {
+
+  margin-top: calc(#{$nav-height} + #{$section-margin});
+  }

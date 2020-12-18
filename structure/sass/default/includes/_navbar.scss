@@ -1,27 +1,26 @@
 // Top Nav
 
 .nav {
+  @include padding(null 1rem);
   background: rgb(var(--nav-bg-rgb), .85);
   color     : var(--clr-white);
-  @include padding(null 1rem);
-  height : var(--nav-height);
-  transition: all 500ms ease-out;
+
+
   position : fixed;
   left     : 0;
   right    : 0;
   top      : 0;
   z-index  : 1000;
+  transition: all 500ms ease-out;
 
   @media screen and (min-width: $breakpoint) {
     background: transparent;
+   
   }
 
   &.scroll {
     box-shadow: var(--bs-1);
     background: rgba(var(--clr-primary-rgb), .85);
-
-    @media screen and (min-width: $breakpoint) {}
-
     .logo a,
     .topnav__li a,
     .topnav__li.active a {
@@ -39,7 +38,7 @@
     a {
       text-decoration: none;
       color : var(--nav-text);
-      font-size   : 2.5rem;
+      font-size : 2rem;
       line-height : var(--nav-height);
       font-family : var(--ff-sans);
       font-weight : var(--fw-m);
@@ -49,12 +48,15 @@
         color: var(--nav-text);
       }
 
-      &:hover {}
+      &:hover {
+        color: var(--clr-accent);
+      }
     }
   }
 
   .topnav {
     background: var(--clr-primary);
+
     position  : absolute;
     top       : 100%;
     left      : 0;
@@ -86,7 +88,7 @@
       text-align: center;
 
       @media screen and (min-width: $breakpoint) {
-        flex-flow: row nowrap;
+        flex-flow: row wrap;
       }
     }
 
@@ -110,7 +112,7 @@
         height  : 100%;
         text-decoration: none;
         line-height : var(--nav-height);
-        font-size   : 1.25rem;
+        font-size : .9rem;
         transition  : all 125ms ease;
 
         @media screen and (min-width: $breakpoint) {
@@ -220,4 +222,4 @@
 
 .nav-toggle:checked~.topnav a {
   opacity: 1;
-}
+} 
