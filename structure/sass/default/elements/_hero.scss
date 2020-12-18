@@ -14,6 +14,12 @@
   color     : var(--clr-white);
   @include padding(1rem 2rem);
   border-radius: var(--br);
+ width    : 50ch;
+ max-width: 50%;
+
+ *+* {
+   // @include margin(2rem null null);
+ }
   }
   &__image {
     width        : 100vw;
@@ -29,4 +35,5 @@
       object-fit: cover;
     }
   }
+
 }
