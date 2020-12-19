@@ -1,16 +1,9 @@
 {% extends 'pages/_base_layout.html' %}
 
-{%  block hero %}
-
-{# {{ getMediaSrcSet(page.media.filename, page.media.caption) }} #}
-
+{% block hero %}
 {{ getBlockElementsHtml(page.blocks.heroBlock) }}
 {% endblock hero %}
+
 {% block body %}
-<div class="container">
-
-  {{ getBlockElementsHtml(page.blocks.contentBlock) }}
-
-</div>
-
+{{ getBlockElementsHtml(page.blocks.contentBlock) }}
 {% endblock body %}

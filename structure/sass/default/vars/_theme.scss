@@ -1,39 +1,40 @@
-// Colors 
+// Color Pallette
 
-$clr-black: hsl(0, 0%, 20%);
-$clr-white: #ffffff;
-$clr-blue: rgb(51, 102, 153);
-$clr-grey-dark: #595959;
+$clr-black : #333333;
+$clr-white : #ffffff;
+$clr-blue  : #336699;
 $clr-grey-medium: #cccccc;
-$clr-grey-light: #f0f0f0;
-$clr-orange: #ff781f;
-$clr-red: #ff0000;
-$clr-green: #007000;
+$clr-grey-light : #f0f0f0;
+$clr-grey-dark : #777;
+$clr-orange     : #ff781f;
+$clr-red        : #ff0000;
+$clr-green      : #007000;
 
-// Theme -- DO NOT CHANGE VARIABLE 
+// Theme -- DO NOT CHANGE VARIABLE NAMES. Update the  
 
-$clr-primary: $clr-blue;
-$clr-primary-dark: darken($clr-primary, 10);
+$clr-primary : $clr-blue;
+$clr-primary-dark : darken($clr-primary, 10);
 $clr-primary-light: lighten($clr-primary, 30);
-$clr-secondary: adjust-hue($clr-primary, -20);
-$clr-accent: $clr-orange;
-$clr-dark-text: $clr-black;
+$clr-secondary : adjust-hue($clr-primary, -20);
+$clr-accent    : $clr-orange;
+$clr-dark-text : $clr-black;
 
 
 // Default Element Styles 
 
-$bs: 0 2px 2px rgba($clr-black, .5);
-$bs-1: 0 10px 25px rgba($clr-black, .25);
-$bsh: 0px 0px 10px 2px rgba($clr-black, .15); // box shadow hover
-$br: 7px;
-$ls: 2px;
-$ts: 0 2px 5px rgba($clr-black, .18);
+$bs   : 0 2px 2px rgba($clr-black, .5);
+$bs-1 : 0 10px 25px rgba($clr-black, .25);
+$bsh  : 0px 0px 10px 2px rgba($clr-black, .15); // box shadow hover
+$br   : 7px;
+$ls   : 2px;
+$ts   : 0 2px 5px rgba($clr-black, .18);
+$section-margin: 0rem;
 
 // Navigation Variables
 $nav-height: 60px;
-$nav-background: $clr-primary;
-$nav-font-color: $clr-white;
-$nav-hover-color: $clr-accent;
+$nav-bg : $clr-primary;
+$nav-text : $clr-white;
+$nav-hover : $clr-accent;
 
 // Layout Variables
 $max-container-width: 1200px;
@@ -51,12 +52,12 @@ serif;
 $ff-sans: 'Open Sans',
 sans-serif;
 
-// Set the $nav-color to transparent if dont' want a background color.
-$nav-bg: $clr-white;
-$nav-bg-opacity: 0%;
-$nav-text: $clr-black;
-$nav-accent: $clr-accent;
-$nav-height: 60px;
+// Set the $nav-color to transparent if don't want a background color.
+$nav-bg        : $clr-primary;
+$nav-bg-opacity: 0;
+$nav-text : $clr-white;
+$nav-accent    : $clr-accent;
+$nav-height    : 60px;
 
 /* 
     CSS VARIABLES 
@@ -69,37 +70,63 @@ $nav-height: 60px;
     INSIDE THE MAIN.CSS AND LOGIN.CSS FILES.
 
 */
-
 :root {
-    /* Color Theme */
-    --clr-primary: #{$clr-primary};
-    --clr-primary-dark: #{$clr-primary-dark};
-    --clr-primary-light: #{$clr-primary-light};
-    --clr-secondary: #{$clr-secondary};
-    --clr-accent: #{$clr-accent};
-    --clr-dark-text: #{$clr-dark-text};
+  /* Color Theme */
+  /* Color base */
+  --clr-primary          : #{$clr-primary};
+  --clr-primary-dark     : #{$clr-primary-dark};
+  --clr-primary-light    : #{$clr-primary-light};
+  --clr-secondary        : #{$clr-secondary};
+  --clr-accent           : #{$clr-accent};
+  --clr-dark-text        : #{$clr-dark-text};
+  --clr-primary          : #{$clr-primary};
+  --clr-white            : #{$clr-white};
+  --clr-black            : #{$clr-black};
+  --clr-grey-dark   : #{$clr-grey-dark};
+  --clr-grey-medium : #{$clr-grey-medium};
+  --clr-grey-light  : #{$clr-grey-light};
+  /* Color RGB Components */
+  --clr-primary-rgb      : #{hexToRGB($clr-primary)};
+  --clr-primary-dark-rgb : #{hexToRGB($clr-primary-dark)};
+  --clr-primary-light-rgb: #{hexToRGB($clr-primary-light)};
+  --clr-secondary-rgb    : #{hexToRGB($clr-secondary)};
+  --clr-accent-rgb       : #{hexToRGB($clr-accent)};
+  --clr-dark-text-rgb    : #{hexToRGB($clr-dark-text)};
+  --clr-primary-rgb      : #{hexToRGB($clr-primary)};
+  --clr-black-rgb        : #{hexToRGB($clr-black)};
+  --clr-white-rgb        : #{hexToRGB($clr-white)};
+  --clr-grey-dark-rgb   : #{hexToRGB($clr-grey-dark)};
+  --clr-grey-medium-rgb : #{hexToRGB($clr-grey-medium)};
+  --clr-grey-light-rgb  : #{hexToRGB($clr-grey-light)};
 
-    --clr-white: #{$clr-white};
-    --clr-black: #{$clr-black};
-    --clr-grey-light: #{$clr-grey-light};
-    --clr-grey-medium: #{$clr-grey-medium};
-    --clr-grey-dark: #{$clr-grey-dark};
+  /* Default Element Styles */
+  --bs   : #{$bs}; // Box Shadow  
+  --bs-1 : #{$bs-1}; // Box Shadow 1 
+  --bsh  : #{$bsh}; // Box Shadow Hover
+  --br   : #{$br}; // Border Radius 
+  --ls   : #{$ls}; // Letter spacing 
+  --ts   : #{$ts}; // Text Shadow 
+  --section-margin: #{$section-margin}; // Spacing between sections
 
-    /* Default Element Styles */
-    --bs: #{$bs}; // Box Shadow  
-    --br: #{$br}; // Border Radius 
-    --ls: #{$ls}; // Letter spacing 
-    --ts: #{$ts}; // Text Shadow 
+  /*  Navigation Styles */
+  --nav-height    : #{$nav-height};
+  --nav-bg        : #{$nav-bg};
+  --nav-bg-opacity: #{$nav-bg-opacity};
+  --nav-text      : #{$nav-text};
+  --nav-hover     : #{$nav-hover};
+  --nav-accent    : #{$nav-accent};
+  /* Layout Variables */
+  --max-width : #{$max-container-width};
 
-    /*  Navigation Styles */
-    --nav-height: #{$nav-height};
-    --nav-background: #{$nav-background};
-    --nav-font-color: #{$nav-font-color};
-    --nav-hover-color: #{$nav-hover-color};
+  /* Media Queries */
+  --breakpoint: #{$breakpoint};
+  /* Font Families */
+  --ff-serif : #{$ff-serif};
+  --ff-sans  : #{$ff-sans};
 
-    /* Layout Variables */
-    --max-width: #{$max-container-width};
-
-    /* Media Queries */
-    --breakpoint: #{$breakpoint};
+  /* Font Weights */
+  --fw-l: #{$fw-l}; //Fontweight light
+  --fw-n: #{$fw-n}; //Fontweight normal
+  --fw-m: #{$fw-m}; //Fontweight medium
+  --fw-b: #{$fw-b}; //Fontweight bold
 }

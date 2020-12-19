@@ -1,8 +1,8 @@
 {# Hero Element #}
-<header class="hero" {% if element.settings.overlay %}
-  style="background-color: rgba({{ element.settings.overlayColor}},{{element.settings.overlay }})" {% endif %}>
+<div class="hero">
+
   <div class="hero__content">
-    <h1>{{ element.title }}</h1>
+    <h1 class="hero__content-title">{{ element.title }}</h1>
     {{ element.content }}
     {% if element.settings.ctaTitle %}
     <a href="{{element.settings.ctaTarget}}" target="_blank" class="btn btn-cta">{{ element.settings.ctaTitle }}</a>
@@ -10,16 +10,14 @@
     {% endif %}
   </div>
 
-  {% if element.media.filename %}
-  {% set style = "object-position: "~element.settings.placement %}
-  {{ getMediaSrcSet(element.media.filename,element.media.caption,{ "style": style}) }}
-  {% else %}
-  <img src="/assets/img/heroDefault.jpg" alt="Top of the Mountain">
-  {% endif %}
-</header>
+<div class="hero__image">
+    {% if element.media.filename %}
+    {{ getMediaSrcSet(element.media.filename,element.media.caption) }}
+    {% else %}
+    <img src="/assets/img/heroDefault.jpg" alt="Top of the Mountain">
+    {% endif %}
+  </div>
+  <div class="hero__overlay" {% if element.settings.overlay %}
+    style="background-color: rgba({{element.settings.overlayColor}},{{element.settings.overlay }}%)" {% endif %}></div>
 
-{# <p>Overlay %: {{ element.settings.overlay }}</p>
-<p>Position %: {{ element.settings.placement }}</p>
-<p>Attachment %: {{ element.settings.attachment }}</p> #}
-
-{# <img src="{{ getMediaPath(element.media.filename)}}" alt="{{ element.media.caption }}"> #}
+</div>

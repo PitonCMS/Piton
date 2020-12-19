@@ -1,18 +1,9 @@
 .contactElement {
-  @include padding(2em null);
-  display: flex;
-  flex-flow: column nowrap;
-
-  *+* {
-    @include margin(1rem null null null);
-
-  }
-
   .contact-form {
-    display: grid;
+    display              : grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto 1fr;
-    column-gap: 2em;
+    grid-template-rows   : auto 1fr;
+    column-gap           : 2em;
   }
 
   button {
@@ -20,7 +11,7 @@
   }
 
   ::placeholder {
-    color: rgba($clr-grey-dark, .75);
+    color: rgba(var(--clr-grey-dark-rgb), .75);
 
   }
 }
@@ -33,10 +24,10 @@
 
 /* Add styles to 'label' selector */
 label {
-  font-size: 1.2em;
-  align-self: flex-start;
+  font-size   : 1.2em;
+  align-self  : flex-start;
   justify-self: flex-end;
-  grid-column: 1 / 2;
+  grid-column : 1 / 2;
 }
 
 /* Add styles to 'input' and 'textarea' selectors */
@@ -45,10 +36,11 @@ input[type=email],
 textarea {
   width: 100%;
   @include padding(.75em 1em);
-  border: 1px solid var(--clr-grey-medium);
+  border       : 1px solid var(--clr-grey-medium);
   border-radius: var(--br);
-  grid-column: 2 / 3;
-  font-size: 1rem;
+  grid-column  : 2 / 3;
+  font-size    : 1rem;
+  transition   : all 125ms ease-in-out;
 }
 
 /* Add styles to show 'focus' of selector */
@@ -62,12 +54,12 @@ textarea:focus {
 input[type=submit],
 .jsContactSubmitButton {
   justify-self: flex-start;
-  grid-column: 2 / 3;
-  font-size: 1rem;
+  grid-column : 2 / 3;
+  font-size   : 1rem;
 }
 
 /* Add styles for 'focus' property */
 input[type=submit]:focus {
   background: var(--clr-accent);
-  color: var(--clr-white);
+  color     : var(--clr-white);
 }
