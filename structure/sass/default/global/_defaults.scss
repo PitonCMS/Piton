@@ -31,7 +31,9 @@ img {
   display: block;
   height : auto;
 }
-
+p {
+  @include margin(1rem null null null);
+}
 h1,
 h2,
 h3,
@@ -45,8 +47,7 @@ h6 {
   color      : var(--clr-accent);
 }
 h1 {
-  font-size: 3.5rem;
-  font-size: 5rem;
+  font-size: 4rem;
 }
 
 h2 {

@@ -2,10 +2,8 @@
 
 .nav {
   @include padding(null 1rem);
-  background: rgb(var(--nav-bg-rgb), .85);
+  background: var(--clr-primary-dark);
   color     : var(--clr-white);
-
-
   position : fixed;
   left     : 0;
   right    : 0;
@@ -14,20 +12,27 @@
   transition: all 500ms ease-out;
 
   @media screen and (min-width: $breakpoint) {
-    background: transparent;
-   
-  }
+    background: rgba(var(--clr-primary-dark-rgb), .25); // alpha background for visual navbar on busy hero image
 
-  &.scroll {
-    box-shadow: var(--bs-1);
-    background: rgba(var(--clr-primary-rgb), .85);
     .logo a,
     .topnav__li a,
     .topnav__li.active a {
       color: var(--clr-white);
     }
-  }
 
+  }
+  &.scroll {
+    box-shadow: var(--bs-1);
+@media screen and (min-width: $breakpoint) {
+  background: rgba(var(--clr-primary-dark-rgb), 1);
+      .logo a,
+      .topnav__li a,
+      .topnav__li.active a {
+        color: var(--clr-white);
+      }
+    }
+
+  }
   .container {
     display : flex;
     justify-content: space-between;
@@ -37,8 +42,8 @@
   .logo {
     a {
       text-decoration: none;
-      color : var(--nav-text);
-      font-size : 2rem;
+      color       : var(--nav-text);
+      font-size   : 2rem;
       line-height : var(--nav-height);
       font-family : var(--ff-sans);
       font-weight : var(--fw-m);
@@ -57,11 +62,11 @@
   .topnav {
     background: var(--clr-primary);
 
-    position  : absolute;
-    top       : 100%;
-    left      : 0;
-    width     : 100%;
-    z-index   : 1000;
+    position: absolute;
+    top     : 100%;
+    left    : 0;
+    width   : 100%;
+    z-index : 1000;
 
     opacity: 0;
 
@@ -106,13 +111,13 @@
       @media screen and (min-width: $breakpoint) {}
 
       a {
-        color : var(--clr-white);
+        color   : var(--clr-white);
         display : block;
         width   : 100%;
         height  : 100%;
         text-decoration: none;
         line-height : var(--nav-height);
-        font-size : .9rem;
+        font-size   : .9rem;
         transition  : all 125ms ease;
 
         @media screen and (min-width: $breakpoint) {
@@ -121,7 +126,7 @@
         }
 
         &:hover {
-        
+
           background: rgba(var(--clr-accent-rgb), .5);
         }
 
@@ -196,11 +201,13 @@
 .nav.scroll * label>span::after {
   background: white !important;
 }
+
 // Nav Toggle Animation
 
 .nav-toggle:checked~.nav-toggle-label span {
   background: transparent;
 }
+
 .nav.scroll * .nav-toggle:checked~.nav-toggle-label span {
   background: transparent !important;
 }
@@ -222,4 +229,4 @@
 
 .nav-toggle:checked~.topnav a {
   opacity: 1;
-} 
+}
