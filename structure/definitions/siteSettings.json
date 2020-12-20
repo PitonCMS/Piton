@@ -34,7 +34,28 @@
 	 "inputType": "input"
 	},
 	{
-	 "category": "site",
+		"category": "site",
+		"label": "Website Footer About",
+		"key": "footerAbout",
+		"value": "",
+		"inputType": "textarea"
+	},
+	{
+		"category": "site",
+		"label": "Website Author",
+		"key": "footerAuthor",
+		"value": "",
+		"inputType": "input"
+	},
+	{
+		"category": "site",
+		"label": "Website Author URL",
+		"key": "footerAuthorURL",
+		"value": "",
+		"inputType": "input"
+	},
+	{
+		"category": "site",
 	 "label": "Website Contact Address",
 	 "key": "contactAddress",
 	 "value": "",

@@ -48,11 +48,12 @@
     </div>
 <div class="footer2">
         <div class="container"></div>
-        <p>Piton CMS &copy; 2018 - {{ "now"|date('Y') }}</p>
-        {% if site.settings.siteAuthor %}
-        {# <p>Website built by <a href="{{ site.settings.siteAuthorUrl }}">{{ site.settings.siteAuthor }}</a></p> #}
+        <p>{{ site.settings.displayName|default('Piton<span>CMS</span>') }} &copy; 2018 - {{ "now"|date('Y') }}</p>
+        {% if site.settings.footerAuthor %}
+        <p>Built with <a href="http://pitoncms.com" target="_blank">PitonCMS</a> by <a
+                href="{{ site.settings.footerAuthorURL }} " target="_blank">{{
+                site.settings.footerAuthor }}</a></p>
         {% endif %}
-        <p>Website built by <a href="https://moritzmedia.com">Moritz Media</a></p>
     </div>
     </div>
 </footer>
