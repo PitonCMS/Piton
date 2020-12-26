@@ -1,66 +1,99 @@
+// Top Nav
+
 .nav {
   @include padding(null 1rem);
-  height: $nav-height;
-  background: $clr-primary;
-  color: $clr-white;
+  background: var(--clr-primary-dark);
+  color     : var(--clr-white);
+  position : fixed;
+  left     : 0;
+  right    : 0;
+  top      : 0;
+  z-index  : 1000;
+  transition: all 500ms ease-out;
 
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  @media screen and (min-width: $breakpoint) {
+    background: rgba(var(--clr-primary-dark-rgb), .25); // alpha background for visual navbar on busy hero image
 
+    .logo a,
+    .topnav__li a,
+    .topnav__li.active a {
+      color: var(--clr-white);
+    }
+
+  }
+  &.scroll {
+    box-shadow: var(--bs-1);
+@media screen and (min-width: $breakpoint) {
+  background: rgba(var(--clr-primary-dark-rgb), 1);
+      .logo a,
+      .topnav__li a,
+      .topnav__li.active a {
+        color: var(--clr-white);
+      }
+    }
+
+  }
   .container {
-    display: flex;
+    display : flex;
     justify-content: space-between;
-    align-items: center;
+    align-items : center;
   }
 
-  .logo a {
-    text-decoration: none;
-    font-size: 2rem;
-    color: $clr-white;
-    font-family: 'Roboto Slab', serif;
-    font-weight: 900;
-    transition: color 125ms ease;
+  .logo {
+    a {
+      text-decoration: none;
+      color       : var(--nav-text);
+      font-size   : 2rem;
+      line-height : var(--nav-height);
+      font-family : var(--ff-sans);
+      font-weight : var(--fw-m);
+      transition  : color 125ms ease;
 
-    &:hover {
-      color: $clr-accent;
+      @media screen and (min-width: $breakpoint) {
+        color: var(--nav-text);
+      }
+
+      &:hover {
+        color: var(--clr-accent);
+      }
     }
   }
 
   .topnav {
-    background-color: $clr-primary;
-    box-shadow: $bs-1;
+    background: var(--clr-primary);
 
     position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    z-index: 100;
+    top     : 100%;
+    left    : 0;
+    width   : 100%;
+    z-index : 1000;
 
     opacity: 0;
 
     display: block;
 
-    transform: scale(1, 0);
+    transform : scale(1, 0);
     transform-origin: top;
-    transition: all 125ms ease;
+    transition : all 125ms ease;
 
     @media screen and (min-width: $breakpoint) {
-      @include padding(0rem null);
+      @include padding(0 null);
+      @include margin(0);
       box-shadow: none;
-      opacity: 1;
-      transform: scale(1, 1);
-      width: auto;
-      position: static;
+      opacity   : 1;
+      transform : scale(1, 1);
+      width     : auto;
+      position  : static;
+      background: transparent;
     }
 
     &__ul {
-      display: flex;
-      flex-flow: column nowrap;
+      display : flex;
+      flex-flow : column nowrap;
       text-align: center;
 
       @media screen and (min-width: $breakpoint) {
-        flex-flow: row nowrap;
+        flex-flow: row wrap;
       }
     }
 
@@ -70,36 +103,128 @@
       list-style: none;
 
       &.active a {
-        background: darken($clr-primary, 10%) !important;
-        color: $clr-accent;
+        background: rgba(var(--clr-accent-rgb), .75);
+
+        @media screen and (min-width: $breakpoint) {}
       }
 
+      @media screen and (min-width: $breakpoint) {}
+
       a {
-        color: $clr-white;
-        display: block;
-        width: 100%;
-        height: 100%;
+        color   : var(--clr-white);
+        display : block;
+        width   : 100%;
+        height  : 100%;
         text-decoration: none;
-        line-height: $nav-height;
-        font-size: 1.25rem;
-        transition: all 125ms ease;
+        line-height : var(--nav-height);
+        font-size   : .9rem;
+        transition  : all 125ms ease;
 
         @media screen and (min-width: $breakpoint) {
-          @include padding(null .75em);
+          @include padding(null 0.75em);
+          color: var(--nav-text);
         }
 
         &:hover {
-          color: $clr-accent;
-          background: darken($clr-primary, 10%);
+
+          background: rgba(var(--clr-accent-rgb), .5);
+        }
+
+        &:focus {
+          outline: none;
         }
       }
     }
+
   }
+
+}
+
+
+
+// Hamburger
+
+// Hide checkbox and remove from the document flow
+.nav-toggle {
+  position: absolute;
+  top : -999px !important;
+  left : -9999px !important;
+}
+
+// Nav Toggle Label & Hamburger icon w/animation
+
+.nav-toggle-label {
+  @include margin(0);
+  cursor: pointer;
+  height: var(--nav-height);
+
+  display : flex;
+  align-items : center;
+  justify-content: center;
+  position : relative;
+  z-index  : 100;
+  width    : var(--nav-height);
+
+  @media screen and (min-width: $breakpoint) {
+    display: none;
+  }
+
+  span,
+  span::before,
+  span::after {
+    width : calc(#{var(--nav-height)}/ 2);
+    height : 4px;
+    border-radius: $br;
+    background : var(--nav-text);
+    position   : relative;
+  }
+
+  span::before,
+  span::after {
+    content : '';
+    position : absolute;
+    transform : rotate(0deg);
+    transition: transform 125ms ease;
+  }
+
+  span::before {
+    top: 10px;
+  }
+
+  span::after {
+    top: -10px;
+  }
+}
+
+.nav.scroll * label>span,
+.nav.scroll * label>span::before,
+.nav.scroll * label>span::after {
+  background: white !important;
+}
+
+// Nav Toggle Animation
+
+.nav-toggle:checked~.nav-toggle-label span {
+  background: transparent;
+}
+
+.nav.scroll * .nav-toggle:checked~.nav-toggle-label span {
+  background: transparent !important;
+}
+
+.nav-toggle:checked~.nav-toggle-label span::before {
+  transform: rotate(135deg);
+  top : -0px;
+}
+
+.nav-toggle:checked~.nav-toggle-label span::after {
+  transform: rotate(-135deg);
+  top : 0px;
 }
 
 .nav-toggle:checked~.topnav {
   transform: scale(1, 1);
-  opacity: 1;
+  opacity : 1;
 }
 
 .nav-toggle:checked~.topnav a {

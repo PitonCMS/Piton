@@ -1,34 +1,40 @@
-// Collections
+.collectionElement {
+  &__wrapper {
+    display              : grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap                  : 1.5rem;
+    align-items          : flex-start;
+    margin               : 0;
 
-.collection-wrapper{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 2rem;
-}
-.card{
-  
-  border-radius: var(--br);
-  display: flex;
-  flex-flow: column nowrap;
-  box-shadow: var(--bs);
+  }
+
+  &__card {
+
+    align-self   : flex-start;
+    justify-self : stretch;
+    margin-top   : 1rem;
+    border-radius: var(--br);
+
+    img {
+      border-radius: var(--br);
+    }
+  }
 
 }
-.card-header{
-  @include padding(1rem);
-  background-color: var(--clr-orange);
-  color: var(--clr-white);
-  text-align: center;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: 1.5rem;
-  letter-spacing: 1.9px;
-}
-.card-body{
-  @include padding(1rem);
-}
-.card-footer{
-  @include padding(1rem);
-  text-align: center;
-  @include margin(auto null null);
-  border-top: solid 1px var(--clr-black);
+
+.collectionDetail {
+
+  &__image {
+    width        : 100%;
+    height       : 500px;
+    overflow     : hidden;
+    border-radius: var(--br);
+    box-shadow   : var(--bs-1);
+
+    img {
+      object-fit: cover;
+
+      height: 500px;
+    }
+  }
 }

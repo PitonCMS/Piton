@@ -1,3 +1,4 @@
+/* Default Styles - Global */
 *,
 *::before,
 *::after {
@@ -5,52 +6,106 @@
   @include margin(0);
   @include padding(0);
 }
-
+html {
+  scroll-behavior: smooth;
+}
 html,
 body {
+  width  : 100vw;
+  height : 100vh;
   min-height: 100vh;
-  width: 100vw;
-
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-
+  color      : var(--clr-black);
+  font-family: var(--ff-sans);
+  font-weight: var(--fw-n);
+  line-height: 1.6;
+  display    : flex;
+  flex-flow  : column nowrap;
+  overflow-x : hidden;
+  }
 
 img {
+  width  : 100%;
   display: block;
-  width: 100%;
+  height : auto;
+}
+p {
+  @include margin(1rem null null null);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ff-serif);
+  font-weight: var(--fw-m);
+  margin     : 0;
+  line-height: 1;
+  color      : var(--clr-accent);
+}
+h1 {
+  font-size: 4rem;
 }
 
-li {
-  @include margin(.25rem null null 1rem);
-  @include padding(null null null -1rem)
+h2 {
+  font-size: 2.5rem;
 }
 
-.mainContent {
-  flex: 1;
-  justify-self: start;
-  align-self: start;
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+section {
+  @include padding(5rem null);
+  @include margin(0rem null null);
 }
 
 .container {
+  // @include padding(null 2rem);
+  @include margin(auto);
   width: 100%;
-  max-width: $max-container-width;
-  @include margin(0 auto);
+  max-width: var(--max-width);
+
+}
+
+.footer {
+  @include margin(auto null null null);
+}
+
+.element {
+  @include padding(2rem null);
+  width  : 100%;
   display: grid;
-  grid-template-columns: minmax(2rem, 1fr) minmax(auto, 100ch) minmax(2rem, 1fr);
-
-
-
+  grid-template-columns:
+    minmax(1rem, 1fr) minmax(auto, 90ch) minmax(1rem, 1fr);
+*+* {
+  @include margin(1.25rem null null null);
+}
   >* {
-    grid-column: 2 / 3;
+    grid-column: 2;
   }
 }
+.hero+section:first-of-type {
 
-.span {
-  grid-column: 1 / -1;
+  @include margin(#{$section-margin} null);
 }
+
+.nav+section:first-of-type {
+
+  margin-top: calc(#{$nav-height} + #{$section-margin});
+  }
