@@ -28,7 +28,7 @@
          "label": "Hero Image Overlay Percentage",
          "key": "overlay",
          "value": "",
-         "inputType": "input",
+         "inputType": "text",
          "help": "Only input overlay amount without the %"
        },
        {
@@ -112,7 +112,7 @@
          "label": "Hero Button Title",
          "key": "ctaTitle",
          "value": "",
-         "inputType": "input",
+         "inputType": "text",
          "help": "Enter Title for cta."
      },
      {
@@ -120,7 +120,7 @@
          "label": "Hero Button Link",
          "key": "ctaTarget",
          "value": "",
-         "inputType": "input",
+         "inputType": "text",
          "help": "Enter Target for cta."
      }
  ]
