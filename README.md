@@ -65,7 +65,7 @@ To login, navigate to `/login` and enter the email address you used during the i
 Sessions are valid for the duration set in the `secondsUntilExpiration` session configuration item, which defaults to two hours from the last request. This can be increased to any session length.
 
 ## Inside PitonCMS Administration
-After logging in to the PitonCMS administration back end, go ahead and explore. A good first stop is under the **Tools** menu is to review the client controlled site settings. Also review the **Help** documentation for Designer and Client.
+After logging in to the PitonCMS administration back end, go ahead and explore. A good first stop is under the **Tools** menu is to review the client controlled site settings. Also review the **Support** documentation for Designer and Client.
 
 ## First Project Commit
 For your project using PitonCMS, before your first commit you should:
