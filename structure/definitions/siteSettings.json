@@ -17,21 +17,21 @@
 	 "label": "Google Webmaster Verification Link",
 	 "key": "googleWebMaster",
 	 "value": "",
-	 "inputType": "input"
+	 "inputType": "text"
 	},
 	{
 	 "category": "site",
 	 "label": "Website Contact Email",
 	 "key": "contactEmail",
 	 "value": "",
-	 "inputType": "input"
+	 "inputType": "text"
 	},
 	{
 	 "category": "site",
 	 "label": "Website Contact Phone",
 	 "key": "contactPhone",
 	 "value": "",
-	 "inputType": "input"
+	 "inputType": "text"
 	},
 	{
 		"category": "site",
@@ -80,28 +80,28 @@
 	 "label": "Facebook Link",
 	 "key": "facebookLink",
 	 "value": "https://www.facebook.com",
-	 "inputType": "input"
+	 "inputType": "text"
 	},
 	{
 	 "category": "social",
 	 "label": "Github Link",
 	 "key": "githubLink",
 	 "value": "https://www.github.com",
-	 "inputType": "input"
+	 "inputType": "text"
 	},
 	{
 	 "category": "social",
 	 "label": "Twitter Link",
 	 "key": "twitterLink",
 	 "value": "https://twitter.com",
-	 "inputType": "input"
+	 "inputType": "text"
 	},
 	{
 	 "category": "social",
 	 "label": "Instagram Link",
 	 "key": "instagramLink",
 	 "value": "https://www.instagram.com",
-	 "inputType": "input"
+	 "inputType": "text"
 	}
  ]
 }
