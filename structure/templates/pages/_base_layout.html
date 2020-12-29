@@ -15,8 +15,8 @@
     <title>{{ site.settings.displayName }}</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link rel="stylesheet" href="/assets/vendor/fancybox-master/dist/jquery.fancybox.min.css">
     <link rel="stylesheet" href="/assets/css/{{ site.settings.theme|default('default') }}/main.css">
+    <link rel="stylesheet" href="/assets/vendor/fancybox/fancybox.css">
 
     {{ include('includes/_pitonConfigJs.html') }}
 </head>
@@ -33,11 +33,9 @@
 
     {{ include("includes/_footer.html") }}
 
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="/assets/vendor/fancybox-master/dist/jquery.fancybox.min.js"></script>
     <script src="/assets/js/custom.js"></script>
     <script src="/admin/js/dist/contact.js"></script>
+    <script src="/assets/vendor/fancybox/fancybox.umd.js"></script>
 
     {% if site.environment.production and site.settings.statCounter %}
     {{ site.settings.statCounter }}
