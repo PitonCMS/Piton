@@ -19,13 +19,12 @@
                     </ul>
                 </nav>
             </div>
+{% if site.settings.footerAbout %}
             <div class="footer-about">
                 <h5>About {{ site.settings.displayName|default('Piton<span>CMS</span>') }}</h5>
-                {{ site.settings.footerAboutUs}}
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias nam magnam debitis eaque tenetur
-                    provident fugiat
-                    dolore, quae nihil cumque.</p>
+                {{ site.settings.footerAbout|nl2br}}
             </div>
+            {% endif %}
             <div class="footer-social">
                 <h5>Get Social With Us</h5>
                 <div class="get-social-icons">
@@ -42,11 +41,29 @@
                     <a href="{{ site.settings.instagramLink }}"><i class="social-icon fab fa-instagram fa-2x"></i></a>
                     {% endif %}
 
+                    {% if site.settings.githubLink %}
+                    <a href="{{ site.settings.githubLink }}"><i class="social-icon fab fa-github fa-2x"></i></a>
+                    {% endif %}
+
                 </div>
             </div>
+            <div class="footer-address">
+            
+                {% if site.settings.contactAddress %}
+                <h5>Address</h5>
+                {{ site.settings.contactAddress|nl2br}}
+                {% endif %}
+            
+                {% if site.settings.contactPhone %}
+                <h5>Phone</h5>
+                <a href="tel:{{site.settings.contactPhone}}"> {{ site.settings.contactPhone }}</a>
+            
+                {% endif %}
+            </div>
+
         </div>
     </div>
-<div class="footer2">
+    <div class="footer2">
         <div class="container"></div>
         <p>{{ site.settings.displayName|default('Piton<span>CMS</span>') }} &copy; 2018 - {{ "now"|date('Y') }}</p>
         {% if site.settings.footerAuthor %}

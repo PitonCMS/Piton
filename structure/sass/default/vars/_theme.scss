@@ -1,11 +1,11 @@
 // Color Pallette
 
-$clr-black : #333333;
-$clr-white : #ffffff;
+$clr-black : hsl(0, 0%, 10%);
+$clr-white : hsl(0, 0%, 96%);
 $clr-blue  : #336699;
-$clr-grey-medium: #cccccc;
-$clr-grey-light : #f0f0f0;
-$clr-grey-dark : #777;
+$clr-grey-light : hsl(0, 0%, 94%);
+$clr-grey-medium: hsl(0, 0%, 80%);
+$clr-grey-dark  : hsl(0, 0%, 50%);
 $clr-orange     : #ff781f;
 $clr-red        : #ff0000;
 $clr-green      : #007000;
@@ -16,13 +16,14 @@ $clr-primary : $clr-blue;
 $clr-primary-dark : darken($clr-primary, 10);
 $clr-primary-light: lighten($clr-primary, 30);
 $clr-secondary : adjust-hue($clr-primary, -20);
-$clr-accent    : $clr-orange;
+$clr-accent : $clr-orange;
 $clr-dark-text : $clr-black;
+$clr-light-text: $clr-white;
 
 
 // Default Element Styles 
 
-$bs   : 0 2px 2px rgba($clr-black, .5);
+$bs : 0 0 25px rgba($clr-black, .25);
 $bs-1 : 0 10px 25px rgba($clr-black, .25);
 $bsh  : 0px 0px 10px 2px rgba($clr-black, .15); // box shadow hover
 $br   : 7px;
@@ -100,7 +101,7 @@ $nav-height    : 60px;
   --clr-grey-light-rgb  : #{hexToRGB($clr-grey-light)};
 
   /* Default Element Styles */
-  --bs   : #{$bs}; // Box Shadow  
+  --bs   : #{$bs}; // Box Shadow    
   --bs-1 : #{$bs-1}; // Box Shadow 1 
   --bsh  : #{$bsh}; // Box Shadow Hover
   --br   : #{$br}; // Border Radius 
