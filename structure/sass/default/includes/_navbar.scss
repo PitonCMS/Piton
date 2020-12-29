@@ -12,7 +12,7 @@
   transition: all 500ms ease-out;
 
   @media screen and (min-width: $breakpoint) {
-    background: rgba(var(--clr-primary-dark-rgb), .25); // alpha background for visual navbar on busy hero image
+    background: rgba(var(--clr-primary-dark-rgb), 1); // alpha background for visual navbar on busy hero image
 
     .logo a,
     .topnav__li a,

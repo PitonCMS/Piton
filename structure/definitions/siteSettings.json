@@ -24,17 +24,38 @@
 	 "label": "Website Contact Email",
 	 "key": "contactEmail",
 	 "value": "",
-	 "inputType": "text"
+	"inputType": "email"
 	},
 	{
 	 "category": "site",
 	 "label": "Website Contact Phone",
 	 "key": "contactPhone",
 	 "value": "",
-	 "inputType": "text"
+	"inputType": "tel"
 	},
 	{
-	 "category": "site",
+		"category": "site",
+		"label": "Website Footer About",
+		"key": "footerAbout",
+		"value": "",
+		"inputType": "textarea"
+	},
+	{
+		"category": "site",
+		"label": "Website Author",
+		"key": "footerAuthor",
+		"value": "",
+		"inputType": "text"
+	},
+	{
+		"category": "site",
+		"label": "Website Author URL",
+		"key": "footerAuthorURL",
+		"value": "",
+		"inputType": "url"
+	},
+	{
+		"category": "site",
 	 "label": "Website Contact Address",
 	 "key": "contactAddress",
 	 "value": "",
@@ -59,28 +80,28 @@
 	 "label": "Facebook Link",
 	 "key": "facebookLink",
 	 "value": "https://www.facebook.com",
-	 "inputType": "text"
+	"inputType": "url"
 	},
 	{
 	 "category": "social",
 	 "label": "Github Link",
 	 "key": "githubLink",
 	 "value": "https://www.github.com",
-	 "inputType": "text"
+	"inputType": "url"
 	},
 	{
 	 "category": "social",
 	 "label": "Twitter Link",
 	 "key": "twitterLink",
 	 "value": "https://twitter.com",
-	 "inputType": "text"
+	"inputType": "url"
 	},
 	{
 	 "category": "social",
 	 "label": "Instagram Link",
 	 "key": "instagramLink",
 	 "value": "https://www.instagram.com",
-	 "inputType": "text"
+	"inputType": "url"
 	}
  ]
 }

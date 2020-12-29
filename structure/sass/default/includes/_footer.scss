@@ -29,8 +29,10 @@
      align-items: flex-start;
 
      @media screen and (min-width: $breakpoint) {
-       grid-template-columns: 1fr 1fr 1fr;
-       justify-items        : center;
+       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+       grid-template-columns: auto 1fr auto auto;
+       gap : 1rem;
+       //  justify-items        : center;
      }
    }
 
@@ -47,6 +49,11 @@
        @include padding(.25rem .5rem);
      }
    }
+.footer-address {
+  *+* {
+    @include margin(1rem null null null);
+  }
+}
  }
 
  /* footer2 */

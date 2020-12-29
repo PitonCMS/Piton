@@ -1,22 +1,102 @@
 .collectionElement {
   &__wrapper {
     display              : grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap                  : 1.5rem;
-    align-items          : flex-start;
-    margin               : 0;
+    grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+    gap : 1.5rem;
 
-  }
+    *+* {
+      @include margin(0 null null null);
+    }
 
+    a {
+      display        : block;
+      color          : inherit;
+      text-decoration: none;
+    }
+    }
   &__card {
+    display   : flex;
+    flex-flow : column nowrap;
+    border    : solid 1px $clr-grey-light;
+    box-shadow: var(--bs);
 
-    align-self   : flex-start;
-    justify-self : stretch;
-    margin-top   : 1rem;
-    border-radius: var(--br);
+    &-image {
+      overflow: hidden;
 
-    img {
-      border-radius: var(--br);
+      img {
+        height    : 150px;
+        object-fit: cover;
+        transition: transform 125ms ease-in;
+
+        &:hover {
+          transform: scale(1.05);
+        }
+        }
+        }
+
+        &Header {
+          position: relative;
+          @include padding(.5rem 1.5rem);
+          min-height     : 90px;
+          background     : $clr-primary;
+          display        : flex;
+          flex-flow      : column nowrap;
+          justify-content: center;
+          align-items    : flex-start;
+          color          : contrast-switch($clr-primary);
+
+          h5 {
+            color      : contrast-switch($clr-primary);
+            font-family: var(--ff-sans);
+          }
+
+          &::before {
+            @include triangle('right', 1rem, 1rem, $clr-grey-light);
+            content: '';
+            @include position(absolute, 50% null null 0);
+            transform: translateY(-50%);
+          }
+
+          &::after {
+            @include triangle('left', 1rem, 1rem, $clr-grey-light);
+            content: '';
+            @include position(absolute, 50% 0 null null);
+            transform: translateY(-50%);
+          }
+        }
+
+        &Body {
+          @include padding(1rem);
+
+          p {
+            color      : $clr-grey-dark;
+            line-height: 1.2 !important;
+            font-size  : .95rem;
+
+            &:first-of-type {
+              margin-top: 0 !important;
+            }
+          }
+        }
+
+        &Footer {
+          @include padding(1rem);
+          background: $clr-primary;
+          color     : contrast-switch($clr-primary);
+          display   : block;
+          transition: all 125ms ease-in;
+          @include margin(auto null null null);
+          border-top: solid 1px $clr-grey-light;
+
+          &:hover {
+            background: contrast-switch($clr-primary);
+            color     : $clr-primary;
+          }
+
+          a {
+            display: block;
+            @include size(100%);
+          }
     }
   }
 
@@ -24,12 +104,14 @@
 
 .collectionDetail {
 
+  // @include padding(2rem null null null);
   &__image {
-    width        : 100%;
-    height       : 500px;
-    overflow     : hidden;
-    border-radius: var(--br);
-    box-shadow   : var(--bs-1);
+    width : 100%;
+    height : 500px;
+    overflow : hidden;
+    border-radius : var(--br);
+    box-shadow : var(--bs);
+    // box-shadow : 5px 5px 15px rgba(black, .5);
 
     img {
       object-fit: cover;

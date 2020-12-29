@@ -109,3 +109,25 @@ section {
 
   margin-top: calc(#{$nav-height} + #{$section-margin});
   }
+ figure {
+
+   border-radius: var(--br);
+
+
+
+   img {
+     max-height   : 450px;
+     border-radius: var(--br);
+     box-shadow   : var(--bs);
+     object-fit   : cover;
+   }
+
+   figcaption {
+     color      : var(--clr-grey-dark);
+     font-size  : .8rem;
+     font-style : italic;
+     font-weight: 300;
+     margin-top : .25rem !important;
+     text-align : center;
+   }
+ }

@@ -6,17 +6,20 @@
 
 {% block body %}
 
-{# {{ getBlockElementsHtml(page.blocks.heroBlock) }} #}
-<section class="collectionDetail">
-  <div class="container">
-<div class="collectionDetail__image">
-  {{ getMediaSrcSet(page.media.filename, page.media.caption) }}
-</div>
- 
-    {{ getBlockElementsHtml(page.blocks.contentBlock) }}
-  
+{{ getBlockElementsHtml(page.blocks.heroBlock) }}
+
+<section class="collectionDetail element">
+  <figure class="image">
+    {{ getMediaSrcSet(page.media.filename, page.media.caption) }}
+    <figcaption>{{ page.media.caption}}</figcaption>
+    </figure>
+    
+    <div class="collectionDetail__content">
+      {{ getBlockElementsHtml(page.blocks.contentBlock) }}
   </div>
 </section>
 
+
+  
 
 {% endblock body %}

@@ -24,6 +24,9 @@
     width     : 60ch;
     max-width : 50%;
     z-index   : 102;
+    &-title {
+      color: var(--clr-white);
+    }
   }
 
   &__image {
