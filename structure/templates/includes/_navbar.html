@@ -13,12 +13,11 @@
         {% if navLink.childNav %}
         {# This is the case for a parent with a child nav dropdown #}
         <li class="topnav__li {% if navLink.currentPage %}active{% endif %}">
-
           <input type="checkbox" name="sub-nav-toggle-{{ loop.index }}" class="sub-nav-toggle"
             id="sub-nav-toggle-{{ loop.index }}">
           <label for="sub-nav-toggle-{{ loop.index }}" class="sub-nav-toggle-label">{{ navLink.title }}</label>
-
           <ul class="sub-nav">
+            {# Loop through children #}
             {% for child in navLink.childNav %}
             <li class="sub-nav-link">
               <a class="dropdown-item" href="{{ getNavigationLink(child) }}">{{ child.title }}</a>
