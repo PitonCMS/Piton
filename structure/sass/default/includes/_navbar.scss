@@ -174,7 +174,7 @@
   span::after {
     width : calc(#{var(--nav-height)}/ 2);
     height : 4px;
-    border-radius: $br;
+    border-radius: var(--br);
     background : var(--nav-text);
     position   : relative;
   }

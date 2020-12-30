@@ -15,24 +15,23 @@ Text Element #}
       </div>
 
       <div class="input-group">
-        <label>Your Email<span class="text-danger">*</span></label>
-        <input type="email" class="contact-form__form-control" name="email" maxlength="100" placeholder="Email address" required
-          autocomplete="off" />
+        <label>Your Email<span class="text-danger"> *</span></label>
+        <input type="email" class="contact-form__form-control" name="email" maxlength="100" placeholder="Email address"
+          required autocomplete="off" />
       </div>
 
       <div class="input-group span">
-        <label>Message</label>
-        <textarea class="contact-form__form-control" rows="5" name="message"></textarea>
+        <label>Message<span class="text-danger"> *</span></label>
+        <textarea class="contact-form__form-control" rows="5" name="message" required></textarea>
       </div>
 
-      <div class="input-group">
-        {# Custom Field Example #}
-        <label>Favorite Color</label>
-        <input type="text" class="contact-form__form-control" name="favoriteColor" />
+      <div class="input-group span">
+        <button class="btn btn-submit" type="submit">Submit</button>
       </div>
 
-      <button class="btn span" type="submit">Submit</button>
-
+      <div class="input-group span">
+        <p><span class="text-danger">* </span>Required</p>
+      </div>
       {{ pitonMacro.contactHoneypot() }}
     </form>
   </div>

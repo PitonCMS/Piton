@@ -14,8 +14,8 @@
 
     img {
 
-      border-radius: $br;
-      box-shadow   : $bs-1;
+      border-radius: var(--br);
+      box-shadow   : var(--bs);
       height       : 250px;
       object-fit   : cover;
     }

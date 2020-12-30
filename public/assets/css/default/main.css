@@ -8,35 +8,44 @@
     IF YOU ARE USING CSS ONLY, CHANGE THE PROPERTY OF THE VARIABLE 
     INSIDE THE MAIN.CSS AND LOGIN.CSS FILES.
 
+    THE -RGB IS THE RED/GREEN/BLUE IDENTIFIER OF THE COLOR IT
+    REPRESENTS. THIS IS USED FOR COLORS THAT USE AN ALPHA CHANNEL.
+    IF YOU UPDATE A BASE COLOR, YOU SHOULD ALSO FIND THE RGB VALUE AND REPLACE
+    THE 3 NUMBERS. THERE ARE TOOLS IN CODE EDITORS FOR THIS, OR IT IS EASILY
+    GOOGLED.
+
+    IE 
+
+    --CLR-PRIMARY: #336699; // == RGB(51, 102, 153)
+    --CLR-PRIMARY-RGB: 51,102,153;
+
 */
+/* Color Theme */
+/* Color base */
+/* Color RGB Components */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=PT+Serif:wght@700&display=swap");
 :root {
-  /* Color Theme */
-  /* Color base */
   --clr-primary: #336699;
+  --clr-primary-rgb: 51, 102, 153;
   --clr-primary-dark: #264d73;
-  --clr-primary-light: #8cb3d9;
-  --clr-secondary: #338899;
-  --clr-accent: #ff781f;
-  --clr-dark-text: #1a1a1a;
-  --clr-primary: #336699;
-  --clr-white: whitesmoke;
-  --clr-black: #1a1a1a;
-  --clr-grey-dark: gray;
-  --clr-grey-medium: #cccccc;
-  --clr-grey-light: #f0f0f0;
-  /* Color RGB Components */
-  --clr-primary-rgb: 51, 102, 153;
   --clr-primary-dark-rgb: 38, 77, 115;
+  --clr-primary-light: #8cb3d9;
   --clr-primary-light-rgb: 140, 179, 217;
+  --clr-secondary: #338899;
   --clr-secondary-rgb: 51, 136, 153;
+  --clr-accent: #ff781f;
   --clr-accent-rgb: 255, 120, 31;
+  --clr-dark-text: #1a1a1a;
   --clr-dark-text-rgb: 26, 26, 26;
-  --clr-primary-rgb: 51, 102, 153;
-  --clr-black-rgb: 26, 26, 26;
+  --clr-white: whitesmoke;
   --clr-white-rgb: 245, 245, 245;
+  --clr-black: #1a1a1a;
+  --clr-black-rgb: 26, 26, 26;
+  --clr-grey-dark: gray;
   --clr-grey-dark-rgb: 128, 128, 128;
+  --clr-grey-medium: #cccccc;
   --clr-grey-medium-rgb: 204, 204, 204;
+  --clr-grey-light: #f0f0f0;
   --clr-grey-light-rgb: 240, 240, 240;
   /* Default Element Styles */
   --bs: 0 0 25px rgba(26, 26, 26, 0.25);
@@ -215,6 +224,14 @@ figure figcaption {
   text-align: center;
 }
 
+.text-danger {
+  color: var(--clr-accent);
+}
+
+.span {
+  grid-column: 1/-1 !important;
+}
+
 .hero {
   --hero-height: 80vh;
   height: min(var(--hero-height), 1080px);
@@ -278,7 +295,7 @@ figure figcaption {
 
 .btn-cta {
   font-size: 1.25rem;
-  color: #1a1a1a;
+  color: var(--clr-black);
   font-weight: 500;
   text-decoration: none;
   display: inline-flex;
@@ -417,27 +434,30 @@ figure figcaption {
 
 .contactElement .contact-form {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto 1fr;
-  column-gap: 2em;
+  grid-template-columns: 1fr;
+  gap: 1rem;
 }
-.contactElement button {
-  justify-self: start;
+@media screen and (min-width: 768px) {
+  .contactElement .contact-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 .contactElement ::placeholder {
   color: rgba(var(--clr-grey-dark-rgb), 0.75);
 }
 
-.input-group * + * {
-  margin-top: 0.5em;
+.input-group {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: baseline;
+}
+.input-group > * {
+  margin: 0;
 }
 
 /* Add styles to 'label' selector */
 label {
   font-size: 1.2em;
-  align-self: flex-start;
-  justify-self: flex-end;
-  grid-column: 1/2;
 }
 
 /* Add styles to 'input' and 'textarea' selectors */
@@ -457,21 +477,8 @@ textarea {
 input[type=text]:focus,
 input[type=email]:focus,
 textarea:focus {
-  border: 1px solid var(--clr-accent);
-}
-
-/* Add styles to the submit button */
-input[type=submit],
-.jsContactSubmitButton {
-  justify-self: flex-start;
-  grid-column: 2/3;
-  font-size: 1rem;
-}
-
-/* Add styles for 'focus' property */
-input[type=submit]:focus {
-  background: var(--clr-accent);
-  color: var(--clr-white);
+  border: 2px dashed var(--clr-accent);
+  outline: none;
 }
 
 .galleryElement .gallery-wrapper {
@@ -485,8 +492,8 @@ input[type=submit]:focus {
   margin-top: 0;
 }
 .galleryElement .gallery-img img {
-  border-radius: 7px;
-  box-shadow: 0 10px 25px rgba(26, 26, 26, 0.25);
+  border-radius: var(--br);
+  box-shadow: var(--bs);
   height: 250px;
   object-fit: cover;
 }
@@ -667,7 +674,7 @@ input[type=submit]:focus {
 .nav-toggle-label span::after {
   width: calc(var(--nav-height)/ 2);
   height: 4px;
-  border-radius: 7px;
+  border-radius: var(--br);
   background: var(--nav-text);
   position: relative;
 }

@@ -1,33 +1,33 @@
 .contactElement {
   .contact-form {
     display              : grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows   : auto 1fr;
-    column-gap           : 2em;
-  }
-
-  button {
-    justify-self: start;
+  grid-template-columns: 1fr;
+    gap                  : 1rem;
+    @media screen and (min-width: $breakpoint){
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   ::placeholder {
     color: rgba(var(--clr-grey-dark-rgb), .75);
-
   }
 }
 
-.input-group *+* {
-
-  @include margin(.5em null null null);
-
+.input-group {
+  display   : flex;
+  flex-flow : column nowrap;
+  align-items: baseline;
+  >*{
+    @include margin(0);
+  }
 }
 
 /* Add styles to 'label' selector */
 label {
   font-size   : 1.2em;
-  align-self  : flex-start;
-  justify-self: flex-end;
-  grid-column : 1 / 2;
+  // align-self  : flex-start;
+  // justify-self: flex-end;
+  // grid-column : 1 / 2;
 }
 
 /* Add styles to 'input' and 'textarea' selectors */
@@ -47,19 +47,6 @@ textarea {
 input[type=text]:focus,
 input[type=email]:focus,
 textarea:focus {
-  border: 1px solid var(--clr-accent);
-}
-
-/* Add styles to the submit button */
-input[type=submit],
-.jsContactSubmitButton {
-  justify-self: flex-start;
-  grid-column : 2 / 3;
-  font-size   : 1rem;
-}
-
-/* Add styles for 'focus' property */
-input[type=submit]:focus {
-  background: var(--clr-accent);
-  color     : var(--clr-white);
+  border: 2px dashed var(--clr-accent);
+  outline: none;
 }

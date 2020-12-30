@@ -1,40 +1,40 @@
 // Color Pallette
 
-$clr-black : hsl(0, 0%, 10%);
-$clr-white : hsl(0, 0%, 96%);
-$clr-blue  : #336699;
-$clr-grey-light : hsl(0, 0%, 94%);
-$clr-grey-medium: hsl(0, 0%, 80%);
-$clr-grey-dark  : hsl(0, 0%, 50%);
-$clr-orange     : #ff781f;
-$clr-red        : #ff0000;
-$clr-green      : #007000;
+$clr-black      : rgb(26, 26, 26);
+$clr-white      : rgb(245, 245, 245);
+$clr-blue       : rgb(51, 102, 153);
+$clr-grey-light : rgb(240, 240, 240);
+$clr-grey-medium: rgb(204, 204, 204);
+$clr-grey-dark  : rgb(128, 128, 128);
+$clr-orange     : rgb(255, 120, 31);
+$clr-red        : rgb(255, 0, 0);
+$clr-green      : rgb(0, 112, 0);
 
 // Theme -- DO NOT CHANGE VARIABLE NAMES. Update the  
 
-$clr-primary : $clr-blue;
+$clr-primary      : $clr-blue;
 $clr-primary-dark : darken($clr-primary, 10);
 $clr-primary-light: lighten($clr-primary, 30);
-$clr-secondary : adjust-hue($clr-primary, -20);
-$clr-accent : $clr-orange;
-$clr-dark-text : $clr-black;
-$clr-light-text: $clr-white;
+$clr-secondary    : adjust-hue($clr-primary, -20);
+$clr-accent       : $clr-orange;
+$clr-dark-text    : $clr-black;
+$clr-light-text   : $clr-white;
 
 
 // Default Element Styles 
 
-$bs : 0 0 25px rgba($clr-black, .25);
-$bs-1 : 0 10px 25px rgba($clr-black, .25);
-$bsh  : 0px 0px 10px 2px rgba($clr-black, .15); // box shadow hover
-$br   : 7px;
-$ls   : 2px;
-$ts   : 0 2px 5px rgba($clr-black, .18);
+$bs            : 0 0 25px rgba($clr-black, .25);
+$bs-1          : 0 10px 25px rgba($clr-black, .25);
+$bsh           : 0px 0px 10px 2px rgba($clr-black, .15); // box shadow hover
+$br            : 7px;
+$ls            : 2px;
+$ts            : 0 2px 5px rgba($clr-black, .18);
 $section-margin: 0rem;
 
 // Navigation Variables
 $nav-height: 60px;
-$nav-bg : $clr-primary;
-$nav-text : $clr-white;
+$nav-bg    : $clr-primary;
+$nav-text  : $clr-white;
 $nav-hover : $clr-accent;
 
 // Layout Variables
@@ -56,7 +56,7 @@ sans-serif;
 // Set the $nav-color to transparent if don't want a background color.
 $nav-bg        : $clr-primary;
 $nav-bg-opacity: 0;
-$nav-text : $clr-white;
+$nav-text      :  $clr-white;
 $nav-accent    : $clr-accent;
 $nav-height    : 60px;
 
@@ -70,43 +70,64 @@ $nav-height    : 60px;
     IF YOU ARE USING CSS ONLY, CHANGE THE PROPERTY OF THE VARIABLE 
     INSIDE THE MAIN.CSS AND LOGIN.CSS FILES.
 
+    THE -RGB IS THE RED/GREEN/BLUE IDENTIFIER OF THE COLOR IT
+    REPRESENTS. THIS IS USED FOR COLORS THAT USE AN ALPHA CHANNEL.
+    IF YOU UPDATE A BASE COLOR, YOU SHOULD ALSO FIND THE RGB VALUE AND REPLACE
+    THE 3 NUMBERS. THERE ARE TOOLS IN CODE EDITORS FOR THIS, OR IT IS EASILY
+    GOOGLED.
+
+    IE 
+
+    --CLR-PRIMARY: #336699; // == RGB(51, 102, 153)
+    --CLR-PRIMARY-RGB: 51,102,153;
+
 */
-:root {
+
   /* Color Theme */
   /* Color base */
-  --clr-primary          : #{$clr-primary};
-  --clr-primary-dark     : #{$clr-primary-dark};
-  --clr-primary-light    : #{$clr-primary-light};
-  --clr-secondary        : #{$clr-secondary};
-  --clr-accent           : #{$clr-accent};
-  --clr-dark-text        : #{$clr-dark-text};
-  --clr-primary          : #{$clr-primary};
-  --clr-white            : #{$clr-white};
-  --clr-black            : #{$clr-black};
-  --clr-grey-dark   : #{$clr-grey-dark};
-  --clr-grey-medium : #{$clr-grey-medium};
-  --clr-grey-light  : #{$clr-grey-light};
   /* Color RGB Components */
-  --clr-primary-rgb      : #{hexToRGB($clr-primary)};
+:root {
+
+  --clr-primary     : #{$clr-primary};
+  --clr-primary-rgb : #{hexToRGB($clr-primary)};
+
+  --clr-primary-dark     : #{$clr-primary-dark};
   --clr-primary-dark-rgb : #{hexToRGB($clr-primary-dark)};
+
+  --clr-primary-light    : #{$clr-primary-light};
   --clr-primary-light-rgb: #{hexToRGB($clr-primary-light)};
-  --clr-secondary-rgb    : #{hexToRGB($clr-secondary)};
-  --clr-accent-rgb       : #{hexToRGB($clr-accent)};
-  --clr-dark-text-rgb    : #{hexToRGB($clr-dark-text)};
-  --clr-primary-rgb      : #{hexToRGB($clr-primary)};
-  --clr-black-rgb        : #{hexToRGB($clr-black)};
-  --clr-white-rgb        : #{hexToRGB($clr-white)};
-  --clr-grey-dark-rgb   : #{hexToRGB($clr-grey-dark)};
+
+  --clr-secondary     : #{$clr-secondary};
+  --clr-secondary-rgb : #{hexToRGB($clr-secondary)};
+
+  --clr-accent     : #{$clr-accent};
+  --clr-accent-rgb : #{hexToRGB($clr-accent)};
+
+  --clr-dark-text     : #{$clr-dark-text};
+  --clr-dark-text-rgb : #{hexToRGB($clr-dark-text)};
+
+  --clr-white     : #{$clr-white};
+  --clr-white-rgb : #{hexToRGB($clr-white)};
+
+  --clr-black     : #{$clr-black};
+  --clr-black-rgb : #{hexToRGB($clr-black)};
+
+  --clr-grey-dark     : #{$clr-grey-dark};
+  --clr-grey-dark-rgb : #{hexToRGB($clr-grey-dark)};
+
+  --clr-grey-medium     : #{$clr-grey-medium};
   --clr-grey-medium-rgb : #{hexToRGB($clr-grey-medium)};
-  --clr-grey-light-rgb  : #{hexToRGB($clr-grey-light)};
+
+  --clr-grey-light     : #{$clr-grey-light};
+  --clr-grey-light-rgb : #{hexToRGB($clr-grey-light)};
 
   /* Default Element Styles */
-  --bs   : #{$bs}; // Box Shadow    
-  --bs-1 : #{$bs-1}; // Box Shadow 1 
-  --bsh  : #{$bsh}; // Box Shadow Hover
-  --br   : #{$br}; // Border Radius 
-  --ls   : #{$ls}; // Letter spacing 
-  --ts   : #{$ts}; // Text Shadow 
+  --bs            : #{$bs}; // Box Shadow    
+  --bs-1          : #{$bs-1}; // Box Shadow 1 
+  --bsh           : #{$bsh}; // Box Shadow Hover
+  --br            : #{$br}; // Border Radius 
+  --ls            : #{$ls}; // Letter spacing 
+  --ts            : #{$ts}; // Text Shadow 
   --section-margin: #{$section-margin}; // Spacing between sections
 
   /*  Navigation Styles */
@@ -117,13 +138,13 @@ $nav-height    : 60px;
   --nav-hover     : #{$nav-hover};
   --nav-accent    : #{$nav-accent};
   /* Layout Variables */
-  --max-width : #{$max-container-width};
+  --max-width     : #{$max-container-width};
 
   /* Media Queries */
   --breakpoint: #{$breakpoint};
   /* Font Families */
-  --ff-serif : #{$ff-serif};
-  --ff-sans  : #{$ff-sans};
+  --ff-serif  : #{$ff-serif};
+  --ff-sans   : #{$ff-sans};
 
   /* Font Weights */
   --fw-l: #{$fw-l}; //Fontweight light
