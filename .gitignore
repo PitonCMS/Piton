@@ -4,6 +4,8 @@ logs/
 cache/
 .sass-cache/
 *.xml
-vendor/
 public/media/
 *.map
+
+# After installing PitonCMS, consider removing the vendor/ line below
+vendor/

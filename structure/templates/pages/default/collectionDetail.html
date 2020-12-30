@@ -1,9 +1,5 @@
 {% extends 'pages/_base_layout.html' %}
 
-{% block headStyle %}
-
-{% endblock headStyle %}
-
 {% block body %}
 
 {{ getBlockElementsHtml(page.blocks.heroBlock) }}
@@ -13,13 +9,11 @@
     {{ getMediaSrcSet(page.media.filename, page.media.caption) }}
     <figcaption>{{ page.media.caption}}</figcaption>
     </figure>
-    
+
     <div class="collectionDetail__content">
       {{ getBlockElementsHtml(page.blocks.contentBlock) }}
   </div>
 </section>
 
-
-  
 
 {% endblock body %}
