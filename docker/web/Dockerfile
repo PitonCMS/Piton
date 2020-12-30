@@ -1,9 +1,8 @@
-FROM ubuntu:19.10
+FROM ubuntu:21.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get -y install software-properties-common && \
-    add-apt-repository ppa:ondrej/php && \
     apt-get install -y \
       apache2 \
       php7.4 \
@@ -31,6 +30,7 @@ RUN apt-get update && \
 COPY apache-host.conf /etc/apache2/sites-available/000-default.conf
 COPY run.sh /usr/local/bin/run
 RUN chmod +x /usr/local/bin/run
+COPY wait-for-it.sh /usr/local/bin/wait-for-it
+RUN chmod +x /usr/local/bin/wait-for-it
 
 EXPOSE 80
-CMD ["/usr/local/bin/run"]

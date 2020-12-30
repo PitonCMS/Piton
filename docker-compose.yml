@@ -12,6 +12,9 @@ services:
     depends_on:
       - db
     tty: true
+    secrets:
+      - host_ssh_key
+    command: bash -c '/usr/local/bin/wait-for-it db:3306 -t 60 -- /usr/local/bin/run'
 
   db:
     image: mysql:5.7

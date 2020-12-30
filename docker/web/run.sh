@@ -35,7 +35,8 @@ echo "Restarting apache"
 service apache2 restart
 
 # Add host machine SSH key
-RUN mkdir ~/.ssh && ln -s /run/secrets/host_ssh_key ~/.ssh/id_rsa
+echo "Adding host machine SSH key"
+mkdir ~/.ssh && ln -s /run/secrets/host_ssh_key ~/.ssh/id_rsa
 
 # To avoid closing the process and killing docker-compose, run this indefinitely
 /bin/sh
