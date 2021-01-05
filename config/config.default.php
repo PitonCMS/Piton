@@ -67,13 +67,3 @@ $config['email']['smtpHost'] = '';
 $config['email']['smtpUser'] = '';
 $config['email']['smtpPass'] = '';
 $config['email']['smtpPort'] = '';
-
-/**
- * Pagination Row Limits
- *
- * Define how many results to display per page.
- * - adminPagePagination:  Administration, how many Pages or Collection Detail Pages to display
- * - adminMediaPagination: Administration, how many media files to display
- */
-$config['pagination']['adminPagePagination']['resultsPerPage'] = 6;
-$config['pagination']['adminMediaPagination']['resultsPerPage'] = 10;
