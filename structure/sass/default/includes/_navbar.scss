@@ -1,6 +1,6 @@
 /* Navigation Styles w/sub navigation dropdown and responsive toggles */  
 .navbar {
-  @include padding(null 2rem);
+  @include padding(null 1em);
   background : darken($clr-primary, 10%);
   color      : contrast-switch($clr-primary);
   height     : $nav-height;
@@ -60,7 +60,9 @@
     &-link {
       list-style: none;
       position: relative;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
+      font-weight: $fw-l;
+      letter-spacing: 1px;
 
 
 
@@ -68,6 +70,7 @@
         @include padding(null .5rem);
         height     : $nav-height;
         line-height: $nav-height;
+        font-size: 1rem;
       }
 
       &:hover {
@@ -101,7 +104,7 @@
     width     : 100%;
     background: lighten($clr-primary, 15%);
     transform : scaleY($scale);
-    // height    : 0; // Set height to 0 for mobile dropdown animation
+    height    : 0; // Set height to 0 for mobile dropdown animation
 
     @media screen and (min-width: $breakpoint) {
       white-space: nowrap;
@@ -111,7 +114,7 @@
 
       position: absolute;
       top     : 100%;
-      left    : 0;
+      right    : 0;
 
       transform       : scaleY($scale);
       opacity         : $scale;

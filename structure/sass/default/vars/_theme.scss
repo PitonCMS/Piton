@@ -59,7 +59,7 @@ $nav-bg-opacity: 0;
 $nav-text      :  $clr-white;
 $nav-accent    : $clr-accent;
 $nav-height    : 60px;
-$scale: 1;
+$scale: 0; // Scales the navigation. valid #'s 0 -> 1. Zero value is collapsed.
 
 /* 
     CSS VARIABLES 

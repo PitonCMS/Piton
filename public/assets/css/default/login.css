@@ -594,8 +594,8 @@ textarea:focus {
 
 /* Navigation Styles w/sub navigation dropdown and responsive toggles */
 .navbar {
-  padding-right: 2rem;
-  padding-left: 2rem;
+  padding-right: 1em;
+  padding-left: 1em;
   background: #264d73;
   color: #fff;
   height: 60px;
@@ -630,8 +630,8 @@ textarea:focus {
   top: 100%;
   left: 0;
   right: 0;
-  transform: scaleY(1);
-  opacity: 1;
+  transform: scaleY(0);
+  opacity: 0;
   transition: transform 0.2s ease, opacity 250ms ease-out;
   transform-origin: top;
 }
@@ -649,7 +649,9 @@ textarea:focus {
 .navbar .nav-link {
   list-style: none;
   position: relative;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 1px;
 }
 @media screen and (min-width: 768px) {
   .navbar .nav-link {
@@ -657,6 +659,7 @@ textarea:focus {
     padding-left: 0.5rem;
     height: 60px;
     line-height: 60px;
+    font-size: 1rem;
   }
 }
 .navbar .nav-link:hover {
@@ -680,7 +683,8 @@ textarea:focus {
 .navbar .subnav {
   width: 100%;
   background: #538cc6;
-  transform: scaleY(1);
+  transform: scaleY(0);
+  height: 0;
 }
 @media screen and (min-width: 768px) {
   .navbar .subnav {
@@ -689,9 +693,9 @@ textarea:focus {
     display: block;
     position: absolute;
     top: 100%;
-    left: 0;
-    transform: scaleY(1);
-    opacity: 1;
+    right: 0;
+    transform: scaleY(0);
+    opacity: 0;
     transition: transform 0.2s ease, opacity 0.4s ease-out;
     transform-origin: top;
   }
