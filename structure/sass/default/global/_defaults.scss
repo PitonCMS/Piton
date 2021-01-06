@@ -105,7 +105,7 @@ section {
   @include margin(#{$section-margin} null);
 }
 
-.nav+section:first-of-type {
+.navbar+section:first-of-type {
 
   margin-top: calc(#{$nav-height} + #{$section-margin});
   }
