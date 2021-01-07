@@ -6,18 +6,20 @@
   @include margin(0);
   @include padding(0);
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 html,
 body {
-  width  : 100vw;
-  height : 100vh;
+  width     : 100vw;
+  height    : 100vh;
   min-height: 100vh;
 }
 
 body {
-  color      : var(--clr-black);
+  color: var(--clr-black);
 
   font-family: var(--ff-sans);
   font-weight: var(--fw-n);
@@ -25,23 +27,29 @@ body {
   display    : flex;
   flex-flow  : column nowrap;
   overflow-x : hidden;
-  }
+}
 
 img {
   width  : 100%;
   display: block;
   height : auto;
 }
+
 p {
   @include margin(1rem null null null);
 }
-a{
-  color: $clr-dark-text;
-text-decoration: none;
-&:hover{
-  color: $clr-accent;
+
+a {
+  color          : $clr-dark-text;
+  text-decoration: none;
+
+  transition: all 250ms ease;
+
+  &:hover {
+    color: $clr-accent;
+  }
 }
-}
+
 h1,
 h2,
 h3,
@@ -54,6 +62,7 @@ h6 {
   line-height: 1;
   color      : var(--clr-accent);
 }
+
 h1 {
   font-size: 4rem;
 }
@@ -86,7 +95,7 @@ section {
 .container {
   // @include padding(null 2rem);
   @include margin(auto);
-  width: 100%;
+  width    : 100%;
   max-width: var(--max-width);
 
 }
@@ -101,13 +110,16 @@ section {
   display: grid;
   grid-template-columns:
     minmax(1rem, 1fr) minmax(auto, 90ch) minmax(1rem, 1fr);
-*+* {
-  @include margin(1.25rem null null null);
-}
+
+  *+* {
+    @include margin(1.25rem null null null);
+  }
+
   >* {
     grid-column: 2;
   }
 }
+
 .hero+section:first-of-type {
 
   @include margin(#{$section-margin} null);
@@ -116,33 +128,36 @@ section {
 .navbar+section:first-of-type {
 
   margin-top: calc(#{$nav-height} + #{$section-margin});
+}
+
+figure {
+
+  border-radius: var(--br);
+
+
+
+  img {
+    max-height   : 450px;
+    border-radius: var(--br);
+    box-shadow   : var(--bs);
+    object-fit   : cover;
   }
- figure {
 
-   border-radius: var(--br);
+  figcaption {
+    color      : var(--clr-grey-dark);
+    font-size  : .8rem;
+    font-style : italic;
+    font-weight: 300;
+    margin-top : .25rem !important;
+    text-align : center;
+  }
+}
 
+.text-danger {
+  color: var(--clr-accent);
+}
 
-
-   img {
-     max-height   : 450px;
-     border-radius: var(--br);
-     box-shadow   : var(--bs);
-     object-fit   : cover;
-   }
-
-   figcaption {
-     color      : var(--clr-grey-dark);
-     font-size  : .8rem;
-     font-style : italic;
-     font-weight: 300;
-     margin-top : .25rem !important;
-     text-align : center;
-   }
- }
- .text-danger{
-   color: var(--clr-accent);
- }
- .span{
+.span {
   grid-column: 1 / -1 !important;
 
 }
