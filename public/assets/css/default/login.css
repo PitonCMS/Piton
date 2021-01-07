@@ -131,6 +131,14 @@ p {
   margin-top: 1rem;
 }
 
+a {
+  color: #1a1a1a;
+  text-decoration: none;
+}
+a:hover {
+  color: #ff781f;
+}
+
 h1,
 h2,
 h3,
@@ -858,6 +866,66 @@ textarea:focus {
 
 .nav-footer__nav {
   list-style: none;
+}
+
+.pagination {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pagination * + * {
+  margin: 0;
+}
+.pagination a {
+  text-decoration: none;
+  color: var(--clr-primary);
+  display: block;
+  width: 100%;
+  display: flex;
+}
+.pagination .page-link {
+  border-top: solid 1px var(--clr-primary);
+  border-bottom: solid 1px var(--clr-primary);
+  border-right: solid 1px var(--clr-primary);
+  padding: 0.5rem 1rem;
+  background: white;
+}
+.pagination .page-link:first-child {
+  border-left: solid 1px var(--clr-primary);
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+}
+.pagination .page-link:last-child {
+  border-right: solid 1px var(--clr-primary);
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.pagination .page-link.disabled a {
+  color: #cccccc;
+  cursor: default;
+  pointer-events: none;
+}
+.pagination .page-link.disabled:hover {
+  background: white;
+}
+.pagination .page-link.disabled:hover a {
+  color: #cccccc;
+}
+.pagination .page-link.active {
+  background: var(--clr-primary);
+  color: var(--clr-white);
+}
+.pagination .page-link.active a {
+  color: var(--clr-white);
+}
+.pagination .page-link:hover {
+  background: var(--clr-primary);
+  color: var(--clr-white);
+}
+.pagination .page-link:hover a {
+  color: var(--clr-white);
 }
 
 /*# sourceMappingURL=login.css.map */

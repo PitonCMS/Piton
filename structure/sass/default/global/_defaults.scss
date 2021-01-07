@@ -18,6 +18,7 @@ body {
 
 body {
   color      : var(--clr-black);
+
   font-family: var(--ff-sans);
   font-weight: var(--fw-n);
   line-height: 1.6;
@@ -33,6 +34,13 @@ img {
 }
 p {
   @include margin(1rem null null null);
+}
+a{
+  color: $clr-dark-text;
+text-decoration: none;
+&:hover{
+  color: $clr-accent;
+}
 }
 h1,
 h2,
