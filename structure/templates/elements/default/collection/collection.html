@@ -8,27 +8,25 @@
     <h2>{{ element.title }}</h2>
     {{ element.content }}
 
-    <div class="collectionElement__wrapper">
+    <ul class="cards">
       {% for detail in collection %}
-      <div class="collectionElement__card">
-        <div class="collectionElement__card-image">
-          <img src="{{ getMediaPath(detail.media.filename, 'thumb') }}">
-        </div>
-        <div class="collectionElement__cardHeader">
-          <h5>{{ detail.title }}</h>
-        </div>
-        <div class="collectionElement__cardBody">
-          <p>{{ detail.meta_description }}</>
-        </div>
-        <div class="collectionElement__cardFooter">
-          <a href="{{ pathFor('showPage', {'slug1': detail.collection_slug, 'slug2': detail.page_slug}) }}" class="">Read More
-            <i class="fas fa-chevron-right"></i></a>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
 
-    {# Print navigation links #}
+      <li class="cards__item">
+        <div class="card">
+          <div class="card__image"> <img src="{{ getMediaPath(detail.media.filename, 'thumb') }}"></div>
+          <div class="card__content">
+            <div class="card__title">
+              {{ detail.title }}
+            </div>
+            <p class="card__text">{{ detail.meta_description }}</p>
+            <a href="{{ pathFor('showPage', {'slug1': detail.collection_slug, 'slug2': detail.page_slug}) }}" class="btn-link">Read More...</a>
+          </div>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+
+    {# Print pagination navigation #}
     {{ pagination() }}
   </div>
 

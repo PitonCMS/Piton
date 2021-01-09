@@ -1,122 +1,67 @@
-.collectionElement {
-  &__wrapper {
-    display              : grid;
-    grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
-    gap : 1.5rem;
+ .cards {
+   @include margin(2rem null);
+   @include padding(0);
+   list-style: none;
 
-    *+* {
-      @include margin(0 null null null);
-    }
+   display              : grid;
+   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+   gap                  : 2rem;
 
-    a {
-      display        : block;
-      color          : inherit;
-      text-decoration: none;
-    }
-    }
-  &__card {
-    display   : flex;
-    flex-flow : column nowrap;
-    border    : solid 1px $clr-grey-light;
-    box-shadow: var(--bs);
+   *+* {
+     @include margin(0 null null);
+   }
 
-    &-image {
-      overflow: hidden;
+   &__item {
+   display: flex;
+   }
 
-      img {
-        height    : 150px;
-        object-fit: cover;
-        transition: transform 125ms ease-in;
+   .card {
+     background-color: $clr-white;
+     border-radius   : var(--br);
+     box-shadow      : 0 20px 40px -14px rgba(black, .25);
 
-        &:hover {
-          transform: scale(1.05);
-        }
-        }
-        }
+     display  : flex;
+     flex-flow: column nowrap;
+     overflow : hidden;
 
-        &Header {
-          position: relative;
-          @include padding(.5rem 1.5rem);
-          min-height     : 90px;
-          background     : $clr-primary;
-          display        : flex;
-          flex-flow      : column nowrap;
-          justify-content: center;
-          align-items    : flex-start;
-          color          : contrast-switch($clr-primary);
+     &__content {
+       display  : flex;
+       flex     : 1 1 auto;
+       flex-flow: column nowrap;
+       padding  : 1rem;
+     }
 
-          h5 {
-            color      : contrast-switch($clr-primary);
-            font-family: var(--ff-sans);
-          }
-
-          &::before {
-            @include triangle('right', 1rem, 1rem, $clr-grey-light);
-            content: '';
-            @include position(absolute, 50% null null 0);
-            transform: translateY(-50%);
-          }
-
-          &::after {
-            @include triangle('left', 1rem, 1rem, $clr-grey-light);
-            content: '';
-            @include position(absolute, 50% 0 null null);
-            transform: translateY(-50%);
-          }
-        }
-
-        &Body {
-          @include padding(1rem);
-
-          p {
-            color      : $clr-grey-dark;
-            line-height: 1.2 !important;
-            font-size  : .95rem;
-
-            &:first-of-type {
-              margin-top: 0 !important;
-            }
-          }
-        }
-
-        &Footer {
-          @include padding(1rem);
-          background: $clr-primary;
-          color     : contrast-switch($clr-primary);
-          display   : block;
-          transition: all 125ms ease-in;
-          @include margin(auto null null null);
-          border-top: solid 1px $clr-grey-light;
-
-          &:hover {
-            background: contrast-switch($clr-primary);
-            color     : $clr-primary;
-          }
-
-          a {
-            display: block;
-            @include size(100%);
-          }
-    }
-  }
-
-}
-
-.collectionDetail {
-
-  // @include padding(2rem null null null);
-  &__image {
-    width : 100%;
-    height : 500px;
-    overflow : hidden;
-    border-radius : var(--br);
-    box-shadow : var(--bs);
-    // box-shadow : 5px 5px 15px rgba(black, .5);
-
-    img {
-      object-fit: cover;
-
-      height: 500px;
-    }
-  }
-}
+     &__image {
+       background-position    : center center;
+       background-repeat      : no-repeat;
+       background-size        : cover;
+       border-top-left-radius : var(--br);
+       border-top-right-radius: var(--br);
+       filter                 : contrast(70%);
+       overflow               : hidden;
+       position               : relative;
+       transition             : filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+     img{
+       object-fit: cover;
+     }
+     }
+     &:hover{
+       .card__image{
+         filter: contrast(100%);
+       }
+     }
+     &__title {
+       color: var(--clr-black);
+       font-size: 1.25rem;
+       font-weight: 300;
+       letter-spacing: 2px;
+       text-transform: uppercase;
+     }
+     &__text {
+       flex: 1 1 auto;
+       font-size: .875rem;
+       line-height: 1.5;
+       margin-bottom: 1.25rem;
+     }
+   }
+ }
