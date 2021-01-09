@@ -25,6 +25,7 @@ $clr-light-text   : $clr-white;
 
 $bs            : 0 0 25px rgba($clr-black, .25);
 $bs-1          : 0 10px 25px rgba($clr-black, .25);
+$bs-2          : 0 20px 40px -15px rgba(black, .25);
 $bsh           : 0px 0px 10px 2px rgba($clr-black, .15); // box shadow hover
 $br            : 7px;
 $ls            : 2px;
@@ -56,10 +57,10 @@ sans-serif;
 // Set the $nav-color to transparent if don't want a background color.
 $nav-bg        : $clr-primary;
 $nav-bg-opacity: 0;
-$nav-text      :  $clr-white;
+$nav-text      : $clr-white;
 $nav-accent    : $clr-accent;
 $nav-height    : 60px;
-$scale: 0; // Scales the navigation. valid #'s 0 -> 1. Zero value is collapsed.
+$scale         : 0; // Scales the navigation. valid #'s 0 -> 1. Zero value is collapsed.
 
 /* 
     CSS VARIABLES 
@@ -84,9 +85,9 @@ $scale: 0; // Scales the navigation. valid #'s 0 -> 1. Zero value is collapsed.
 
 */
 
-  /* Color Theme */
-  /* Color base */
-  /* Color RGB Components */
+/* Color Theme */
+/* Color base */
+/* Color RGB Components */
 :root {
 
   --clr-primary     : #{$clr-primary};
@@ -125,6 +126,7 @@ $scale: 0; // Scales the navigation. valid #'s 0 -> 1. Zero value is collapsed.
   /* Default Element Styles */
   --bs            : #{$bs}; // Box Shadow    
   --bs-1          : #{$bs-1}; // Box Shadow 1 
+  --bs-2          : #{$bs-2}; // Box Shadow 1 
   --bsh           : #{$bsh}; // Box Shadow Hover
   --br            : #{$br}; // Border Radius 
   --ls            : #{$ls}; // Letter spacing 
