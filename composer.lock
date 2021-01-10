@@ -376,12 +376,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PitonCMS/Engine.git",
-                "reference": "8fd6df9640640b222a5bd2495752a3badc049387"
+                "reference": "9a10f46407148dcfb7fac074420094b07029a10f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PitonCMS/Engine/zipball/8fd6df9640640b222a5bd2495752a3badc049387",
-                "reference": "8fd6df9640640b222a5bd2495752a3badc049387",
+                "url": "https://api.github.com/repos/PitonCMS/Engine/zipball/9a10f46407148dcfb7fac074420094b07029a10f",
+                "reference": "9a10f46407148dcfb7fac074420094b07029a10f",
                 "shasum": ""
             },
             "require": {
