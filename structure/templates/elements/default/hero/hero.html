@@ -13,9 +13,9 @@
   <div class="hero__image">
     {% if element.media.filename %}
     {% set positionStyle = 'object-position: ' ~ element.settings.placement ?? 'center' %}
-    {{ getMediaSrcSet(element.media.filename, element.media.caption, {'style': positionStyle}) }}
+    {{ getMediaSrcSet(element.media.filename, element.media.caption, {'style': positionStyle, 'sizes': '100vw'}) }}
     {% else %}
-    <img src="/assets/img/heroDefault.jpg" alt="Top of the Mountain">
+    {# <img src="/assets/img/heroDefault.jpg" alt="Top of the Mountain"> #}
     {% endif %}
   </div>
   <div class="hero__overlay" {% if element.settings.overlay %}
