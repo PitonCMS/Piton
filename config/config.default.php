@@ -67,3 +67,11 @@ $config['email']['smtpHost'] = '';
 $config['email']['smtpUser'] = '';
 $config['email']['smtpPass'] = '';
 $config['email']['smtpPort'] = '';
+
+/**
+ * Pagination
+ *
+ * Set default number of results to return in pagination queries.
+ * Affects both administration and front end pagination.
+ */
+$config['pagination']['resultsPerPage'] = 20;
