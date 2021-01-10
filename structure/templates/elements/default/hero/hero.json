@@ -2,7 +2,8 @@
     "elementName": "Hero",
     "elementDescription": "Hero image element",
     "enableInput": "image",
-    "settings": [{
+    "settings": [
+        {
             "category": "element",
             "label": "Hero Image Overlay Percentage",
             "key": "overlay",

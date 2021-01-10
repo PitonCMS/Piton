@@ -15,12 +15,14 @@
                     </ul>
                 </nav>
             </div>
-{% if site.settings.footerAbout %}
+
+            {% if site.settings.footerAbout %}
             <div class="footer-about">
-                <h5>About {{ site.settings.displayName|default('Piton<span>CMS</span>') }}</h5>
+                <h5>About {{ site.settings.siteName|default('Piton<span>CMS</span>') }}</h5>
                 {{ site.settings.footerAbout|nl2br}}
             </div>
             {% endif %}
+
             <div class="footer-social">
                 <h5>Get Social With Us</h5>
                 <div class="get-social-icons">
@@ -61,7 +63,7 @@
     </div>
     <div class="footer2">
         <div class="container"></div>
-        <p>{{ site.settings.displayName|default('Piton<span>CMS</span>') }} &copy; 2018 - {{ "now"|date('Y') }}</p>
+        <p>{{ site.settings.siteName|default('Piton<span>CMS</span>') }} &copy; 2018 - {{ "now"|date('Y') }}</p>
         {% if site.settings.footerAuthor %}
         <p>Built with <a href="http://pitoncms.com" target="_blank">PitonCMS</a> by <a
                 href="{{ site.settings.footerAuthorURL }} " target="_blank">{{
