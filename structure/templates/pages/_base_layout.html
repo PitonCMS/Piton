@@ -33,9 +33,9 @@
 
     {{ include("includes/_footer.html") }}
 
-    <script src="/assets/js/custom.js"></script>
-    <script src="/admin/js/dist/contact.js"></script>
-    <script src="/assets/fancybox/fancybox/fancybox.umd.js"></script>
+    <script src="{{ baseUrl() }}/admin/js/dist/front.js"></script>
+    <script src="{{ baseUrl() }}/assets/js/custom.js"></script>
+    <script src="{{ baseUrl() }}/assets/fancybox/fancybox/fancybox.umd.js"></script>
 
     {% if site.environment.production and site.settings.statCounter %}
     {{ site.settings.statCounter }}
