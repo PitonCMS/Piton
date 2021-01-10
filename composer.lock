@@ -376,12 +376,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/PitonCMS/Engine.git",
-                "reference": "298d1950baf8ca60bdb2602d89cbaafd56376147"
+                "reference": "8fd6df9640640b222a5bd2495752a3badc049387"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PitonCMS/Engine/zipball/298d1950baf8ca60bdb2602d89cbaafd56376147",
-                "reference": "298d1950baf8ca60bdb2602d89cbaafd56376147",
+                "url": "https://api.github.com/repos/PitonCMS/Engine/zipball/8fd6df9640640b222a5bd2495752a3badc049387",
+                "reference": "8fd6df9640640b222a5bd2495752a3badc049387",
                 "shasum": ""
             },
             "require": {
@@ -415,7 +415,7 @@
             ],
             "description": "PitonCMS core engine",
             "homepage": "https://github.com/PitonCMS/Engine",
-            "time": "2021-01-09T11:23:45+00:00"
+            "time": "2021-01-10T13:05:39+00:00"
         },
         {
             "name": "pitoncms/orm",
