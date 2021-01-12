@@ -1,9 +1,13 @@
-// Image Element
-.imageElement {
-  img {
+ // Image Element
+ .imageElement {
+   &__image{
+   max-height: 450px;
+   img {
     border-radius: var(--br);
     box-shadow: var(--bs-1);
     max-height: 450px;
     object-fit: cover;
   }
+   }
+
 }

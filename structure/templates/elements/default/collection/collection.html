@@ -3,15 +3,14 @@
 {# Get the collection summary set. The second argument is the number of items to return per page #}
 {% set collection = getCollectionPagesWithPagination(element.collection_id, 6) %}
 
-<section class="collectionElement element">
-<div class="container">
+
+<div class="element">
     <h2>{{ element.title }}</h2>
     {{ element.content }}
 
     <ul class="cards">
       {% for detail in collection %}
-
-     
+      
         <li class="card">
           <div class="card__image"> <img src="{{ getMediaPath(detail.media.filename, 'thumb') }}"></div>
           <div class="card__content">
@@ -30,4 +29,3 @@
     {{ pagination() }}
   </div>
 
-</section>
