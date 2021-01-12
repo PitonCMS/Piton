@@ -200,6 +200,10 @@ h6 {
   font-size: 1rem;
 }
 
+main {
+  padding-top: 60px;
+}
+
 .container {
   margin: auto;
   padding-right: 2rem;
@@ -212,9 +216,9 @@ h6 {
   grid-column: 2/3;
 }
 
-.navbar + .container {
-  padding-top: 60px;
-  padding-bottom: 60px;
+.hero + .container main {
+  margin: 0;
+  padding: 0;
 }
 
 .element {
@@ -390,17 +394,19 @@ h6 {
   margin-bottom: 1.25rem;
 }
 
-.contactElement .contact-form {
+.contact-form {
+  margin-top: 1rem;
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
 }
 @media screen and (min-width: 768px) {
-  .contactElement .contact-form {
+  .contact-form {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-.contactElement ::placeholder {
+
+::placeholder {
   color: rgba(var(--clr-grey-dark-rgb), 0.75);
 }
 
@@ -408,9 +414,6 @@ h6 {
   display: flex;
   flex-flow: column nowrap;
   align-items: baseline;
-}
-.input-group > * {
-  margin: 0;
 }
 
 /* Add styles to 'label' selector */

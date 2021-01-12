@@ -1,7 +1,8 @@
  // Contact Styles
 
- .contactElement {
+
    .contact-form {
+     @include margin(1rem null null null);
      display              : grid;
      grid-template-columns: 1fr;
      gap                  : 1rem;
@@ -14,16 +15,13 @@
    ::placeholder {
      color: rgba(var(--clr-grey-dark-rgb), .75);
    }
- }
+ 
 
  .input-group {
    display    : flex;
    flex-flow  : column nowrap;
    align-items: baseline;
 
-   >* {
-     @include margin(0);
-   }
  }
 
  /* Add styles to 'label' selector */
