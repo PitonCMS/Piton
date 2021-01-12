@@ -61,7 +61,8 @@ p {
   @include margin(1rem null null null);
 }
 
-.element__title+p {
+.element__title+p
+ {
   @include margin(1rem null null null);
 }
 
@@ -124,7 +125,7 @@ main {
   display              : grid;
   grid-template-columns: minmax(1rem, 1fr) minmax(auto, 90ch) minmax(1rem, 1fr);
 
-  main {
+  >* {
     grid-column: 2 / 3;
   }
 }
