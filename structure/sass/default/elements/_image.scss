@@ -24,3 +24,6 @@
      object-fit: cover;
    }
  }
+ .imageElement__image+.imageElement__content{
+   @include margin(2rem null null);
+ }

@@ -204,7 +204,7 @@ h6 {
 }
 
 main {
-  padding-top: 60px;
+  padding: calc(60px * 1.5) 0;
 }
 
 .container {
@@ -479,6 +479,10 @@ textarea:focus {
   box-shadow: var(--bs-1);
   max-height: 450px;
   object-fit: cover;
+}
+
+.imageElement__image + .imageElement__content {
+  margin-top: 2rem;
 }
 
 .video-container {
