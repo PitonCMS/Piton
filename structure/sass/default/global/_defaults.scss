@@ -5,6 +5,8 @@
   box-sizing: border-box;
   @include margin(0);
   @include padding(0);
+  // -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html {
@@ -140,11 +142,6 @@ main {
   &-title {
     @include margin(1rem null null null);
   }
-}
-
-.footer {
-  @include margin(auto null null null);
-  @include padding(3rem null null null);
 }
 
 .text-danger {

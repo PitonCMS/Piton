@@ -1,8 +1,9 @@
 .footer {
   @include margin(auto null null null);
+  @include padding(1rem null null null);
   background: var(--clr-primary);
   color     : contrast-switch($clr-primary);
-  font-size: .9rem;
+  font-size : .9rem;
 
   a {
     color     : contrast-switch($clr-primary);
@@ -18,9 +19,10 @@
   }
 
   .footer1 {
-display: grid;
-grid-template-columns: 1fr;
-gap: 2rem;
+    @include padding(2rem null);
+    display              : grid;
+    grid-template-columns: 1fr;
+    gap                  : 2rem;
 
     @media screen and (min-width: $breakpoint) {
       grid-template-columns: auto 1fr auto auto;
@@ -58,6 +60,8 @@ gap: 2rem;
     p {
       @include margin(0);
       font-size: .8rem;
+      font-weight: var(--fw-l);
+      
       color    : contrast-switch($clr-primary);
     }
   }

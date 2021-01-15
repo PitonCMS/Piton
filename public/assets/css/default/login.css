@@ -38,8 +38,8 @@
   --clr-accent-rgb: 255, 120, 31;
   --clr-dark-text: #262626;
   --clr-dark-text-rgb: 38, 38, 38;
-  --clr-white: whitesmoke;
-  --clr-white-rgb: 245, 245, 245;
+  --clr-white: white;
+  --clr-white-rgb: 255, 255, 255;
   --clr-black: #262626;
   --clr-black-rgb: 38, 38, 38;
   --clr-grey-dark: gray;
@@ -61,7 +61,7 @@
   --nav-height: 60px;
   --nav-bg: #336699;
   --nav-bg-opacity: 0;
-  --nav-text: whitesmoke;
+  --nav-text: white;
   --nav-hover: #ff781f;
   --nav-accent: #ff781f;
   /* Layout Variables */
@@ -72,7 +72,7 @@
   --ff-serif: PT Serif, serif;
   --ff-sans: Open Sans, sans-serif;
   /* Font Weights */
-  --fw-l: 300;
+  --fw-l: 400;
   --fw-n: 400;
   --fw-m: 600;
   --fw-b: 700;
@@ -99,6 +99,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html {
@@ -113,7 +114,7 @@ body {
 }
 
 body {
-  background-color: whitesmoke;
+  background-color: white;
   font-family: var(--ff-sans);
   color: #262626;
   font-weight: 400;
@@ -227,11 +228,6 @@ main {
 }
 .element-title {
   margin-top: 1rem;
-}
-
-.footer {
-  margin-top: auto;
-  padding-top: 3rem;
 }
 
 .text-danger {
@@ -354,7 +350,7 @@ main {
 }
 .cards .card {
   width: 100%;
-  background-color: whitesmoke;
+  background-color: white;
   border-radius: var(--br);
   box-shadow: var(--bs-2);
   display: flex;
@@ -579,7 +575,7 @@ textarea:focus {
   padding-right: 1em;
   padding-left: 1em;
   background: #264d73;
-  color: whitesmoke;
+  color: #fff;
   height: 60px;
   line-height: 60px;
   display: flex;
@@ -596,7 +592,7 @@ textarea:focus {
 }
 .navbar .logo a {
   text-decoration: none;
-  color: whitesmoke;
+  color: #fff;
   font-size: 2rem;
   padding: 0;
   margin: 0;
@@ -605,7 +601,7 @@ textarea:focus {
 }
 .navbar .nav {
   background: #4080bf;
-  color: whitesmoke;
+  color: #fff;
   white-space: nowrap;
   text-align: center;
   position: absolute;
@@ -632,7 +628,7 @@ textarea:focus {
   list-style: none;
   position: relative;
   font-size: 1.5rem;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 1px;
 }
 @media screen and (min-width: 768px) {
@@ -649,11 +645,11 @@ textarea:focus {
 }
 .navbar .nav a {
   text-decoration: none;
-  color: whitesmoke;
+  color: #fff;
   display: block;
 }
 .navbar .toggle-label {
-  color: whitesmoke;
+  color: #fff;
   cursor: pointer;
   font-size: inherit;
   display: block;
@@ -777,12 +773,13 @@ textarea:focus {
 
 .footer {
   margin-top: auto;
+  padding-top: 1rem;
   background: var(--clr-primary);
-  color: whitesmoke;
+  color: #fff;
   font-size: 0.9rem;
 }
 .footer a {
-  color: whitesmoke;
+  color: #fff;
   transition: all 125ms ease;
 }
 .footer a:hover {
@@ -792,6 +789,8 @@ textarea:focus {
   list-style: none;
 }
 .footer .footer1 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
@@ -825,7 +824,8 @@ textarea:focus {
 .footer .footer2 p {
   margin: 0;
   font-size: 0.8rem;
-  color: whitesmoke;
+  font-weight: var(--fw-l);
+  color: #fff;
 }
 
 .pagination {

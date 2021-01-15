@@ -29,7 +29,7 @@
 
 $_bourbon-defaults: (
   "contrast-switch-dark-color": rgb(38,38,38),
-  "contrast-switch-light-color": rgb(245,245,245),
+  "contrast-switch-light-color": #fff,
   "global-font-file-formats": ("woff2", "woff"),
   "modular-scale-base": 1em,
   "modular-scale-ratio": $major-third,
