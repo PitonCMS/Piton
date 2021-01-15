@@ -1,91 +1,64 @@
-  // footer
-
- /* Footer Styles */
- .footer {
-  width : 100%;
-  position : relative;
-  align-self: flex-end;
+.footer {
+  @include margin(auto null null null);
+  background: var(--clr-primary);
+  color     : contrast-switch($clr-primary);
+  font-size: .9rem;
 
   a {
-    color : var(--clr-white);
-    text-decoration: none;
+    color     : contrast-switch($clr-primary);
+    transition: all 125ms ease;
 
     &:hover {
       color: var(--clr-accent);
     }
   }
-}
 
-/* footer1 */
-.footer1 {
-  background-color: var(--clr-primary);
-  color           : var(--clr-white);
-  font-size : .8rem;
-  font-weight: 300;
-  letter-spacing: 1.1px;
-  @include padding(1rem);
+  ul {
+    list-style: none;
+  }
 
-  .container {
-    display : grid;
-    grid-template-columns: 1fr;
-    gap     : 1rem;
-    align-items: flex-start;
+  .footer1 {
+display: grid;
+grid-template-columns: 1fr;
+gap: 2rem;
 
     @media screen and (min-width: $breakpoint) {
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       grid-template-columns: auto 1fr auto auto;
-      gap : 1rem;
     }
-  }
 
-  h5 {
-    font-size : 1.2rem;
-    text-shadow: var(--ts);
-    color : var(--clr-white);
-    @include margin(null null 1rem null);
-
-  }
-
-  .footer-social {
-    .social-icon {
-      @include padding(.25rem .5rem);
+    h5 {
+      @include margin(null null 1rem null);
+      font-size  : 1.2rem;
+      text-shadow: var(--ts);
     }
+
+    .footer-social {
+      .social-icon {
+        @include padding(.25rem .5rem);
+      }
+    }
+
+    .footer-address {
+      *+* {
+        @include margin(1rem null null null);
+      }
+    }
+
   }
-.footer-address {
- *+* {
-   @include margin(1rem null null null);
- }
-}
-}
 
-/* footer2 */
-.footer2 {
-  background-color: var(--clr-primary-dark) !important;
-  @include padding(1rem);
-  width: 100%;
-  display        : flex;
-  flex-flow      : column nowrap;
-  justify-content: center;
-  align-content  : center;
-  text-align     : center;
-
-
-  p {
-    @include margin(0);
-    color      : var(--clr-grey-light);
-    font-size  : .8rem;
-    font-weight: var(--fw-l);
-  }
-  .container {
-    display : flex;
-    flex-flow: column nowrap;
-    align-items: center;
+  .footer2 {
+    @include padding(1rem null);
+    @include margin(1rem null null);
+    background     : var(--clr-primary-dark);
+    display        : flex;
+    flex-flow      : column nowrap;
     justify-content: center;
-  }
-}
+    align-items    : center;
 
-.nav-footer {
-  &__nav {
-    list-style: none;
+    p {
+      @include margin(0);
+      font-size: .8rem;
+      color    : contrast-switch($clr-primary);
+    }
   }
 }
