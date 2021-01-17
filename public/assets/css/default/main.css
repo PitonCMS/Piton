@@ -30,32 +30,32 @@
   --clr-primary-rgb: 51, 102, 153;
   --clr-primary-dark: #264d73;
   --clr-primary-dark-rgb: 38, 77, 115;
-  --clr-primary-light: #8cb3d9;
-  --clr-primary-light-rgb: 140, 179, 217;
+  --clr-primary-light: #6699cc;
+  --clr-primary-light-rgb: 102, 153, 204;
   --clr-secondary: #338899;
   --clr-secondary-rgb: 51, 136, 153;
   --clr-accent: #ff781f;
   --clr-accent-rgb: 255, 120, 31;
-  --clr-dark-text: #262626;
-  --clr-dark-text-rgb: 38, 38, 38;
+  --clr-dark-text: #333333;
+  --clr-dark-text-rgb: 51, 51, 51;
   --clr-white: white;
   --clr-white-rgb: 255, 255, 255;
-  --clr-black: #262626;
-  --clr-black-rgb: 38, 38, 38;
-  --clr-grey-dark: gray;
-  --clr-grey-dark-rgb: 128, 128, 128;
+  --clr-black: #333333;
+  --clr-black-rgb: 51, 51, 51;
+  --clr-grey-dark: #4d4d4d;
+  --clr-grey-dark-rgb: 77, 77, 77;
   --clr-grey-medium: #cccccc;
   --clr-grey-medium-rgb: 204, 204, 204;
   --clr-grey-light: #f0f0f0;
   --clr-grey-light-rgb: 240, 240, 240;
   /* Default Element Styles */
-  --bs: 0 0 25px rgba(38, 38, 38, 0.25);
-  --bs-1: 0 10px 25px rgba(38, 38, 38, 0.25);
+  --bs: 0 0 25px rgba(51, 51, 51, 0.25);
+  --bs-1: 0 10px 25px rgba(51, 51, 51, 0.25);
   --bs-2: 0 20px 40px -15px rgba(0, 0, 0, 0.25);
-  --bsh: 0px 0px 10px 2px rgba(38, 38, 38, 0.15);
+  --bsh: 0px 0px 10px 2px rgba(51, 51, 51, 0.15);
   --br: 7px;
   --ls: 2px;
-  --ts: 0 2px 5px rgba(38, 38, 38, 0.18);
+  --ts: 0 2px 5px rgba(51, 51, 51, 0.18);
   --section-margin: 0rem;
   /*  Navigation Styles */
   --nav-height: 60px;
@@ -84,12 +84,12 @@
 
 @media (min-width: 768px) and (max-width: 991px) {
   :root {
-    font-size: calc(14px + (18 - 14) * ((100vw - 768px) / (991 - 768)));
+    font-size: calc(14px + (16 - 14) * ((100vw - 768px) / (991 - 768)));
   }
 }
 @media (min-width: 991px) {
   :root {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 /* Default Styles - Global */
@@ -180,11 +180,11 @@ h6 {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 2.25rem;
 }
 
 h3 {
@@ -338,59 +338,58 @@ main {
 
 .cards {
   margin-top: 2rem;
-  margin-bottom: 2rem;
-  padding: 0;
-  list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  list-style: none;
 }
-.cards * + * {
-  margin-top: 0;
+.cards a:hover {
+  color: inherit;
 }
-.cards .card {
-  width: 100%;
-  background-color: white;
-  border-radius: var(--br);
-  box-shadow: var(--bs-2);
+
+.card {
+  height: 100%;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
   display: flex;
-  flex-flow: column nowrap;
-  overflow: hidden;
+  flex-direction: column;
+  justify-content: flex-start;
 }
-.cards .card__content {
-  display: flex;
-  flex: 1 1 auto;
-  flex-flow: column nowrap;
-  padding: 1rem;
-}
-.cards .card__image {
+.card__image {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-top-left-radius: var(--br);
-  border-top-right-radius: var(--br);
   filter: contrast(70%);
   overflow: hidden;
   position: relative;
   transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
 }
-.cards .card__image img {
-  object-fit: contain;
+.card__image img {
+  height: 175px;
+  object-fit: cover;
 }
-.cards .card:hover .card__image {
-  filter: contrast(100%);
+.card__title {
+  padding: 1rem;
+  background: var(--clr-primary-light);
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.cards .card__title {
-  color: var(--clr-accent);
-  font-size: 1.25rem;
-  font-weight: 300;
-  letter-spacing: 1.4px;
+.card__title h3 {
+  font-family: var(--ff-sans);
+  color: white;
+  font-size: 1.3rem;
+  font-weight: var(--fw-l);
+  line-height: 1.2;
 }
-.cards .card__text {
+.card__text {
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
   flex: 1 1 auto;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  margin-bottom: 1.25rem;
+}
+.card:hover .card__image {
+  filter: contrast(100%);
 }
 
 .contact-form {

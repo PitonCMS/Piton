@@ -1,11 +1,11 @@
   // Color Pallette
 
-  $clr-black      : rgb(38, 38, 38);
+  $clr-black      : rgb(51, 51, 51);
   $clr-white      : rgb(255, 255, 255);
   $clr-blue       : rgb(51, 102, 153);
   $clr-grey-light : rgb(240, 240, 240);
   $clr-grey-medium: rgb(204, 204, 204);
-  $clr-grey-dark  : rgb(128, 128, 128);
+  $clr-grey-dark  : hsl(0, 0%, 30%);
   $clr-orange     : rgb(255, 120, 31);
   $clr-red        : rgb(255, 0, 0);
   $clr-green      : rgb(0, 112, 0);
@@ -14,7 +14,7 @@
 
   $clr-primary      : $clr-blue;
   $clr-primary-dark : darken($clr-primary, 10);
-  $clr-primary-light: lighten($clr-primary, 30);
+  $clr-primary-light: lighten($clr-primary, 20);
   $clr-secondary    : adjust-hue($clr-primary, -20);
   $clr-accent       : $clr-orange;
   $clr-dark-text    : $clr-black;
