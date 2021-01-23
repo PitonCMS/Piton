@@ -11,6 +11,10 @@
                 {
                     "name": "Default",
                     "value": "default"
+                },
+                {
+                    "name": "Theme",
+                    "value": "theme"
                 }
             ]
         },
