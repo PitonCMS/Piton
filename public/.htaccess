@@ -8,17 +8,6 @@ Options -Indexes
   Header set X-Robots-Tag "noindex"
 </Files>
 
-# Headers
-<If "%{HTTP_HOST} !~ /^localhost$/">
-Header set Strict-Transport-Security "max-age=631138519; includeSubDomains"
-#Header set Content-Security-Policy "default-src 'self' 'unsafe-inline'; script-src 'self' ssl.google-analytics.com *.googleapis.com  *.statcounter.com *.google-analytics.com *.fontawesome.com cdnjs.cloudflare.com; style-src 'self' fonts.gstatic.com *.googleapis.com *.fontawesome.com cdnjs.cloudflare.com; font-src 'self' fonts.gstatic.com *.fontawesome.com; img-src 'self'"
-Header set X-Frame-Options DENY
-Header set X-Content-Type-Options nosniff
-Header set Referrer-Policy no-referrer-when-downgrade
-Header set Feature-Policy 'self'
-Header set X-XSS-Protection "1; mode=block"
-</If>
-
 RewriteEngine On
 
 # Check to see if the user is attempting to access a valid file, such as an image
@@ -35,10 +24,10 @@ RewriteRule . index.php [L]
     ExpiresByType image/jpeg "access plus 1 year"
     ExpiresByType image/png "access plus 1 year"
     ExpiresByType image/gif "access plus 1 year"
-    #ExpiresByType text/css "access plus 60 minutes"
-    #ExpiresByType text/javascript "access plus 60 minutes"
-    #ExpiresByType application/x-javascript "access plus 60 minutes"
-    #ExpiresByType text/html "access plus 60 seconds"
+    ExpiresByType text/css "access plus 60 minutes"
+    ExpiresByType text/javascript "access plus 60 minutes"
+    ExpiresByType application/x-javascript "access plus 60 minutes"
+    ExpiresByType text/html "access plus 60 seconds"
 </IfModule>
 
 <ifModule mod_headers.c>

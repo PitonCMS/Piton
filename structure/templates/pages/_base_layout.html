@@ -5,18 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     {% if page.meta_description %}
     <meta name="description" content="{{ page.meta_description }}">
     {% endif %}
-    {% if site.settings.googleWebMaster %}
-    <meta name="google-site-verification" content="{{ site.settings.googleWebMaster }}">
-    {% endif %}
 
-    <title>{{ site.settings.siteName }}</title>
-    <link rel="stylesheet" href="/assets/{{ site.settings.theme|default('default') }}/css/main.css">
-    <link rel="stylesheet" href="/assets/fancybox/fancybox/fancybox.css">
+    <title>{{ page.title ~ ' | ' ~ site.settings.siteName|default('PitonCMS') }}</title>
+    <link rel="stylesheet" href="{{ baseUrl() }}/assets/{{ site.settings.theme|default('default') }}/css/main.css">
+    <link rel="stylesheet" href="{{ baseUrl() }}/assets/fancybox/fancybox/fancybox.css">
 
-    {{ include('includes/_pitonConfigJs.html') }}
 </head>
 
 <body>
@@ -30,23 +27,16 @@
             {% endblock %}
         </main>
             {% block sidebar %}
-          
             {% endblock %}
     </div>
 
     {{ include("includes/_footer.html") }}
 
-    <script src="{{ baseUrl() }}/admin/js/dist/front.js"></script>
-    <script src="{{ baseUrl() }}/assets/{{ site.settings.theme|default('default') }}/js/custom.js"></script>
-    <script src="{{ baseUrl() }}/assets/fancybox/fancybox/fancybox.umd.js"></script>
+    <script nonce="{{ site.environment.cspNonce }}" src="{{ baseUrl() }}/admin/js/dist/front.js"></script>
+    <script nonce="{{ site.environment.cspNonce }}" src="{{ baseUrl() }}/assets/{{ site.settings.theme|default('default') }}/js/custom.js"></script>
+    <script nonce="{{ site.environment.cspNonce }}" src="{{ baseUrl() }}/assets/fancybox/fancybox/fancybox.umd.js"></script>
 
-    {% if site.environment.production and site.settings.statCounter %}
-    {{ site.settings.statCounter }}
-    {% endif %}
-
-    {% if site.environment.production and site.settings.googleAnalytics %}
-    {{ site.settings.googleAnalytics }}
-    {% endif %}
+    {# When adding analytics tracking JS code besure to include the nonce key in the script tag #}
 </body>
 
 </html>
