@@ -36,7 +36,10 @@
     <script nonce="{{ site.environment.cspNonce }}" src="{{ baseUrl() }}/assets/{{ site.settings.theme|default('default') }}/js/custom.js"></script>
     <script nonce="{{ site.environment.cspNonce }}" src="{{ baseUrl() }}/assets/fancybox/fancybox/fancybox.umd.js"></script>
 
-    {# When adding analytics tracking JS code besure to include the nonce key in the script tag #}
+    {% if site.environment.production %}
+    {# Add analytics tracking JS code here so it only runs when in production. Be sure to include the nonce key in the script tag #}
+
+    {% endif %}
 </body>
 
 </html>
