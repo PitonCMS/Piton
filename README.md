@@ -7,14 +7,14 @@ PitonCMS was designed to be designer friendly, giving great flexibility to the d
 Page structures, data fields, settings, are all easily extensible by modifying project JSON **Definition** files. These files can be checked into version control and pushed to other environments to promote layout and data changes without having to modify remote databases or push code.
 
 PitonCMS is built on modern standards and packages:
-* PHP 7.1+
+* PHP 7.3+
 * Runs on the [Slim](http://www.slimframework.com/) framework, fast and powerful
 * Coded to PHP-FIG [PSR-12](https://www.php-fig.org/psr/psr-12/) standards
 * [Composer](https://getcomposer.org/) for package management
 * [Twig](https://twig.symfony.com/) to render HTML templates
 
 ## Requirements
-* *AMP environment with PHP 7.1 or greater. PitonCMS comes with a [Docker-Compose](https://docs.docker.com/compose/) image ready to run for local development
+* *AMP environment with PHP 7.3+. PitonCMS comes with a [Docker-Compose](https://docs.docker.com/compose/) image ready to run for local development
 * [Composer](https://getcomposer.org/) installed on your development environment
 
 ## Install PitonCMS
@@ -65,7 +65,7 @@ To login, navigate to `/login` and enter the email address you used during the i
 Sessions are valid for the duration set in the `secondsUntilExpiration` session configuration item, which defaults to two hours from the last request. This can be increased to any session length.
 
 ## Inside PitonCMS Administration
-After logging in to the PitonCMS administration back end, go ahead and explore. A good first stop is under the **Tools** menu is to review the client controlled site settings. Also review the **Help** documentation for Designer and Client.
+After logging in to the PitonCMS administration back end, go ahead and explore. A good first stop is under the **Tools** menu is to review the client controlled site settings. Also review the **Support** documentation for Designer and Client.
 
 ## First Project Commit
 For your project using PitonCMS, before your first commit you should:

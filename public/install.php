@@ -4,7 +4,7 @@
  * PitonCMS (https://github.com/PitonCMS)
  *
  * @link      https://github.com/PitonCMS/Piton
- * @copyright Copyright (c) 2015 - 2020 Wolfgang Moritz
+ * @copyright Copyright 2018 Wolfgang Moritz
  * @license   https://github.com/PitonCMS/Piton/blob/master/LICENSE (MIT License)
  */
 
@@ -92,7 +92,7 @@ if (isset($_POST['submit'])) {
 
     // Verify tables do not exist before installation
     try {
-        $result = $pdo->query('select 1 from page limit 1');
+        $result = $pdo->query('select 1 from `page` limit 1');
         if ($result) {
             throw new Exception("exists");
         }
@@ -121,16 +121,27 @@ if (isset($_POST['submit'])) {
     $insertNewUser = 'insert into `user` (`first_name`, `last_name`, `email`, `role`, `created_date`, `updated_date`) values (?, ?, ?, ?, ?, ?);';
     $userData[] = $_POST['firstName'] ?? null;
     $userData[] = $_POST['lastName'] ?? null;
-    $userData[] = $_POST['email'] ?? null;
+    $userData[] = $_POST['email'];
     $userData[] = 'A';
     $userData[] = date('Y-m-d H:i:s');
     $userData[] = date('Y-m-d H:i:s');
 
+    // Insert siteName into data_store
+    $insertSiteName = 'insert into `data_store` (`category`, `setting_key`, `setting_value`, `created_date`, `updated_date`) values (?, ?, ?, ?, ?);';
+    $dataSiteName[] = 'site';
+    $dataSiteName[] = 'siteName';
+    $dataSiteName[] = $_POST['siteName'] ?? null;
+    $dataSiteName[] = date('Y-m-d H:i:s');
+    $dataSiteName[] = date('Y-m-d H:i:s');
+
     try {
         $stmt = $pdo->prepare($insertNewUser);
         $stmt->execute($userData);
+
+        $stmt = $pdo->prepare($insertSiteName);
+        $stmt->execute($dataSiteName);
     } catch (Exception $e) {
-        throwPitonError("Failed to insert new user: {$e->getMessage()}.");
+        throwPitonError("Failed to insert user or site data: {$e->getMessage()}.");
     }
 
     // Set engine version as key to avoid running install again
@@ -185,8 +196,13 @@ if (isset($_POST['submit'])) {
         </p>
 
         <p>
-            <label>Email Address</label>
+            <label>Email Address*</label>
             <input type="email" name="email" maxlength="60" placeholder="Email" required>
+        </p>
+
+        <p>
+            <label>Website Name<label>
+            <input type="text" name="siteName" maxlength="60" placeholder="Website name">
         </p>
 
         <button type="submit" name="submit">Install Database</button>
