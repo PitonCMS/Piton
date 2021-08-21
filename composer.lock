@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "13a4815c84ef95a03aec68bafe841865",
+    "content-hash": "f30e65dac7685b815b48da9579a99aff",
     "packages": [
         {
             "name": "erusev/parsedown",
@@ -456,20 +456,20 @@
         },
         {
             "name": "pitoncms/engine",
-            "version": "0.5.0",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PitonCMS/Engine.git",
-                "reference": "4641d0fa368f6980c281181a83994bb4ef4cc394"
+                "reference": "08e665dbf3309398437a267983f6aa8179f3c4dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PitonCMS/Engine/zipball/4641d0fa368f6980c281181a83994bb4ef4cc394",
-                "reference": "4641d0fa368f6980c281181a83994bb4ef4cc394",
+                "url": "https://api.github.com/repos/PitonCMS/Engine/zipball/08e665dbf3309398437a267983f6aa8179f3c4dd",
+                "reference": "08e665dbf3309398437a267983f6aa8179f3c4dd",
                 "shasum": ""
             },
             "require": {
-                "erusev/parsedown": "~1.7.4",
+                "erusev/parsedown-extra": "~0.8.1",
                 "justinrainbow/json-schema": "~5.2.10",
                 "monolog/monolog": "~2.3.1",
                 "php": ">=7.3",
@@ -501,9 +501,9 @@
             "homepage": "https://github.com/PitonCMS/Engine",
             "support": {
                 "issues": "https://github.com/PitonCMS/Engine/issues",
-                "source": "https://github.com/PitonCMS/Engine/tree/0.5.0"
+                "source": "https://github.com/PitonCMS/Engine/tree/develop"
             },
-            "time": "2021-08-03T00:28:27+00:00"
+            "time": "2021-08-21T18:58:39+00:00"
         },
         {
             "name": "pitoncms/orm",
@@ -1232,7 +1232,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "pitoncms/engine": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
