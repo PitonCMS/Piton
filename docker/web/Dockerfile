@@ -15,18 +15,16 @@ RUN apt-get update && \
       php7.4-ldap \
       php7.4-mbstring \
       php7.4-mysql \
-      # php7.4-pgsql \
-      # php7.4-sqlite3 \
       php7.4-xml \
       php7.4-xsl \
       php7.4-zip \
-      # php7.4-soap \
-      # php7.4-opcache \
       nano \
       sendmail \
-      composer \
-      php-curl
+      php-curl \
+      curl \
+      git
 
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer
 COPY apache-host.conf /etc/apache2/sites-available/000-default.conf
 COPY run.sh /usr/local/bin/run
 RUN chmod +x /usr/local/bin/run
