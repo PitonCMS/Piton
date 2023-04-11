@@ -38,4 +38,9 @@
     {{ pitonMacro.contactHoneypot() }}
   </form>
 
+  {# Preload the client response message text, but keep it hidden until form submission by PitonCMS #}
+  <div class="contact-form__response" data-contact-response="true" hidden>
+    <p>{{ site.settings.contactFormAcknowledgement }}</p>
+  </div>
+
 </div>
