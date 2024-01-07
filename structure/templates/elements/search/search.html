@@ -10,8 +10,8 @@
     {{ element.content }}
 
     <ul class="cards">
-      {% for p in results %}
-      <a href="{{ pathFor('showPage', {'slug1': p.collection_slug, 'slug2': p.page_slug}) }}">
+    {% for p in results %}
+        <a href="{{ getPathForPage(p.page_slug, p.collection_slug) }}">
         <li class="card">
 
           {% if p.media.filename %}
@@ -33,7 +33,7 @@
       {# For when no search results are found #}
       <h3>No search results found.</h3>
 
-      {% endfor %}
+    {% endfor %}
     </ul>
 
     {# Print pagination navigation #}

@@ -9,7 +9,7 @@
 
   <ul class="cards">
     {% for detail in collection %}
-    <a href="{{ pathFor('showPage', {'slug1': detail.collection_slug, 'slug2': detail.page_slug}) }}">
+    <a href="{{ getPathForPage(detail.page_slug, detail.collection_slug) }}">
       <li class="card">
 
         {% if detail.media.filename %}
