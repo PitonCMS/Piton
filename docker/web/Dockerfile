@@ -1,15 +1,17 @@
-FROM ubuntu:20.04
+FROM ubuntu:latest
 
 ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get -y install software-properties-common && \
+    add-apt-repository ppa:ondrej/php && \
+    apt-get update && \
     apt-get install -y \
       apache2 \
       php7.4 \
       php7.4-cli \
       libapache2-mod-php7.4 \
       php-apcu \
-      php-xdebug \
+      php7.4-xdebug \
       php7.4-gd \
       php7.4-json \
       php7.4-ldap \
