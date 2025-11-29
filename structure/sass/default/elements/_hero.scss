@@ -20,7 +20,9 @@
     left      : 50%;
     transform : translate(-50%, -50%);
     color     : var(--clr-white);
-    @include padding(1rem 2rem);
+    
+    padding-block: 1rem;
+    padding-inline: 2rem;
     border-radius: var(--br);
     width     : 60ch;
     max-width : 50%;
