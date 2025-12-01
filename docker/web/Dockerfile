@@ -7,19 +7,19 @@ RUN apt-get update && \
     apt-get update && \
     apt-get install -y \
       apache2 \
-      php7.4 \
-      php7.4-cli \
-      libapache2-mod-php7.4 \
+      php8.4 \
+      php8.4-cli \
+      libapache2-mod-php8.4 \
       php-apcu \
-      php7.4-xdebug \
-      php7.4-gd \
-      php7.4-json \
-      php7.4-ldap \
-      php7.4-mbstring \
-      php7.4-mysql \
-      php7.4-xml \
-      php7.4-xsl \
-      php7.4-zip \
+      php8.4-xdebug \
+      php8.4-gd \
+      php8.4-json \
+      php8.4-ldap \
+      php8.4-mbstring \
+      php8.4-mysql \
+      php8.4-xml \
+      php8.4-xsl \
+      php8.4-zip \
       nano \
       sendmail \
       php-curl \
