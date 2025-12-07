@@ -2,7 +2,8 @@
 
 
    .contact-form {
-     @include margin(1rem null null null);
+  
+     margin-block-start: 1rem;
      display              : grid;
      grid-template-columns: 1fr;
      gap                  : 1rem;
@@ -34,7 +35,8 @@
  input[type=email],
  textarea {
    width: 100%;
-   @include padding(.75em 1em);
+   padding-block: .75em;
+   padding-inline: 1em;
    border       : 1px solid var(--clr-grey-medium);
    border-radius: var(--br);
    grid-column  : 2 / 3;

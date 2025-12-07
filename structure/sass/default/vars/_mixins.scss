@@ -6,3 +6,12 @@
   green($hex),
   blue($hex);
 }
+
+// Contrast Color
+@function contrast-switch($color) {
+  @if (lightness($color) > 50%) {
+    @return $clr-black;
+  } @else {
+    @return $clr-white;
+  }
+}

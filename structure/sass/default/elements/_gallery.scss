@@ -1,12 +1,13 @@
 // Gallery Element
 
 .gallery-wrapper {
-  @include padding(2rem null);
+  
+  padding-block: 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 1.5rem;
   .gallery-img{
-    @include margin(0 null null null);
+    margin-block-start: 0;
     img {
 
       border-radius: var(--br);
