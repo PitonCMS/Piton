@@ -7,7 +7,7 @@ PitonCMS was designed to be designer friendly, giving great flexibility to the d
 Page structures, data fields, settings, are all easily extensible by modifying project JSON **Definition** files. These files can be checked into version control and pushed to other environments to promote layout and data changes without having to modify remote databases or push code.
 
 PitonCMS is built on modern standards and packages:
-* PHP 7.3+
+* PHP 8.3+
 * Runs on the [Slim](http://www.slimframework.com/) framework, fast and powerful
 * Coded to PHP-FIG [PSR-12](https://www.php-fig.org/psr/psr-12/) standards
 * [Composer](https://getcomposer.org/) for package management
