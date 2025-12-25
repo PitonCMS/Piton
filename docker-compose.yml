@@ -8,7 +8,6 @@ services:
       - .:/var/www/piton
       - ./docker/web/apache-host.conf:/etc/apache2/sites-enabled/000-default.conf
       - ./docker/web/99-dev.ini:/usr/local/etc/php/conf.d/99-dev.ini
-      - ~/.ssh/id_rsa:/run/secrets/host_ssh_key
 
   db:
     platform: linux/arm64
@@ -22,7 +21,3 @@ services:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-
-secrets:
-  host_ssh_key:
-    file: ~/.ssh/id_rsa

@@ -27,7 +27,7 @@ RUN docker-php-ext-install \
 # Install Imagick extension
 RUN pecl install imagick && docker-php-ext-enable imagick
 
-# Install Xdebug (for debugging)
+# Install Xdebug
 RUN pecl install xdebug && docker-php-ext-enable xdebug
 
 # Install Composer globally
