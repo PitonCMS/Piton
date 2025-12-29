@@ -6,6 +6,7 @@ composer.local.lock
 docker-compose.override.yml
 sitemap.xml
 *.map
+*.code-workspace
 
 # Directories to ignore
 logs/
