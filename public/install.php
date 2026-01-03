@@ -51,7 +51,7 @@ function throwPitonError($message)
 // Install database if this script is called via POST Request
 if (isset($_POST['submit'])) {
     // Make sure at a minimum that we have the user email address
-    if (!isset($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+    if (!isset($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL, FILTER_FLAG_EMAIL_UNICODE)) {
         throwPitonError("You must provide a valid email address. {$_POST['email']} is not valid.");
     }
 
