@@ -14,7 +14,7 @@ PitonCMS is built on modern standards and packages:
 * [Twig](https://twig.symfony.com/) to render HTML templates
 
 ## Requirements
-* *AMP environment with PHP 7.3+. PitonCMS comes with a [Docker-Compose](https://docs.docker.com/compose/) image ready to run for local development
+* *AMP environment with PHP 8.3+. PitonCMS comes with a [Docker-Compose](https://docs.docker.com/compose/) image ready to run for local development
 * [Composer](https://getcomposer.org/) installed on your development environment
 
 ## Install PitonCMS
