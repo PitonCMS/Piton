@@ -181,3 +181,12 @@ composer update pitoncms/engine
 Where you replace `piton` with your project name.
 
 The PitonCMS frontend project files above the `vendor` folder are never updated, so your custom files are never touched.
+
+## License
+
+PitonCMS is licensed under AGPLv3 with an additional permission for themes and plugins.
+
+This means:
+- Core modifications must be open-sourced under AGPLv3
+- Custom themes and plugins can remain proprietary
+- See the LICENSE file for full details
