@@ -1,12 +1,13 @@
 <?php
+
 /**
  * Custom Public Application Routes
  *
- * Copy this file to routes.php and
- * use example below to define custom static routes
+ * Copy this file to routes.php and use example below to define custom override routes by *route name*.
+ * Be certain to use the `setName()` method to define which named route to override.
  */
 
-// Example public static route
+// Example public home route
 // $app->get('/custom-static-route', function ($request, $response, $args) {
 //     return (new Piton\Controllers\ControllerName($this))->MethodName($request, $response, $args);
-// });
+// })->setName('home');
