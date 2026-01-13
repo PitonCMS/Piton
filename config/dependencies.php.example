@@ -8,7 +8,7 @@ declare(strict_types=1);
 
 /**
  * Override default Piton services using this file.
- * Rename file to dependencies.php. The $container is available in this context.
+ * Rename file to 'dependencies.php'. The $container is available in this context.
  *
  * Example custom 404 Not Found handler to replace the built in Piton Not Found:
     $container['notFoundHandler'] = function ($c) {
