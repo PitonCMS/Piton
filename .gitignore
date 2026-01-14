@@ -7,6 +7,7 @@ docker-compose.override.yml
 sitemap.xml
 *.map
 *.code-workspace
+piton-installed.lock
 
 # Directories to ignore
 logs/
