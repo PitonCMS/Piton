@@ -18,39 +18,39 @@ PitonCMS is built on modern standards and packages:
 * [Composer](https://getcomposer.org/) installed on your development environment
 
 ## Install PitonCMS
-To install PitonCMS using composer from the command line, change directories (`cd`) to where you want to create your new PitonCMS project directory, and run the composer `create-project` command, but update `<my-project-name>` to the new project name (to use Docker ensure the project name is all lower case):
+To install PitonCMS using composer using the command line, change directories (`cd`) to where you want to create your new PitonCMS project directory, and run the composer `create-project` command, but update `<my-project-name>` to the new project name (to use Docker ensure the project name is all lower case):
 
-```
+```sh
 composer create-project pitoncms/piton <my-project-name>
 ```
 
-This will create a new instance of PitonCMS in a folder of the same name. When composer asks if you wish to delete any version control files say yes.
+This will create a new instance of PitonCMS in the new directory. When composer asks if you wish to delete any version control files say yes.
 
-The `create-project` command will automatically run a script that sets default configurations for your development environment.
+Installing PitonCMS using composer will automatically set default configurations for your local development environment to get you started quickly!
 
-## Run PitonCMS in Docker Container
+## Start PitonCMS in Docker Container
 If you have a [Docker](https://docs.docker.com/) client installed on your computer, from the command line `cd` into the new project folder and run:
 
-```
+```sh
 docker-compose build
 ```
 to build the Docker images. This is a one time step.
 
 To start the Docker container and webserver, run:
 
-```
+```sh
 docker-compose up -d
 ```
 
 To later stop your container, run:
 
-```
+```sh
 docker-compose stop
 ```
 
 If you do not have the Docker client, then run PitonCMS on your local *AMP server.
 
-After starting your development server, open a browser and go to `http://localhost`. The first time you will be directed to the installer script. Enter your name and email address and click submit to build the database and add you as an administrative user.
+After starting your development server open a browser and go to `http://localhost`. The first time you will be directed to the installer script. Enter your name and email address and click submit to build the database and add you as an administrative user. These values can be later changed in the PitonCMS administration console.
 
 **Note:** The installer script (`public/install.php`) deletes itself after creating the database. If for some reason the self-delete fails, be sure to manually delete this file. DO NOT commit `install.php` and/or push to a production environment.
 
@@ -65,8 +65,7 @@ Sessions are valid for the duration set in the `secondsUntilExpiration` session 
 After logging in to the PitonCMS administration back end, go ahead and explore. A good first stop is under the **Tools** menu is to review the client controlled site settings. Also review the **Support** documentation for Designer and Client.
 
 ## First Project Commit
-For your project using PitonCMS, before your first commit you should:
-* Make sure that `public/install.php` has been deleted
+For your project using PitonCMS, before your first commit you should ensure sure that `public/install.php` file has been deleted.
 
 ## Backend Configuration Settings
 After installing the project, inspect the `config/config.local.php` configuration file to ensure the configuration values are set for your environment.
