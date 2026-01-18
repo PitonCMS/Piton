@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5f5d4380848ebc7e579a42681b60efc2",
+    "content-hash": "06984b7b9f04ec8c3905fa6699144b46",
     "packages": [
         {
             "name": "dflydev/dot-access-data",
@@ -969,16 +969,16 @@
         },
         {
             "name": "pitoncms/engine",
-            "version": "1.0.3",
+            "version": "1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PitonCMS/Engine.git",
-                "reference": "6a634287b536ec3a4266737faba9b9439a046239"
+                "reference": "1c174a0c3fa9028e5faca0d093a84e105a79c71d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PitonCMS/Engine/zipball/6a634287b536ec3a4266737faba9b9439a046239",
-                "reference": "6a634287b536ec3a4266737faba9b9439a046239",
+                "url": "https://api.github.com/repos/PitonCMS/Engine/zipball/1c174a0c3fa9028e5faca0d093a84e105a79c71d",
+                "reference": "1c174a0c3fa9028e5faca0d093a84e105a79c71d",
                 "shasum": ""
             },
             "require": {
@@ -989,8 +989,8 @@
                 "php-di/php-di": "^7.1",
                 "phpmailer/phpmailer": "^6.5.0",
                 "pitoncms/orm": "^1.0.0",
-                "pitoncms/pagination": "^1.0.0",
-                "pitoncms/session": "^3.0.0",
+                "pitoncms/pagination": "^1.0.2",
+                "pitoncms/session": "^3.1.0",
                 "slim/psr7": "^1.8",
                 "slim/slim": "^4.15",
                 "slim/twig-view": "^3.4",
@@ -1016,9 +1016,9 @@
             "homepage": "https://github.com/PitonCMS/Engine",
             "support": {
                 "issues": "https://github.com/PitonCMS/Engine/issues",
-                "source": "https://github.com/PitonCMS/Engine/tree/1.0.3"
+                "source": "https://github.com/PitonCMS/Engine/tree/1.0.5"
             },
-            "time": "2026-01-15T14:15:25+00:00"
+            "time": "2026-01-18T08:54:06+00:00"
         },
         {
             "name": "pitoncms/orm",
