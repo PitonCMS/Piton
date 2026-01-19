@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "06984b7b9f04ec8c3905fa6699144b46",
+    "content-hash": "8813a637ffbc0ce65ef914df1b517e8d",
     "packages": [
         {
             "name": "dflydev/dot-access-data",
@@ -969,16 +969,16 @@
         },
         {
             "name": "pitoncms/engine",
-            "version": "1.0.5",
+            "version": "1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PitonCMS/Engine.git",
-                "reference": "1c174a0c3fa9028e5faca0d093a84e105a79c71d"
+                "reference": "862d6f8b9a63fb3a303a4794c49cdced3ab03715"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PitonCMS/Engine/zipball/1c174a0c3fa9028e5faca0d093a84e105a79c71d",
-                "reference": "1c174a0c3fa9028e5faca0d093a84e105a79c71d",
+                "url": "https://api.github.com/repos/PitonCMS/Engine/zipball/862d6f8b9a63fb3a303a4794c49cdced3ab03715",
+                "reference": "862d6f8b9a63fb3a303a4794c49cdced3ab03715",
                 "shasum": ""
             },
             "require": {
@@ -1016,9 +1016,9 @@
             "homepage": "https://github.com/PitonCMS/Engine",
             "support": {
                 "issues": "https://github.com/PitonCMS/Engine/issues",
-                "source": "https://github.com/PitonCMS/Engine/tree/1.0.5"
+                "source": "https://github.com/PitonCMS/Engine/tree/1.0.6"
             },
-            "time": "2026-01-18T08:54:06+00:00"
+            "time": "2026-01-19T17:45:06+00:00"
         },
         {
             "name": "pitoncms/orm",
