@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "php": ">=8.3",
+        "php": "^8.2",
         "pitoncms/engine": "^1.0.5"
         },
     "autoload": {
