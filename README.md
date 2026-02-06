@@ -50,9 +50,7 @@ docker-compose stop
 
 If you do not have the Docker client, then run PitonCMS on your local *AMP server.
 
-After starting your development server open a browser and go to `http://localhost`. The first time you will be directed to the installer script. Enter your name and email address and click submit to build the database and add you as an administrative user. These values can be later changed in the PitonCMS administration console.
-
-**Note:** The installer script (`public/install.php`) deletes itself after creating the database. If for some reason the self-delete fails, be sure to manually delete this file. DO NOT commit `install.php` and/or push to a production environment.
+After starting your development server open a browser and go to `http://localhost`. The first time you will be directed to the initial setup form. Enter your name and email address and click submit to add you as an administrative user. These values can be later changed in the PitonCMS administration console.
 
 ## Login to PitonCMS
 PitonCMS does not store passwords. PitonCMS uses passwordless authentication by email.
@@ -63,9 +61,6 @@ Sessions are valid for the duration set in the `secondsUntilExpiration` session 
 
 ## Inside PitonCMS Administration
 After logging in to the PitonCMS administration back end, go ahead and explore. A good first stop is under the **Tools** menu is to review the client controlled site settings. Also review the **Support** documentation for Designer and Client.
-
-## First Project Commit
-For your project using PitonCMS, before your first commit you should ensure sure that `public/install.php` file has been deleted.
 
 ## Backend Configuration Settings
 After installing the project, inspect the `config/config.local.php` configuration file to ensure the configuration values are set for your environment.
